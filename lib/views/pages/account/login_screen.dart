@@ -211,7 +211,7 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
             _globalService.getString(Const.LOGIN_FORGOT_PASS),
             style: Theme.of(context).textTheme.bodyText2.copyWith(
                   color: Styles.textColor(context),
-                  fontSize: 15,
+                  fontSize: 16,
                 ),
           ),
           onPressed: () =>
