@@ -19,10 +19,9 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     var btnRadius;
 
-    if(shape == null || shape == ButtonShape.Rounded) {
+    if (shape == null || shape == ButtonShape.Rounded) {
       btnRadius = BorderRadius.circular(24);
     } else if (shape == ButtonShape.RoundedTop) {
       btnRadius = BorderRadius.only(
@@ -55,22 +54,25 @@ class CustomButton extends StatelessWidget {
       ),
       child: Ink(
         decoration: BoxDecoration(
-          borderRadius: btnRadius,
-          gradient: _globalService.getAppLandingData().gradientEnabled && backgroundColor==null
-              ? getGradient(_globalService)
-              : null,
-          color: backgroundColor ?? Theme.of(context).primaryColor,
-        ),
+            borderRadius: btnRadius,
+            gradient: _globalService.getAppLandingData().gradientEnabled &&
+                    backgroundColor == null
+                ? getGradient(_globalService)
+                : null,
+            color: Colors.blue
+            // color: backgroundColor ?? Theme.of(context).primaryColor,
+            ),
         child: Container(
           constraints: BoxConstraints(minHeight: 50, maxHeight: 50),
           alignment: Alignment.center,
           child: Text(
-            label,
+            "Sign In",
+            //label,
             style: Theme.of(context).textTheme.subtitle2.copyWith(
-              color: Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.normal,
-            ),
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal,
+                ),
           ),
         ),
       ),

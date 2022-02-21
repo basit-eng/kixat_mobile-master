@@ -217,7 +217,11 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
           child: ListView(
             shrinkWrap: true,
             children: [
+              Spacer(
+                flex: 3,
+              ),
               Container(
+                margin: const EdgeInsets.only(bottom: 40),
                 height: 200,
                 width: 200,
                 decoration: BoxDecoration(
@@ -229,6 +233,7 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Card(
+                  margin: const EdgeInsets.only(bottom: 70),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                       side: BorderSide(

@@ -2,7 +2,7 @@ class AppConstants {
   static const NstKey = 'bm9wU3RhdGlvblRva2Vu';
   static const NstSecret = 'bm9wS2V5';
 
-  static const TOPIC_PRIVACY_POLICY ='privacypolicy';// 'PrivacyInfo';
+  static const TOPIC_PRIVACY_POLICY = 'privacypolicy'; // 'PrivacyInfo';
   static const TOPIC_ABOUT_US = 'AboutUs';
 
   static const EMPTY_POST_BODY = '{}';
@@ -22,7 +22,7 @@ class AppConstants {
 
   static const double productBoxThumbnailSize = 175.0;
 
-  static const loginBackground = 'assets/splash_image.jpg';
+  static const loginBackground = 'assets/back.jpg';
   static const splashBackground = 'assets/splash_image_kixat.gif';
   static const cartIcon_white = 'assets/cart_white.png';
   static const cartIcon_black = 'assets/cart.png';
@@ -30,6 +30,7 @@ class AppConstants {
   static const shopping_bag = 'assets/bags.png';
   static const shopping_list = 'assets/list.png';
   static const shop_order = 'assets/order.png';
+  static const loginPageIcon = 'assets/logo.png';
 
   static const tokenExpireErrorCode = 403;
 }
