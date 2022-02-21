@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:kixat/bloc/home_bloc.dart';
 import 'package:kixat/views/customWidget/home/horizontal_categories.dart';
 import 'package:kixat/views/customWidget/home/horizontal_manufacturer_slider.dart';
