@@ -32,7 +32,6 @@ import 'package:kixat/views/pages/more/vendor_list_screen.dart';
 import 'package:kixat/views/pages/product-list/product_list_screen.dart';
 import 'package:kixat/views/pages/product/product_details_screen.dart';
 import 'package:kixat/views/pages/product/zoomable_image_screen.dart';
-import 'package:kixat/views/pages/splash.dart';
 import 'package:kixat/views/pages/tabs-screen/error_screen.dart';
 import 'package:kixat/views/pages/tabs-screen/tabs_screen.dart';
 import 'package:scoped_model/scoped_model.dart';
@@ -62,7 +61,7 @@ class MyApp extends StatelessWidget {
           );
         },
         routes: {
-          '/': (context) => Splash(),
+          '/': (context) => LoginScreen(),
           TabsScreen.routeName: (context) => FcmHandler(child: TabsScreen()),
           HomeScreen.routeName: (context) => HomeScreen(categories: []),
           LoginScreen.routeName: (context) => LoginScreen(),
