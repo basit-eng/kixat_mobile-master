@@ -178,6 +178,7 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
     );
 
     final loginButton = CustomButton(
+      backgroundColor: Colors.blue,
       label: _globalService.getString(Const.LOGIN_LOGIN_BTN).toUpperCase(),
       shape: ButtonShape.Rounded,
       onClick: () {
@@ -190,29 +191,14 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
 
     final registerLabel = Row(
       children: [
-        TextButton(
-          child: Text(
-            _globalService.getString(Const.LOGIN_NEW_CUSTOMER),
-            style: Theme.of(context).textTheme.bodyText2.copyWith(
-                  color: Styles.textColor(context),
-                  fontSize: 16,
-                ),
-          ),
-          onPressed: () {
-            Navigator.of(context).pushNamed(
-              RegistrationScreen.routeName,
-              arguments: RegistrationScreenArguments(getCustomerInfo: false),
-            );
-          },
-        ),
         Spacer(),
         TextButton(
           child: Text(
             _globalService.getString(Const.LOGIN_FORGOT_PASS),
-            style: Theme.of(context).textTheme.bodyText2.copyWith(
-                  color: Styles.textColor(context),
-                  fontSize: 16,
-                ),
+            style: Theme.of(context)
+                .textTheme
+                .bodyText2
+                .copyWith(fontSize: 16, color: Colors.red),
           ),
           onPressed: () =>
               Navigator.of(context).pushNamed(ForgotPasswordScreen.routeName),
@@ -228,32 +214,46 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
                 image: AssetImage(AppConstants.loginBackground),
                 fit: BoxFit.cover)),
         child: Center(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  side: BorderSide(
-                    color: Colors.grey.shade400,
-                  )),
-              elevation: 0,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    SizedBox(height: 48.0),
-                    formData.usernamesEnabled ? username : email,
-                    SizedBox(height: 8.0),
-                    password,
-                    SizedBox(height: 10.0),
-                    loginButton,
-                    registerLabel
-                  ],
+          child: ListView(
+            shrinkWrap: true,
+            children: [
+              Container(
+                height: 200,
+                width: 200,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(AppConstants.loginPageIcon),
+                  ),
                 ),
               ),
-            ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      side: BorderSide(
+                        color: Colors.grey.shade400,
+                      )),
+                  elevation: 20,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        SizedBox(height: 15.0),
+                        formData.usernamesEnabled ? username : email,
+                        SizedBox(height: 8.0),
+                        password,
+                        SizedBox(height: 10.0),
+                        loginButton,
+                        registerLabel
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
