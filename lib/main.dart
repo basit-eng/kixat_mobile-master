@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
           );
         },
         routes: {
-          '/': (context) => Splash(),
+          '/': (context) => LoginScreen(),
           TabsScreen.routeName: (context) => FcmHandler(child: TabsScreen()),
           HomeScreen.routeName: (context) => HomeScreen(categories: []),
           LoginScreen.routeName: (context) => LoginScreen(),
