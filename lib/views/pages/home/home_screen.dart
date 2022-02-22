@@ -104,21 +104,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   if (snapshot.hasData &&
                       snapshot.data.status == Status.COMPLETED) {
                     if (snapshot.data.data?.data?.isNotEmpty == true) {
-                      return GridView.count(
-          crossAxisCount: 2,
-          crossAxisSpacing: 10.0,
-          mainAxisSpacing: 10.0,
-          shrinkWrap: true,
-          children: List.generate(20, (index) {
-              return HorizontalSlider(
-                          '${_globalService.getString(Const.HOME_BESTSELLER)}',
-                          false,
-                          false,
-                          [],
-                          snapshot.data.data.data);
-            },),
-        ),
-                      
+                      return GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 10.0,
+                          mainAxisSpacing: 10.0,
+                        ),
+                        shrinkWrap: true,
+                        itemCount: 10,
+                        itemBuilder: (context, index) {
+                          return HorizontalSlider(
+                              '${_globalService.getString(Const.HOME_FEATURED_PRODUCT)}',
+                              false,
+                              false,
+                              [],
+                              snapshot.data.data.data);
+                        },
+                      );
                     } else {
                       return SizedBox.shrink();
                     }
