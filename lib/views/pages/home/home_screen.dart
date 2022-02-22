@@ -12,6 +12,7 @@ import 'package:kixat/model/home/FeaturedProductResponse.dart';
 import 'package:kixat/model/home/ManufacturersResponse.dart';
 import 'package:kixat/networking/ApiResponse.dart';
 import 'package:kixat/service/GlobalService.dart';
+import 'package:kixat/utils/styles.dart';
 import 'package:kixat/utils/Const.dart';
 
 import 'home_carousel.dart';
@@ -103,12 +104,21 @@ class _HomeScreenState extends State<HomeScreen> {
                   if (snapshot.hasData &&
                       snapshot.data.status == Status.COMPLETED) {
                     if (snapshot.data.data?.data?.isNotEmpty == true) {
-                      return HorizontalSlider(
+                      return GridView.count(
+          crossAxisCount: 2,
+          crossAxisSpacing: 10.0,
+          mainAxisSpacing: 10.0,
+          shrinkWrap: true,
+          children: List.generate(20, (index) {
+              return HorizontalSlider(
                           '${_globalService.getString(Const.HOME_BESTSELLER)}',
                           false,
                           false,
                           [],
                           snapshot.data.data.data);
+            },),
+        ),
+                      
                     } else {
                       return SizedBox.shrink();
                     }
@@ -117,67 +127,92 @@ class _HomeScreenState extends State<HomeScreen> {
                 }),
 
             // Featured products
-            StreamBuilder<ApiResponse<FeaturedProductResponse>>(
-                stream: _bloc.featuredProdStream,
-                builder: (context, snapshot) {
-                  if (snapshot.hasData &&
-                      snapshot.data.status == Status.COMPLETED) {
-                    if (snapshot.data.data?.data?.isNotEmpty == true) {
-                      return HorizontalSlider(
-                          '${_globalService.getString(Const.HOME_FEATURED_PRODUCT)}',
-                          false,
-                          false,
-                          [],
-                          snapshot.data.data.data);
-                    } else {
-                      return SizedBox.shrink();
-                    }
-                  }
-                  return SizedBox.shrink();
-                }),
+            // StreamBuilder<ApiResponse<FeaturedProductResponse>>(
+            //     stream: _bloc.featuredProdStream,
+            //     builder: (context, snapshot) {
+            //       if (snapshot.hasData &&
+            //           snapshot.data.status == Status.COMPLETED) {
+            //         if (snapshot.data.data?.data?.isNotEmpty == true) {
+            //           return HorizontalSlider(
+            //               '${_globalService.getString(Const.HOME_FEATURED_PRODUCT)}',
+            //               false,
+            //               false,
+            //               [],
+            //               snapshot.data.data.data);
+            //         } else {
+            //           return SizedBox.shrink();
+            //         }
+            //       }
+            //       return SizedBox.shrink();
+            //     }),
 
             // Categories with products
-            StreamBuilder<ApiResponse<CategoriesWithProductsResponse>>(
-                stream: _bloc.categoriesWithProdStream,
-                builder: (context, snapshot) {
-                  if (snapshot.hasData &&
-                      snapshot.data.status == Status.COMPLETED)
-                    return Column(
-                      children: [
-                        ...snapshot.data.data.data.map<Widget>((e) {
-                          return HorizontalSlider(
-                            e.name,
-                            true,
-                            true,
-                            e.subCategories,
-                            e.products,
-                            categoryId: e.id,
-                          );
-                        }).toList(),
-                      ],
-                    );
-                  return SizedBox.shrink();
-                }),
+            // StreamBuilder<ApiResponse<CategoriesWithProductsResponse>>(
+            //     stream: _bloc.categoriesWithProdStream,
+            //     builder: (context, snapshot) {
+            //       if (snapshot.hasData &&
+            //           snapshot.data.status == Status.COMPLETED)
+            //         return Column(
+            //           children: [
+            //             ...snapshot.data.data.data.map<Widget>((e) {
+            //               return HorizontalSlider(
+            //                 e.name,
+            //                 true,
+            //                 true,
+            //                 e.subCategories,
+            //                 e.products,
+            //                 categoryId: e.id,
+            //               );
+            //             }).toList(),
+            //           ],
+            //         );
+            //       return SizedBox.shrink();
+            //     }),
 
             // Manufacturers slider
-            StreamBuilder<ApiResponse<ManufacturersResponse>>(
-                stream: _bloc.manufacturersStream,
-                builder: (context, snapshot) {
-                  if (snapshot.hasData &&
-                      snapshot.data.status == Status.COMPLETED) {
-                    if (snapshot.data.data?.data?.isNotEmpty == true) {
-                      return HorizontalManufacturerSlider(
-                          '${_globalService.getString(Const.HOME_MANUFACTURER)}',
-                          snapshot.data.data.data);
-                    } else {
-                      return SizedBox.shrink();
-                    }
-                  }
-                  return SizedBox.shrink();
-                }),
+            // StreamBuilder<ApiResponse<ManufacturersResponse>>(
+            // stream: _bloc.manufacturersStream,
+            // builder: (context, snapshot) {
+            //   if (snapshot.hasData &&
+            //       snapshot.data.status == Status.COMPLETED) {
+            //     if (snapshot.data.data?.data?.isNotEmpty == true) {
+            //       return HorizontalManufacturerSlider(
+            //           '${_globalService.getString(Const.HOME_MANUFACTURER)}',
+            //           snapshot.data.data.data);
+            //     } else {
+            //       return SizedBox.shrink();
+            //     }
+            //   }
+            //   return SizedBox.shrink();
+            // }),
           ],
         ),
       ),
     );
   }
 }
+
+Widget dashboard = GridView.builder(
+  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      // childAspectRatio: 3 / 2,
+      crossAxisCount: 3,
+      crossAxisSpacing: 06),
+  itemBuilder: (context, index) {
+    return Container(
+        child: Card(
+      child: Column(
+        children: [
+          Image.asset(
+            "assets/bags.png",
+            height: 80,
+            width: 80,
+          ),
+          Text(
+            "data",
+            style: Styles.productNameTextStyle(context),
+          ),
+        ],
+      ),
+    ));
+  },
+);
