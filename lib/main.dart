@@ -20,6 +20,7 @@ import 'package:kixat/views/pages/account/review/product_review_screen.dart';
 import 'package:kixat/views/pages/account/rewardPoint/reward_point_screen.dart';
 import 'package:kixat/views/pages/account/subscription_screen.dart';
 import 'package:kixat/views/pages/account/wishlist_screen.dart';
+import 'package:kixat/views/pages/attendance.dart';
 import 'package:kixat/views/pages/checkout/checkout_screen.dart';
 import 'package:kixat/views/pages/checkout/checkout_webview.dart';
 import 'package:kixat/views/pages/home/home_screen.dart';
@@ -62,7 +63,7 @@ class MyApp extends StatelessWidget {
           );
         },
         routes: {
-          '/': (context) => LoginScreen(),
+          '/': (context) => Splash(),
           TabsScreen.routeName: (context) => FcmHandler(child: TabsScreen()),
           HomeScreen.routeName: (context) => HomeScreen(categories: []),
           LoginScreen.routeName: (context) => LoginScreen(),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:kixat/utils/utility.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-
   final Widget title;
   final bool centerTitle;
   final Widget leading;
@@ -29,5 +28,4 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => AppBar().preferredSize;
-
 }

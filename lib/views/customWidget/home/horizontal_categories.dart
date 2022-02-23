@@ -10,12 +10,13 @@ import 'package:kixat/views/pages/product-list/product_list_screen.dart';
 
 class HorizontalCategories extends StatelessWidget {
   final List<CategoryTreeResponseData> categories;
-  final double boxSize = 100;
+  final double boxSize = 150;
 
   const HorizontalCategories({Key key, this.categories}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
       color:
           isDarkThemeEnabled(context) ? Color(0xFF2D2C2C) : Color(0xFFECEDF4),
@@ -23,45 +24,54 @@ class HorizontalCategories extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: 5),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 5),
-            child: Text(
-              GlobalService()
-                  .getString(Const.HOME_OUR_CATEGORIES)
-                  .toUpperCase(),
-              style: Theme.of(context).textTheme.headline6,
-            ),
-          ),
+          // Padding(
+          //   padding: EdgeInsets.symmetric(horizontal: 5),
+          //   child: Text(
+          //     GlobalService()
+          //         .getString(Const.HOME_OUR_CATEGORIES)
+          //         .toUpperCase(),
+          //     style: Theme.of(context).textTheme.headline6,
+          //   ),
+          // ),
           Container(
-            height: boxSize + 40,
+            height: size.height,
             width: double.infinity,
-            child: ListView.builder(
+            child: GridView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 250,
+                    mainAxisExtent: 200,
+                    crossAxisSpacing: 08,
+                    mainAxisSpacing: 08),
                 shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
                 itemCount: categories.length,
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
                     onTap: () {
-                      Navigator.of(context)
-                          .pushNamed(ProductListScreen.routeName,
-                              arguments: ProductListScreenArguments(
-                                id: categories[index].categoryId,
-                                name: categories[index].name,
-                                type: GetBy.CATEGORY,
-                              ));
+                      Navigator.of(context).pushNamed(
+                        ProductListScreen.routeName,
+                        arguments: ProductListScreenArguments(
+                          id: categories[index].categoryId,
+                          name: categories[index].name,
+                          type: GetBy.CATEGORY,
+                        ),
+                      );
                     },
-                    child: Padding(
-                      padding: EdgeInsets.fromLTRB(5, 5, 3, 5),
+                    child: Card(
+                      // color: Colors.primaries[index],
+                      margin:
+                          EdgeInsets.symmetric(horizontal: 16, vertical: 04),
+                      elevation: 6.5,
+                      // shape: RoundedRectangleBorder(
+                      //   borderRadius: BorderRadius.circular(15),
+                      // ),
                       child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Card(
-                            elevation: 1.5,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            child: ClipRRect(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(15)),
+                          ClipRRect(
+                            borderRadius: BorderRadius.all(Radius.circular(15)),
+                            child: Flexible(
                               child: CpImage(
                                 url: categories[index].iconUrl,
                                 height: boxSize,
@@ -70,28 +80,25 @@ class HorizontalCategories extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(
-                            height: 5,
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              categories[index].name,
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ),
-                          SizedBox(
-                              width: boxSize,
-                              child: Text(
-                                categories[index].name,
-                                overflow: TextOverflow.ellipsis,
-                                maxLines: 1,
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 14.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              )),
                         ],
                       ),
                     ),
                   );
                 }),
           ),
-          SizedBox(height: 5),
         ],
       ),
     );

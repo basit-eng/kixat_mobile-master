@@ -66,6 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        physics: ClampingScrollPhysics(),
         child: Column(
           children: [
             // Slider banner
@@ -98,37 +99,36 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: 5),
 
             // BestSellers products
-            StreamBuilder<ApiResponse<BestSellerProductResponse>>(
-                stream: _bloc.bestSellerProdStream,
-                builder: (context, snapshot) {
-                  if (snapshot.hasData &&
-                      snapshot.data.status == Status.COMPLETED) {
-                    if (snapshot.data.data?.data?.isNotEmpty == true) {
-                      return GridView.builder(
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          crossAxisSpacing: 10.0,
-                          mainAxisSpacing: 10.0,
-                        ),
-                        shrinkWrap: true,
-                        itemCount: 10,
-                        itemBuilder: (context, index) {
-                          return HorizontalSlider(
-                              '${_globalService.getString(Const.HOME_FEATURED_PRODUCT)}',
-                              false,
-                              false,
-                              [],
-                              snapshot.data.data.data);
-                        },
-                      );
-                    } else {
-                      return SizedBox.shrink();
-                    }
-                  }
-                  return SizedBox.shrink();
-                }),
-
-            // Featured products
+            // StreamBuilder<ApiResponse<BestSellerProductResponse>>(
+            //     stream: _bloc.bestSellerProdStream,
+            //     builder: (context, snapshot) {
+            //       if (snapshot.hasData &&
+            //           snapshot.data.status == Status.COMPLETED) {
+            //         if (snapshot.data.data?.data?.isNotEmpty == true) {
+            //           return GridView.builder(
+            //             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            //               crossAxisCount: 2,
+            //               crossAxisSpacing: 10.0,
+            //               mainAxisSpacing: 10.0,
+            //             ),
+            //             shrinkWrap: true,
+            //             itemCount: 10,
+            //             itemBuilder: (context, index) {
+            //               return HorizontalSlider(
+            //                   '${_globalService.getString(Const.HOME_FEATURED_PRODUCT)}',
+            //                   false,
+            //                   false,
+            //                   [],
+            //                   snapshot.data.data.data);
+            //             },
+            //           );
+            //         } else {
+            //           return SizedBox.shrink();
+            //         }
+            //       }
+            //       return SizedBox.shrink();
+            //     }),
+            // Featured productsy
             // StreamBuilder<ApiResponse<FeaturedProductResponse>>(
             //     stream: _bloc.featuredProdStream,
             //     builder: (context, snapshot) {
@@ -173,48 +173,24 @@ class _HomeScreenState extends State<HomeScreen> {
 
             // Manufacturers slider
             // StreamBuilder<ApiResponse<ManufacturersResponse>>(
-            // stream: _bloc.manufacturersStream,
-            // builder: (context, snapshot) {
-            //   if (snapshot.hasData &&
-            //       snapshot.data.status == Status.COMPLETED) {
-            //     if (snapshot.data.data?.data?.isNotEmpty == true) {
-            //       return HorizontalManufacturerSlider(
-            //           '${_globalService.getString(Const.HOME_MANUFACTURER)}',
-            //           snapshot.data.data.data);
-            //     } else {
-            //       return SizedBox.shrink();
+            //   stream: _bloc.manufacturersStream,
+            //   builder: (context, snapshot) {
+            //     if (snapshot.hasData &&
+            //         snapshot.data.status == Status.COMPLETED) {
+            //       if (snapshot.data.data?.data?.isNotEmpty == true) {
+            //         return HorizontalManufacturerSlider(
+            //             '${_globalService.getString(Const.HOME_MANUFACTURER)}',
+            //             snapshot.data.data.data);
+            //       } else {
+            //         return SizedBox.shrink();
+            //       }
             //     }
-            //   }
-            //   return SizedBox.shrink();
-            // }),
+            //     return SizedBox.shrink();
+            //   },
+            // ),
           ],
         ),
       ),
     );
   }
 }
-
-Widget dashboard = GridView.builder(
-  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-      // childAspectRatio: 3 / 2,
-      crossAxisCount: 3,
-      crossAxisSpacing: 06),
-  itemBuilder: (context, index) {
-    return Container(
-        child: Card(
-      child: Column(
-        children: [
-          Image.asset(
-            "assets/bags.png",
-            height: 80,
-            width: 80,
-          ),
-          Text(
-            "data",
-            style: Styles.productNameTextStyle(context),
-          ),
-        ],
-      ),
-    ));
-  },
-);
