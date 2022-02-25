@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kixat/ScopedModelWrapper.dart';
-
 import 'package:kixat/utils/styles.dart';
 import 'package:kixat/views/pages/FcmHandler.dart';
 import 'package:kixat/views/pages/account/address/add_edit_address_screen.dart';
@@ -49,7 +48,7 @@ class MyApp extends StatelessWidget {
     return ScopedModelDescendant<AppModel>(builder: (context, child, model) {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'KiXAT',
+        title: 'SMS',
         theme: Styles.lightTheme(model),
         darkTheme: Styles.darkTheme(model),
         themeMode: model.isDarkTheme ? ThemeMode.dark : ThemeMode.light,
@@ -62,7 +61,7 @@ class MyApp extends StatelessWidget {
           );
         },
         routes: {
-          '/': (context) => LoginScreen(),
+          '/': (context) => Splash(),
           TabsScreen.routeName: (context) => FcmHandler(child: TabsScreen()),
           HomeScreen.routeName: (context) => HomeScreen(categories: []),
           LoginScreen.routeName: (context) => LoginScreen(),
