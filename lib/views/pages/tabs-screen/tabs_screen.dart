@@ -1,4 +1,5 @@
 import 'dart:collection';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:kixat/bloc/category_tree/category_tree_bloc.dart';
@@ -112,26 +113,46 @@ class _TabsScreenState extends State<TabsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: CustomAppBar(
         title: _selectedPageIndex == 0
-            ? SizedBox(
-                height: 40,
-                child: _globalService.getAppLandingData().rtl
-                    ? Image(
-                        image: AssetImage(AppConstants.logo_rtl),
-                        fit: BoxFit.fill,
-                      )
-                    : CpImage(
-                        url: _globalService.getAppLandingData().logoUrl,
-                        fit: BoxFit.fill,
-                      ),
+            ? Padding(
+                padding: const EdgeInsets.only(top: 16.0),
+                child: SizedBox(
+                    height: 40,
+                    child: _globalService.getAppLandingData().rtl
+                        ? Text(
+                            "Softify School System",
+                            overflow: TextOverflow.ellipsis,
+                            softWrap: true,
+                            textAlign: TextAlign.justify,
+                            style:
+                                TextStyle(color: Colors.black87, fontSize: 18),
+                          )
+                        : Text(
+                            "Softify School System",
+                            overflow: TextOverflow.ellipsis,
+                            softWrap: true,
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.black87, fontSize: 18),
+                          )
+                    // Image(
+                    //     image: AssetImage(AppConstants.logo_rtl),
+                    //     fit: BoxFit.fill,
+                    //   )
+                    // : CpImage(
+                    //     url: _globalService.getAppLandingData().logoUrl,
+                    //     fit: BoxFit.fill,
+                    //   ),
+                    ),
               )
             : Text(
                 _pages[_selectedPageIndex]['title'],
-                style: Theme.of(context).appBarTheme.textTheme.headline6,
+                style: Theme.of(context).appBarTheme.titleTextStyle,
               ),
-        centerTitle: _selectedPageIndex == 0,
+        centerTitle: _selectedPageIndex == 0 ?? true,
         leading: _selectedPageIndex != 0
             ? InkWell(
                 onTap: () {
@@ -142,24 +163,25 @@ class _TabsScreenState extends State<TabsScreen> {
                 child: Icon(Icons.arrow_back),
               )
             : null,
-        actions: [
-          AppBarCart(),
-        ],
+        // actions: [
+        // AppBarCart(),
+        // ],
       ),
       drawer: _selectedPageIndex == 0
           ? Drawer(
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
                     alignment: Alignment.center,
                     color: isDarkThemeEnabled(context)
                         ? Colors.grey[800]
                         : Colors.grey[300],
-                    height: 85,
+                    height: 80,
                     child: Text(
                       '${_globalService.getString(Const.HOME_NAV_CATEGORY)}',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

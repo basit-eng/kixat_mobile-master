@@ -30,24 +30,25 @@ class _AppBarCartState extends State<AppBarCart> {
             onTap: () {
               Navigator.of(context).pushNamed(ShoppingCartScreen.routeName);
             },
-            child: Badge(
-              position: BadgePosition.topEnd(top: 4, end: -15),
-              badgeContent: Text(
-                (snapshot?.data ?? 0).toString(),
-                style: TextStyle(
-                    fontSize: 10,
-                    color: Theme.of(context)
-                        .appBarTheme
-                        .textTheme
-                        .headline6
-                        .color),
-              ),
-              badgeColor: Theme.of(context).primaryColor,
-              // child: Image(
-              //   image: AssetImage(AppConstants.cartIcon_black),
-              //   width: 30,
-              // ) //Icon(NopCart.ic_cart),
-            ),
+            child: Container(),
+            // Badge(
+            //     position: BadgePosition.topEnd(top: 4, end: -15),
+            //     badgeContent: Text(
+            //       (snapshot?.data ?? 0).toString(),
+            //       style: TextStyle(
+            //           fontSize: 10,
+            //           color: Theme.of(context)
+            //               .appBarTheme
+            //               .textTheme
+            //               .headline6
+            //               .color),
+            //     ),
+            //     // badgeColor: Theme.of(context).primaryColor,
+            //     child: Image(
+            //       image: AssetImage(AppConstants.cartIcon_black),
+            //       width: 0,
+            //     ) //Icon(NopCart.ic_cart),
+            //     ),
           ),
         );
       },
