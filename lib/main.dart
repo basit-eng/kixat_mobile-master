@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kixat/ScopedModelWrapper.dart';
-
 import 'package:kixat/utils/styles.dart';
 import 'package:kixat/views/pages/FcmHandler.dart';
 import 'package:kixat/views/pages/account/address/add_edit_address_screen.dart';

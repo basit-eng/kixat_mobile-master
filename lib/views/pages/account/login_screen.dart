@@ -17,6 +17,7 @@ import 'package:kixat/utils/ValidationMixin.dart';
 import 'package:kixat/utils/shared_pref.dart';
 import 'package:kixat/utils/styles.dart';
 import 'package:kixat/utils/utility.dart';
+import 'package:kixat/views/pages/examSchedule/exam_schedule.dart';
 
 class LoginScreen extends StatefulWidget {
   static const routeName = '/login';
@@ -178,16 +179,19 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
     );
 
     final loginButton = CustomButton(
-      backgroundColor: Colors.blue,
-      label: _globalService.getString(Const.LOGIN_LOGIN_BTN).toUpperCase(),
-      shape: ButtonShape.Rounded,
-      onClick: () {
-        if (_formKey.currentState.validate()) {
-          removeFocusFromInputField(context);
-          _bloc.postLoginFormData(formData);
+        backgroundColor: Colors.blue,
+        label: _globalService.getString(Const.LOGIN_LOGIN_BTN).toUpperCase(),
+        shape: ButtonShape.Rounded,
+        onClick: () {
+          ExamSchedule();
         }
-      },
-    );
+        // onClick: () {
+        //   if (_formKey.currentState.validate()) {
+        //     removeFocusFromInputField(context);
+        //     _bloc.postLoginFormData(formData);
+        //   }
+        // },
+        );
 
     final registerLabel = Row(
       children: [
@@ -258,6 +262,16 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
                   ),
                 ),
               ),
+              TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ExamSchedule(),
+                      ),
+                    );
+                  },
+                  child: Text('Exame Sechedule'))
             ],
           ),
         ),
