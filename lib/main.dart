@@ -21,6 +21,7 @@ import 'package:kixat/views/pages/account/rewardPoint/reward_point_screen.dart';
 import 'package:kixat/views/pages/account/subscription_screen.dart';
 import 'package:kixat/views/pages/account/wishlist_screen.dart';
 import 'package:kixat/views/pages/attendance.dart';
+import 'package:kixat/views/pages/calender_screen.dart';
 import 'package:kixat/views/pages/checkout/checkout_screen.dart';
 import 'package:kixat/views/pages/checkout/checkout_webview.dart';
 import 'package:kixat/views/pages/home/home_screen.dart';
@@ -50,7 +51,7 @@ class MyApp extends StatelessWidget {
     return ScopedModelDescendant<AppModel>(builder: (context, child, model) {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'KiXAT',
+        title: 'Softify School',
         theme: Styles.lightTheme(model),
         darkTheme: Styles.darkTheme(model),
         themeMode: model.isDarkTheme ? ThemeMode.dark : ThemeMode.light,
@@ -103,9 +104,8 @@ class MyApp extends StatelessWidget {
               },
             );
           } else if (settings.name == ProductListScreen.routeName) {
-            final ProductListScreenArguments args =
-                settings.arguments as ProductListScreenArguments;
-
+            final StudentListScreenArguments args =
+                settings.arguments as StudentListScreenArguments;
             return MaterialPageRoute(
               builder: (context) {
                 return ProductListScreen(args.type, args.name, args.id);

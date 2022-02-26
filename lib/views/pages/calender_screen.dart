@@ -3,10 +3,10 @@ import 'package:table_calendar/table_calendar.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AttendanceScreen extends StatelessWidget {
-  const AttendanceScreen({Key key}) : super(key: key);
+class CalenderScreen extends StatelessWidget {
+  const CalenderScreen({Key key}) : super(key: key);
 
-  static const routeName = 'attendence-screen';
+  static const routeName = 'calender-screen';
 
   @override
   Widget build(BuildContext context) {
@@ -68,56 +68,23 @@ class AttendanceScreen extends StatelessWidget {
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(120, 10, 30, 0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CustomAttendanceDotsWidget(
-                    attendenceStatus: "Absent",
-                    dotColor: Colors.red,
+            ListView.builder(
+              shrinkWrap: true,
+              itemCount: 08,
+              itemBuilder: (context, index) {
+                return Card(
+                  margin: EdgeInsets.symmetric(horizontal: 10, vertical: 18),
+                  child: EventCard(
+                    event: 'Sports week Class 3 - Class 10',
+                    time: '1:00 - 3:00 PM',
+                    secondaryColor: Colors.grey[300],
+                    primaryColor: SchoolToolkitColors.grey,
                   ),
-                  CustomAttendanceDotsWidget(
-                    attendenceStatus: "HalfDay",
-                    dotColor: Colors.yellow,
-                  ),
-                  CustomAttendanceDotsWidget(
-                    attendenceStatus: "Leave",
-                    dotColor: Colors.green,
-                  ),
-                  CustomAttendanceDotsWidget(
-                    attendenceStatus: "HalfDay",
-                    dotColor: Colors.purple,
-                  ),
-                ],
-              ),
-            ),
+                );
+              },
+            )
           ],
         ),
-      ),
-    );
-  }
-}
-
-class CustomAttendanceDotsWidget extends StatelessWidget {
-  const CustomAttendanceDotsWidget(
-      {Key key, this.dotColor, this.attendenceStatus})
-      : super(key: key);
-
-  final Color dotColor;
-  final String attendenceStatus;
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      contentPadding: EdgeInsets.all(0),
-      horizontalTitleGap: 0,
-      leading: Icon(
-        Icons.circle,
-        color: dotColor,
-      ),
-      title: Text(
-        attendenceStatus,
-        style: Theme.of(context).textTheme.bodyMedium,
       ),
     );
   }

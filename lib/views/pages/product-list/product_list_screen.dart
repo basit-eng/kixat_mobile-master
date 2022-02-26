@@ -336,3 +336,11 @@ class ProductListScreenArguments {
 
   ProductListScreenArguments({this.type, this.name, this.id});
 }
+
+class StudentListScreenArguments {
+  String type;
+  String name;
+  num id;
+
+  StudentListScreenArguments({this.type, this.name, this.id});
+}

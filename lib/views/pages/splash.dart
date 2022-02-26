@@ -9,6 +9,7 @@ import 'package:kixat/utils/utility.dart';
 import 'package:kixat/views/pages/tabs-screen/error_screen.dart';
 import 'package:kixat/views/pages/tabs-screen/tabs_screen.dart';
 import 'package:scoped_model/scoped_model.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -27,6 +28,15 @@ class _SplashState extends State<Splash> {
 
   @override
   Widget build(BuildContext context) {
+    Size ScreenSize = MediaQuery.of(context).size;
+    ScreenUtil.init(
+      context,
+      designSize: Size(
+        ScreenSize.width,
+        ScreenSize.height,
+      ),
+      allowFontScaling: true,
+    );
     return Scaffold(
       backgroundColor: Colors.white,
       body: Container(

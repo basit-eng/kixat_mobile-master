@@ -29,24 +29,24 @@ class ProfileScreen extends StatelessWidget {
                 color: Colors.grey.shade300,
                 child: ListTile(
                   leading: CircleAvatar(
-                    backgroundImage: AssetImage('assets/profile.jpg'),
-                    radius: 40,
+                    backgroundImage: AssetImage('assets/user.png'),
+                    radius: 24,
                   ),
                   title: Text('Emma_ema'),
                   subtitle: Text('Class 9th A'),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 25),
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 14),
                 child: Text(
                   "Personal Information",
                   textAlign: TextAlign.left,
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
                 ),
               ),
               Card(
                 elevation: 04,
-                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                margin: EdgeInsets.symmetric(horizontal: 12, vertical: 5),
                 child: Column(
                   children: [
                     CustomProfile(
@@ -72,22 +72,22 @@ class ProfileScreen extends StatelessWidget {
                     CustomProfile(
                       attr: "Gender",
                       iconsPath: Icons.female,
-                      value: "Femail",
+                      value: "Female",
                     ),
                   ],
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 25),
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 14),
                 child: Text(
                   "DegreeInformation",
                   textAlign: TextAlign.left,
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
                 ),
               ),
               Card(
                 elevation: 04,
-                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                margin: EdgeInsets.symmetric(horizontal: 12, vertical: 5),
                 child: Column(
                   children: [
                     CustomProfile(
@@ -114,16 +114,16 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 25),
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 14),
                 child: Text(
                   "Contact Information",
                   textAlign: TextAlign.left,
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800),
                 ),
               ),
               Card(
                 elevation: 04,
-                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                margin: EdgeInsets.symmetric(horizontal: 12, vertical: 5),
                 child: Column(
                   children: [
                     CustomProfile(

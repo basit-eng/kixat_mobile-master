@@ -6,7 +6,13 @@ import 'package:kixat/utils/Const.dart';
 import 'package:kixat/utils/GetBy.dart';
 import 'package:kixat/utils/utility.dart';
 import 'package:kixat/views/customWidget/cached_image.dart';
+import 'package:kixat/views/pages/assignmentCard_screen.dart';
+import 'package:kixat/views/pages/attendance.dart';
+import 'package:kixat/views/pages/calender_screen.dart';
+import 'package:kixat/views/pages/notice_screen.dart';
 import 'package:kixat/views/pages/product-list/product_list_screen.dart';
+import 'package:kixat/views/pages/profile_screen.dart';
+import 'package:kixat/views/pages/rountineCard_screen.dart';
 
 class HorizontalCategories extends StatelessWidget {
   final List<CategoryTreeResponseData> categories;
@@ -16,6 +22,14 @@ class HorizontalCategories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List pagesList = <Widget>[
+      NoticeScreen(),
+      ProfileScreen(),
+      AttendanceScreen(),
+      CalenderScreen(),
+      AssignmentScreen(),
+      RountineClassScreen(),
+    ];
     Size size = MediaQuery.of(context).size;
     return Container(
       color:
@@ -48,14 +62,19 @@ class HorizontalCategories extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
                     onTap: () {
-                      Navigator.of(context).pushNamed(
-                        ProductListScreen.routeName,
-                        arguments: ProductListScreenArguments(
-                          id: categories[index].categoryId,
-                          name: categories[index].name,
-                          type: GetBy.CATEGORY,
-                        ),
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => pagesList[index]),
                       );
+                      // Navigator.of(context).pushNamed(
+                      //   ProductListScreen.routeName,
+                      //   arguments: StudentListScreenArguments(
+                      //     id: categories[index].categoryId,
+                      //     name: categories[index].name,
+                      //     type: GetBy.CATEGORY,
+                      //   ),
+                      // );
                     },
                     child: Card(
                       // color: Colors.primaries[index],
