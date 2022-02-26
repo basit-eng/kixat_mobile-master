@@ -32,11 +32,12 @@ class RountineClassScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             return Card(
               margin: EdgeInsets.symmetric(horizontal: 10, vertical: 18),
-              child: EventCard(
-                event: 'Sports week Class 3 - Class 10',
-                time: '1:00 - 3:00 PM',
-                secondaryColor: Colors.grey[300],
-                primaryColor: SchoolToolkitColors.grey,
+              child: RoutineCard(
+                classTopic: 'Fundamentals of Mathematics',
+                classType: 'Theory Class',
+                subject: 'Mathematics',
+                professor: 'Mr. Ram Prasad Yadav',
+                time: '8:00 - 9:00 AM',
               ),
             );
           },

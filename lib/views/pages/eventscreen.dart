@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 
-class NoticeScreen extends StatelessWidget {
-  const NoticeScreen({Key key}) : super(key: key);
+class EventsScreen extends StatelessWidget {
+  const EventsScreen({Key key}) : super(key: key);
 
-  static const routeName = 'notice-screen';
+  static const routeName = 'events-screen';
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class NoticeScreen extends StatelessWidget {
         shadowColor: Color(0xFFFFFFFF),
         backgroundColor: Color(0xFF473F97),
         title: const Text(
-          'Notice Board',
+          "Events ",
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -35,12 +35,11 @@ class NoticeScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             return Card(
               margin: EdgeInsets.symmetric(horizontal: 10, vertical: 16),
-              child: RoutineCard(
-                classTopic: 'Fundamentals of Mathematics',
-                classType: 'Theory Class',
-                subject: 'Mathematics',
-                professor: 'Mr. Ram Prasad Yadav',
-                time: '8:00 - 9:00 AM',
+              child: EventCard(
+                event: 'Sports week Class 3 - Class 10',
+                time: '1:00 - 3:00 PM',
+                secondaryColor: SchoolToolkitColors.lighterGrey,
+                primaryColor: SchoolToolkitColors.grey,
               ),
             );
           },

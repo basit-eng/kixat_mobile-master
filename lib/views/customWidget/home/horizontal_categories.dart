@@ -9,6 +9,7 @@ import 'package:kixat/views/customWidget/cached_image.dart';
 import 'package:kixat/views/pages/assignmentCard_screen.dart';
 import 'package:kixat/views/pages/attendance.dart';
 import 'package:kixat/views/pages/calender_screen.dart';
+import 'package:kixat/views/pages/eventscreen.dart';
 import 'package:kixat/views/pages/notice_screen.dart';
 import 'package:kixat/views/pages/product-list/product_list_screen.dart';
 import 'package:kixat/views/pages/profile_screen.dart';
@@ -29,6 +30,7 @@ class HorizontalCategories extends StatelessWidget {
       CalenderScreen(),
       AssignmentScreen(),
       RountineClassScreen(),
+      EventsScreen(),
     ];
     Size size = MediaQuery.of(context).size;
     return Container(
