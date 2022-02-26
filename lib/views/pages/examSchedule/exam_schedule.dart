@@ -16,7 +16,7 @@ class ExamSchedule extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Exam Schedule"),
+        title: Text('Exam Schedule'),
       ),
       body: Center(
         // child: ListView(
@@ -48,18 +48,27 @@ class ExamSchedule extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ListTile(
-                    tileColor: Color.fromARGB(255, 200, 199, 198),
-                    leading: Icon(
-                      Icons.book,
-                      color: Colors.black,
+                  Card(
+                    child: ListTile(
+                      // onTap: () {
+                      //   Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //       builder: (context) => HomeWork(),
+                      //     ),
+
+                      tileColor: Color.fromARGB(255, 200, 199, 198),
+                      leading: Icon(
+                        Icons.book,
+                        color: Colors.black,
+                      ),
+                      minLeadingWidth: 5,
+                      title: Text(
+                        ' ${entries[index]}',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      trailing: Text('Room No'),
                     ),
-                    minLeadingWidth: 10,
-                    title: Text(
-                      ' ${entries[index]}',
-                      style: TextStyle(color: Colors.black),
-                    ),
-                    trailing: Text('Room No'),
                   ),
                   ListTile(
                     leading: Icon(
@@ -72,7 +81,12 @@ class ExamSchedule extends StatelessWidget {
                       style: TextStyle(color: Colors.black),
                     ),
                     subtitle: Text('20-02-022'),
-                    trailing: Icon(Icons.lock_clock_sharp),
+                    trailing: Column(
+                      children: [
+                        Icon(Icons.lock_clock_sharp),
+                        Text('Start/End Time'),
+                      ],
+                    ),
                   ),
                 ],
               ),
