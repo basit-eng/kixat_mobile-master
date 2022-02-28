@@ -1,25 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../customWidget/CustomAppBar.dart';
+
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        shadowColor: Color(0xFFFFFFFF),
-        backgroundColor: Color(0xFF473F97),
-        title: const Text(
-          'Profile',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 1.3,
-            color: Colors.white,
-          ),
-        ),
-        centerTitle: true,
-      ),
+      appBar: CustomAppBar(title: Text("Profile")),
       body: ListView(
         children: [
           Column(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:kixat/views/customWidget/CustomAppBar.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 
 class NoticeScreen extends StatelessWidget {
@@ -12,20 +13,7 @@ class NoticeScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: AppBar(
-        shadowColor: Color(0xFFFFFFFF),
-        backgroundColor: Color(0xFF473F97),
-        title: const Text(
-          'Notice Board',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 1.3,
-            color: Colors.white,
-          ),
-        ),
-        centerTitle: true,
-      ),
+      appBar: CustomAppBar(title: Text("Notice Board")),
       body: Container(
         height: size.height,
         width: size.width,

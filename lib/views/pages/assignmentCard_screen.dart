@@ -3,6 +3,8 @@ import 'package:table_calendar/table_calendar.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../customWidget/CustomAppBar.dart';
+
 class AssignmentScreen extends StatelessWidget {
   const AssignmentScreen({Key key}) : super(key: key);
 
@@ -11,20 +13,7 @@ class AssignmentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        shadowColor: Color(0xFFFFFFFF),
-        backgroundColor: Color(0xFF473F97),
-        title: Text(
-          'Assignment',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 1.3,
-            color: Colors.white,
-          ),
-        ),
-        centerTitle: true,
-      ),
+      appBar: CustomAppBar(title: Text("Assignment")),
       body: SafeArea(
         child: ListView.builder(
           itemCount: 8,

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 
+import '../customWidget/CustomAppBar.dart';
+
 class EventsScreen extends StatelessWidget {
   const EventsScreen({Key key}) : super(key: key);
 
@@ -12,19 +14,8 @@ class EventsScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: AppBar(
-        shadowColor: Color(0xFFFFFFFF),
-        backgroundColor: Color(0xFF473F97),
-        title: const Text(
-          "Events ",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 1.3,
-            color: Colors.white,
-          ),
-        ),
-        centerTitle: true,
+      appBar: CustomAppBar(
+        title: Text("Events"),
       ),
       body: Container(
         height: size.height,

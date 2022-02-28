@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kixat/views/customWidget/CustomAppBar.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,19 +12,8 @@ class CalenderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        shadowColor: Color(0xFFFFFFFF),
-        backgroundColor: Color(0xFF473F97),
-        title: Text(
-          'Attendance',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 1.3,
-            color: Colors.white,
-          ),
-        ),
-        centerTitle: true,
+      appBar: CustomAppBar(
+        title: Text("Calender"),
       ),
       body: SafeArea(
         child: ListView(
