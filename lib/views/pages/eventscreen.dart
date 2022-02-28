@@ -7,7 +7,7 @@ import '../customWidget/CustomAppBar.dart';
 class EventsScreen extends StatelessWidget {
   const EventsScreen({Key key}) : super(key: key);
 
-  static const routeName = 'events-screen';
+  static const routeName = '/events-screen';
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,10 @@ class EventsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: CustomAppBar(
-        title: Text("Events"),
+        title: Text(
+          "Events",
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
       ),
       body: Container(
         height: size.height,
@@ -25,12 +28,17 @@ class EventsScreen extends StatelessWidget {
           itemCount: 08,
           itemBuilder: (context, index) {
             return Card(
-              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 16),
+              elevation: 9,
+              shape: RoundedRectangleBorder(
+                  borderRadius: const BorderRadius.all(
+                Radius.circular(8.0),
+              )),
+              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 12),
               child: EventCard(
                 event: 'Sports week Class 3 - Class 10',
                 time: '1:00 - 3:00 PM',
-                secondaryColor: SchoolToolkitColors.lighterGrey,
-                primaryColor: SchoolToolkitColors.grey,
+                secondaryColor: Color(0XFF6AC0D8),
+                // primaryColor: Colors.accents[index],
               ),
             );
           },

@@ -15,6 +15,7 @@ import 'package:kixat/service/GlobalService.dart';
 import 'package:kixat/utils/styles.dart';
 import 'package:kixat/utils/Const.dart';
 
+import '../../customWidget/cached_image.dart';
 import 'home_carousel.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -95,7 +96,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
             // Our Categories
             if (widget.categories.isNotEmpty)
-              HorizontalCategories(categories: widget.categories),
+              DashBoardMenu(categories: widget.categories),
+            // HorizontalCategories(categories: widget.categories),
             SizedBox(height: 5),
 
             // BestSellers products

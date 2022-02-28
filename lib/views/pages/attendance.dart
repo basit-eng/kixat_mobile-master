@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AttendanceScreen extends StatelessWidget {
   const AttendanceScreen({Key key}) : super(key: key);
 
-  static const routeName = 'attendence-screen';
+  static const routeName = '/attendence-screen';
 
   @override
   Widget build(BuildContext context) {

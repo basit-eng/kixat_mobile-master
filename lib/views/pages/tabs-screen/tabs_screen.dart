@@ -160,9 +160,12 @@ class _TabsScreenState extends State<TabsScreen> {
                     _selectedPageIndex = 0;
                   });
                 },
-                child: Icon(Icons.arrow_back),
+                child: Icon(
+                  Icons.arrow_back,
+                ),
               )
             : null,
+
         // actions: [
         // AppBarCart(),
         // ],

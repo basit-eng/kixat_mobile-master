@@ -8,15 +8,20 @@ import '../customWidget/CustomAppBar.dart';
 class AssignmentScreen extends StatelessWidget {
   const AssignmentScreen({Key key}) : super(key: key);
 
-  static const routeName = 'assignment-screen';
+  static const routeName = '/assignment-screen';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: Text("Assignment")),
+      appBar: CustomAppBar(
+        title: Text(
+          "Assignment",
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
+      ),
       body: SafeArea(
         child: ListView.builder(
-          itemCount: 8,
+          itemCount: 4,
           itemBuilder: (context, index) {
             return Card(
               elevation: 03,
@@ -28,7 +33,7 @@ class AssignmentScreen extends StatelessWidget {
                     'Chapter 3 - Q.no 1 - Q.no 10 (Please submit in word format with names attached)',
                 subject: 'Mathematics',
                 teacher: 'Dr. Stone',
-                deadlineBackgroundColor: SchoolToolkitColors.red,
+                deadlineBackgroundColor: Colors.primaries[index],
                 onUploadHandler: () {
                   print('Handle upload');
                   // optional, if null is passsed upload button will be hidden

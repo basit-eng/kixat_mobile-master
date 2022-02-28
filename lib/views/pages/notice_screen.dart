@@ -6,14 +6,18 @@ import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 class NoticeScreen extends StatelessWidget {
   const NoticeScreen({Key key}) : super(key: key);
 
-  static const routeName = 'notice-screen';
+  static const routeName = '/notice-screen';
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: CustomAppBar(title: Text("Notice Board")),
+      appBar: CustomAppBar(
+          title: Text(
+        "Notice Board",
+        style: Theme.of(context).textTheme.titleLarge,
+      )),
       body: Container(
         height: size.height,
         width: size.width,

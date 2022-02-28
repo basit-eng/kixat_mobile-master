@@ -7,12 +7,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class RountineClassScreen extends StatelessWidget {
   const RountineClassScreen({Key key}) : super(key: key);
 
-  static const routeName = 'routineClass-screen';
+  static const routeName = '/routineClass-screen';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: Text("Time Table")),
+      appBar: CustomAppBar(
+          title: Text(
+        "Time Table",
+        style: Theme.of(context).textTheme.titleLarge,
+      )),
       body: SafeArea(
         child: ListView.builder(
           shrinkWrap: true,

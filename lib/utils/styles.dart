@@ -15,16 +15,16 @@ class Styles {
       visualDensity: VisualDensity.adaptivePlatformDensity,
       fontFamily: 'LatoRegular',
       appBarTheme: AppBarTheme(
+        backgroundColor: Colors.black54,
         textTheme: ThemeData.dark().textTheme.copyWith(
               headline6: TextStyle(
-                fontFamily: 'LatoRegular',
-                fontSize: 20,
-                color: parseColor(model
-                    .appLandingData.topBarTextColor), // Need to set from api
-              ),
+                  fontFamily: 'LatoRegular', fontSize: 20, color: Colors.white
+                  // color: parseColor(model
+                  //     .appLandingData.topBarTextColor), // Need to set from api
+                  ),
             ),
-        color: parseColor(
-            model.appLandingData.topBarBackgroundColor), // Need to set from api
+        // color: parseColor(
+        //     model.appLandingData.topBarBackgroundColor), // Need to set from api
       ),
       textTheme: ThemeData.dark().textTheme.copyWith(
             headline6: TextStyle(
@@ -50,7 +50,8 @@ class Styles {
             ),
           ),
       primaryIconTheme: ThemeData.dark().primaryIconTheme.copyWith(
-            color: parseColor(model.appLandingData.topBarTextColor),
+            color: Colors.white,
+            // parseColor(model.appLandingData.topBarTextColor),
           ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor:
@@ -77,16 +78,16 @@ class Styles {
       visualDensity: VisualDensity.adaptivePlatformDensity,
       fontFamily: 'LatoRegular',
       appBarTheme: AppBarTheme(
+        backgroundColor: Colors.blue[800],
         textTheme: ThemeData.light().textTheme.copyWith(
               headline6: TextStyle(
-                fontFamily: 'LatoRegular',
-                fontSize: 20,
-                color: parseColor(model
-                    .appLandingData.topBarTextColor), // Need to set from api
-              ),
+                  fontFamily: 'LatoRegular', fontSize: 20, color: Colors.white
+                  // color: parseColor(model
+                  //     .appLandingData.topBarTextColor), // Need to set from api
+                  ),
             ),
-        color: parseColor(
-            model.appLandingData.topBarBackgroundColor), // Need to set from api
+        // color: parseColor(
+        // model.appLandingData.topBarBackgroundColor), // Need to set from api
       ),
       textTheme: ThemeData.light().textTheme.copyWith(
             headline6: TextStyle(
@@ -112,8 +113,9 @@ class Styles {
             ),
           ),
       primaryIconTheme: ThemeData.light().primaryIconTheme.copyWith(
-            // AppBar icon color
-            color: parseColor(model.appLandingData.topBarTextColor),
+          // AppBar icon color
+          color: Colors.black
+          // parseColor(model.appLandingData.topBarTextColor),
           ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor:
