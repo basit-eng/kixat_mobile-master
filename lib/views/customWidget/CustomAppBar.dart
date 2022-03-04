@@ -23,7 +23,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: centerTitle ?? false,
       leading: leading,
       actions: actions ?? List.empty(),
-      flexibleSpace: appbarGradient(),
+      flexibleSpace: appbarGradient(context),
     );
   }
 

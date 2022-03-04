@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:kixat/views/customWidget/CustomAppBar.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
-
-import '../customWidget/CustomAppBar.dart';
 
 class EventsScreen extends StatelessWidget {
   const EventsScreen({Key key}) : super(key: key);
@@ -17,7 +15,7 @@ class EventsScreen extends StatelessWidget {
       appBar: CustomAppBar(
         title: Text(
           "Events",
-          style: Theme.of(context).textTheme.titleLarge,
+          style: Theme.of(context).appBarTheme.textTheme.headline6,
         ),
       ),
       body: Container(

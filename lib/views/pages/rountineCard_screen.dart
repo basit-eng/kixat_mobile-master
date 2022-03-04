@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:kixat/views/customWidget/CustomAppBar.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RountineClassScreen extends StatelessWidget {
   const RountineClassScreen({Key key}) : super(key: key);
@@ -15,7 +14,7 @@ class RountineClassScreen extends StatelessWidget {
       appBar: CustomAppBar(
           title: Text(
         "Time Table",
-        style: Theme.of(context).textTheme.titleLarge,
+        style: Theme.of(context).appBarTheme.textTheme.headline6,
       )),
       body: SafeArea(
         child: ListView.builder(

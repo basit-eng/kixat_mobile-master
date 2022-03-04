@@ -28,12 +28,13 @@ class _BannerSliderState extends State<BannerSlider> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Stack(
       children: [
         CarouselSlider(
           options: CarouselOptions(
-            aspectRatio: 2.2831, // TODO make aspectRatio dynamic
-            viewportFraction: 1.0,
+            aspectRatio: 3.5 / 1, // TODO make aspectRatio dynamic
+            viewportFraction: 1,
             enableInfiniteScroll: true,
             autoPlay: _globalService.getAppLandingData().sliderAutoPlay,
             autoPlayInterval: Duration(
@@ -54,11 +55,17 @@ class _BannerSliderState extends State<BannerSlider> {
               builder: (BuildContext context) {
                 return GestureDetector(
                   onTap: () => onSliderImageClick(i),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    child: CpImage(
-                      url: i.imageUrl,
-                      fit: BoxFit.fitHeight,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16), // Image border
+                    child: SizedBox(
+                      // size: Size.fromRadius(48), // Image radius
+                      width: size.width - 30,
+                      height: 50,
+                      // height: size.height * 0.01,
+                      child: CpImage(
+                        url: i.imageUrl,
+                        fit: BoxFit.fill,
+                      ),
                     ),
                   ),
                 );

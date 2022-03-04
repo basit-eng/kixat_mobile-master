@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:table_calendar/table_calendar.dart';
+import 'package:kixat/views/customWidget/CustomAppBar.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../customWidget/CustomAppBar.dart';
 
 class AssignmentScreen extends StatelessWidget {
   const AssignmentScreen({Key key}) : super(key: key);
@@ -16,7 +13,7 @@ class AssignmentScreen extends StatelessWidget {
       appBar: CustomAppBar(
         title: Text(
           "Assignment",
-          style: Theme.of(context).textTheme.titleLarge,
+          style: Theme.of(context).appBarTheme.textTheme.headline6,
         ),
       ),
       body: SafeArea(

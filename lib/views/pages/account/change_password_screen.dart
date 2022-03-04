@@ -68,7 +68,12 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: Text(_globalService.getString(Const.CHANGE_PASSWORD)),
+        title: Text(
+          _globalService.getString(
+            Const.CHANGE_PASSWORD,
+          ),
+          style: Theme.of(context).appBarTheme.textTheme.headline6,
+        ),
       ),
       body: StreamBuilder<ApiResponse<ChangePasswordData>>(
         stream: _bloc.passChangeStream,

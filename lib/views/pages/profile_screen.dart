@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../customWidget/CustomAppBar.dart';
+import 'package:kixat/views/customWidget/CustomAppBar.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key key}) : super(key: key);
@@ -13,7 +12,7 @@ class ProfileScreen extends StatelessWidget {
       appBar: CustomAppBar(
         title: Text(
           "Profile",
-          style: Theme.of(context).textTheme.titleLarge,
+          style: Theme.of(context).appBarTheme.textTheme.headline6,
         ),
       ),
       body: Container(
@@ -64,7 +63,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   CustomProfile(
                     attr: "Roll No.",
-                    iconsPath: Icons.numbers_outlined,
+                    iconsPath: Icons.confirmation_number_outlined,
                     value: "123",
                   ),
                   CustomProfile(

@@ -6,7 +6,7 @@ description: KiXAT Leading Market Place in Egypt
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 # {version name}+{version code}
-version: 1.0.5+2
+version: 1.0.0+1
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

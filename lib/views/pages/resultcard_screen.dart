@@ -11,13 +11,13 @@ class ResultCardScreen extends StatelessWidget {
         appBar: CustomAppBar(
             title: Text(
           "Result Card",
-          style: Theme.of(context).textTheme.bodyMedium,
+          style: Theme.of(context).appBarTheme.textTheme.headline6,
         )),
         body: Container(
           child: Center(
             child: Text(
               "Result Card Page In progress",
-              style: Theme.of(context).textTheme.bodyMedium,
+              style: Theme.of(context).appBarTheme.textTheme.headline6,
             ),
           ),
         ),

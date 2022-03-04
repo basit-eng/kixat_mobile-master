@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:kixat/views/customWidget/CustomAppBar.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 
@@ -16,7 +15,7 @@ class NoticeScreen extends StatelessWidget {
       appBar: CustomAppBar(
           title: Text(
         "Notice Board",
-        style: Theme.of(context).textTheme.titleLarge,
+        style: Theme.of(context).appBarTheme.textTheme.headline6,
       )),
       body: Container(
         height: size.height,

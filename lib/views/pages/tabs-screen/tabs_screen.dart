@@ -13,11 +13,16 @@ import 'package:kixat/utils/utility.dart';
 import 'package:kixat/views/customWidget/CustomAppBar.dart';
 import 'package:kixat/views/customWidget/cached_image.dart';
 import 'package:kixat/views/customWidget/category_tree.dart';
+import 'package:kixat/views/customWidget/custom_fee.dart';
+import 'package:kixat/views/customWidget/notification_screen.dart';
 import 'package:kixat/views/pages/account/account_screen.dart';
 import 'package:kixat/views/pages/app_bar_cart.dart';
 import 'package:kixat/views/pages/categories/categories_screen.dart';
+import 'package:kixat/views/pages/drawer.dart';
 import 'package:kixat/views/pages/home/home_screen.dart';
 import 'package:kixat/views/pages/more/more_screen.dart';
+import 'package:kixat/views/pages/notice_screen.dart';
+import 'package:kixat/views/pages/report_card.dart';
 import 'package:kixat/views/pages/search/search_screen.dart';
 
 class TabsScreen extends StatefulWidget {
@@ -48,12 +53,14 @@ class _TabsScreenState extends State<TabsScreen> {
         'title': '${_globalService.getString(Const.HOME_NAV_HOME)}',
       },
       {
-        'page': Container(),
-        'title': '${_globalService.getString(Const.HOME_NAV_CATEGORY)}',
+        'page': ReportCardScreen(),
+        'title': "Reports"
+        // '${_globalService.getString(Const.HOME_NAV_CATEGORY)}',
       },
       {
-        'page': SearchScreen(),
-        'title': '${_globalService.getString(Const.HOME_NAV_SEARCH)}',
+        'page': FeeCard(),
+        'title': "Fee"
+        // '${_globalService.getString(Const.HOME_NAV_SEARCH)}',
       },
       {
         'page': AccountScreen(),
@@ -80,12 +87,14 @@ class _TabsScreenState extends State<TabsScreen> {
               'title': '${_globalService.getString(Const.HOME_NAV_HOME)}',
             },
             {
-              'page': CategoriesScreen(snapshot),
-              'title': '${_globalService.getString(Const.HOME_NAV_CATEGORY)}',
+              'page': ReportCardScreen(),
+              'title': "Reports"
+              // '${_globalService.getString(Const.HOME_NAV_CATEGORY)}',
             },
             {
-              'page': SearchScreen(),
-              'title': '${_globalService.getString(Const.HOME_NAV_SEARCH)}',
+              'page': FeeCard(),
+              'title': "Fee"
+              // '${_globalService.getString(Const.HOME_NAV_SEARCH)}',
             },
             {
               'page': AccountScreen(),
@@ -127,16 +136,34 @@ class _TabsScreenState extends State<TabsScreen> {
                             overflow: TextOverflow.ellipsis,
                             softWrap: true,
                             textAlign: TextAlign.justify,
-                            style:
-                                TextStyle(color: Colors.black87, fontSize: 18),
+                            style: Theme.of(context)
+                                .appBarTheme
+                                .textTheme
+                                .headline6,
+
+                            // style: TextStyle(
+                            //     color: isDarkThemeEnabled(context)
+                            //         ? Colors.black45
+                            //         : Colors.white,
+                            //     fontSize: 20,
+                            //     fontWeight: FontWeight.w800),
                           )
                         : Text(
                             "Softify School System",
                             overflow: TextOverflow.ellipsis,
                             softWrap: true,
                             textAlign: TextAlign.center,
-                            style:
-                                TextStyle(color: Colors.black87, fontSize: 18),
+                            style: Theme.of(context)
+                                .appBarTheme
+                                .textTheme
+                                .headline6,
+
+                            // style: TextStyle(
+                            //     color: isDarkThemeEnabled(context)
+                            //         ? Colors.black45
+                            //         : Colors.white,
+                            //     fontSize: 20,
+                            //     fontWeight: FontWeight.w800),
                           )
                     // Image(
                     //     image: AssetImage(AppConstants.logo_rtl),
@@ -165,35 +192,28 @@ class _TabsScreenState extends State<TabsScreen> {
                 ),
               )
             : null,
-
-        // actions: [
-        // AppBarCart(),
-        // ],
-      ),
-      drawer: _selectedPageIndex == 0
-          ? Drawer(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    alignment: Alignment.center,
-                    color: isDarkThemeEnabled(context)
-                        ? Colors.grey[800]
-                        : Colors.grey[300],
-                    height: 80,
-                    child: Text(
-                      '${_globalService.getString(Const.HOME_NAV_CATEGORY)}',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 16.0),
+            child: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: ((context) => NotificationScreen()),
                   ),
-                  if (loaded) CategoryTree(snapshot),
-                ],
+                );
+              },
+              child: Icon(
+                Icons.notifications,
+                size: 30,
+                color: Colors.white,
               ),
-            )
-          : null,
+            ),
+          ),
+        ],
+      ),
+      drawer: _selectedPageIndex == 0 ? CustomDrawer() : null,
       body: WillPopScope(
         onWillPop: () async {
           if (_navigationQueue.isNotEmpty) {
@@ -220,7 +240,7 @@ class _TabsScreenState extends State<TabsScreen> {
           BottomNavigationBarItem(
             icon: Column(
               children: [
-                Icon(NopCart.ic_category, size: 18),
+                Icon(Icons.receipt_long_rounded, size: 18),
                 SizedBox(
                   height: 3,
                 ),
@@ -229,7 +249,7 @@ class _TabsScreenState extends State<TabsScreen> {
             label: _pages[1]['title'],
           ),
           BottomNavigationBarItem(
-            icon: Icon(NopCart.ic_search),
+            icon: Icon(Icons.feed),
             label: _pages[2]['title'],
           ),
           BottomNavigationBarItem(

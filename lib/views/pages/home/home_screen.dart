@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kixat/bloc/home_bloc.dart';
+import 'package:kixat/views/customWidget/custom_fee.dart';
 import 'package:kixat/views/customWidget/home/horizontal_categories.dart';
 import 'package:kixat/views/customWidget/home/horizontal_manufacturer_slider.dart';
 import 'package:kixat/views/customWidget/home/horizontal_product_box_slider.dart';
@@ -14,6 +15,7 @@ import 'package:kixat/networking/ApiResponse.dart';
 import 'package:kixat/service/GlobalService.dart';
 import 'package:kixat/utils/styles.dart';
 import 'package:kixat/utils/Const.dart';
+import 'package:kixat/views/customWidget/message_subscription.dart';
 
 import '../../customWidget/cached_image.dart';
 import 'home_carousel.dart';
@@ -65,134 +67,59 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: SingleChildScrollView(
-        physics: ClampingScrollPhysics(),
-        child: Column(
-          children: [
-            // Slider banner
-            StreamBuilder<ApiResponse<HomeSliderResponse>>(
-              stream: _bloc.sliderStream,
-              builder: (context, snapshot) {
-                if (snapshot.hasData) {
-                  switch (snapshot.data.status) {
-                    case Status.LOADING:
-                      return Padding(
-                        padding: EdgeInsets.symmetric(vertical: 10),
-                        child: Loading(loadingMessage: snapshot.data.message),
-                      );
-                      break;
-                    case Status.COMPLETED:
-                      return BannerSlider(snapshot.data.data.data);
-                      break;
-                    case Status.ERROR:
-                      return SizedBox.shrink();
-                      break;
-                  }
-                }
-                return SizedBox.shrink();
-              },
-            ),
-
-            // Our Categories
-            if (widget.categories.isNotEmpty)
-              DashBoardMenu(categories: widget.categories),
-            // HorizontalCategories(categories: widget.categories),
-            SizedBox(height: 5),
-
-            // BestSellers products
-            // StreamBuilder<ApiResponse<BestSellerProductResponse>>(
-            //     stream: _bloc.bestSellerProdStream,
-            //     builder: (context, snapshot) {
-            //       if (snapshot.hasData &&
-            //           snapshot.data.status == Status.COMPLETED) {
-            //         if (snapshot.data.data?.data?.isNotEmpty == true) {
-            //           return GridView.builder(
-            //             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            //               crossAxisCount: 2,
-            //               crossAxisSpacing: 10.0,
-            //               mainAxisSpacing: 10.0,
-            //             ),
-            //             shrinkWrap: true,
-            //             itemCount: 10,
-            //             itemBuilder: (context, index) {
-            //               return HorizontalSlider(
-            //                   '${_globalService.getString(Const.HOME_FEATURED_PRODUCT)}',
-            //                   false,
-            //                   false,
-            //                   [],
-            //                   snapshot.data.data.data);
-            //             },
-            //           );
-            //         } else {
-            //           return SizedBox.shrink();
-            //         }
-            //       }
-            //       return SizedBox.shrink();
-            //     }),
-            // Featured productsy
-            // StreamBuilder<ApiResponse<FeaturedProductResponse>>(
-            //     stream: _bloc.featuredProdStream,
-            //     builder: (context, snapshot) {
-            //       if (snapshot.hasData &&
-            //           snapshot.data.status == Status.COMPLETED) {
-            //         if (snapshot.data.data?.data?.isNotEmpty == true) {
-            //           return HorizontalSlider(
-            //               '${_globalService.getString(Const.HOME_FEATURED_PRODUCT)}',
-            //               false,
-            //               false,
-            //               [],
-            //               snapshot.data.data.data);
-            //         } else {
-            //           return SizedBox.shrink();
-            //         }
-            //       }
-            //       return SizedBox.shrink();
-            //     }),
-
-            // Categories with products
-            // StreamBuilder<ApiResponse<CategoriesWithProductsResponse>>(
-            //     stream: _bloc.categoriesWithProdStream,
-            //     builder: (context, snapshot) {
-            //       if (snapshot.hasData &&
-            //           snapshot.data.status == Status.COMPLETED)
-            //         return Column(
-            //           children: [
-            //             ...snapshot.data.data.data.map<Widget>((e) {
-            //               return HorizontalSlider(
-            //                 e.name,
-            //                 true,
-            //                 true,
-            //                 e.subCategories,
-            //                 e.products,
-            //                 categoryId: e.id,
-            //               );
-            //             }).toList(),
-            //           ],
-            //         );
-            //       return SizedBox.shrink();
-            //     }),
-
-            // Manufacturers slider
-            // StreamBuilder<ApiResponse<ManufacturersResponse>>(
-            //   stream: _bloc.manufacturersStream,
-            //   builder: (context, snapshot) {
-            //     if (snapshot.hasData &&
-            //         snapshot.data.status == Status.COMPLETED) {
-            //       if (snapshot.data.data?.data?.isNotEmpty == true) {
-            //         return HorizontalManufacturerSlider(
-            //             '${_globalService.getString(Const.HOME_MANUFACTURER)}',
-            //             snapshot.data.data.data);
-            //       } else {
-            //         return SizedBox.shrink();
-            //       }
-            //     }
-            //     return SizedBox.shrink();
-            //   },
-            // ),
-          ],
+      body: Container(
+        height: size.height,
+        width: size.width,
+        child: StreamBuilder<ApiResponse<HomeSliderResponse>>(
+          stream: _bloc.sliderStream,
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              switch (snapshot.data.status) {
+                case Status.LOADING:
+                  return Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                    child: Loading(loadingMessage: snapshot.data.message),
+                  );
+                  break;
+                case Status.COMPLETED:
+                  return MainMenu(
+                    sliderData: snapshot.data.data.data,
+                    categories: widget.categories,
+                  );
+                  break;
+                case Status.ERROR:
+                  return SizedBox.shrink();
+                  break;
+              }
+            }
+            return SizedBox.shrink();
+          },
         ),
       ),
     );
+  }
+}
+
+class MainMenu extends StatelessWidget {
+  const MainMenu({Key key, this.categories, this.sliderData}) : super(key: key);
+  final List<CategoryTreeResponseData> categories;
+  final HomeSliderData sliderData;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+        physics: ClampingScrollPhysics(),
+        shrinkWrap: true,
+        children: [
+          if (categories.isNotEmpty) SizedBox(height: 05),
+          FeeCard(),
+          SizedBox(height: 5),
+          BannerSlider(sliderData),
+          DashBoardMenu(categories: categories),
+          SizedBox(height: 5),
+          MessageSubsciptionCard(),
+        ]);
   }
 }

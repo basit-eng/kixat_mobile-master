@@ -186,7 +186,7 @@ ButtonStyle roundButtonStyle(BuildContext context) {
   );
 }
 
-Widget appbarGradient() {
+Widget appbarGradient(BuildContext context) {
   GlobalService _globalService = GlobalService();
 
   if (_globalService.getAppLandingData().gradientEnabled) {
@@ -197,9 +197,9 @@ Widget appbarGradient() {
     );
   } else {
     return Container(
-      color:
-          parseColor(_globalService.getAppLandingData().topBarBackgroundColor),
-    );
+        color: isDarkThemeEnabled(context) ? Colors.black26 : Colors.blue
+        // parseColor(_globalService.getAppLandingData().topBarBackgroundColor),
+        );
   }
 }
 
@@ -263,7 +263,8 @@ Future<File> saveFileToDisk(FileResponse response,
   }
 
   if (!await Directory(path).exists()) await Directory(path).create();
-  File file = await File('$path/${response.filename}').writeAsBytes(response.fileBytes);
+  File file =
+      await File('$path/${response.filename}').writeAsBytes(response.fileBytes);
 
   if (showNotification) {
     NotificationUtils().showFileDownloadNotification(path: file.path);

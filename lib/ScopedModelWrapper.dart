@@ -24,6 +24,7 @@ class AppModel extends Model {
     topBarBackgroundColor: '#ffffff',
     totalShoppingCartProducts: 0,
     totalWishListProducts: 0,
+
     // rtl: true,
     rtl: false,
   );

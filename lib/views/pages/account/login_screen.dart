@@ -75,7 +75,10 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: Text(_globalService.getString(Const.ACCOUNT_LOGIN)),
+        title: Text(
+          _globalService.getString(Const.ACCOUNT_LOGIN),
+          style: Theme.of(context).appBarTheme.textTheme.headline6,
+        ),
       ),
       body: StreamBuilder<ApiResponse<LoginFormData>>(
         stream: _bloc.loginFormStream,

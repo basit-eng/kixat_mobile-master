@@ -15,7 +15,7 @@ class AttendanceScreen extends StatelessWidget {
       appBar: CustomAppBar(
         title: Text(
           "Attendence",
-          style: Theme.of(context).textTheme.titleLarge,
+          style: Theme.of(context).appBarTheme.textTheme.headline6,
         ),
       ),
       body: SafeArea(
