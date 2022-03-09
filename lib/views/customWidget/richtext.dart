@@ -16,10 +16,10 @@ class RichWidget extends StatelessWidget {
         children: <TextSpan>[
           TextSpan(
             text: text2,
-            style: Theme.of(context)
-                .textTheme
-                .labelMedium
-                .copyWith(fontWeight: FontWeight.w600, color: Colors.blue),
+            style: Theme.of(context).textTheme.bodySmall.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: Colors.blue,
+                ),
           ),
         ],
       ),

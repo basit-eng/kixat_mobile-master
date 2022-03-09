@@ -12,11 +12,11 @@ class NoticeScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: CustomAppBar(
-          title: Text(
-        "Notice Board",
-        style: Theme.of(context).appBarTheme.textTheme.headline6,
-      )),
+      // appBar: CustomAppBar(
+      //     title: Text(
+      //   "Notice Board",
+      //   style: Theme.of(context).appBarTheme.textTheme.headline6,
+      // )),
       body: Container(
         height: size.height,
         width: size.width,

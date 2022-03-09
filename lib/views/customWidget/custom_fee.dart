@@ -20,15 +20,15 @@ class FeeCardWidget extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      padding: const EdgeInsets.only(left: 8.0, right: 08, bottom: 12),
       child: Card(
         elevation: 20,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: BorderRadius.circular(10),
         ),
         child: Container(
-          height: size.height * 0.17,
-          width: size.width * 0.29,
+          height: size.height * 0.16,
+          width: size.width * 0.33,
           // alignment: Alignment.topCenter,
           padding: EdgeInsets.all(08),
           // decoration: BoxDecoration(
@@ -49,7 +49,7 @@ class FeeCardWidget extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Icon(
                   icon,
-                  size: 40,
+                  size: 36,
                   color: Colors.blue,
                 ),
               ),
@@ -58,7 +58,7 @@ class FeeCardWidget extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .labelMedium
-                    .copyWith(fontWeight: FontWeight.w800),
+                    .copyWith(fontWeight: FontWeight.w600),
               ),
               RichWidget(
                 text1: 'Fee : ',
@@ -93,23 +93,23 @@ class FeeCard extends StatelessWidget {
       children: [
         Flexible(
           child: FeeCardWidget(
-              icon: Icons.file_present_sharp,
+              icon: Icons.note_alt,
               attendence: 26,
               fee: 240,
               title: "Previous Month"),
         ),
         Flexible(
           child: FeeCardWidget(
-              icon: Icons.file_present_sharp,
+              icon: Icons.note_rounded,
               attendence: 26,
-              fee: 240,
+              fee: 260,
               title: "Current Month"),
         ),
         Flexible(
           child: FeeCardWidget(
-              icon: Icons.file_present_sharp,
+              icon: Icons.note_add_rounded,
               attendence: 26,
-              fee: 240,
+              fee: 210,
               title: "Next Month"),
         ),
       ],

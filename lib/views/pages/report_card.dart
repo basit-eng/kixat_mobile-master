@@ -11,11 +11,11 @@ class ReportCardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-          title: Text(
-        "Report Card",
-        style: Theme.of(context).appBarTheme.textTheme.headline6,
-      )),
+      // appBar: CustomAppBar(
+      //     title: Text(
+      //   "Student Report ",
+      //   style: Theme.of(context).appBarTheme.textTheme.headline6,
+      // )),
       body: ListView(
         shrinkWrap: true,
         physics: ClampingScrollPhysics(),
@@ -27,7 +27,7 @@ class ReportCardScreen extends StatelessWidget {
                 result: customReportResult(result: ["120", "90", "91%", "A+"]),
                 title: "Mothly Test Result",
                 btnText: "Pass",
-                buttonColor: Colors.green),
+                buttonColor: Colors.blue),
           ),
           SizedBox(
             height: 20,
@@ -39,7 +39,7 @@ class ReportCardScreen extends StatelessWidget {
               result: customReportResult(result: ["450", "120", "38%", "E"]),
               title: "Mid Term Exam",
               btnText: "Pass",
-              buttonColor: Colors.green,
+              buttonColor: Colors.blue,
             ),
           ),
           SizedBox(
@@ -69,7 +69,6 @@ customReportCard(
   return Column(
     children: [
       Card(
-        color: Colors.grey[200],
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 05, vertical: 04),
           child: ListTile(
@@ -79,10 +78,7 @@ customReportCard(
             ),
             title: Text(
               title,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w700,
-              ),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
             trailing: ElevatedButton(
                 onPressed: () {
@@ -106,10 +102,10 @@ customReportCard(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            customReportMenu(title: "Total"),
-            customReportMenu(title: "Obtained"),
-            customReportMenu(title: "Percentage"),
-            customReportMenu(title: "Grade"),
+            customReportMenu(title: "Total", context: context),
+            customReportMenu(title: "Obtained", context: context),
+            customReportMenu(title: "Percentage", context: context),
+            customReportMenu(title: "Grade", context: context),
           ],
         ),
       ),
@@ -133,11 +129,12 @@ customReportCard(
 
 customReportMenu({
   String title,
+  BuildContext context,
 }) {
   return Text(
     title,
     textAlign: TextAlign.left,
-    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+    style: Theme.of(context).textTheme.titleSmall,
   );
 }
 
@@ -165,7 +162,7 @@ class customReportResult extends StatelessWidget {
                 child: Text(
                   result[index],
                   textAlign: TextAlign.start,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                  style: Theme.of(context).textTheme.titleSmall,
                 ),
               );
             }),

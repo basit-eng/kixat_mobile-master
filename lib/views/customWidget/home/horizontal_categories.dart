@@ -7,8 +7,11 @@ import 'package:kixat/views/pages/assignmentCard_screen.dart';
 import 'package:kixat/views/pages/attendance.dart';
 import 'package:kixat/views/pages/calender_screen.dart';
 import 'package:kixat/views/pages/eventscreen.dart';
+import 'package:kixat/views/pages/feeDetails/fee_details.dart';
+import 'package:kixat/views/pages/my_courses.dart';
 import 'package:kixat/views/pages/notice_screen.dart';
 import 'package:kixat/views/pages/profile_screen.dart';
+import 'package:kixat/views/pages/report_card.dart';
 import 'package:kixat/views/pages/rountineCard_screen.dart';
 
 import '../../pages/resultcard_screen.dart';
@@ -24,30 +27,39 @@ class DashBoardMenu extends StatelessWidget {
     EventsScreen(),
     CalenderScreen(),
     ProfileScreen(),
+    FeeDetails(),
+    MyCoursesScreen(),
     ResultCardScreen(),
     RountineClassScreen(),
     NoticeScreen(),
     AttendanceScreen(),
+    ReportCardScreen(),
   ];
-  List imagesList = [
-    'assets/list.png',
+  List imagesList = <String>[
+    'assets/bags.png',
     'assets/list.png',
     'assets/list.png',
     'assets/list.png',
     'assets/order.png',
     'assets/list.png',
-    'assets/logo.png',
+    'assets/order.png',
+    'assets/list.png',
+    'assets/bags.png',
+    'assets/list.png',
     'assets/list.png',
   ];
   List DashBoardMenuItemsName = [
-    "Assignments",
+    "Assignment",
     "Events",
     "Calender",
     "Profile",
-    "ResultCard",
-    "TimeTable",
+    "Fee Details",
+    "My Courses",
+    "Result Card",
+    "Time Table",
     "Notice Board",
-    "Attendence"
+    "Attendence",
+    "Reports",
   ];
 
   @override
@@ -59,14 +71,11 @@ class DashBoardMenu extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: isDarkThemeEnabled(context) ? Colors.black26 : Colors.white,
-          borderRadius: BorderRadius.circular(30),
-          // border: Border.all(
-          //     // color: isDarkThemeEnabled(context) ? Colors.black26 : Colors.white,
-          //     ),
+          borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
               color: isDarkThemeEnabled(context)
-                  ? Colors.black26
+                  ? Colors.black12
                   : Colors.grey[300],
               blurRadius: 10.0, // soften the shadow
               spreadRadius: 05.0, //extend the shadow
@@ -82,11 +91,12 @@ class DashBoardMenu extends StatelessWidget {
           physics: NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 4,
-            crossAxisSpacing: 08.0,
+            crossAxisSpacing: 4.0,
             mainAxisSpacing: 4.0,
           ),
           shrinkWrap: true,
-          itemCount: categories.length,
+          scrollDirection: Axis.vertical,
+          itemCount: imagesList.length,
           itemBuilder: (BuildContext context, int index) {
             return GestureDetector(
               onTap: () {
@@ -104,18 +114,19 @@ class DashBoardMenu extends StatelessWidget {
                 // );
               },
               child: Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(10.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Expanded(
+                    Flexible(
+                      flex: 1,
                       child: ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(15)),
-                        child: CpImage(
-                          url: categories[index].iconUrl,
-                          height: boxSize,
-                          width: boxSize,
+                        borderRadius: BorderRadius.all(Radius.circular(04)),
+                        child: Image.asset(
+                          imagesList[index],
+                          height: 40,
+                          width: 40,
                           fit: BoxFit.cover,
                         ),
                       ),

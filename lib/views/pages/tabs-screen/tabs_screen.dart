@@ -19,6 +19,7 @@ import 'package:kixat/views/pages/account/account_screen.dart';
 import 'package:kixat/views/pages/app_bar_cart.dart';
 import 'package:kixat/views/pages/categories/categories_screen.dart';
 import 'package:kixat/views/pages/drawer.dart';
+import 'package:kixat/views/pages/feeDetails/fee_details.dart';
 import 'package:kixat/views/pages/home/home_screen.dart';
 import 'package:kixat/views/pages/more/more_screen.dart';
 import 'package:kixat/views/pages/notice_screen.dart';
@@ -92,8 +93,8 @@ class _TabsScreenState extends State<TabsScreen> {
               // '${_globalService.getString(Const.HOME_NAV_CATEGORY)}',
             },
             {
-              'page': FeeCard(),
-              'title': "Fee"
+              'page': NoticeScreen(),
+              'title': "Notice Board"
               // '${_globalService.getString(Const.HOME_NAV_SEARCH)}',
             },
             {
@@ -189,6 +190,7 @@ class _TabsScreenState extends State<TabsScreen> {
                 },
                 child: Icon(
                   Icons.arrow_back,
+                  color: Colors.white,
                 ),
               )
             : null,

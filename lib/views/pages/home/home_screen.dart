@@ -123,3 +123,48 @@ class MainMenu extends StatelessWidget {
         ]);
   }
 }
+
+class SwitchButton extends StatefulWidget {
+  SwitchButton(
+      {Key key, this.title, this.subtitle, this.onChange, this.isSwitched})
+      : super(key: key);
+
+  final String title;
+  final String subtitle;
+  Function onChange;
+  bool isSwitched;
+
+  @override
+  State<SwitchButton> createState() => _SwitchButtonState();
+}
+
+class _SwitchButtonState extends State<SwitchButton> {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 04),
+      child: ListTile(
+        title: Text(
+          widget.title,
+          style: Theme.of(context).textTheme.titleMedium.copyWith(
+                fontWeight: FontWeight.w600,
+              ),
+        ),
+        trailing: Switch(
+          value: widget.isSwitched,
+          onChanged: (value) {
+            setState(() {
+              widget.isSwitched = value;
+            });
+          },
+        ),
+        subtitle: Text(
+          widget.subtitle,
+          style: Theme.of(context).textTheme.labelLarge.copyWith(
+                fontWeight: FontWeight.w400,
+              ),
+        ),
+      ),
+    );
+  }
+}

@@ -18,7 +18,6 @@ class NotificationScreen extends StatelessWidget {
         children: [
           Card(
             elevation: 20,
-            color: Colors.white,
             child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,8 +26,7 @@ class NotificationScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       "Today",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                      style: Theme.of(context).textTheme.titleMedium,
                     ),
                   ),
                   Divider(
@@ -42,7 +40,6 @@ class NotificationScreen extends StatelessWidget {
           ),
           Card(
             elevation: 20,
-            color: Colors.white,
             child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,8 +48,7 @@ class NotificationScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       "Early",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                      style: Theme.of(context).textTheme.titleMedium,
                     ),
                   ),
                   Divider(
@@ -88,14 +84,17 @@ class CustomNotification extends StatelessWidget {
             customnotificationtile(
               desription: "This is Today Notification",
               dateTime: "20/03/2022",
+              context: context,
             ),
             customnotificationtile(
               desription: "This is Today Notification",
               dateTime: "20/03/2022",
+              context: context,
             ),
             customnotificationtile(
               desription: "This is Today Notification",
               dateTime: "20/03/2022",
+              context: context,
             ),
           ],
         ),
@@ -104,15 +103,26 @@ class CustomNotification extends StatelessWidget {
   }
 
   Widget customnotificationtile(
-      {String desription, String dateTime, IconData leadingicon}) {
+      {String desription,
+      String dateTime,
+      IconData leadingicon,
+      BuildContext context}) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         ListTile(
           leading: Icon(leadingicon ?? Icons.notifications),
-          title: Text(desription),
-          subtitle: Text("$dateTime"),
-          trailing: Icon(Icons.close),
+          title: Text(
+            desription,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          subtitle: Text(
+            "$dateTime",
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
+          trailing: Icon(
+            Icons.close,
+          ),
         ),
         Divider(
           height: 1,

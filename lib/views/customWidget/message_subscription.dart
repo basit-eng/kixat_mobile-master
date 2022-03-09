@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/shims/dart_ui_fake.dart';
 import 'package:kixat/model/category_tree/CategoryTreeResponse.dart';
 import 'package:kixat/utils/utility.dart';
+import 'package:kixat/views/pages/home/home_screen.dart';
 
 class MessageSubsciptionCard extends StatefulWidget {
   MessageSubsciptionCard({
@@ -66,9 +67,15 @@ class _MessageSubsciptionCardState extends State<MessageSubsciptionCard> {
                 physics: NeverScrollableScrollPhysics(),
                 itemCount: 04,
                 itemBuilder: (context, index) {
-                  return messageSubscriptionTile(
+                  return SwitchButton(
                     title: "Attendence",
                     subtitle: "Daily Attendence | 200 PKR",
+                    isSwitched: true,
+                    onChange: (value) {
+                      setState(() {
+                        isSwitched = value;
+                      });
+                    },
                   );
                 }),
             // messageSubscriptionTile(
@@ -82,35 +89,6 @@ class _MessageSubsciptionCardState extends State<MessageSubsciptionCard> {
             // messageSubscriptionTile(
             //     title: "Result", subtitle: "Message on Fee Exam | 200 PKR"),
           ],
-        ),
-      ),
-    );
-  }
-
-  Padding messageSubscriptionTile(
-      {final String title, final String subtitle, Function onChange}) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 04),
-      child: ListTile(
-        title: Text(
-          title,
-          style: Theme.of(context).textTheme.titleMedium.copyWith(
-                fontWeight: FontWeight.w600,
-              ),
-        ),
-        trailing: Switch(
-          value: isSwitched,
-          onChanged: (value) {
-            setState(() {
-              isSwitched = value;
-            });
-          },
-        ),
-        subtitle: Text(
-          subtitle,
-          style: Theme.of(context).textTheme.labelLarge.copyWith(
-                fontWeight: FontWeight.w400,
-              ),
         ),
       ),
     );
