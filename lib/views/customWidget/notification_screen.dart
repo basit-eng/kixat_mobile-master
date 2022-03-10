@@ -3,6 +3,7 @@ import 'package:kixat/views/customWidget/CustomAppBar.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({Key key}) : super(key: key);
+  static const routeName = '/notification-screen';
 
   @override
   Widget build(BuildContext context) {

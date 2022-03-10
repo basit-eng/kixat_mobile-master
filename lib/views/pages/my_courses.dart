@@ -3,6 +3,7 @@ import 'package:kixat/views/customWidget/CustomAppBar.dart';
 
 class MyCoursesScreen extends StatelessWidget {
   const MyCoursesScreen({Key key}) : super(key: key);
+  static const routeName = '/courses';
 
   @override
   Widget build(BuildContext context) {

@@ -41,40 +41,42 @@ class FeeCardWidget extends StatelessWidget {
           //           spreadRadius: 9,
           //           blurRadius: 20)
           //     ]),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Icon(
-                  icon,
-                  size: 36,
+          child: Flexible(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Icon(
+                    icon,
+                    size: 36,
+                    color: Colors.blue,
+                  ),
+                ),
+                Text(
+                  title,
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelMedium
+                      .copyWith(fontWeight: FontWeight.w600),
+                ),
+                RichWidget(
+                  text1: 'Fee : ',
+                  text2: "$fee PKR",
+                ),
+                // RichWidget(
+                //   text1: 'Attendence:',
+                //   text2: "$attendence",
+                // ),
+                Divider(
+                  indent: 05,
+                  endIndent: 05,
+                  thickness: 3,
                   color: Colors.blue,
                 ),
-              ),
-              Text(
-                title,
-                style: Theme.of(context)
-                    .textTheme
-                    .labelMedium
-                    .copyWith(fontWeight: FontWeight.w600),
-              ),
-              RichWidget(
-                text1: 'Fee : ',
-                text2: "$fee PKR",
-              ),
-              // RichWidget(
-              //   text1: 'Attendence:',
-              //   text2: "$attendence",
-              // ),
-              Divider(
-                indent: 05,
-                endIndent: 05,
-                thickness: 3,
-                color: Colors.blue,
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

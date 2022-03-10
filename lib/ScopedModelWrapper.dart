@@ -16,12 +16,12 @@ class ScopeModelWrapper extends StatelessWidget {
 class AppModel extends Model {
   // Set All default values here
   AppLandingData _appLandingData = AppLandingData(
-    primaryThemeColor: '#10CB3C',
-    bottomBarActiveColor: '#10CB3C',
+    primaryThemeColor: '#2196F3',
+    bottomBarActiveColor: '#2196F3',
     bottomBarInactiveColor: '#808080',
     bottomBarBackgroundColor: '#f7f6f6',
     topBarTextColor: '#ffffff',
-    topBarBackgroundColor: '#ffffff',
+    topBarBackgroundColor: '#2196F3',
     totalShoppingCartProducts: 0,
     totalWishListProducts: 0,
 

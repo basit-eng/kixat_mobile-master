@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kixat/ScopedModelWrapper.dart';
 import 'package:kixat/utils/styles.dart';
+import 'package:kixat/views/customWidget/notification_screen.dart';
 import 'package:kixat/views/pages/FcmHandler.dart';
 import 'package:kixat/views/pages/account/address/add_edit_address_screen.dart';
 import 'package:kixat/views/pages/account/address/address_list_screen.dart';
@@ -19,10 +20,14 @@ import 'package:kixat/views/pages/account/review/product_review_screen.dart';
 import 'package:kixat/views/pages/account/rewardPoint/reward_point_screen.dart';
 import 'package:kixat/views/pages/account/subscription_screen.dart';
 import 'package:kixat/views/pages/account/wishlist_screen.dart';
+import 'package:kixat/views/pages/assignmentCard_screen.dart';
 import 'package:kixat/views/pages/attendance.dart';
 import 'package:kixat/views/pages/calender_screen.dart';
 import 'package:kixat/views/pages/checkout/checkout_screen.dart';
 import 'package:kixat/views/pages/checkout/checkout_webview.dart';
+import 'package:kixat/views/pages/dialog_box.dart';
+import 'package:kixat/views/pages/documents.dart';
+import 'package:kixat/views/pages/eventscreen.dart';
 import 'package:kixat/views/pages/home/home_screen.dart';
 import 'package:kixat/views/pages/more/barcode_scanner_screen.dart';
 import 'package:kixat/views/pages/more/contact_us_screen.dart';
@@ -30,9 +35,15 @@ import 'package:kixat/views/pages/more/contact_vendor_screen.dart';
 import 'package:kixat/views/pages/more/settings_screen.dart';
 import 'package:kixat/views/pages/more/topic_screen.dart';
 import 'package:kixat/views/pages/more/vendor_list_screen.dart';
+import 'package:kixat/views/pages/my_courses.dart';
+import 'package:kixat/views/pages/notice_screen.dart';
 import 'package:kixat/views/pages/product-list/product_list_screen.dart';
 import 'package:kixat/views/pages/product/product_details_screen.dart';
 import 'package:kixat/views/pages/product/zoomable_image_screen.dart';
+import 'package:kixat/views/pages/profile_screen.dart';
+import 'package:kixat/views/pages/report_card.dart';
+import 'package:kixat/views/pages/resultcard_screen.dart';
+import 'package:kixat/views/pages/rountineCard_screen.dart';
 import 'package:kixat/views/pages/splash.dart';
 import 'package:kixat/views/pages/tabs-screen/error_screen.dart';
 import 'package:kixat/views/pages/tabs-screen/tabs_screen.dart';
@@ -87,6 +98,24 @@ class MyApp extends StatelessWidget {
               ReturnRequestHistoryScreen(),
           NewProductsScreen.routeName: (context) => NewProductsScreen(),
           SubscriptionScreen.routeName: (context) => SubscriptionScreen(),
+          //-----------------------------------
+          DialogBoxScreen.routeName: (context) => DialogBoxScreen(),
+          AssignmentScreen.routeName: (context) => AssignmentScreen(),
+          RountineClassScreen.routeName: (context) => RountineClassScreen(),
+          ResultCardScreen.routeName: (context) => ResultCardScreen(),
+          ReportCardScreen.routeName: (context) => ReportCardScreen(),
+          ProfileScreen.routeName: (context) => ProfileScreen(),
+          NoticeScreen.routeName: (context) => NoticeScreen(),
+          MyCoursesScreen.routeName: (context) => MyCoursesScreen(),
+
+          EventsScreen.routeName: (context) => EventsScreen(),
+          CalenderScreen.routeName: (context) => CalenderScreen(),
+
+          AttendanceScreen.routeName: (context) => AttendanceScreen(),
+          DocumentsScreen.routeName: (context) => DocumentsScreen(),
+
+          EventsScreen.routeName: (context) => EventsScreen(),
+          NotificationScreen.routeName: (context) => NotificationScreen(),
         },
         onGenerateRoute: (settings) {
           if (settings.name == ProductDetailsPage.routeName) {

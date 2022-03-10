@@ -2,19 +2,28 @@ import 'package:flutter/material.dart';
 
 class DialogBoxScreen extends StatelessWidget {
   const DialogBoxScreen({Key key}) : super(key: key);
+  static const routeName = '/popUpDialog';
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       elevation: 4,
-      child: Container(
-        height: size.height * 0.6,
-        width: size.width,
-        child: Column(
-          children: <Widget>[
-            Container(
+      child: customDialogBox(context),
+      // backgroundColor: Colors.transparent,
+    );
+  }
+
+  customDialogBox(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
+    return Container(
+      height: size.height * 0.6,
+      width: size.width,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Flexible(
+            child: Container(
               decoration: BoxDecoration(
                 color: Color(0xFFEFEFEF),
                 borderRadius: BorderRadius.only(
@@ -25,7 +34,7 @@ class DialogBoxScreen extends StatelessWidget {
               height: size.height * 0.18,
               width: size.width,
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(14.0),
                 child: CircleAvatar(
                   radius: 115,
                   backgroundImage: NetworkImage(
@@ -33,34 +42,32 @@ class DialogBoxScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-              height: 15,
-            ),
-            Center(
-              child: Text(
-                "Confirmation",
-                style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.blue,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Text(
-              "Are you sure you want to subscribe this offer?",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 12),
-              child: Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12)),
-                margin: EdgeInsets.only(top: 16),
-                elevation: 20,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Text("Confirmation",
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.titleLarge),
+          SizedBox(
+            height: 08,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Text("Are you sure you want to subscribe this offer?",
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.labelLarge),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 08, horizontal: 12),
+            child: Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12)),
+              margin: EdgeInsets.only(top: 16),
+              elevation: 20,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                child: Flexible(
                   child: ListTile(
                     title: Padding(
                       padding: const EdgeInsets.only(top: 8.0, bottom: 12),
@@ -68,20 +75,10 @@ class DialogBoxScreen extends StatelessWidget {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            'Attendance',
-                            style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.blue,
-                                fontWeight: FontWeight.w600),
-                          ),
-                          Text(
-                            'March',
-                            style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.blue,
-                                fontWeight: FontWeight.w600),
-                          ),
+                          Text('Attendance',
+                              style: Theme.of(context).textTheme.bodyLarge),
+                          Text('March',
+                              style: Theme.of(context).textTheme.bodyLarge),
                         ],
                       ),
                     ),
@@ -90,16 +87,10 @@ class DialogBoxScreen extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            '1 Month',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w600),
-                          ),
-                          Text(
-                            'Abs: 5 ',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w600),
-                          ),
+                          Text('1 Month',
+                              style: Theme.of(context).textTheme.bodyMedium),
+                          Text('Abs: 5 ',
+                              style: Theme.of(context).textTheme.bodyMedium),
                         ],
                       ),
                     ),
@@ -107,22 +98,21 @@ class DialogBoxScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
+          ),
+          Padding(
               padding: const EdgeInsets.all(18.0),
               child: ElevatedButton(
-                onPressed: () {},
-                child: Text(
-                  'Subscribe Now',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 1,
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text('Subscribe Now'),
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12), // <-- Radius
                   ),
                 ),
-              ),
-            ),
-          ],
-        ),
+              )),
+        ],
       ),
     );
   }

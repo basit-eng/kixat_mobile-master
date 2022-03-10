@@ -199,12 +199,7 @@ class _TabsScreenState extends State<TabsScreen> {
             padding: const EdgeInsets.only(right: 16.0),
             child: InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: ((context) => NotificationScreen()),
-                  ),
-                );
+                Navigator.pushNamed(context, '/notification-screen');
               },
               child: Icon(
                 Icons.notifications,

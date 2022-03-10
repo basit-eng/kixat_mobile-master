@@ -16,6 +16,7 @@ import 'package:kixat/service/GlobalService.dart';
 import 'package:kixat/utils/styles.dart';
 import 'package:kixat/utils/Const.dart';
 import 'package:kixat/views/customWidget/message_subscription.dart';
+import 'package:kixat/views/pages/dialog_box.dart';
 
 import '../../customWidget/cached_image.dart';
 import 'home_carousel.dart';
@@ -155,6 +156,12 @@ class _SwitchButtonState extends State<SwitchButton> {
           onChanged: (value) {
             setState(() {
               widget.isSwitched = value;
+              if (value == true)
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return DialogBoxScreen();
+                    });
             });
           },
         ),

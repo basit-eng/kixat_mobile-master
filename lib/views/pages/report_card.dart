@@ -4,18 +4,18 @@ import 'package:kixat/views/pages/resultCard_detail_screen.dart';
 
 class ReportCardScreen extends StatelessWidget {
   ReportCardScreen({Key key, this.title}) : super(key: key);
-  static const routeName = '/ReportCard';
+  static const routeName = '/reportCard';
 
   final String title;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: CustomAppBar(
-      //     title: Text(
-      //   "Student Report ",
-      //   style: Theme.of(context).appBarTheme.textTheme.headline6,
-      // )),
+      appBar: CustomAppBar(
+          title: Text(
+        "Student Report ",
+        style: Theme.of(context).appBarTheme.textTheme.headline6,
+      )),
       body: ListView(
         shrinkWrap: true,
         physics: ClampingScrollPhysics(),

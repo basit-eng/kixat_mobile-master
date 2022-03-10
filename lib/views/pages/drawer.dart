@@ -83,8 +83,7 @@ class CustomDrawer extends StatelessWidget {
               title: "My Profile",
               icon: Icons.account_box_rounded,
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ProfileScreen()));
+                Navigator.pushNamed(context, routeName);
               },
             ),
             divider,
@@ -93,8 +92,7 @@ class CustomDrawer extends StatelessWidget {
               title: "Manage Account",
               icon: Icons.manage_accounts_rounded,
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => AccountScreen()));
+                Navigator.pushNamed(context, routeName);
               },
             ),
             divider,
@@ -103,10 +101,7 @@ class CustomDrawer extends StatelessWidget {
               title: "Change Language",
               icon: Icons.language_rounded,
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => ChangePasswordScreen()));
+                Navigator.pushNamed(context, routeName);
               },
             ),
             divider,
@@ -115,52 +110,17 @@ class CustomDrawer extends StatelessWidget {
               title: "FAQs",
               icon: Icons.question_answer_rounded,
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => AssignmentScreen()));
+                Navigator.pushNamed(context, routeName);
               },
             ),
             divider,
-            customListTile(
-              context: context,
-              title: "Exam",
-              icon: Icons.question_answer_rounded,
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ExamSchedule()));
-              },
-            ),
-            customListTile(
-              context: context,
-              title: "Courses",
-              icon: Icons.book_online_rounded,
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MyCoursesScreen()));
-              },
-            ),
-            divider,
-            divider,
-            customListTile(
-              context: context,
-              title: "report",
-              icon: Icons.home_repair_service_outlined,
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => ReportCardScreen()));
-              },
-            ),
             divider,
             customListTile(
               context: context,
               title: "Find Us",
               icon: Icons.find_in_page_rounded,
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => NoticeScreen()));
+                Navigator.pushNamed(context, routeName);
               },
             ),
             divider,
@@ -169,8 +129,7 @@ class CustomDrawer extends StatelessWidget {
               title: "Contact us",
               icon: Icons.contact_phone_rounded,
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ContactUsScreen()));
+                Navigator.pushNamed(context, routeName);
               },
             ),
             divider,
@@ -179,8 +138,7 @@ class CustomDrawer extends StatelessWidget {
               title: "Log Out",
               icon: Icons.login_outlined,
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => LoginScreen()));
+                Navigator.pushNamed(context, routeName);
               },
             ),
           ],

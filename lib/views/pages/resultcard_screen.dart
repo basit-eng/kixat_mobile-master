@@ -4,6 +4,8 @@ import 'package:kixat/views/customWidget/CustomAppBar.dart';
 class ResultCardScreen extends StatelessWidget {
   const ResultCardScreen({Key key}) : super(key: key);
 
+  static const routeName = '/resultcardscreen';
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(

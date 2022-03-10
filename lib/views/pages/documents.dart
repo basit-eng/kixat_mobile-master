@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:kixat/views/customWidget/CustomAppBar.dart';
 
-class DocmentsScreen extends StatelessWidget {
-  const DocmentsScreen({Key key}) : super(key: key);
+class DocumentsScreen extends StatelessWidget {
+  const DocumentsScreen({Key key}) : super(key: key);
+
+  static const routeName = '/documents';
 
   @override
   Widget build(BuildContext context) {
