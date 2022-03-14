@@ -9,7 +9,8 @@ class MyCoursesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: Text("Courses"),
+        title: Text("Courses",
+            style: Theme.of(context).appBarTheme.textTheme.headline6),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -103,10 +104,7 @@ class CustomCoursesName extends StatelessWidget {
           leading: Icon(icon),
           title: Text(
             subjects,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
-            ),
+            style: Theme.of(context).textTheme.bodyText1,
           ),
         ),
       ),
@@ -134,11 +132,11 @@ class CustomCoursesTechers extends StatelessWidget {
           children: [
             Text(
               profession,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+              style: Theme.of(context).textTheme.bodyText1,
             ),
             Text(
               name,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+              style: Theme.of(context).textTheme.bodyText1,
             ),
             Text(
               outline,

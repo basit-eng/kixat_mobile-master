@@ -27,7 +27,7 @@ class NotificationScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       "Today",
-                      style: Theme.of(context).textTheme.titleMedium,
+                      style: Theme.of(context).textTheme.bodyText1,
                     ),
                   ),
                   Divider(
@@ -49,7 +49,7 @@ class NotificationScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       "Early",
-                      style: Theme.of(context).textTheme.titleMedium,
+                      style: Theme.of(context).textTheme.bodyText1,
                     ),
                   ),
                   Divider(
@@ -115,11 +115,11 @@ class CustomNotification extends StatelessWidget {
           leading: Icon(leadingicon ?? Icons.notifications),
           title: Text(
             desription,
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context).textTheme.bodyText2,
           ),
           subtitle: Text(
             "$dateTime",
-            style: Theme.of(context).textTheme.bodySmall,
+            style: Theme.of(context).textTheme.bodyText2,
           ),
           trailing: Icon(
             Icons.close,

@@ -19,7 +19,7 @@ class ResultCardScreen extends StatelessWidget {
           child: Center(
             child: Text(
               "Result Card Page In progress",
-              style: Theme.of(context).appBarTheme.textTheme.headline6,
+              style: Theme.of(context).textTheme.bodyText1,
             ),
           ),
         ),

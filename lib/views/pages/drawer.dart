@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kixat/model/AppLandingResponse.dart';
 import 'package:kixat/utils/nop_cart_icons.dart';
+import 'package:kixat/utils/sign_config.dart';
 import 'package:kixat/views/pages/account/account_screen.dart';
 import 'package:kixat/views/pages/account/change_password_screen.dart';
 import 'package:kixat/views/pages/account/login_screen.dart';
@@ -58,20 +59,23 @@ class CustomDrawer extends StatelessWidget {
                       children: [
                         Text(
                           "Akhtar Abbas ",
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w700,
-                            letterSpacing: 2,
-                          ),
+                          style: Theme.of(context).textTheme.headline6.copyWith(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 2.4 * SizeConfig.textMultiplier),
                         ),
-                        Text(
-                          "03109987653",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                            color: Colors.white,
-                            letterSpacing: 2,
+                        Padding(
+                          padding: const EdgeInsets.only(top: 6.0),
+                          child: Text(
+                            "03109987653",
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline6
+                                .copyWith(
+                                    color: Colors.white,
+                                    letterSpacing: 1.3,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 2.2 * SizeConfig.textMultiplier),
                           ),
                         ),
                       ],
@@ -151,7 +155,12 @@ class CustomDrawer extends StatelessWidget {
       {BuildContext context, String title, IconData icon, VoidCallback onTap}) {
     return ListTile(
       leading: Icon(icon),
-      title: Text(title),
+      title: Text(
+        title,
+        style: Theme.of(context).textTheme.subtitle1.copyWith(
+            fontWeight: FontWeight.w400,
+            fontSize: 1.8 * SizeConfig.textMultiplier),
+      ),
       onTap: () => onTap(),
     );
   }

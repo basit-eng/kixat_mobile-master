@@ -17,29 +17,27 @@ class DialogBoxScreen extends StatelessWidget {
   customDialogBox(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.6,
+      height: size.height * 0.5,
       width: size.width,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          Flexible(
-            child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xFFEFEFEF),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                ),
+          Container(
+            decoration: BoxDecoration(
+              color: Color(0xFFEFEFEF),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
               ),
-              height: size.height * 0.18,
-              width: size.width,
-              child: Padding(
-                padding: const EdgeInsets.all(14.0),
-                child: CircleAvatar(
-                  radius: 115,
-                  backgroundImage: NetworkImage(
-                      'https://cdn.pixabay.com/photo/2018/01/15/07/52/woman-3083390_1280.jpg'),
-                ),
+            ),
+            height: size.height * 0.16,
+            width: size.width,
+            child: Padding(
+              padding: const EdgeInsets.all(14.0),
+              child: CircleAvatar(
+                radius: 100,
+                backgroundImage: NetworkImage(
+                    'https://cdn.pixabay.com/photo/2018/01/15/07/52/woman-3083390_1280.jpg'),
               ),
             ),
           ),
@@ -48,15 +46,15 @@ class DialogBoxScreen extends StatelessWidget {
           ),
           Text("Confirmation",
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.titleLarge),
+              style: Theme.of(context).textTheme.headline6),
           SizedBox(
-            height: 08,
+            height: 04,
           ),
           Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: Text("Are you sure you want to subscribe this offer?",
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.labelLarge),
+                style: Theme.of(context).textTheme.bodyText1),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 08, horizontal: 12),
@@ -64,54 +62,55 @@ class DialogBoxScreen extends StatelessWidget {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12)),
               margin: EdgeInsets.only(top: 16),
-              elevation: 20,
+              elevation: 6,
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                child: Flexible(
-                  child: ListTile(
-                    title: Padding(
-                      padding: const EdgeInsets.only(top: 8.0, bottom: 12),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Attendance',
-                              style: Theme.of(context).textTheme.bodyLarge),
-                          Text('March',
-                              style: Theme.of(context).textTheme.bodyLarge),
-                        ],
-                      ),
+                padding: const EdgeInsets.symmetric(vertical: 4),
+                child: ListTile(
+                  title: Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 12),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Attendance',
+                            style: Theme.of(context).textTheme.bodyText1),
+                        Text('March',
+                            style: Theme.of(context).textTheme.bodyText1),
+                      ],
                     ),
-                    subtitle: Padding(
-                      padding: const EdgeInsets.only(top: 08),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('1 Month',
-                              style: Theme.of(context).textTheme.bodyMedium),
-                          Text('Abs: 5 ',
-                              style: Theme.of(context).textTheme.bodyMedium),
-                        ],
-                      ),
+                  ),
+                  subtitle: Padding(
+                    padding: const EdgeInsets.only(top: 08),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('1 Month',
+                            style: Theme.of(context).textTheme.bodyText1),
+                        Text('Abs: 5 ',
+                            style: Theme.of(context).textTheme.bodyText1),
+                      ],
                     ),
                   ),
                 ),
               ),
             ),
           ),
-          Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: Text('Subscribe Now'),
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12), // <-- Radius
+          Flexible(
+            child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 22.0, vertical: 12),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text('Subscribe Now'),
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12), // <-- Radius
+                    ),
                   ),
-                ),
-              )),
+                )),
+          ),
         ],
       ),
     );

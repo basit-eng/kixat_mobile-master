@@ -31,9 +31,9 @@ class DashBoardMenu extends StatelessWidget {
     MyCoursesScreen(),
     ResultCardScreen(),
     RountineClassScreen(),
-    NoticeScreen(),
+    // NoticeScreen(),
     AttendanceScreen(),
-    ReportCardScreen(),
+    // ReportCardScreen(),
   ];
   List imagesList = <String>[
     'assets/bags.png',
@@ -43,8 +43,6 @@ class DashBoardMenu extends StatelessWidget {
     'assets/order.png',
     'assets/list.png',
     'assets/order.png',
-    'assets/list.png',
-    'assets/bags.png',
     'assets/list.png',
     'assets/list.png',
   ];
@@ -57,9 +55,7 @@ class DashBoardMenu extends StatelessWidget {
     "My Courses",
     "Result Card",
     "Time Table",
-    "Notice Board",
     "Attendence",
-    "Reports",
   ];
 
   @override
@@ -138,7 +134,7 @@ class DashBoardMenu extends StatelessWidget {
                         DashBoardMenuItemsName[index],
                         // overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.center,
-                        style: Theme.of(context).textTheme.labelMedium,
+                        style: Theme.of(context).textTheme.bodyText1,
                       ),
                     ),
                   ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/shims/dart_ui_fake.dart';
 import 'package:kixat/model/category_tree/CategoryTreeResponse.dart';
+import 'package:kixat/utils/sign_config.dart';
 import 'package:kixat/utils/utility.dart';
 import 'package:kixat/views/pages/home/home_screen.dart';
 
@@ -54,6 +55,9 @@ class _MessageSubsciptionCardState extends State<MessageSubsciptionCard> {
               child: Text(
                 "Message Subscription",
                 textAlign: TextAlign.left,
+                style: Theme.of(context).textTheme.headline6.copyWith(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 2.0 * SizeConfig.textMultiplier),
               ),
             ),
             Divider(

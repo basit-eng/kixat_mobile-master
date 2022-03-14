@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kixat/bloc/home_bloc.dart';
+import 'package:kixat/utils/sign_config.dart';
 import 'package:kixat/views/customWidget/custom_fee.dart';
 import 'package:kixat/views/customWidget/home/horizontal_categories.dart';
 import 'package:kixat/views/customWidget/home/horizontal_manufacturer_slider.dart';
@@ -18,7 +19,6 @@ import 'package:kixat/utils/Const.dart';
 import 'package:kixat/views/customWidget/message_subscription.dart';
 import 'package:kixat/views/pages/dialog_box.dart';
 
-import '../../customWidget/cached_image.dart';
 import 'home_carousel.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -147,9 +147,9 @@ class _SwitchButtonState extends State<SwitchButton> {
       child: ListTile(
         title: Text(
           widget.title,
-          style: Theme.of(context).textTheme.titleMedium.copyWith(
-                fontWeight: FontWeight.w600,
-              ),
+          style: Theme.of(context).textTheme.headline6.copyWith(
+              fontWeight: FontWeight.w500,
+              fontSize: 1.8 * SizeConfig.textMultiplier),
         ),
         trailing: Switch(
           value: widget.isSwitched,
@@ -167,9 +167,9 @@ class _SwitchButtonState extends State<SwitchButton> {
         ),
         subtitle: Text(
           widget.subtitle,
-          style: Theme.of(context).textTheme.labelLarge.copyWith(
-                fontWeight: FontWeight.w400,
-              ),
+          style: Theme.of(context).textTheme.bodyText1.copyWith(
+              fontWeight: FontWeight.w300,
+              fontSize: 1.7 * SizeConfig.textMultiplier),
         ),
       ),
     );

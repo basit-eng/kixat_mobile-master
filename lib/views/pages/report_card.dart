@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/views/customWidget/CustomAppBar.dart';
 import 'package:kixat/views/pages/resultCard_detail_screen.dart';
 
 class ReportCardScreen extends StatelessWidget {
@@ -11,11 +10,11 @@ class ReportCardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-          title: Text(
-        "Student Report ",
-        style: Theme.of(context).appBarTheme.textTheme.headline6,
-      )),
+      // appBar: CustomAppBar(
+      //     title: Text(
+      //   "Student Report ",
+      //   style: Theme.of(context).appBarTheme.textTheme.headline6,
+      // )),
       body: ListView(
         shrinkWrap: true,
         physics: ClampingScrollPhysics(),
@@ -78,7 +77,7 @@ customReportCard(
             ),
             title: Text(
               title,
-              style: Theme.of(context).textTheme.titleMedium,
+              style: Theme.of(context).textTheme.headline6,
             ),
             trailing: ElevatedButton(
                 onPressed: () {
@@ -134,7 +133,7 @@ customReportMenu({
   return Text(
     title,
     textAlign: TextAlign.left,
-    style: Theme.of(context).textTheme.titleSmall,
+    style: Theme.of(context).textTheme.bodyText1,
   );
 }
 
@@ -162,7 +161,7 @@ class customReportResult extends StatelessWidget {
                 child: Text(
                   result[index],
                   textAlign: TextAlign.start,
-                  style: Theme.of(context).textTheme.titleSmall,
+                  style: Theme.of(context).textTheme.bodyText1,
                 ),
               );
             }),

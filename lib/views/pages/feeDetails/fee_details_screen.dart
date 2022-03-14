@@ -141,7 +141,7 @@ class FeeDetailExpand extends StatelessWidget {
     return Card(
       child: Text(
         'data',
-        style: Theme.of(context).textTheme.labelMedium,
+        style: Theme.of(context).textTheme.bodyText1,
       ),
     );
   }

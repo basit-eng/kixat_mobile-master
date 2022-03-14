@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:kixat/utils/sign_config.dart';
+import 'package:kixat/utils/utility.dart';
 import 'package:kixat/views/customWidget/CustomAppBar.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -16,14 +18,13 @@ class ProfileScreen extends StatelessWidget {
         ),
       ),
       body: Container(
-        color: Colors.grey[300],
+        color: !isDarkThemeEnabled(context) ? Colors.grey[200] : Colors.black38,
         child: ListView(
           shrinkWrap: true,
           physics: ClampingScrollPhysics(),
           children: [
             Card(
-              margin: EdgeInsets.symmetric(horizontal: 12, vertical: 05),
-              color: Colors.white,
+              // margin: EdgeInsets.symmetric(horizontal: 12, vertical: 05),
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 08, vertical: 02),
@@ -31,9 +32,14 @@ class ProfileScreen extends StatelessWidget {
                   leading: CircleAvatar(
                     backgroundColor: Colors.blue,
                     backgroundImage: AssetImage('assets/user.png'),
-                    radius: 22,
+                    radius: 34,
                   ),
-                  title: Text('Emma_ema'),
+                  title: Text(
+                    'Muhammad Ali',
+                    style: Theme.of(context).textTheme.headline6.copyWith(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 2.2 * SizeConfig.textMultiplier),
+                  ),
                   subtitle: Text('Class 9th A'),
                 ),
               ),
@@ -43,11 +49,13 @@ class ProfileScreen extends StatelessWidget {
               child: Text(
                 "Personal Information",
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+                style: Theme.of(context).textTheme.headline6.copyWith(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 2.2 * SizeConfig.textMultiplier),
               ),
             ),
             Card(
-              elevation: 04,
+              elevation: 0,
               margin: EdgeInsets.symmetric(horizontal: 12, vertical: 5),
               child: Column(
                 children: [
@@ -82,13 +90,15 @@ class ProfileScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 24, vertical: 14),
               child: Text(
-                "DegreeInformation",
+                "Degree Information",
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+                style: Theme.of(context).textTheme.headline6.copyWith(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 2.2 * SizeConfig.textMultiplier),
               ),
             ),
             Card(
-              elevation: 04,
+              elevation: 0,
               margin: EdgeInsets.symmetric(horizontal: 12, vertical: 5),
               child: Column(
                 children: [
@@ -120,11 +130,13 @@ class ProfileScreen extends StatelessWidget {
               child: Text(
                 "Contact Information",
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800),
+                style: Theme.of(context).textTheme.headline6.copyWith(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 2.2 * SizeConfig.textMultiplier),
               ),
             ),
             Card(
-              elevation: 04,
+              elevation: 0,
               margin: EdgeInsets.symmetric(horizontal: 12, vertical: 5),
               child: Column(
                 children: [
@@ -162,19 +174,26 @@ class CustomProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      // contentPadding: EdgeInsets.all(0),
       leading: Padding(
-        padding: EdgeInsets.only(left: 40),
+        padding: EdgeInsets.only(left: 08),
         child: Icon(
           iconsPath,
-          size: 28,
+          size: 24,
         ),
       ),
-      title: Text(attr, style: TextStyle(), textAlign: TextAlign.left),
+      title: Text(attr,
+          style: Theme.of(context).textTheme.bodyText1.copyWith(
+              fontWeight: FontWeight.w400,
+              fontSize: 2.0 * SizeConfig.textMultiplier),
+          textAlign: TextAlign.left),
       trailing: Padding(
-        padding: EdgeInsets.only(right: 60),
+        padding: EdgeInsets.only(right: 10),
         child: Text(
           value,
-          style: TextStyle(),
+          style: Theme.of(context).textTheme.bodyText1.copyWith(
+              fontWeight: FontWeight.w400,
+              fontSize: 1.9 * SizeConfig.textMultiplier),
           textAlign: TextAlign.center,
         ),
       ),

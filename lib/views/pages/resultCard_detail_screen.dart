@@ -34,7 +34,8 @@ customReportCard(
     {String title,
     Color buttonColor,
     customReportResult result,
-    String btnText}) {
+    String btnText,
+    BuildContext context}) {
   return Column(
     children: [
       Card(
@@ -48,13 +49,7 @@ customReportCard(
               Icons.chrome_reader_mode,
               size: 30,
             ),
-            title: Text(
-              title,
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            title: Text(title, style: Theme.of(context).textTheme.headline6),
             trailing: ElevatedButton(
                 onPressed: () {},
                 style: ButtonStyle(
@@ -97,9 +92,7 @@ customReportCard(
   );
 }
 
-customReportMenu({
-  String title,
-}) {
+customReportMenu({String title, BuildContext context}) {
   return Flexible(
     flex: 4,
     child: Padding(
@@ -108,7 +101,7 @@ customReportMenu({
         title,
         softWrap: true,
         textAlign: TextAlign.center,
-        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+        style: Theme.of(context).textTheme.bodyText1,
       ),
     ),
   );
@@ -138,7 +131,7 @@ class customReportResult extends StatelessWidget {
                 child: Text(
                   result[index],
                   textAlign: TextAlign.start,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  style: Theme.of(context).textTheme.headline6,
                 ),
               );
             }),

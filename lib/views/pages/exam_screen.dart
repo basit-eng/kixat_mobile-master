@@ -72,7 +72,7 @@ class ExamSchedule extends StatelessWidget {
                   ),
                   ListTile(
                     leading: Icon(
-                      Icons.calendar_month,
+                      Icons.calendar_today,
                       color: Colors.black,
                     ),
                     minLeadingWidth: 10,

@@ -108,10 +108,8 @@ class CustomAttendanceDotsWidget extends StatelessWidget {
         Icons.circle,
         color: dotColor,
       ),
-      title: Text(
-        attendenceStatus,
-        style: Theme.of(context).textTheme.bodyMedium,
-      ),
+      title:
+          Text(attendenceStatus, style: Theme.of(context).textTheme.bodyText1),
     );
   }
 }
