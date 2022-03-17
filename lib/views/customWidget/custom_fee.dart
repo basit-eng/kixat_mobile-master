@@ -55,11 +55,14 @@ class FeeCardWidget extends StatelessWidget {
                 ),
               ),
               Flexible(
-                child: Text(
-                  title,
-                  style: Theme.of(context).textTheme.headline6.copyWith(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 1.6 * SizeConfig.textMultiplier),
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: Text(
+                    title,
+                    style: Theme.of(context).textTheme.headline6.copyWith(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 1.6 * SizeConfig.textMultiplier),
+                  ),
                 ),
               ),
               Flexible(

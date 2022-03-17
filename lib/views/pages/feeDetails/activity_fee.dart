@@ -12,7 +12,6 @@ class ActivityFee extends StatelessWidget {
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
-          side: BorderSide(color: Colors.indigo),
         ),
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
@@ -62,7 +61,7 @@ Widget buildText(BuildContext context) => Theme(
                   Align(
                     alignment: Alignment.bottomLeft,
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(12.0),
                       child: Text(
                         'Rs 5,000',
                         style: TextStyle(

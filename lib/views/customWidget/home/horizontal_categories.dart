@@ -6,12 +6,15 @@ import 'package:kixat/views/customWidget/cached_image.dart';
 import 'package:kixat/views/pages/assignmentCard_screen.dart';
 import 'package:kixat/views/pages/attendance.dart';
 import 'package:kixat/views/pages/calender_screen.dart';
+import 'package:kixat/views/pages/documents.dart';
 import 'package:kixat/views/pages/eventscreen.dart';
+import 'package:kixat/views/pages/feeDetails/fee02.dart';
 import 'package:kixat/views/pages/feeDetails/fee_details.dart';
-import 'package:kixat/views/pages/my_courses.dart';
+import 'package:kixat/views/pages/courses.dart';
 import 'package:kixat/views/pages/notice_screen.dart';
 import 'package:kixat/views/pages/profile_screen.dart';
 import 'package:kixat/views/pages/report_card.dart';
+import 'package:kixat/views/pages/resultCard_detail_screen.dart';
 import 'package:kixat/views/pages/rountineCard_screen.dart';
 
 import '../../pages/resultcard_screen.dart';
@@ -27,13 +30,14 @@ class DashBoardMenu extends StatelessWidget {
     EventsScreen(),
     CalenderScreen(),
     ProfileScreen(),
-    FeeDetails(),
+    FeeScreen(),
     MyCoursesScreen(),
-    ResultCardScreen(),
+    ResultCardDetailScreen(),
     RountineClassScreen(),
     // NoticeScreen(),
     AttendanceScreen(),
     // ReportCardScreen(),
+    DocumentsScreen(),
   ];
   List imagesList = <String>[
     'assets/bags.png',
@@ -45,6 +49,7 @@ class DashBoardMenu extends StatelessWidget {
     'assets/order.png',
     'assets/list.png',
     'assets/list.png',
+    'assets/order.png',
   ];
   List DashBoardMenuItemsName = [
     "Assignment",
@@ -56,6 +61,7 @@ class DashBoardMenu extends StatelessWidget {
     "Result Card",
     "Time Table",
     "Attendence",
+    "Documents",
   ];
 
   @override
@@ -64,25 +70,29 @@ class DashBoardMenu extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.all(12.0),
-      child: Container(
-        decoration: BoxDecoration(
-          color: isDarkThemeEnabled(context) ? Colors.black26 : Colors.white,
-          borderRadius: BorderRadius.circular(16),
-          boxShadow: [
-            BoxShadow(
-              color: isDarkThemeEnabled(context)
-                  ? Colors.black12
-                  : Colors.grey[300],
-              blurRadius: 10.0, // soften the shadow
-              spreadRadius: 05.0, //extend the shadow
-              offset: Offset(
-                08.0, // Move to right 10  horizontally
-                08.0, // Move to bottom 10 Vertically
-              ),
-            )
-          ],
+      child: Card(
+        elevation: 20,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
         ),
-        padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 00),
+        // decoration: BoxDecoration(
+        //   // color: isDarkThemeEnabled(context) ? Colors.red : Colors.white,
+        //   borderRadius: BorderRadius.circular(16),
+        //   boxShadow: [
+        //     BoxShadow(
+        //       color: isDarkThemeEnabled(context)
+        //           ? Colors.black38
+        //           : Colors.grey[300],
+        //       blurRadius: 10.0, // soften the shadow
+        //       spreadRadius: 05.0, //extend the shadow
+        //       offset: Offset(
+        //         08.0, // Move to right 10  horizontally
+        //         08.0, // Move to bottom 10 Vertically
+        //       ),
+        //     )
+        //   ],
+        // ),
+        // padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 00),
         child: GridView.builder(
           physics: NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

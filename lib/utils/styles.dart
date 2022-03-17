@@ -56,7 +56,7 @@ class Styles {
               // parseColor(model.appLandingData.topBarTextColor),
             ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: Colors.black54,
+          backgroundColor: Colors.black38,
           // parseColor(model.appLandingData.bottomBarBackgroundColor),
           elevation: 10,
           selectedItemColor: Colors.blue,
@@ -130,7 +130,7 @@ class Styles {
           selectedItemColor: Colors.blue,
           // parseColor(
           //     model.appLandingData.bottomBarActiveColor), // Need to set from api
-          unselectedItemColor: Colors.black54,
+          unselectedItemColor: Colors.black38,
           //  parseColor(model
           //     .appLandingData.bottomBarInactiveColor), // Need to set from api
           showUnselectedLabels: true,

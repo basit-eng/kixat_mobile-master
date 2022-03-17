@@ -126,27 +126,25 @@ class CustomCoursesTechers extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(18),
-      child: Expanded(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              profession,
-              style: Theme.of(context).textTheme.bodyText1,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            profession,
+            style: Theme.of(context).textTheme.bodyText1,
+          ),
+          Text(
+            name,
+            style: Theme.of(context).textTheme.bodyText1,
+          ),
+          Text(
+            outline,
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w400,
             ),
-            Text(
-              name,
-              style: Theme.of(context).textTheme.bodyText1,
-            ),
-            Text(
-              outline,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -26,25 +26,29 @@ class _MessageSubsciptionCardState extends State<MessageSubsciptionCard> {
 
     return Padding(
       padding: const EdgeInsets.all(12.0),
-      child: Container(
-        decoration: BoxDecoration(
-          color: isDarkThemeEnabled(context) ? Colors.black26 : Colors.white,
-          borderRadius: BorderRadius.circular(30),
-          // border: Border.all(color: Colors.grey[100]),
-          boxShadow: [
-            BoxShadow(
-              color: isDarkThemeEnabled(context)
-                  ? Colors.black26
-                  : Colors.grey[400],
-              blurRadius: 10.0, // soften the shadow
-              spreadRadius: 05.0, //extend the shadow
-              offset: Offset(
-                08.0, // Move to right 10  horizontally
-                08.0, // Move to bottom 10 Vertically
-              ),
-            )
-          ],
+      child: Card(
+        elevation: 20,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
         ),
+        // decoration: BoxDecoration(
+        //   color: isDarkThemeEnabled(context) ? Colors.black26 : Colors.white,
+        //   borderRadius: BorderRadius.circular(30),
+        //   // border: Border.all(color: Colors.grey[100]),
+        //   boxShadow: [
+        //     BoxShadow(
+        //       color: isDarkThemeEnabled(context)
+        //           ? Colors.black26
+        //           : Colors.grey[400],
+        //       blurRadius: 10.0, // soften the shadow
+        //       spreadRadius: 05.0, //extend the shadow
+        //       offset: Offset(
+        //         08.0, // Move to right 10  horizontally
+        //         08.0, // Move to bottom 10 Vertically
+        //       ),
+        //     )
+        //   ],
+        // ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,

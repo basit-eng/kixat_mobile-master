@@ -4,12 +4,25 @@ import 'package:table_calendar/table_calendar.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 
 class RountineClassScreen extends StatelessWidget {
-  const RountineClassScreen({Key key}) : super(key: key);
+  RountineClassScreen({Key key}) : super(key: key);
 
   static const routeName = '/routineClass-screen';
 
+  List days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+
   @override
   Widget build(BuildContext context) {
+    TextStyle style = Theme.of(context)
+        .textTheme
+        .bodyText1
+        .copyWith(fontWeight: FontWeight.w700);
     return Scaffold(
       appBar: CustomAppBar(
           title: Text(
@@ -19,16 +32,46 @@ class RountineClassScreen extends StatelessWidget {
       body: SafeArea(
         child: ListView.builder(
           shrinkWrap: true,
-          itemCount: 08,
+          itemCount: days.length,
           itemBuilder: (context, index) {
             return Card(
-              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 18),
-              child: RoutineCard(
-                classTopic: 'Fundamentals of Mathematics',
-                classType: 'Theory Class',
-                subject: 'Mathematics',
-                professor: 'Mr. Ram Prasad Yadav',
-                time: '8:00 - 9:00 AM',
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: double.infinity,
+                    color: Color(0XFFF5F5F5),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(days[index], style: style),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        top: 08, left: 16.0, right: 16, bottom: 08),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 12.0),
+                          child: Text("Time", style: style),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 12.0),
+                          child: Text("Subject", style: style),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 12.0),
+                          child: Text("Room", style: style),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 12.0),
+                          child: Text("Teacher Name", style: style),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
               ),
             );
           },

@@ -4,6 +4,8 @@ import 'package:kixat/utils/nop_cart_icons.dart';
 import 'package:kixat/utils/sign_config.dart';
 import 'package:kixat/views/pages/account/account_screen.dart';
 import 'package:kixat/views/pages/account/change_password_screen.dart';
+import 'package:kixat/views/pages/account/faq.dart';
+import 'package:kixat/views/pages/account/find_us.dart';
 import 'package:kixat/views/pages/account/login_screen.dart';
 import 'package:kixat/views/pages/assignmentCard_screen.dart';
 import 'package:kixat/views/pages/attendance.dart';
@@ -11,7 +13,8 @@ import 'package:kixat/views/pages/calender_screen.dart';
 import 'package:kixat/views/pages/examSchedule/exam_schedule.dart';
 import 'package:kixat/views/pages/home/home_screen.dart';
 import 'package:kixat/views/pages/more/contact_us_screen.dart';
-import 'package:kixat/views/pages/my_courses.dart';
+import 'package:kixat/views/pages/more/settings_screen.dart';
+import 'package:kixat/views/pages/courses.dart';
 import 'package:kixat/views/pages/notice_screen.dart';
 import 'package:kixat/views/pages/profile_screen.dart';
 import 'package:kixat/views/pages/report_card.dart';
@@ -21,16 +24,16 @@ class CustomDrawer extends StatelessWidget {
     Key key,
   }) : super(key: key);
 
-  static const routeName = '/Dashboard';
+  static const routeNamedashboard = '/Dashboard';
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
 
     var divider = Divider(
-      thickness: 1,
+      thickness: 1.5,
       height: 2,
-      indent: 25,
-      endIndent: 15,
+      indent: 10,
+      endIndent: 10,
     );
     return SafeArea(
       child: Drawer(
@@ -45,10 +48,12 @@ class CustomDrawer extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    CircleAvatar(
-                      radius: 40,
-                      backgroundColor: Colors.white,
-                      backgroundImage: AssetImage("assets/user.png"),
+                    FittedBox(
+                      child: CircleAvatar(
+                        radius: 40,
+                        backgroundImage: NetworkImage(
+                            'https://cdn.pixabay.com/photo/2018/01/15/07/52/woman-3083390_1280.jpg'),
+                      ),
                     ),
                     SizedBox(
                       width: 15,
@@ -65,7 +70,7 @@ class CustomDrawer extends StatelessWidget {
                               fontSize: 2.4 * SizeConfig.textMultiplier),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 6.0),
+                          padding: const EdgeInsets.only(top: 2.0),
                           child: Text(
                             "03109987653",
                             style: Theme.of(context)
@@ -87,7 +92,7 @@ class CustomDrawer extends StatelessWidget {
               title: "My Profile",
               icon: Icons.account_box_rounded,
               onTap: () {
-                Navigator.pushNamed(context, routeName);
+                Navigator.pushNamed(context, ProfileScreen.routeName);
               },
             ),
             divider,
@@ -96,7 +101,7 @@ class CustomDrawer extends StatelessWidget {
               title: "Manage Account",
               icon: Icons.manage_accounts_rounded,
               onTap: () {
-                Navigator.pushNamed(context, routeName);
+                Navigator.pushNamed(context, SettingsScreen.routeName);
               },
             ),
             divider,
@@ -105,7 +110,7 @@ class CustomDrawer extends StatelessWidget {
               title: "Change Language",
               icon: Icons.language_rounded,
               onTap: () {
-                Navigator.pushNamed(context, routeName);
+                Navigator.pushNamed(context, SettingsScreen.routeName);
               },
             ),
             divider,
@@ -114,17 +119,16 @@ class CustomDrawer extends StatelessWidget {
               title: "FAQs",
               icon: Icons.question_answer_rounded,
               onTap: () {
-                Navigator.pushNamed(context, routeName);
+                Navigator.pushNamed(context, FAQScreen.routeName);
               },
             ),
-            divider,
             divider,
             customListTile(
               context: context,
               title: "Find Us",
               icon: Icons.find_in_page_rounded,
               onTap: () {
-                Navigator.pushNamed(context, routeName);
+                Navigator.pushNamed(context, FindUsScreen.routeName);
               },
             ),
             divider,
@@ -133,7 +137,7 @@ class CustomDrawer extends StatelessWidget {
               title: "Contact us",
               icon: Icons.contact_phone_rounded,
               onTap: () {
-                Navigator.pushNamed(context, routeName);
+                Navigator.pushNamed(context, ContactUsScreen.routeName);
               },
             ),
             divider,
@@ -142,7 +146,7 @@ class CustomDrawer extends StatelessWidget {
               title: "Log Out",
               icon: Icons.login_outlined,
               onTap: () {
-                Navigator.pushNamed(context, routeName);
+                Navigator.pop(context);
               },
             ),
           ],
@@ -159,7 +163,7 @@ class CustomDrawer extends StatelessWidget {
         title,
         style: Theme.of(context).textTheme.subtitle1.copyWith(
             fontWeight: FontWeight.w400,
-            fontSize: 1.8 * SizeConfig.textMultiplier),
+            fontSize: 1.9 * SizeConfig.textMultiplier),
       ),
       onTap: () => onTap(),
     );

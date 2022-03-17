@@ -10,32 +10,33 @@ class DocumentsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: Text("Documents"),
-      ),
-      body: Expanded(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            CustomDocTitle(title: "Certificates", icon: Icons.picture_as_pdf),
-            CustomDocDiscribtion(
-              leadingicon: Icons.picture_as_pdf,
-              file: "doc.pdf",
-              tralingicon: Icons.download,
-            ),
-            CustomDocTitle(title: "Marksheet", icon: Icons.picture_as_pdf),
-            CustomDocDiscribtion(
-              leadingicon: Icons.picture_as_pdf,
-              file: "doc.pdf",
-              tralingicon: Icons.download,
-            ),
-            CustomDocTitle(title: "Report Card", icon: Icons.picture_as_pdf),
-            CustomDocDiscribtion(
-              leadingicon: Icons.picture_as_pdf,
-              file: "doc.pdf",
-              tralingicon: Icons.download,
-            ),
-          ],
+        title: Text(
+          "Documents",
+          style: Theme.of(context).appBarTheme.textTheme.headline6,
         ),
+      ),
+      body: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          CustomDocTitle(title: "Certificates", icon: Icons.picture_as_pdf),
+          CustomDocDiscribtion(
+            leadingicon: Icons.picture_as_pdf,
+            file: "doc.pdf",
+            tralingicon: Icons.download,
+          ),
+          CustomDocTitle(title: "Marksheet", icon: Icons.picture_as_pdf),
+          CustomDocDiscribtion(
+            leadingicon: Icons.picture_as_pdf,
+            file: "doc.pdf",
+            tralingicon: Icons.download,
+          ),
+          CustomDocTitle(title: "Report Card", icon: Icons.picture_as_pdf),
+          CustomDocDiscribtion(
+            leadingicon: Icons.picture_as_pdf,
+            file: "doc.pdf",
+            tralingicon: Icons.download,
+          ),
+        ],
       ),
     );
   }

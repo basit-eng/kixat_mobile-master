@@ -9,6 +9,8 @@ import 'package:kixat/views/pages/account/address/address_list_screen.dart';
 import 'package:kixat/views/pages/account/cart/shopping_cart_screen.dart';
 import 'package:kixat/views/pages/account/change_password_screen.dart';
 import 'package:kixat/views/pages/account/downloadableProduct/downloadable_product_screen.dart';
+import 'package:kixat/views/pages/account/faq.dart';
+import 'package:kixat/views/pages/account/find_us.dart';
 import 'package:kixat/views/pages/account/forgot_password_screen.dart';
 import 'package:kixat/views/pages/account/login_screen.dart';
 import 'package:kixat/views/pages/account/new_products_screen.dart';
@@ -29,6 +31,7 @@ import 'package:kixat/views/pages/checkout/checkout_webview.dart';
 import 'package:kixat/views/pages/dialog_box.dart';
 import 'package:kixat/views/pages/documents.dart';
 import 'package:kixat/views/pages/eventscreen.dart';
+import 'package:kixat/views/pages/feeDetails/fee02.dart';
 import 'package:kixat/views/pages/home/home_screen.dart';
 import 'package:kixat/views/pages/more/barcode_scanner_screen.dart';
 import 'package:kixat/views/pages/more/contact_us_screen.dart';
@@ -36,14 +39,14 @@ import 'package:kixat/views/pages/more/contact_vendor_screen.dart';
 import 'package:kixat/views/pages/more/settings_screen.dart';
 import 'package:kixat/views/pages/more/topic_screen.dart';
 import 'package:kixat/views/pages/more/vendor_list_screen.dart';
-import 'package:kixat/views/pages/my_courses.dart';
+import 'package:kixat/views/pages/courses.dart';
 import 'package:kixat/views/pages/notice_screen.dart';
 import 'package:kixat/views/pages/product-list/product_list_screen.dart';
 import 'package:kixat/views/pages/product/product_details_screen.dart';
 import 'package:kixat/views/pages/product/zoomable_image_screen.dart';
 import 'package:kixat/views/pages/profile_screen.dart';
 import 'package:kixat/views/pages/report_card.dart';
-import 'package:kixat/views/pages/resultcard_screen.dart';
+import 'package:kixat/views/pages/resultCard_detail_screen.dart';
 import 'package:kixat/views/pages/rountineCard_screen.dart';
 import 'package:kixat/views/pages/splash.dart';
 import 'package:kixat/views/pages/tabs-screen/error_screen.dart';
@@ -59,11 +62,10 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      return OrientationBuilder(builder: ((context, orientation) {
-        SizeConfig().init(constraints, orientation);
-        return ScopedModelDescendant<AppModel>(
-            builder: (context, child, model) {
+    return ScopedModelDescendant<AppModel>(builder: (context, child, model) {
+      return LayoutBuilder(builder: (context, constraints) {
+        return OrientationBuilder(builder: (context, orientation) {
+          SizeConfig().init(constraints, orientation);
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Softify School',
@@ -109,10 +111,12 @@ class MyApp extends StatelessWidget {
               NewProductsScreen.routeName: (context) => NewProductsScreen(),
               SubscriptionScreen.routeName: (context) => SubscriptionScreen(),
               //-----------------------------------
+
               DialogBoxScreen.routeName: (context) => DialogBoxScreen(),
               AssignmentScreen.routeName: (context) => AssignmentScreen(),
               RountineClassScreen.routeName: (context) => RountineClassScreen(),
-              ResultCardScreen.routeName: (context) => ResultCardScreen(),
+              ResultCardDetailScreen.routeName: (context) =>
+                  ResultCardDetailScreen(),
               ReportCardScreen.routeName: (context) => ReportCardScreen(),
               ProfileScreen.routeName: (context) => ProfileScreen(),
               NoticeScreen.routeName: (context) => NoticeScreen(),
@@ -120,12 +124,14 @@ class MyApp extends StatelessWidget {
 
               EventsScreen.routeName: (context) => EventsScreen(),
               CalenderScreen.routeName: (context) => CalenderScreen(),
+              FeeScreen.routeName: (context) => FeeScreen(),
 
               AttendanceScreen.routeName: (context) => AttendanceScreen(),
               DocumentsScreen.routeName: (context) => DocumentsScreen(),
 
-              EventsScreen.routeName: (context) => EventsScreen(),
               NotificationScreen.routeName: (context) => NotificationScreen(),
+              FindUsScreen.routeName: (context) => FindUsScreen(),
+              FAQScreen.routeName: (context) => FAQScreen(),
             },
             onGenerateRoute: (settings) {
               if (settings.name == ProductDetailsPage.routeName) {
@@ -256,7 +262,7 @@ class MyApp extends StatelessWidget {
             },
           );
         });
-      }));
+      });
     });
   }
 }
