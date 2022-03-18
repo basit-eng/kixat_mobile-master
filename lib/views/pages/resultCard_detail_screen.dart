@@ -67,11 +67,9 @@ customReportCard(
                   btnText,
                   style: Theme.of(context).textTheme.labelMedium.copyWith(
                         fontSize: 14,
-                        color: isDarkThemeEnabled(context)
-                            ? Colors.black38
-                            : Color(
-                                0XFFF5F5F5,
-                              ),
+                        color: Color(
+                          0XFFF5F5F5,
+                        ),
                       ),
                 )),
           ),

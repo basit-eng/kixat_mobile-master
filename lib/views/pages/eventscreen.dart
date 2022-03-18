@@ -35,8 +35,7 @@ class EventsScreen extends StatelessWidget {
               child: EventCard(
                 event: 'Sports week Class 3 - Class 10',
                 time: '1:00 - 3:00 PM',
-                secondaryColor: Color(0XFF6AC0D8),
-                // primaryColor: Colors.accents[index],
+                secondaryColor: Color(0XFF2196F3),
               ),
             );
           },

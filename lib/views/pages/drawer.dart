@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:kixat/model/AppLandingResponse.dart';
 import 'package:kixat/utils/nop_cart_icons.dart';
 import 'package:kixat/utils/sign_config.dart';
@@ -90,7 +91,7 @@ class CustomDrawer extends StatelessWidget {
             customListTile(
               context: context,
               title: "My Profile",
-              icon: Icons.account_box_rounded,
+              iconPath: "assets/svg/user.svg",
               onTap: () {
                 Navigator.pushNamed(context, ProfileScreen.routeName);
               },
@@ -99,7 +100,7 @@ class CustomDrawer extends StatelessWidget {
             customListTile(
               context: context,
               title: "Manage Account",
-              icon: Icons.manage_accounts_rounded,
+              iconPath: "assets/svg/settings.svg",
               onTap: () {
                 Navigator.pushNamed(context, SettingsScreen.routeName);
               },
@@ -108,7 +109,7 @@ class CustomDrawer extends StatelessWidget {
             customListTile(
               context: context,
               title: "Change Language",
-              icon: Icons.language_rounded,
+              iconPath: "assets/svg/world.svg",
               onTap: () {
                 Navigator.pushNamed(context, SettingsScreen.routeName);
               },
@@ -117,7 +118,7 @@ class CustomDrawer extends StatelessWidget {
             customListTile(
               context: context,
               title: "FAQs",
-              icon: Icons.question_answer_rounded,
+              iconPath: "assets/svg/faqs.svg",
               onTap: () {
                 Navigator.pushNamed(context, FAQScreen.routeName);
               },
@@ -126,7 +127,7 @@ class CustomDrawer extends StatelessWidget {
             customListTile(
               context: context,
               title: "Find Us",
-              icon: Icons.find_in_page_rounded,
+              iconPath: "assets/svg/search-alt.svg",
               onTap: () {
                 Navigator.pushNamed(context, FindUsScreen.routeName);
               },
@@ -135,7 +136,7 @@ class CustomDrawer extends StatelessWidget {
             customListTile(
               context: context,
               title: "Contact us",
-              icon: Icons.contact_phone_rounded,
+              iconPath: "assets/svg/portrait.svg",
               onTap: () {
                 Navigator.pushNamed(context, ContactUsScreen.routeName);
               },
@@ -144,7 +145,7 @@ class CustomDrawer extends StatelessWidget {
             customListTile(
               context: context,
               title: "Log Out",
-              icon: Icons.login_outlined,
+              iconPath: "assets/svg/power.svg",
               onTap: () {
                 Navigator.pop(context);
               },
@@ -156,9 +157,17 @@ class CustomDrawer extends StatelessWidget {
   }
 
   ListTile customListTile(
-      {BuildContext context, String title, IconData icon, VoidCallback onTap}) {
+      {BuildContext context,
+      String title,
+      String iconPath,
+      VoidCallback onTap}) {
     return ListTile(
-      leading: Icon(icon),
+      leading: SvgPicture.asset(
+        iconPath,
+        height: 18,
+        width: 18,
+        color: Colors.blue,
+      ),
       title: Text(
         title,
         style: Theme.of(context).textTheme.subtitle1.copyWith(

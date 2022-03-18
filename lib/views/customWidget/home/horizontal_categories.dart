@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kixat/model/category_tree/CategoryTreeResponse.dart';
 import 'package:kixat/utils/utility.dart';
 
@@ -40,16 +41,16 @@ class DashBoardMenu extends StatelessWidget {
     DocumentsScreen(),
   ];
   List imagesList = <String>[
-    'assets/bags.png',
-    'assets/list.png',
-    'assets/list.png',
-    'assets/list.png',
-    'assets/order.png',
-    'assets/list.png',
-    'assets/order.png',
-    'assets/list.png',
-    'assets/list.png',
-    'assets/order.png',
+    'assets/svg/edit.svg',
+    'assets/svg/bell.svg',
+    'assets/svg/calendar.svg',
+    'assets/svg/user.svg',
+    'assets/svg/edit-alt.svg',
+    'assets/svg/book-alt.svg',
+    'assets/svg/chart-histogram.svg',
+    'assets/svg/time-check.svg',
+    'assets/svg/list-check.svg',
+    'assets/svg/document.svg',
   ];
   List DashBoardMenuItemsName = [
     "Assignment",
@@ -129,10 +130,11 @@ class DashBoardMenu extends StatelessWidget {
                       flex: 1,
                       child: ClipRRect(
                         borderRadius: BorderRadius.all(Radius.circular(04)),
-                        child: Image.asset(
+                        child: SvgPicture.asset(
                           imagesList[index],
-                          height: 40,
-                          width: 40,
+                          color: Colors.blue,
+                          height: 25,
+                          width: 25,
                           fit: BoxFit.cover,
                         ),
                       ),
