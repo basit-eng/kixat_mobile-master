@@ -1,5 +1,5 @@
 // import 'package:flutter/material.dart';
-// import 'package:kixat/model/ShoppingCartResponse.dart';
+// import 'package:schoolapp/model/ShoppingCartResponse.dart';
 // import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 
 // import '../../utils/custom_colors.dart';

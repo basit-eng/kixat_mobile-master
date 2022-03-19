@@ -1,15 +1,15 @@
 import 'dart:async';
 
-import 'package:kixat/bloc/base_bloc.dart';
-import 'package:kixat/model/home/BestSellerProductResponse.dart';
-import 'package:kixat/model/home/CategoriesWithProductsResponse.dart';
-import 'package:kixat/model/home/FeaturedProductResponse.dart';
-import 'package:kixat/model/HomeSliderResponse.dart';
-import 'package:kixat/model/home/ManufacturersResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/HomeRepository.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
+import 'package:schoolapp/bloc/base_bloc.dart';
+import 'package:schoolapp/model/home/BestSellerProductResponse.dart';
+import 'package:schoolapp/model/home/CategoriesWithProductsResponse.dart';
+import 'package:schoolapp/model/home/FeaturedProductResponse.dart';
+import 'package:schoolapp/model/HomeSliderResponse.dart';
+import 'package:schoolapp/model/home/ManufacturersResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/HomeRepository.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
 
 class HomeBloc implements BaseBloc {
   HomeRepository _homeRepository;
@@ -114,12 +114,12 @@ class HomeBloc implements BaseBloc {
         GlobalService().getString(Const.COMMON_PLEASE_WAIT)));
 
     try {
-      var categoriesWithProdsRes = await _homeRepository.fetchCategoriesWithProducts();
+      var categoriesWithProdsRes =
+          await _homeRepository.fetchCategoriesWithProducts();
 
       // remove empty categories
-      categoriesWithProdsRes.data.removeWhere((element)
-        => element.products.isEmpty
-      );
+      categoriesWithProdsRes.data
+          .removeWhere((element) => element.products.isEmpty);
 
       categoriesWithProdSink.add(ApiResponse.completed(categoriesWithProdsRes));
     } catch (e) {

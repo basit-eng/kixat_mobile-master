@@ -1,5 +1,5 @@
 class Endpoints {
-  static const site_url = 'https://kixat.com'; // 4.40
+  static const site_url = 'https://schoolapp.com'; // 4.40
   static const base_url = '$site_url/api/';
 
   static const appLandingSettings = 'home/applandingsetting';
@@ -57,12 +57,14 @@ class Endpoints {
 
   static const getWishList = 'shoppingcart/wishlist';
   static const updateWishList = 'shoppingcart/updatewishlist';
-  static const moveToCartFromWishList = 'shoppingcart/additemstocartfromwishlist';
+  static const moveToCartFromWishList =
+      'shoppingcart/additemstocartfromwishlist';
 
   static const categoryTree = 'home/categorytree';
   static const productDetails = 'product/productdetails';
   static const addProductToCart = 'shoppingCart/AddProductToCart/details';
-  static const addToCartFromProductBox = 'shoppingCart/addproducttocart/catalog';
+  static const addToCartFromProductBox =
+      'shoppingCart/addproducttocart/catalog';
   static const crossSellProduct = 'product/productsalsopurchased';
   static const relatedProducts = 'product/relatedproducts';
   static const productAttributeChange = 'shoppingcart/productattributechange';
@@ -71,7 +73,8 @@ class Endpoints {
   static const newProducts = 'product/newproducts';
 
   static const subscriptionStatus = 'backinstocksubscription/subscribe';
-  static const customerSubscriptions = 'backinstocksubscription/customersubscriptions';
+  static const customerSubscriptions =
+      'backinstocksubscription/customersubscriptions';
 
   static const productReviews = 'product/productreviews';
   static const addProductReview = 'product/productreviewsadd';
@@ -110,8 +113,10 @@ class Endpoints {
 
   // region Multipart file upload
   static const uploadFileReturnRequest = 'returnrequest/uploadfile';
-  static const uploadFileProductAttribute = 'shoppingcart/uploadfileProductAttribute';
-  static const uploadFileCheckoutAttribute = 'shoppingcart/uploadfileCheckoutAttribute';
+  static const uploadFileProductAttribute =
+      'shoppingcart/uploadfileProductAttribute';
+  static const uploadFileCheckoutAttribute =
+      'shoppingcart/uploadfileCheckoutAttribute';
   static const uploadCustomerAvatar = 'customer/uploadavatar';
   // endregion
 }

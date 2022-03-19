@@ -2,11 +2,10 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:kixat/model/PushNotificationModel.dart';
-import 'package:kixat/utils/NotificationType.dart';
+import 'package:schoolapp/model/PushNotificationModel.dart';
+import 'package:schoolapp/utils/NotificationType.dart';
 
 class NotificationUtils {
-
   NotificationDetails _platformChannelSpecifics;
 
   NotificationUtils() {
@@ -38,21 +37,20 @@ class NotificationUtils {
     var filename = "File";
 
     // For iOS request permission first.
-    if(Platform.isIOS) {
+    if (Platform.isIOS) {
       await FlutterLocalNotificationsPlugin()
           .resolvePlatformSpecificImplementation<
-          IOSFlutterLocalNotificationsPlugin>()
+              IOSFlutterLocalNotificationsPlugin>()
           ?.requestPermissions(
-        alert: true,
-        badge: true,
-        sound: true,
-      );
+            alert: true,
+            badge: true,
+            sound: true,
+          );
     }
 
-    if(path!=null && path.isNotEmpty) {
+    if (path != null && path.isNotEmpty) {
       var tokens = path.split('/');
-      if(tokens.isNotEmpty)
-        filename = tokens.last;
+      if (tokens.isNotEmpty) filename = tokens.last;
     }
 
     final payload = jsonEncode(PushNotificationModel(
@@ -62,7 +60,7 @@ class NotificationUtils {
         title: 'Title'));
 
     FlutterLocalNotificationsPlugin().show(
-      0, "$filename downloaded", "", _platformChannelSpecifics, payload: payload
-    );
+        0, "$filename downloaded", "", _platformChannelSpecifics,
+        payload: payload);
   }
 }

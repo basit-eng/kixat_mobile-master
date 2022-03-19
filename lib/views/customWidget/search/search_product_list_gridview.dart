@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/bloc/search_bloc.dart';
-import 'package:kixat/model/ProductSummary.dart';
-import 'package:kixat/model/SearchResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/views/customWidget/loading.dart';
-import 'package:kixat/views/customWidget/product%20box/product_box.dart';
+import 'package:schoolapp/bloc/search_bloc.dart';
+import 'package:schoolapp/model/ProductSummary.dart';
+import 'package:schoolapp/model/SearchResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/views/customWidget/loading.dart';
+import 'package:schoolapp/views/customWidget/product%20box/product_box.dart';
 
 class SearchProductListGridView extends StatefulWidget {
   final SearchResponse productList;

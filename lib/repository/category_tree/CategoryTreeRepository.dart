@@ -1,6 +1,6 @@
-import 'package:kixat/model/category_tree/CategoryTreeResponse.dart';
-import 'package:kixat/networking/ApiBaseHelper.dart';
-import 'package:kixat/networking/Endpoints.dart';
+import 'package:schoolapp/model/category_tree/CategoryTreeResponse.dart';
+import 'package:schoolapp/networking/ApiBaseHelper.dart';
+import 'package:schoolapp/networking/Endpoints.dart';
 
 class CategoryTreeRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

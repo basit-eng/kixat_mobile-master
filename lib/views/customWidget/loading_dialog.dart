@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
 
 class DialogBuilder {
   DialogBuilder(this.context);
@@ -12,8 +12,7 @@ class DialogBuilder {
   static bool _isVisible = false;
 
   void showLoader() {
-
-    if(_isVisible) {
+    if (_isVisible) {
       return;
     } else {
       _isVisible = true;
@@ -41,19 +40,17 @@ class DialogBuilder {
   }
 
   void hideLoader() {
-    if(_isVisible)
-      Navigator.of(context).pop();
+    if (_isVisible) Navigator.of(context).pop();
   }
 
   bool isVisible() => _isVisible;
 }
 
-class LoadingIndicator extends StatelessWidget{
+class LoadingIndicator extends StatelessWidget {
   LoadingIndicator();
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
         padding: EdgeInsets.all(16),
         // color: Colors.grey[800],
@@ -63,36 +60,29 @@ class LoadingIndicator extends StatelessWidget{
             children: [
               _getLoadingIndicator(),
               _getHeading(context),
-            ]
-        )
-    );
+            ]));
   }
 
   Padding _getLoadingIndicator() {
     return Padding(
         child: Container(
             child: Platform.isIOS
-              ? CupertinoActivityIndicator()
-              : CircularProgressIndicator(strokeWidth: 3),
+                ? CupertinoActivityIndicator()
+                : CircularProgressIndicator(strokeWidth: 3),
             width: 32,
-            height: 32
-        ),
-        padding: EdgeInsets.only(bottom: 16)
-    );
+            height: 32),
+        padding: EdgeInsets.only(bottom: 16));
   }
 
   Widget _getHeading(context) {
-    return
-      Padding(
-          child: Text(
-            GlobalService().getString(Const.COMMON_PLEASE_WAIT),
-            style: TextStyle(
-                // color: Colors.white,
-                fontSize: 16
-            ),
-            textAlign: TextAlign.center,
-          ),
-          padding: EdgeInsets.only(bottom: 4)
-      );
+    return Padding(
+        child: Text(
+          GlobalService().getString(Const.COMMON_PLEASE_WAIT),
+          style: TextStyle(
+              // color: Colors.white,
+              fontSize: 16),
+          textAlign: TextAlign.center,
+        ),
+        padding: EdgeInsets.only(bottom: 4));
   }
 }

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:kixat/bloc/review_bloc.dart';
-import 'package:kixat/views/customWidget/CustomAppBar.dart';
-import 'package:kixat/views/customWidget/CustomButton.dart';
-import 'package:kixat/views/customWidget/error.dart';
-import 'package:kixat/views/customWidget/loading.dart';
-import 'package:kixat/views/customWidget/loading_dialog.dart';
-import 'package:kixat/model/ProductReviewResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/ButtonShape.dart';
-import 'package:kixat/utils/Const.dart';
-import 'package:kixat/utils/ValidationMixin.dart';
-import 'package:kixat/utils/utility.dart';
+import 'package:schoolapp/bloc/review_bloc.dart';
+import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
+import 'package:schoolapp/views/customWidget/CustomButton.dart';
+import 'package:schoolapp/views/customWidget/error.dart';
+import 'package:schoolapp/views/customWidget/loading.dart';
+import 'package:schoolapp/views/customWidget/loading_dialog.dart';
+import 'package:schoolapp/model/ProductReviewResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/ButtonShape.dart';
+import 'package:schoolapp/utils/Const.dart';
+import 'package:schoolapp/utils/ValidationMixin.dart';
+import 'package:schoolapp/utils/utility.dart';
 
 class ProductReviewScreen extends StatefulWidget {
   static const routeName = '/product-review';

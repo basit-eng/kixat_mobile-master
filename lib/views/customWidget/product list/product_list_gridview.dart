@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/bloc/product_list/product_list_bloc.dart';
-import 'package:kixat/model/ProductSummary.dart';
-import 'package:kixat/model/product_list/ProductListResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/views/customWidget/loading.dart';
-import 'package:kixat/views/customWidget/product%20box/product_box.dart';
+import 'package:schoolapp/bloc/product_list/product_list_bloc.dart';
+import 'package:schoolapp/model/ProductSummary.dart';
+import 'package:schoolapp/model/product_list/ProductListResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/views/customWidget/loading.dart';
+import 'package:schoolapp/views/customWidget/product%20box/product_box.dart';
 
 class ProductListGridView extends StatefulWidget {
   final String type;

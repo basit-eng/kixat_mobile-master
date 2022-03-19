@@ -1,12 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:kixat/model/AvailableOption.dart';
-import 'package:kixat/model/SearchResponse.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
-import 'package:kixat/utils/extensions.dart';
-import 'package:kixat/views/customWidget/CustomCheckBox.dart';
-import 'package:kixat/views/customWidget/CustomDropdown.dart';
+import 'package:schoolapp/model/AvailableOption.dart';
+import 'package:schoolapp/model/SearchResponse.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
+import 'package:schoolapp/utils/extensions.dart';
+import 'package:schoolapp/views/customWidget/CustomCheckBox.dart';
+import 'package:schoolapp/views/customWidget/CustomDropdown.dart';
 
 class AdvSearchBottomSheet extends StatelessWidget {
   final SearchData model;

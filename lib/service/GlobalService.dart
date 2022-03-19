@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:kixat/model/AppLandingResponse.dart';
+import 'package:schoolapp/model/AppLandingResponse.dart';
 
 class GlobalService {
   static final GlobalService _instance = GlobalService._internal();
@@ -40,7 +40,7 @@ class GlobalService {
   String getString(String key) => _stringResourceMap[key] ?? key;
 
   String getStringWithNumber(String key, num value) =>
-    getString(key).replaceFirst("{0}", value.toString());
+      getString(key).replaceFirst("{0}", value.toString());
 
   String getStringWithNumberStr(String key, String value) =>
       getString(key).replaceFirst("{0}", value);
@@ -53,7 +53,7 @@ class GlobalService {
     _wishListCount = value.totalWishListProducts ?? 0;
     cartCountSink.add(_cartCount);
     wishlistCountSink.add(_wishListCount);
-    debugPrint('ScopedModel -- cart-$_cartCount wl-$_wishListCount' );
+    debugPrint('ScopedModel -- cart-$_cartCount wl-$_wishListCount');
 
     _appLandingData.stringResources.forEach((e) {
       _stringResourceMap[e.key] = e.value;
@@ -80,7 +80,7 @@ class GlobalService {
     debugPrint('ScopedModel -- set cart count to $count');
     _appLandingData.totalShoppingCartProducts = count;
 
-    if(count != _cartCount) {
+    if (count != _cartCount) {
       _cartCount = count;
       cartCountSink.add(count);
     }
@@ -92,7 +92,7 @@ class GlobalService {
     debugPrint('ScopedModel -- set wishList count to $count');
     _appLandingData.totalWishListProducts = count;
 
-    if(count != _wishListCount) {
+    if (count != _wishListCount) {
       _wishListCount = count;
       wishlistCountSink.add(count);
     }

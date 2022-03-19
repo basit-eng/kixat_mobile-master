@@ -1,12 +1,12 @@
-import 'package:kixat/model/FileDownloadResponse.dart';
-import 'package:kixat/model/OrderDetailsResponse.dart';
-import 'package:kixat/model/OrderHistoryResponse.dart';
-import 'package:kixat/model/SampleDownloadResponse.dart';
-import 'package:kixat/networking/ApiBaseHelper.dart';
-import 'package:kixat/networking/Endpoints.dart';
-import 'package:kixat/utils/AppConstants.dart';
-import 'package:kixat/utils/FileResponse.dart';
-import 'package:kixat/utils/utility.dart';
+import 'package:schoolapp/model/FileDownloadResponse.dart';
+import 'package:schoolapp/model/OrderDetailsResponse.dart';
+import 'package:schoolapp/model/OrderHistoryResponse.dart';
+import 'package:schoolapp/model/SampleDownloadResponse.dart';
+import 'package:schoolapp/networking/ApiBaseHelper.dart';
+import 'package:schoolapp/networking/Endpoints.dart';
+import 'package:schoolapp/utils/AppConstants.dart';
+import 'package:schoolapp/utils/FileResponse.dart';
+import 'package:schoolapp/utils/utility.dart';
 
 class OrderRepository {
   ApiBaseHelper _helper = ApiBaseHelper();
@@ -27,14 +27,17 @@ class OrderRepository {
   }
 
   Future<String> repostPayment(num orderId) async {
-    final response = await _helper.post('${Endpoints.orderRepostPayment}/$orderId', AppConstants.EMPTY_POST_BODY);
+    final response = await _helper.post(
+        '${Endpoints.orderRepostPayment}/$orderId',
+        AppConstants.EMPTY_POST_BODY);
     return response.toString();
   }
 
   Future<FileDownloadResponse> downloadPdfInvoice(num orderId) async {
-    final FileResponse response = await _helper.getFile('${Endpoints.orderPdfInvoice}/$orderId');
+    final FileResponse response =
+        await _helper.getFile('${Endpoints.orderPdfInvoice}/$orderId');
 
-    if(response.isFile) {
+    if (response.isFile) {
       return FileDownloadResponse<SampleDownloadResponse>(
         file: await saveFileToDisk(response, showNotification: true),
       );
@@ -59,5 +62,4 @@ class OrderRepository {
       );
     }
   }
-
 }

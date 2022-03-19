@@ -1,18 +1,23 @@
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
-import 'package:kixat/bloc/base_bloc.dart';
-import 'package:kixat/model/FileDownloadResponse.dart';
-import 'package:kixat/model/OrderDetailsResponse.dart';
-import 'package:kixat/model/OrderHistoryResponse.dart';
-import 'package:kixat/model/SampleDownloadResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/OrderRepository.dart';
+import 'package:schoolapp/bloc/base_bloc.dart';
+import 'package:schoolapp/model/FileDownloadResponse.dart';
+import 'package:schoolapp/model/OrderDetailsResponse.dart';
+import 'package:schoolapp/model/OrderHistoryResponse.dart';
+import 'package:schoolapp/model/SampleDownloadResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/OrderRepository.dart';
 
 class OrderBloc extends BaseBloc {
   OrderRepository _repository;
-  StreamController _scOrderHistory, _scLoader, _scOrderDetails,
-      _scReorder, _scRepostPayment, _scPdf, _scFileDownload;
+  StreamController _scOrderHistory,
+      _scLoader,
+      _scOrderDetails,
+      _scReorder,
+      _scRepostPayment,
+      _scPdf,
+      _scFileDownload;
 
   StreamSink<ApiResponse<OrderHistoryResponse>> get orderHistorySink =>
       _scOrderHistory.sink;
@@ -36,10 +41,10 @@ class OrderBloc extends BaseBloc {
   Stream<ApiResponse<OrderDetailsResponse>> get orderDetailsStream =>
       _scOrderDetails.stream;
 
-  StreamSink<ApiResponse<FileDownloadResponse<SampleDownloadResponse>>> get fileDownloadSink =>
-      _scFileDownload.sink;
-  Stream<ApiResponse<FileDownloadResponse<SampleDownloadResponse>>> get fileDownloadStream =>
-      _scFileDownload.stream;
+  StreamSink<ApiResponse<FileDownloadResponse<SampleDownloadResponse>>>
+      get fileDownloadSink => _scFileDownload.sink;
+  Stream<ApiResponse<FileDownloadResponse<SampleDownloadResponse>>>
+      get fileDownloadStream => _scFileDownload.stream;
 
   OrderBloc() {
     _repository = OrderRepository();
@@ -49,7 +54,8 @@ class OrderBloc extends BaseBloc {
     _scReorder = StreamController<ApiResponse<bool>>();
     _scRepostPayment = StreamController<ApiResponse<bool>>();
     _scOrderDetails = StreamController<ApiResponse<OrderDetailsResponse>>();
-    _scFileDownload = StreamController<ApiResponse<FileDownloadResponse<SampleDownloadResponse>>>();
+    _scFileDownload = StreamController<
+        ApiResponse<FileDownloadResponse<SampleDownloadResponse>>>();
   }
 
   @override
@@ -79,10 +85,12 @@ class OrderBloc extends BaseBloc {
     orderDetailsSink.add(ApiResponse.loading());
 
     try {
-      OrderDetailsResponse response = await _repository.fetchOrderDetails(orderId);
+      OrderDetailsResponse response =
+          await _repository.fetchOrderDetails(orderId);
       orderDetailsSink.add(ApiResponse.completed(response));
       pdfLinkSink.add((response.data?.pdfInvoiceDisabled ?? false)
-        ? -1 : (response?.data?.id ?? -1));
+          ? -1
+          : (response?.data?.id ?? -1));
     } catch (e) {
       orderDetailsSink.add(ApiResponse.error(e.toString()));
       print(e.toString());
@@ -117,7 +125,8 @@ class OrderBloc extends BaseBloc {
     fileDownloadSink.add(ApiResponse.loading());
 
     try {
-      FileDownloadResponse<SampleDownloadResponse> response = await _repository.downloadPdfInvoice(orderId);
+      FileDownloadResponse<SampleDownloadResponse> response =
+          await _repository.downloadPdfInvoice(orderId);
       fileDownloadSink.add(ApiResponse.completed(response));
     } catch (e) {
       fileDownloadSink.add(ApiResponse.error(e.toString()));
@@ -129,12 +138,12 @@ class OrderBloc extends BaseBloc {
     fileDownloadSink.add(ApiResponse.loading());
 
     try {
-      FileDownloadResponse<SampleDownloadResponse> response = await _repository.downloadNotesAttachment(noteId);
+      FileDownloadResponse<SampleDownloadResponse> response =
+          await _repository.downloadNotesAttachment(noteId);
       fileDownloadSink.add(ApiResponse.completed(response));
     } catch (e) {
       fileDownloadSink.add(ApiResponse.error(e.toString()));
       print(e.toString());
     }
   }
-
 }

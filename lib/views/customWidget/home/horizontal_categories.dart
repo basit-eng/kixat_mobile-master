@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:kixat/model/category_tree/CategoryTreeResponse.dart';
-import 'package:kixat/utils/utility.dart';
+import 'package:schoolapp/model/category_tree/CategoryTreeResponse.dart';
+import 'package:schoolapp/utils/utility.dart';
 
-import 'package:kixat/views/customWidget/cached_image.dart';
-import 'package:kixat/views/pages/assignmentCard_screen.dart';
-import 'package:kixat/views/pages/attendance.dart';
-import 'package:kixat/views/pages/calender_screen.dart';
-import 'package:kixat/views/pages/documents.dart';
-import 'package:kixat/views/pages/eventscreen.dart';
-import 'package:kixat/views/pages/feeDetails/fee02.dart';
-import 'package:kixat/views/pages/feeDetails/fee_details.dart';
-import 'package:kixat/views/pages/courses.dart';
-import 'package:kixat/views/pages/notice_screen.dart';
-import 'package:kixat/views/pages/profile_screen.dart';
-import 'package:kixat/views/pages/report_card.dart';
-import 'package:kixat/views/pages/resultCard_detail_screen.dart';
-import 'package:kixat/views/pages/rountineCard_screen.dart';
+import 'package:schoolapp/views/customWidget/cached_image.dart';
+import 'package:schoolapp/views/pages/assignmentCard_screen.dart';
+import 'package:schoolapp/views/pages/attendance.dart';
+import 'package:schoolapp/views/pages/calender_screen.dart';
+import 'package:schoolapp/views/pages/documents.dart';
+import 'package:schoolapp/views/pages/eventscreen.dart';
+import 'package:schoolapp/views/pages/feeDetails/fee02.dart';
+import 'package:schoolapp/views/pages/feeDetails/fee_details.dart';
+import 'package:schoolapp/views/pages/courses.dart';
+import 'package:schoolapp/views/pages/notice_screen.dart';
+import 'package:schoolapp/views/pages/profile_screen.dart';
+import 'package:schoolapp/views/pages/report_card.dart';
+import 'package:schoolapp/views/pages/resultCard_detail_screen.dart';
+import 'package:schoolapp/views/pages/rountineCard_screen.dart';
 
 import '../../pages/resultcard_screen.dart';
 
@@ -144,7 +144,9 @@ class DashBoardMenu extends StatelessWidget {
                           vertical: 8.0, horizontal: 00),
                       child: Text(
                         DashBoardMenuItemsName[index],
-                        // overflow: TextOverflow.ellipsis,
+                        overflow: TextOverflow.visible,
+                        maxLines: 2,
+                        softWrap: true,
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.bodyText1,
                       ),

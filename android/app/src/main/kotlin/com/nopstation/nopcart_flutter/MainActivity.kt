@@ -1,4 +1,4 @@
-package com.softify.kixat
+package com.softify.school
 
 import io.flutter.embedding.android.FlutterActivity
 

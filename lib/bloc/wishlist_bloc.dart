@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:kixat/bloc/base_bloc.dart';
-import 'package:kixat/model/WishListResponse.dart';
-import 'package:kixat/model/requestbody/FormValue.dart';
-import 'package:kixat/model/requestbody/FormValuesRequestBody.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/WishListRepository.dart';
+import 'package:schoolapp/bloc/base_bloc.dart';
+import 'package:schoolapp/model/WishListResponse.dart';
+import 'package:schoolapp/model/requestbody/FormValue.dart';
+import 'package:schoolapp/model/requestbody/FormValuesRequestBody.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/WishListRepository.dart';
 
 class WishListBloc extends BaseBloc {
   WishListRepository _repository;
@@ -52,16 +52,13 @@ class WishListBloc extends BaseBloc {
     loaderSink.add(true);
 
     try {
-      WishListResponse response = await _repository.updateWishlistItem(
-        FormValuesRequestBody(
-          formValues: [
-            FormValue(
-              key: 'removefromcart',
-              value: id.toString(),
-            )
-          ]
+      WishListResponse response = await _repository
+          .updateWishlistItem(FormValuesRequestBody(formValues: [
+        FormValue(
+          key: 'removefromcart',
+          value: id.toString(),
         )
-      );
+      ]));
       wishListSink.add(ApiResponse.completed(response));
       loaderSink.add(false);
     } catch (e) {
@@ -75,17 +72,14 @@ class WishListBloc extends BaseBloc {
     loaderSink.add(true);
 
     try {
-      WishListResponse response = await _repository.moveItemToCart(
-          FormValuesRequestBody(
-              formValues: [
-                for(int i=0; i<ids.length; i++)
-                  FormValue(
-                    key: 'addtocart',
-                    value: ids[i].toString(),
-                  )
-              ]
+      WishListResponse response =
+          await _repository.moveItemToCart(FormValuesRequestBody(formValues: [
+        for (int i = 0; i < ids.length; i++)
+          FormValue(
+            key: 'addtocart',
+            value: ids[i].toString(),
           )
-      );
+      ]));
       wishListSink.add(ApiResponse.completed(response));
       loaderSink.add(false);
       launchCartSink.add(true);

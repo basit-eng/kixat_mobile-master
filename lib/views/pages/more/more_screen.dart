@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/views/pages/more/barcode_scanner_screen.dart';
-import 'package:kixat/views/pages/more/contact_us_screen.dart';
-import 'package:kixat/views/pages/more/settings_screen.dart';
-import 'package:kixat/views/pages/more/topic_screen.dart';
-import 'package:kixat/views/pages/more/vendor_list_screen.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/AppConstants.dart';
-import 'package:kixat/utils/Const.dart';
-import 'package:kixat/utils/utility.dart';
+import 'package:schoolapp/views/pages/more/barcode_scanner_screen.dart';
+import 'package:schoolapp/views/pages/more/contact_us_screen.dart';
+import 'package:schoolapp/views/pages/more/settings_screen.dart';
+import 'package:schoolapp/views/pages/more/topic_screen.dart';
+import 'package:schoolapp/views/pages/more/vendor_list_screen.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/AppConstants.dart';
+import 'package:schoolapp/utils/Const.dart';
+import 'package:schoolapp/utils/utility.dart';
 
 class MoreScreen extends StatefulWidget {
   @override

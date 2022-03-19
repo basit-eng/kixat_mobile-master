@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/ScopedModelWrapper.dart';
-import 'package:kixat/bloc/settings_bloc.dart';
-import 'package:kixat/views/customWidget/CustomAppBar.dart';
-import 'package:kixat/views/customWidget/CustomDropdown.dart';
-import 'package:kixat/views/customWidget/loading_dialog.dart';
-import 'package:kixat/model/AppLandingResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
-import 'package:kixat/utils/shared_pref.dart';
-import 'package:kixat/utils/utility.dart';
-import 'package:kixat/utils/extensions.dart';
+import 'package:schoolapp/ScopedModelWrapper.dart';
+import 'package:schoolapp/bloc/settings_bloc.dart';
+import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
+import 'package:schoolapp/views/customWidget/CustomDropdown.dart';
+import 'package:schoolapp/views/customWidget/loading_dialog.dart';
+import 'package:schoolapp/model/AppLandingResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
+import 'package:schoolapp/utils/shared_pref.dart';
+import 'package:schoolapp/utils/utility.dart';
+import 'package:schoolapp/utils/extensions.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class SettingsScreen extends StatefulWidget {

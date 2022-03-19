@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/bloc/product_list/product_list_bloc.dart';
-import 'package:kixat/model/product_list/ProductListResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
-import 'package:kixat/utils/styles.dart';
-import 'package:kixat/views/customWidget/CustomAppBar.dart';
-import 'package:kixat/views/customWidget/loading.dart';
-import 'package:kixat/views/customWidget/product%20list/filter.dart';
-import 'package:kixat/views/customWidget/product%20list/product_list_gridview.dart';
+import 'package:schoolapp/bloc/product_list/product_list_bloc.dart';
+import 'package:schoolapp/model/product_list/ProductListResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
+import 'package:schoolapp/utils/styles.dart';
+import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
+import 'package:schoolapp/views/customWidget/loading.dart';
+import 'package:schoolapp/views/customWidget/product%20list/filter.dart';
+import 'package:schoolapp/views/customWidget/product%20list/product_list_gridview.dart';
 
 class ProductListScreen extends StatefulWidget {
   static const routeName = 'product-list';

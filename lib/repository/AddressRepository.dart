@@ -1,10 +1,10 @@
-import 'package:kixat/model/AddressFormResponse.dart';
-import 'package:kixat/model/AddressListResponse.dart';
-import 'package:kixat/model/BaseResponse.dart';
-import 'package:kixat/networking/ApiBaseHelper.dart';
-import 'package:kixat/networking/Endpoints.dart';
-import 'package:kixat/repository/BaseRepository.dart';
-import 'package:kixat/utils/AppConstants.dart';
+import 'package:schoolapp/model/AddressFormResponse.dart';
+import 'package:schoolapp/model/AddressListResponse.dart';
+import 'package:schoolapp/model/BaseResponse.dart';
+import 'package:schoolapp/networking/ApiBaseHelper.dart';
+import 'package:schoolapp/networking/Endpoints.dart';
+import 'package:schoolapp/repository/BaseRepository.dart';
+import 'package:schoolapp/utils/AppConstants.dart';
 
 class AddressRepository extends BaseRepository {
   ApiBaseHelper _helper = ApiBaseHelper();
@@ -15,7 +15,8 @@ class AddressRepository extends BaseRepository {
   }
 
   Future<String> deleteAddressById(num addressId) async {
-    final response = await _helper.post('${Endpoints.deleteAddress}/$addressId', AppConstants.EMPTY_POST_BODY);
+    final response = await _helper.post(
+        '${Endpoints.deleteAddress}/$addressId', AppConstants.EMPTY_POST_BODY);
     return response.toString();
   }
 
@@ -34,8 +35,10 @@ class AddressRepository extends BaseRepository {
     return AddressFormResponse.fromJson(response);
   }
 
-  Future<BaseResponse> updateExistingAddress(num addressId, AddressFormResponse reqBody) async {
-    final response = await _helper.post('${Endpoints.editAddress}/$addressId', reqBody);
+  Future<BaseResponse> updateExistingAddress(
+      num addressId, AddressFormResponse reqBody) async {
+    final response =
+        await _helper.post('${Endpoints.editAddress}/$addressId', reqBody);
     return BaseResponse.fromJson(response);
   }
 }

@@ -1,11 +1,10 @@
 import 'dart:convert';
 
-import 'package:kixat/model/UserLoginResponse.dart';
-import 'package:kixat/service/GlobalService.dart';
+import 'package:schoolapp/model/UserLoginResponse.dart';
+import 'package:schoolapp/service/GlobalService.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SessionData {
-
   static const _keyLoggedIn = '_keyLoggedIn';
   static const _keyAuthToken = '_keyAuthToken';
   static const _keyDeviceId = '_keyDeviceId';
@@ -33,12 +32,13 @@ class SessionData {
     return;
   }
 
-  Future<void> setUserSession(String authToken, [CustomerInfo customerInfo]) async {
+  Future<void> setUserSession(String authToken,
+      [CustomerInfo customerInfo]) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setBool(_keyLoggedIn, true);
     await prefs.setString(_keyAuthToken, authToken);
 
-    if(customerInfo!=null) {
+    if (customerInfo != null) {
       await prefs.setString(_keyCustomerInfo, jsonEncode(customerInfo));
     }
 
@@ -64,7 +64,7 @@ class SessionData {
 
     try {
       return CustomerInfo.fromJson(jsonDecode(info));
-    } catch(e) {
+    } catch (e) {
       return null;
     }
   }
@@ -83,5 +83,4 @@ class SessionData {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.setBool(_keyDarkTheme, isEnabled);
   }
-
 }

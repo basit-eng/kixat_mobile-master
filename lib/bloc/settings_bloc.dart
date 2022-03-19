@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:kixat/bloc/base_bloc.dart';
-import 'package:kixat/model/AppLandingResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/SettingsRepository.dart';
+import 'package:schoolapp/bloc/base_bloc.dart';
+import 'package:schoolapp/model/AppLandingResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/SettingsRepository.dart';
 
 class SettingsBloc extends BaseBloc {
   SettingsRepository _repository;
@@ -64,5 +64,4 @@ class SettingsBloc extends BaseBloc {
     _scAppLanding?.close();
     _scChangeLang?.close();
   }
-
 }

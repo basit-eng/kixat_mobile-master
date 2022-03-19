@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/utils/AppConstants.dart';
-import 'package:kixat/utils/shared_pref.dart';
+import 'package:schoolapp/utils/AppConstants.dart';
+import 'package:schoolapp/utils/shared_pref.dart';
 
 class ErrorScreen extends StatefulWidget {
   static const routeName = '/errorScreen';
@@ -39,14 +39,16 @@ class _ErrorScreenState extends State<ErrorScreen> {
               ),
               SizedBox(height: 15),
               OutlinedButton(
-                  onPressed: () {
-                    if(widget.screenArgument.errorCode == AppConstants.tokenExpireErrorCode) {
-                      SessionData().clearUserSession().then((value) =>
-                          Navigator.of(context).pop('retry'));
-                    } else {
-                      Navigator.of(context).pop('retry');
-                    }
-                  },
+                onPressed: () {
+                  if (widget.screenArgument.errorCode ==
+                      AppConstants.tokenExpireErrorCode) {
+                    SessionData()
+                        .clearUserSession()
+                        .then((value) => Navigator.of(context).pop('retry'));
+                  } else {
+                    Navigator.of(context).pop('retry');
+                  }
+                },
                 child: Text(widget.screenArgument.errorCode ==
                         AppConstants.tokenExpireErrorCode
                     ? 'Continue As Guest'

@@ -1,9 +1,9 @@
 // ignore_for_file: must_be_immutable, camel_case_types
 
 import 'package:flutter/material.dart';
-import 'package:kixat/utils/utility.dart';
-import 'package:kixat/views/customWidget/CustomAppBar.dart';
-import 'package:kixat/views/pages/report_card.dart';
+import 'package:schoolapp/utils/utility.dart';
+import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
+import 'package:schoolapp/views/pages/report_card.dart';
 
 class ResultCardDetailScreen extends StatelessWidget {
   ResultCardDetailScreen({Key key}) : super(key: key);

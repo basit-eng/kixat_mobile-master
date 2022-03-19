@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/views/customWidget/RoundButton.dart';
-import 'package:kixat/views/customWidget/cached_image.dart';
-import 'package:kixat/model/ProductDetailsResponse.dart';
-import 'package:kixat/Views/pages/product/product_details_screen.dart';
-import 'package:kixat/utils/styles.dart';
+import 'package:schoolapp/views/customWidget/RoundButton.dart';
+import 'package:schoolapp/views/customWidget/cached_image.dart';
+import 'package:schoolapp/model/ProductDetailsResponse.dart';
+import 'package:schoolapp/Views/pages/product/product_details_screen.dart';
+import 'package:schoolapp/utils/styles.dart';
 
 class ItemGroupProduct extends StatefulWidget {
   final ProductDetails item;

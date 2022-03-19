@@ -1,6 +1,6 @@
-import 'package:kixat/model/ContactUsResponse.dart';
-import 'package:kixat/networking/ApiBaseHelper.dart';
-import 'package:kixat/networking/Endpoints.dart';
+import 'package:schoolapp/model/ContactUsResponse.dart';
+import 'package:schoolapp/networking/ApiBaseHelper.dart';
+import 'package:schoolapp/networking/Endpoints.dart';
 
 class ContactUsRepository {
   ApiBaseHelper _helper = ApiBaseHelper();
@@ -14,5 +14,4 @@ class ContactUsRepository {
     final response = await _helper.post(Endpoints.contactUs, reqBody);
     return ContactUsResponse.fromJson(response);
   }
-
 }

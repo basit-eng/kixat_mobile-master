@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:kixat/bloc/base_bloc.dart';
-import 'package:kixat/model/ContactUsResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/ContactUsRepository.dart';
+import 'package:schoolapp/bloc/base_bloc.dart';
+import 'package:schoolapp/model/ContactUsResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/ContactUsRepository.dart';
 
 class ContactUsBloc extends BaseBloc {
   ContactUsRepository _repository;
@@ -43,12 +43,12 @@ class ContactUsBloc extends BaseBloc {
     loaderSink.add(ApiResponse.loading());
 
     try {
-      ContactUsResponse response = await _repository.postEnquiry(ContactUsResponse(data: formData));
+      ContactUsResponse response =
+          await _repository.postEnquiry(ContactUsResponse(data: formData));
       loaderSink.add(ApiResponse.completed(response?.message ?? ''));
     } catch (e) {
       loaderSink.add(ApiResponse.error(e.toString()));
       print(e);
     }
   }
-
 }

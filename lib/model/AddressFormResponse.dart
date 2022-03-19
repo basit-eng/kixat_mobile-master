@@ -1,6 +1,6 @@
-import 'package:kixat/model/CustomProperties.dart';
-import 'package:kixat/model/GetBillingAddressResponse.dart';
-import 'package:kixat/model/requestbody/FormValue.dart';
+import 'package:schoolapp/model/CustomProperties.dart';
+import 'package:schoolapp/model/GetBillingAddressResponse.dart';
+import 'package:schoolapp/model/requestbody/FormValue.dart';
 
 class AddressFormResponse {
   AddressFormResponse({
@@ -28,19 +28,31 @@ class AddressFormResponse {
         errorList: errorList ?? this.errorList,
       );
 
-  factory AddressFormResponse.fromJson(Map<String, dynamic> json) => AddressFormResponse(
-    data: json["Data"] == null ? null : AddressFormData.fromJson(json["Data"]),
-    formValues: json["FormValues"] == null ? null : List<FormValue>.from(json["FormValues"].map((x) => FormValue.fromJson(x))),
-    message: json["Message"] == null ? null : json["Message"],
-    errorList: json["ErrorList"] == null ? null : List<String>.from(json["ErrorList"].map((x) => x)),
-  );
+  factory AddressFormResponse.fromJson(Map<String, dynamic> json) =>
+      AddressFormResponse(
+        data: json["Data"] == null
+            ? null
+            : AddressFormData.fromJson(json["Data"]),
+        formValues: json["FormValues"] == null
+            ? null
+            : List<FormValue>.from(
+                json["FormValues"].map((x) => FormValue.fromJson(x))),
+        message: json["Message"] == null ? null : json["Message"],
+        errorList: json["ErrorList"] == null
+            ? null
+            : List<String>.from(json["ErrorList"].map((x) => x)),
+      );
 
   Map<String, dynamic> toJson() => {
-    "Data": data == null ? null : data.toJson(),
-    "FormValues": formValues == null ? null : List<dynamic>.from(formValues.map((x) => x.toJson())),
-    "Message": message == null ? null : message,
-    "ErrorList": errorList == null ? null : List<dynamic>.from(errorList.map((x) => x)),
-  };
+        "Data": data == null ? null : data.toJson(),
+        "FormValues": formValues == null
+            ? null
+            : List<dynamic>.from(formValues.map((x) => x.toJson())),
+        "Message": message == null ? null : message,
+        "ErrorList": errorList == null
+            ? null
+            : List<dynamic>.from(errorList.map((x) => x)),
+      };
 }
 
 class AddressFormData {
@@ -61,13 +73,18 @@ class AddressFormData {
         customProperties: customProperties ?? this.customProperties,
       );
 
-  factory AddressFormData.fromJson(Map<String, dynamic> json) => AddressFormData(
-    address: json["Address"] == null ? null : Address.fromJson(json["Address"]),
-    customProperties: json["CustomProperties"] == null ? null : CustomProperties.fromJson(json["CustomProperties"]),
-  );
+  factory AddressFormData.fromJson(Map<String, dynamic> json) =>
+      AddressFormData(
+        address:
+            json["Address"] == null ? null : Address.fromJson(json["Address"]),
+        customProperties: json["CustomProperties"] == null
+            ? null
+            : CustomProperties.fromJson(json["CustomProperties"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "Address": address == null ? null : address.toJson(),
-    "CustomProperties": customProperties == null ? null : customProperties.toJson(),
-  };
+        "Address": address == null ? null : address.toJson(),
+        "CustomProperties":
+            customProperties == null ? null : customProperties.toJson(),
+      };
 }

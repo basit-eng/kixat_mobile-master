@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/model/category_tree/CategoryTreeResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/views/customWidget/cached_image.dart';
-import 'package:kixat/views/pages/product-list/product_list_screen.dart';
+import 'package:schoolapp/model/category_tree/CategoryTreeResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/views/customWidget/cached_image.dart';
+import 'package:schoolapp/views/pages/product-list/product_list_screen.dart';
 
 class CategoryTree extends StatefulWidget {
   final ApiResponse<CategoryTreeResponse> snapshot;

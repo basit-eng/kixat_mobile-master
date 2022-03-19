@@ -1,17 +1,17 @@
 import 'dart:async';
 
-import 'package:kixat/bloc/base_bloc.dart';
-import 'package:kixat/model/AvailableOption.dart';
-import 'package:kixat/model/GetAvatarResponse.dart';
-import 'package:kixat/model/RegisterFormResponse.dart';
-import 'package:kixat/model/requestbody/FormValue.dart';
-import 'package:kixat/model/requestbody/RegistrationReqBody.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/AuthRepository.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
-import 'package:kixat/utils/extensions.dart';
-import 'package:kixat/utils/utility.dart';
+import 'package:schoolapp/bloc/base_bloc.dart';
+import 'package:schoolapp/model/AvailableOption.dart';
+import 'package:schoolapp/model/GetAvatarResponse.dart';
+import 'package:schoolapp/model/RegisterFormResponse.dart';
+import 'package:schoolapp/model/requestbody/FormValue.dart';
+import 'package:schoolapp/model/requestbody/RegistrationReqBody.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/AuthRepository.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
+import 'package:schoolapp/utils/extensions.dart';
+import 'package:schoolapp/utils/utility.dart';
 
 class RegisterBloc extends BaseBloc {
   AuthRepository _repository;
@@ -66,14 +66,17 @@ class RegisterBloc extends BaseBloc {
     }
   }
 
-  postRegisterFormData(RegisterFormData data, List<FormValue> formValues) async {
-    RegistrationReqBody reqBody = RegistrationReqBody(data: data.copyWith(availableStates: []), formValues: formValues);
+  postRegisterFormData(
+      RegisterFormData data, List<FormValue> formValues) async {
+    RegistrationReqBody reqBody = RegistrationReqBody(
+        data: data.copyWith(availableStates: []), formValues: formValues);
 
     registerResponseSink.add(ApiResponse.loading(
         GlobalService().getString(Const.COMMON_PLEASE_WAIT)));
 
     try {
-      RegisterFormResponse response = await _repository.postRegisterFormData(reqBody);
+      RegisterFormResponse response =
+          await _repository.postRegisterFormData(reqBody);
       registerResponseSink.add(ApiResponse.completed(response));
     } catch (e) {
       registerResponseSink.add(ApiResponse.error(e.toString()));
@@ -99,12 +102,14 @@ class RegisterBloc extends BaseBloc {
   }
 
   posCustomerInfo(RegisterFormData data, List<FormValue> formValues) async {
-    RegistrationReqBody reqBody = RegistrationReqBody(data: data.copyWith(availableStates: []), formValues: formValues);
+    RegistrationReqBody reqBody = RegistrationReqBody(
+        data: data.copyWith(availableStates: []), formValues: formValues);
 
     registerResponseSink.add(ApiResponse.loading());
 
     try {
-      RegisterFormResponse response = await _repository.updateCustomerInfo(reqBody);
+      RegisterFormResponse response =
+          await _repository.updateCustomerInfo(reqBody);
       registerResponseSink.add(ApiResponse.completed(response));
     } catch (e) {
       registerResponseSink.add(ApiResponse.error(e.toString()));
@@ -175,9 +180,9 @@ class RegisterBloc extends BaseBloc {
   }
 
   setInitiallySelectedItems(RegisterFormData formData) {
-
-    if(selectedCountry!=null || selectedState!=null || selectedTimeZone!=null)
-      return;
+    if (selectedCountry != null ||
+        selectedState != null ||
+        selectedTimeZone != null) return;
 
     selectedCountry = formData.availableCountries?.safeFirstWhere(
       (element) => element.selected ?? false,
@@ -185,7 +190,7 @@ class RegisterBloc extends BaseBloc {
     );
 
     selectedState = formData.availableStates?.safeFirstWhere(
-          (element) => element.selected ?? false,
+      (element) => element.selected ?? false,
       orElse: () => formData.availableStates?.safeFirst(),
     );
 
@@ -194,13 +199,15 @@ class RegisterBloc extends BaseBloc {
       orElse: () => formData.availableTimeZones?.safeFirst(),
     );
 
-    if(formData.dateOfBirthDay == null || formData.dateOfBirthMonth == null || formData.dateOfBirthYear == null) {
+    if (formData.dateOfBirthDay == null ||
+        formData.dateOfBirthMonth == null ||
+        formData.dateOfBirthYear == null) {
       userDob = null;
     } else {
-      userDob = DateTime(formData.dateOfBirthYear, formData.dateOfBirthMonth, formData.dateOfBirthDay);
+      userDob = DateTime(formData.dateOfBirthYear, formData.dateOfBirthMonth,
+          formData.dateOfBirthDay);
     }
 
     privacyAccepted = false;
   }
-
 }

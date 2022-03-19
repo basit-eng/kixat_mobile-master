@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import 'package:kixat/views/customWidget/CustomAppBar.dart';
-import 'package:kixat/networking/ApiBaseHelper.dart';
-import 'package:kixat/networking/Endpoints.dart';
-import 'package:kixat/utils/CheckoutConstants.dart';
+import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
+import 'package:schoolapp/networking/ApiBaseHelper.dart';
+import 'package:schoolapp/networking/Endpoints.dart';
+import 'package:schoolapp/utils/CheckoutConstants.dart';
 
 class CheckoutWebView extends StatefulWidget {
   static const routeName = '/checkoutWebView';

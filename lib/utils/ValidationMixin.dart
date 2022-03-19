@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/service/GlobalService.dart';
+import 'package:schoolapp/service/GlobalService.dart';
 
 mixin ValidationMixin {
-
   bool isValidEmailAddress(String email) {
     if (email == null) {
       return false;
     }
 
     return RegExp(
-        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+            r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
         .hasMatch(email);
   }
 
@@ -17,7 +16,12 @@ mixin ValidationMixin {
     return InputDecoration(
       // contentPadding: EdgeInsets.fromLTRB(10.0, 3.0, 10.0, 3.0),
       labelText: GlobalService().getString(labelTextKey),
-      suffixIcon: isRequired ? Icon(Icons.star, size: 12, /*color: Colors.black,*/) : null,
+      suffixIcon: isRequired
+          ? Icon(
+              Icons.star,
+              size: 12, /*color: Colors.black,*/
+            )
+          : null,
     );
   }
 }

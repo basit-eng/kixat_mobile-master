@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/model/ProductSummary.dart';
-import 'package:kixat/model/home/CategoriesWithProductsResponse.dart';
-import 'package:kixat/views/customWidget/home/product_box_header.dart';
-import 'package:kixat/views/customWidget/product%20box/product_box_horizontal.dart';
+import 'package:schoolapp/model/ProductSummary.dart';
+import 'package:schoolapp/model/home/CategoriesWithProductsResponse.dart';
+import 'package:schoolapp/views/customWidget/home/product_box_header.dart';
+import 'package:schoolapp/views/customWidget/product%20box/product_box_horizontal.dart';
 
 class HorizontalSlider extends StatelessWidget {
   final String title;

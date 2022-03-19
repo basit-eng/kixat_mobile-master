@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/bloc/checkout_bloc.dart';
-import 'package:kixat/views/customWidget/CustomButton.dart';
-import 'package:kixat/views/customWidget/CustomDropdown.dart';
-import 'package:kixat/model/AvailableOption.dart';
-import 'package:kixat/model/GetBillingAddressResponse.dart';
-import 'package:kixat/model/SaveBillingResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
-import 'package:kixat/utils/CustomAttributeManager.dart';
-import 'package:kixat/utils/ValidationMixin.dart';
-import 'package:kixat/utils/extensions.dart';
-import 'package:kixat/utils/styles.dart';
-import 'package:kixat/utils/utility.dart';
+import 'package:schoolapp/bloc/checkout_bloc.dart';
+import 'package:schoolapp/views/customWidget/CustomButton.dart';
+import 'package:schoolapp/views/customWidget/CustomDropdown.dart';
+import 'package:schoolapp/model/AvailableOption.dart';
+import 'package:schoolapp/model/GetBillingAddressResponse.dart';
+import 'package:schoolapp/model/SaveBillingResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
+import 'package:schoolapp/utils/CustomAttributeManager.dart';
+import 'package:schoolapp/utils/ValidationMixin.dart';
+import 'package:schoolapp/utils/extensions.dart';
+import 'package:schoolapp/utils/styles.dart';
+import 'package:schoolapp/utils/utility.dart';
 
 class StepCheckoutAddress extends StatefulWidget {
   final GetBillingData billingData;

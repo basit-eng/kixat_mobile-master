@@ -2,31 +2,39 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:kixat/bloc/base_bloc.dart';
-import 'package:kixat/model/AddToCartResponse.dart';
-import 'package:kixat/model/AvailableOption.dart';
-import 'package:kixat/model/BaseResponse.dart';
-import 'package:kixat/model/FileDownloadResponse.dart';
-import 'package:kixat/model/FileUploadResponse.dart';
-import 'package:kixat/model/ProductAttrChangeResponse.dart';
-import 'package:kixat/model/ProductDetailsResponse.dart';
-import 'package:kixat/model/ProductSummary.dart';
-import 'package:kixat/model/SampleDownloadResponse.dart';
-import 'package:kixat/model/SubscriptionStatusResponse.dart';
-import 'package:kixat/model/home/BestSellerProductResponse.dart';
-import 'package:kixat/model/requestbody/FormValue.dart';
-import 'package:kixat/model/requestbody/FormValuesRequestBody.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/ProductDetailsRepository.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
-import 'package:kixat/utils/extensions.dart';
+import 'package:schoolapp/bloc/base_bloc.dart';
+import 'package:schoolapp/model/AddToCartResponse.dart';
+import 'package:schoolapp/model/AvailableOption.dart';
+import 'package:schoolapp/model/BaseResponse.dart';
+import 'package:schoolapp/model/FileDownloadResponse.dart';
+import 'package:schoolapp/model/FileUploadResponse.dart';
+import 'package:schoolapp/model/ProductAttrChangeResponse.dart';
+import 'package:schoolapp/model/ProductDetailsResponse.dart';
+import 'package:schoolapp/model/ProductSummary.dart';
+import 'package:schoolapp/model/SampleDownloadResponse.dart';
+import 'package:schoolapp/model/SubscriptionStatusResponse.dart';
+import 'package:schoolapp/model/home/BestSellerProductResponse.dart';
+import 'package:schoolapp/model/requestbody/FormValue.dart';
+import 'package:schoolapp/model/requestbody/FormValuesRequestBody.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/ProductDetailsRepository.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
+import 'package:schoolapp/utils/extensions.dart';
 
 class ProductDetailsBloc implements BaseBloc {
   ProductDetailsRepository _repository;
-  StreamController _scProdDetails, _scAddToCart, _scloader, _scSampleDownload,
-      _scGoToCart, _scRelatedProduct, _scCrossSell, _scFileUpload, _scTitle,
-      _scSubscriptionStatus, _scChangeSubscription;
+  StreamController _scProdDetails,
+      _scAddToCart,
+      _scloader,
+      _scSampleDownload,
+      _scGoToCart,
+      _scRelatedProduct,
+      _scCrossSell,
+      _scFileUpload,
+      _scTitle,
+      _scSubscriptionStatus,
+      _scChangeSubscription;
 
   DateTime rentalStartDate, rentalEndDate;
   AvailableOption selectedQuantity;
@@ -54,8 +62,10 @@ class ProductDetailsBloc implements BaseBloc {
   StreamSink<bool> get redirectToCartSink => _scGoToCart.sink;
   Stream<bool> get redirectToCartStream => _scGoToCart.stream;
 
-  StreamSink<ApiResponse<FileUploadData>> get fileUploadSink => _scFileUpload.sink;
-  Stream<ApiResponse<FileUploadData>> get fileUploadStream => _scFileUpload.stream;
+  StreamSink<ApiResponse<FileUploadData>> get fileUploadSink =>
+      _scFileUpload.sink;
+  Stream<ApiResponse<FileUploadData>> get fileUploadStream =>
+      _scFileUpload.stream;
 
   StreamSink<ApiResponse<List<ProductSummary>>> get relatedProductSink =>
       _scRelatedProduct.sink;
@@ -67,18 +77,20 @@ class ProductDetailsBloc implements BaseBloc {
   Stream<ApiResponse<List<ProductSummary>>> get crossSellStream =>
       _scCrossSell.stream;
 
-  StreamSink<ApiResponse<FileDownloadResponse<SampleDownloadResponse>>> get sampleDownloadSink =>
-      _scSampleDownload.sink;
-  Stream<ApiResponse<FileDownloadResponse<SampleDownloadResponse>>> get sampleDownloadStream =>
-      _scSampleDownload.stream;
+  StreamSink<ApiResponse<FileDownloadResponse<SampleDownloadResponse>>>
+      get sampleDownloadSink => _scSampleDownload.sink;
+  Stream<ApiResponse<FileDownloadResponse<SampleDownloadResponse>>>
+      get sampleDownloadStream => _scSampleDownload.stream;
 
   StreamSink<ApiResponse<SubscriptionStatusResponseData>> get subStatusSink =>
       _scSubscriptionStatus.sink;
   Stream<ApiResponse<SubscriptionStatusResponseData>> get subStatusStream =>
       _scSubscriptionStatus.stream;
 
-  StreamSink<ApiResponse<String>> get changeStatusSink => _scChangeSubscription.sink;
-  Stream<ApiResponse<String>> get changeStatusStream => _scChangeSubscription.stream;
+  StreamSink<ApiResponse<String>> get changeStatusSink =>
+      _scChangeSubscription.sink;
+  Stream<ApiResponse<String>> get changeStatusStream =>
+      _scChangeSubscription.stream;
 
   ProductDetailsBloc() {
     _scProdDetails = StreamController<ApiResponse<ProductDetails>>();
@@ -90,8 +102,10 @@ class ProductDetailsBloc implements BaseBloc {
     _scRelatedProduct = StreamController<ApiResponse<List<ProductSummary>>>();
     _scCrossSell = StreamController<ApiResponse<List<ProductSummary>>>();
     _scFileUpload = StreamController<ApiResponse<FileUploadData>>();
-    _scSampleDownload = StreamController<ApiResponse<FileDownloadResponse<SampleDownloadResponse>>>();
-    _scSubscriptionStatus = StreamController<ApiResponse<SubscriptionStatusResponseData>>();
+    _scSampleDownload = StreamController<
+        ApiResponse<FileDownloadResponse<SampleDownloadResponse>>>();
+    _scSubscriptionStatus =
+        StreamController<ApiResponse<SubscriptionStatusResponseData>>();
     _scChangeSubscription = StreamController<ApiResponse<String>>();
   }
 
@@ -100,35 +114,36 @@ class ProductDetailsBloc implements BaseBloc {
         GlobalService().getString(Const.COMMON_PLEASE_WAIT)));
 
     try {
-      ProductDetailsResponse response = await _repository.fetchProductDetails(productId);
+      ProductDetailsResponse response =
+          await _repository.fetchProductDetails(productId);
       titleSink.add(response?.data?.name ?? '');
-      selectedQuantity = response?.data?.addToCart?.allowedQuantities?.safeFirst();
+      selectedQuantity =
+          response?.data?.addToCart?.allowedQuantities?.safeFirst();
       _cachedProductDetails = response.data;
 
       // pre-selected attributes
       List<FormValue> preselectedAttributes = [];
       response.data?.productAttributes?.forEach((attribute) {
         attribute.values?.forEach((element) {
-          if (element.isPreSelected) preselectedAttributes.add(
-            FormValue(
+          if (element.isPreSelected)
+            preselectedAttributes.add(FormValue(
               key: 'product_attribute_${attribute.id.toString()}',
               value: element.id.toString(),
-            )
-          );
+            ));
         });
       });
 
-      if(preselectedAttributes.isNotEmpty) {
+      if (preselectedAttributes.isNotEmpty) {
         try {
           ProductAttrChangeResponse priceResponse =
-          await _repository.postSelectedAttributes(
+              await _repository.postSelectedAttributes(
             productId,
             FormValuesRequestBody(formValues: preselectedAttributes),
           );
 
           updatePrice(priceResponse);
           prodDetailsSink.add(ApiResponse.completed(_cachedProductDetails));
-        } catch(e) {
+        } catch (e) {
           prodDetailsSink.add(ApiResponse.completed(response.data));
         }
       } else {
@@ -144,7 +159,8 @@ class ProductDetailsBloc implements BaseBloc {
     prodDetailsSink.add(ApiResponse.completed(productDetails));
   }
 
-  addToCart(int productId, int cartType, ProductDetails product, List<FormValue> formValues) async {
+  addToCart(int productId, int cartType, ProductDetails product,
+      List<FormValue> formValues) async {
     loaderSink.add(true);
 
     // append product related form values (gift card info, rental product info...)
@@ -154,11 +170,11 @@ class ProductDetailsBloc implements BaseBloc {
     addToCartSink.add(ApiResponse.loading());
 
     try {
-      AddToCartResponse response =
-          await _repository.addProductToCart(productId, cartType, FormValuesRequestBody(formValues: formValues));
+      AddToCartResponse response = await _repository.addProductToCart(
+          productId, cartType, FormValuesRequestBody(formValues: formValues));
       addToCartSink.add(ApiResponse.completed(response));
       loaderSink.add(false);
-      if(redirectToCart) redirectToCartSink.add(true);
+      if (redirectToCart) redirectToCartSink.add(true);
     } catch (e) {
       addToCartSink.add(ApiResponse.error(e.toString()));
       loaderSink.add(false);
@@ -170,7 +186,8 @@ class ProductDetailsBloc implements BaseBloc {
     subStatusSink.add(ApiResponse.loading());
 
     try {
-      SubscriptionStatusResponse response = await _repository.fetchSubscriptionStatus(productId);
+      SubscriptionStatusResponse response =
+          await _repository.fetchSubscriptionStatus(productId);
       subStatusSink.add(ApiResponse.completed(response.data));
     } catch (e) {
       subStatusSink.add(ApiResponse.error(e.toString()));
@@ -182,7 +199,8 @@ class ProductDetailsBloc implements BaseBloc {
     changeStatusSink.add(ApiResponse.loading());
 
     try {
-      BaseResponse response = await _repository.changeSubscriptionStatus(productId);
+      BaseResponse response =
+          await _repository.changeSubscriptionStatus(productId);
       changeStatusSink.add(ApiResponse.completed(response.message));
     } catch (e) {
       changeStatusSink.add(ApiResponse.error(e.toString()));
@@ -190,11 +208,12 @@ class ProductDetailsBloc implements BaseBloc {
     }
   }
 
-  void fetchRelatedProducts(num productId) async{
+  void fetchRelatedProducts(num productId) async {
     relatedProductSink.add(ApiResponse.loading());
 
     try {
-      BestSellerProductResponse response = await _repository.fetchRelatedProducts(productId);
+      BestSellerProductResponse response =
+          await _repository.fetchRelatedProducts(productId);
       relatedProductSink.add(ApiResponse.completed(response.data));
     } catch (e) {
       relatedProductSink.add(ApiResponse.error(e.toString()));
@@ -202,11 +221,12 @@ class ProductDetailsBloc implements BaseBloc {
     }
   }
 
-  void fetchCrossSellProducts(num productId) async{
+  void fetchCrossSellProducts(num productId) async {
     crossSellSink.add(ApiResponse.loading());
 
     try {
-      BestSellerProductResponse response = await _repository.fetchCrossSellProducts(productId);
+      BestSellerProductResponse response =
+          await _repository.fetchCrossSellProducts(productId);
       crossSellSink.add(ApiResponse.completed(response.data));
     } catch (e) {
       crossSellSink.add(ApiResponse.error(e.toString()));
@@ -215,12 +235,11 @@ class ProductDetailsBloc implements BaseBloc {
   }
 
   void postSelectedAttributes(num productId, List<FormValue> formValues) async {
-
     loaderSink.add(true);
 
     try {
       ProductAttrChangeResponse response =
-      await _repository.postSelectedAttributes(
+          await _repository.postSelectedAttributes(
         productId,
         FormValuesRequestBody(formValues: formValues),
       );
@@ -239,8 +258,8 @@ class ProductDetailsBloc implements BaseBloc {
     fileUploadSink.add(ApiResponse.loading());
 
     try {
-      FileUploadResponse response = await _repository.uploadFile(
-          filePath, attributeId.toString());
+      FileUploadResponse response =
+          await _repository.uploadFile(filePath, attributeId.toString());
       var uploadFileData = response.data;
       uploadFileData.attributedId = attributeId;
 
@@ -255,7 +274,8 @@ class ProductDetailsBloc implements BaseBloc {
     sampleDownloadSink.add(ApiResponse.loading());
 
     try {
-      FileDownloadResponse<SampleDownloadResponse> response = await _repository.downloadSample(productId);
+      FileDownloadResponse<SampleDownloadResponse> response =
+          await _repository.downloadSample(productId);
       sampleDownloadSink.add(ApiResponse.completed(response));
     } catch (e) {
       sampleDownloadSink.add(ApiResponse.error(e.toString()));
@@ -264,18 +284,19 @@ class ProductDetailsBloc implements BaseBloc {
   }
 
   List<FormValue> getProductFormValues(ProductDetails product) {
-
     num productId = product.id;
     List<FormValue> formValues = [];
 
     // entered price
-    if(product?.addToCart?.customerEntersPrice == true) {
+    if (product?.addToCart?.customerEntersPrice == true) {
       formValues.add(FormValue(
         key: 'addtocart_$productId.CustomerEnteredPrice',
         value: product.addToCart.customerEnteredPrice.toString(),
       ));
     } else {
-      var quantity = selectedQuantity != null ? int.tryParse(selectedQuantity?.value ?? '1') ?? 1 : product.addToCart.enteredQuantity ?? 1;
+      var quantity = selectedQuantity != null
+          ? int.tryParse(selectedQuantity?.value ?? '1') ?? 1
+          : product.addToCart.enteredQuantity ?? 1;
       formValues.add(
         FormValue(
           key: 'addtocart_$productId.EnteredQuantity',
@@ -307,7 +328,7 @@ class ProductDetailsBloc implements BaseBloc {
       ));
     }
     // rental date
-    if(product?.isRental == true) {
+    if (product?.isRental == true) {
       var formatter = DateFormat('MM/dd/yyyy');
 
       if (rentalStartDate != null)
@@ -327,13 +348,17 @@ class ProductDetailsBloc implements BaseBloc {
   }
 
   void updatePrice(ProductAttrChangeResponse response) {
-    _cachedProductDetails.isFreeShipping = response.data?.isFreeShipping ?? false;
+    _cachedProductDetails.isFreeShipping =
+        response.data?.isFreeShipping ?? false;
     _cachedProductDetails.productPrice?.price = response.data?.price ?? '';
     _cachedProductDetails.gtin = response.data?.gtin ?? '';
     _cachedProductDetails.sku = response.data?.sku ?? '';
-    _cachedProductDetails.stockAvailability = response.data?.stockAvailability ?? '';
-    _cachedProductDetails.defaultPictureModel.fullSizeImageUrl = response.data?.pictureFullSizeUrl ?? '';
-    _cachedProductDetails.defaultPictureModel.imageUrl = response.data?.pictureDefaultSizeUrl ?? '';
+    _cachedProductDetails.stockAvailability =
+        response.data?.stockAvailability ?? '';
+    _cachedProductDetails.defaultPictureModel.fullSizeImageUrl =
+        response.data?.pictureFullSizeUrl ?? '';
+    _cachedProductDetails.defaultPictureModel.imageUrl =
+        response.data?.pictureDefaultSizeUrl ?? '';
   }
 
   @override

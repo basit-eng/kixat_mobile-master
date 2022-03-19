@@ -1,4 +1,4 @@
-import 'package:kixat/model/LoginFormResponse.dart';
+import 'package:schoolapp/model/LoginFormResponse.dart';
 
 class UserLoginReqBody {
   UserLoginReqBody({
@@ -7,12 +7,12 @@ class UserLoginReqBody {
 
   LoginFormData data;
 
-  factory UserLoginReqBody.fromJson(Map<String, dynamic> json) => UserLoginReqBody(
-    data: LoginFormData.fromJson(json["Data"]),
-  );
+  factory UserLoginReqBody.fromJson(Map<String, dynamic> json) =>
+      UserLoginReqBody(
+        data: LoginFormData.fromJson(json["Data"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "Data": data.toJson(),
-  };
+        "Data": data.toJson(),
+      };
 }
-

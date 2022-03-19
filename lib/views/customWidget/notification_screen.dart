@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/views/customWidget/CustomAppBar.dart';
+import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({Key key}) : super(key: key);

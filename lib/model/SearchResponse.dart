@@ -1,6 +1,6 @@
-import 'package:kixat/model/AvailableOption.dart';
-import 'package:kixat/model/CustomProperties.dart';
-import 'package:kixat/model/product_list/ProductListResponse.dart';
+import 'package:schoolapp/model/AvailableOption.dart';
+import 'package:schoolapp/model/CustomProperties.dart';
+import 'package:schoolapp/model/product_list/ProductListResponse.dart';
 
 class SearchResponse {
   SearchResponse({

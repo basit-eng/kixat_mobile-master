@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/model/home/ManufacturersResponse.dart';
-import 'package:kixat/views/customWidget/home/manufacturer_box.dart';
-import 'package:kixat/views/customWidget/home/product_box_header.dart';
+import 'package:schoolapp/model/home/ManufacturersResponse.dart';
+import 'package:schoolapp/views/customWidget/home/manufacturer_box.dart';
+import 'package:schoolapp/views/customWidget/home/product_box_header.dart';
 
 class HorizontalManufacturerSlider extends StatelessWidget {
   final String title;

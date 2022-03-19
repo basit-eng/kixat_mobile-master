@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/utils/sign_config.dart';
-import 'package:kixat/views/customWidget/richtext.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:schoolapp/utils/sign_config.dart';
+import 'package:schoolapp/views/customWidget/richtext.dart';
 
 class FeeCardWidget extends StatelessWidget {
   const FeeCardWidget({
@@ -11,7 +12,7 @@ class FeeCardWidget extends StatelessWidget {
     Key key,
   }) : super(key: key);
 
-  final IconData icon;
+  final String icon;
   final String title;
   final double fee;
   final double attendence;
@@ -48,10 +49,12 @@ class FeeCardWidget extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Icon(
+                child: SvgPicture.asset(
                   icon,
-                  size: 32,
                   color: Colors.blue,
+                  height: 20,
+                  width: 20,
+                  fit: BoxFit.contain,
                 ),
               ),
               Flexible(
@@ -65,7 +68,7 @@ class FeeCardWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              Flexible(
+              FittedBox(
                 child: RichWidget(
                   text1: 'Fee : ',
                   text2: "$fee PKR",
@@ -100,23 +103,23 @@ class FeeCard extends StatelessWidget {
       children: [
         Flexible(
           child: FeeCardWidget(
-              icon: Icons.note_alt,
+              icon: "assets/svg/form.svg",
               attendence: 26,
-              fee: 240,
+              fee: 2400,
               title: "Previous Month"),
         ),
         Flexible(
           child: FeeCardWidget(
-              icon: Icons.note_rounded,
-              attendence: 26,
-              fee: 260,
+              icon: "assets/svg/edit.svg",
+              attendence: 20,
+              fee: 2600,
               title: "Current Month"),
         ),
         Flexible(
           child: FeeCardWidget(
-              icon: Icons.note_add_rounded,
-              attendence: 26,
-              fee: 210,
+              icon: "assets/svg/pencil.svg",
+              attendence: 0,
+              fee: 3000,
               title: "Next Month"),
         ),
       ],

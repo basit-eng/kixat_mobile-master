@@ -1,10 +1,10 @@
-import 'package:kixat/model/home/BestSellerProductResponse.dart';
-import 'package:kixat/model/home/CategoriesWithProductsResponse.dart';
-import 'package:kixat/model/home/FeaturedProductResponse.dart';
-import 'package:kixat/model/HomeSliderResponse.dart';
-import 'package:kixat/model/home/ManufacturersResponse.dart';
-import 'package:kixat/networking/ApiBaseHelper.dart';
-import 'package:kixat/networking/Endpoints.dart';
+import 'package:schoolapp/model/home/BestSellerProductResponse.dart';
+import 'package:schoolapp/model/home/CategoriesWithProductsResponse.dart';
+import 'package:schoolapp/model/home/FeaturedProductResponse.dart';
+import 'package:schoolapp/model/HomeSliderResponse.dart';
+import 'package:schoolapp/model/home/ManufacturersResponse.dart';
+import 'package:schoolapp/networking/ApiBaseHelper.dart';
+import 'package:schoolapp/networking/Endpoints.dart';
 
 class HomeRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

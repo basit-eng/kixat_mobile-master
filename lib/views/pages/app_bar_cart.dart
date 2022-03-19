@@ -3,10 +3,10 @@ import 'dart:ui';
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/nop_cart_icons.dart';
-import 'package:kixat/utils/AppConstants.dart';
-import 'package:kixat/views/pages/account/cart/shopping_cart_screen.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/nop_cart_icons.dart';
+import 'package:schoolapp/utils/AppConstants.dart';
+import 'package:schoolapp/views/pages/account/cart/shopping_cart_screen.dart';
 
 class AppBarCart extends StatefulWidget {
   @override

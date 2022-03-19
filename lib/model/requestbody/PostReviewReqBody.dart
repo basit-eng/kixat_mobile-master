@@ -1,4 +1,4 @@
-import 'package:kixat/model/ProductReviewResponse.dart';
+import 'package:schoolapp/model/ProductReviewResponse.dart';
 
 class PostReviewReqBody {
   PostReviewReqBody({
@@ -7,13 +7,15 @@ class PostReviewReqBody {
 
   PostReviewData data;
 
-  factory PostReviewReqBody.fromJson(Map<String, dynamic> json) => PostReviewReqBody(
-    data: json["Data"] == null ? null : PostReviewData.fromJson(json["Data"]),
-  );
+  factory PostReviewReqBody.fromJson(Map<String, dynamic> json) =>
+      PostReviewReqBody(
+        data:
+            json["Data"] == null ? null : PostReviewData.fromJson(json["Data"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "Data": data == null ? null : data.toJson(),
-  };
+        "Data": data == null ? null : data.toJson(),
+      };
 }
 
 class PostReviewData {
@@ -24,10 +26,13 @@ class PostReviewData {
   AddProductReview addProductReview;
 
   factory PostReviewData.fromJson(Map<String, dynamic> json) => PostReviewData(
-    addProductReview: json["AddProductReview"] == null ? null : AddProductReview.fromJson(json["AddProductReview"]),
-  );
+        addProductReview: json["AddProductReview"] == null
+            ? null
+            : AddProductReview.fromJson(json["AddProductReview"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "AddProductReview": addProductReview == null ? null : addProductReview.toJson(),
-  };
+        "AddProductReview":
+            addProductReview == null ? null : addProductReview.toJson(),
+      };
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/model/ShoppingCartResponse.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
+import 'package:schoolapp/model/ShoppingCartResponse.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
 
 class OrderTotalTable extends StatelessWidget {
   final _globalService = GlobalService();
@@ -12,27 +12,32 @@ class OrderTotalTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var rowNameStyle = Theme.of(context).textTheme.subtitle2.copyWith(
-      fontSize: 18,
-      fontWeight: FontWeight.bold,
-    );
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+        );
 
     var rowValueStyle = Theme.of(context).textTheme.subtitle2.copyWith(
-      color: Theme.of(context).primaryColor,
-      fontSize: 18,
-      fontWeight: FontWeight.bold,
-    );
+          color: Theme.of(context).primaryColor,
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+        );
 
-    var inBetweenSpace = SizedBox(height: 3,);
+    var inBetweenSpace = SizedBox(
+      height: 3,
+    );
 
     var discountValue = (orderTotals.subTotalDiscount?.isNotEmpty == true)
         ? orderTotals.subTotalDiscount
         : ((orderTotals.orderTotalDiscount?.isNotEmpty == true)
-        ? orderTotals.orderTotalDiscount
-        : '');
+            ? orderTotals.orderTotalDiscount
+            : '');
 
     return Column(
       children: [
-        Divider(height: 5, color: Colors.black,),
+        Divider(
+          height: 5,
+          color: Colors.black,
+        ),
         inBetweenSpace,
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,7 +70,8 @@ class OrderTotalTable extends StatelessWidget {
               child: Text(
                 orderTotals.shipping?.isNotEmpty == true
                     ? orderTotals.shipping
-                    :  _globalService.getString(Const.CALCULATED_DURING_CHECKOUT),
+                    : _globalService
+                        .getString(Const.CALCULATED_DURING_CHECKOUT),
                 style: rowValueStyle,
                 textAlign: TextAlign.end,
               ),
@@ -73,7 +79,7 @@ class OrderTotalTable extends StatelessWidget {
           ],
         ),
         inBetweenSpace,
-        if(discountValue?.isNotEmpty == true)
+        if (discountValue?.isNotEmpty == true)
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -110,8 +116,7 @@ class OrderTotalTable extends StatelessWidget {
               ),
             ],
           ),
-        if (orderTotals?.displayTax == true)
-          inBetweenSpace,
+        if (orderTotals?.displayTax == true) inBetweenSpace,
         if (orderTotals?.displayTaxRates == true)
           ListView.builder(
             physics: NeverScrollableScrollPhysics(),
@@ -124,8 +129,7 @@ class OrderTotalTable extends StatelessWidget {
                   " -- ${orderTotals.taxRates[index].value}");
             },
           ),
-        if (orderTotals?.displayTaxRates == true)
-          inBetweenSpace,
+        if (orderTotals?.displayTaxRates == true) inBetweenSpace,
         if (orderTotals?.giftCards?.isNotEmpty)
           ListView.builder(
             physics: NeverScrollableScrollPhysics(),
@@ -133,7 +137,8 @@ class OrderTotalTable extends StatelessWidget {
             scrollDirection: Axis.vertical,
             itemCount: orderTotals.giftCards.length,
             itemBuilder: (context, index) {
-              final textPart1 = '${_globalService.getString(Const.GIFT_CARD)} (${orderTotals.giftCards[index].couponCode})';
+              final textPart1 =
+                  '${_globalService.getString(Const.GIFT_CARD)} (${orderTotals.giftCards[index].couponCode})';
               final textPart2 = orderTotals.giftCards[index].remaining != null
                   ? '\n${_globalService.getStringWithNumberStr(Const.GIFT_CARD_REMAINING, orderTotals.giftCards[index].remaining)}'
                   : '';
@@ -156,29 +161,29 @@ class OrderTotalTable extends StatelessWidget {
               );
             },
           ),
-        if((orderTotals?.redeemedRewardPoints ?? 0) > 0)
-          ...[
-            inBetweenSpace,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Flexible(
-                  child: Text(
-                    _globalService.getStringWithNumber(Const.ORDER_REWARD_POINTS, orderTotals?.redeemedRewardPoints ?? 0),
-                    style: rowNameStyle,
-                  ),
+        if ((orderTotals?.redeemedRewardPoints ?? 0) > 0) ...[
+          inBetweenSpace,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Flexible(
+                child: Text(
+                  _globalService.getStringWithNumber(Const.ORDER_REWARD_POINTS,
+                      orderTotals?.redeemedRewardPoints ?? 0),
+                  style: rowNameStyle,
                 ),
-                Flexible(
-                  child: Text(
-                    orderTotals?.redeemedRewardPointsAmount ?? '',
-                    style: rowValueStyle,
-                  ),
+              ),
+              Flexible(
+                child: Text(
+                  orderTotals?.redeemedRewardPointsAmount ?? '',
+                  style: rowValueStyle,
                 ),
-              ],
-            ),
-          ],
+              ),
+            ],
+          ),
+        ],
         inBetweenSpace,
-        if(orderTotals.paymentMethodAdditionalFee != null)
+        if (orderTotals.paymentMethodAdditionalFee != null)
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -189,14 +194,16 @@ class OrderTotalTable extends StatelessWidget {
                 ),
               ),
               Flexible(
-                child: Text(orderTotals.paymentMethodAdditionalFee,
+                child: Text(
+                  orderTotals.paymentMethodAdditionalFee,
                   style: rowValueStyle,
                 ),
               ),
             ],
           ),
         inBetweenSpace,
-        if(orderTotals.willEarnRewardPoints != null && orderTotals.willEarnRewardPoints != 0)
+        if (orderTotals.willEarnRewardPoints != null &&
+            orderTotals.willEarnRewardPoints != 0)
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -229,7 +236,8 @@ class OrderTotalTable extends StatelessWidget {
               child: Text(
                 orderTotals.orderTotal?.isNotEmpty == true
                     ? orderTotals.orderTotal
-                    :  _globalService.getString(Const.CALCULATED_DURING_CHECKOUT),
+                    : _globalService
+                        .getString(Const.CALCULATED_DURING_CHECKOUT),
                 style: rowValueStyle,
                 textAlign: TextAlign.end,
               ),

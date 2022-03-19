@@ -1,4 +1,4 @@
-import 'package:kixat/model/CustomProperties.dart';
+import 'package:schoolapp/model/CustomProperties.dart';
 
 class GetAvatarResponse {
   GetAvatarResponse({
@@ -11,17 +11,23 @@ class GetAvatarResponse {
   String message;
   List<String> errorList;
 
-  factory GetAvatarResponse.fromJson(Map<String, dynamic> json) => GetAvatarResponse(
-    data: json["Data"] == null ? null : GetAvatarData.fromJson(json["Data"]),
-    message: json["Message"] == null ? null : json["Message"],
-    errorList: json["ErrorList"] == null ? null : List<String>.from(json["ErrorList"].map((x) => x)),
-  );
+  factory GetAvatarResponse.fromJson(Map<String, dynamic> json) =>
+      GetAvatarResponse(
+        data:
+            json["Data"] == null ? null : GetAvatarData.fromJson(json["Data"]),
+        message: json["Message"] == null ? null : json["Message"],
+        errorList: json["ErrorList"] == null
+            ? null
+            : List<String>.from(json["ErrorList"].map((x) => x)),
+      );
 
   Map<String, dynamic> toJson() => {
-    "Data": data == null ? null : data.toJson(),
-    "Message": message == null ? null : message,
-    "ErrorList": errorList == null ? null : List<dynamic>.from(errorList.map((x) => x)),
-  };
+        "Data": data == null ? null : data.toJson(),
+        "Message": message == null ? null : message,
+        "ErrorList": errorList == null
+            ? null
+            : List<dynamic>.from(errorList.map((x) => x)),
+      };
 }
 
 class GetAvatarData {
@@ -34,12 +40,15 @@ class GetAvatarData {
   CustomProperties customProperties;
 
   factory GetAvatarData.fromJson(Map<String, dynamic> json) => GetAvatarData(
-    avatarUrl: json["AvatarUrl"] == null ? null : json["AvatarUrl"],
-    customProperties: json["CustomProperties"] == null ? null : CustomProperties.fromJson(json["CustomProperties"]),
-  );
+        avatarUrl: json["AvatarUrl"] == null ? null : json["AvatarUrl"],
+        customProperties: json["CustomProperties"] == null
+            ? null
+            : CustomProperties.fromJson(json["CustomProperties"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "AvatarUrl": avatarUrl == null ? null : avatarUrl,
-    "CustomProperties": customProperties == null ? null : customProperties.toJson(),
-  };
+        "AvatarUrl": avatarUrl == null ? null : avatarUrl,
+        "CustomProperties":
+            customProperties == null ? null : customProperties.toJson(),
+      };
 }

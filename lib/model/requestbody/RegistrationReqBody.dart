@@ -1,5 +1,5 @@
-import 'package:kixat/model/RegisterFormResponse.dart';
-import 'package:kixat/model/requestbody/FormValue.dart';
+import 'package:schoolapp/model/RegisterFormResponse.dart';
+import 'package:schoolapp/model/requestbody/FormValue.dart';
 
 class RegistrationReqBody {
   RegistrationReqBody({
@@ -10,18 +10,15 @@ class RegistrationReqBody {
   RegisterFormData data;
   List<FormValue> formValues;
 
-  factory RegistrationReqBody.fromJson(Map<String, dynamic> json) => RegistrationReqBody(
-    data: RegisterFormData.fromJson(json["Data"]),
-    formValues: List<FormValue>.from(json["FormValues"].map((x) => FormValue.fromJson(x))),
-  );
+  factory RegistrationReqBody.fromJson(Map<String, dynamic> json) =>
+      RegistrationReqBody(
+        data: RegisterFormData.fromJson(json["Data"]),
+        formValues: List<FormValue>.from(
+            json["FormValues"].map((x) => FormValue.fromJson(x))),
+      );
 
   Map<String, dynamic> toJson() => {
-    "Data": data.toJson(),
-    "FormValues": List<dynamic>.from(formValues.map((x) => x.toJson())),
-  };
+        "Data": data.toJson(),
+        "FormValues": List<dynamic>.from(formValues.map((x) => x.toJson())),
+      };
 }
-
-
-
-
-

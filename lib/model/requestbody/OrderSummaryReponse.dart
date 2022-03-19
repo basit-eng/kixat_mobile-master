@@ -1,4 +1,4 @@
-import 'package:kixat/model/SaveBillingResponse.dart';
+import 'package:schoolapp/model/SaveBillingResponse.dart';
 
 class OrderSummaryResponse {
   OrderSummaryResponse({
@@ -11,15 +11,20 @@ class OrderSummaryResponse {
   String message;
   List<String> errorList;
 
-  factory OrderSummaryResponse.fromJson(Map<String, dynamic> json) => OrderSummaryResponse(
-    data: json["Data"] == null ? null : ConfirmModel.fromJson(json["Data"]),
-    message: json["Message"] == null ? null : json["Message"],
-    errorList: json["ErrorList"] == null ? null : List<String>.from(json["ErrorList"].map((x) => x)),
-  );
+  factory OrderSummaryResponse.fromJson(Map<String, dynamic> json) =>
+      OrderSummaryResponse(
+        data: json["Data"] == null ? null : ConfirmModel.fromJson(json["Data"]),
+        message: json["Message"] == null ? null : json["Message"],
+        errorList: json["ErrorList"] == null
+            ? null
+            : List<String>.from(json["ErrorList"].map((x) => x)),
+      );
 
   Map<String, dynamic> toJson() => {
-    "Data": data == null ? null : data.toJson(),
-    "Message": message == null ? null : message,
-    "ErrorList": errorList == null ? null : List<dynamic>.from(errorList.map((x) => x)),
-  };
+        "Data": data == null ? null : data.toJson(),
+        "Message": message == null ? null : message,
+        "ErrorList": errorList == null
+            ? null
+            : List<dynamic>.from(errorList.map((x) => x)),
+      };
 }

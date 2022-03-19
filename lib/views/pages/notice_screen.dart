@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:kixat/views/customWidget/CustomAppBar.dart';
+import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 
 class NoticeScreen extends StatelessWidget {

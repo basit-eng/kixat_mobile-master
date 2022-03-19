@@ -1,14 +1,14 @@
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:kixat/model/CustomAttribute.dart';
-import 'package:kixat/model/requestbody/FormValue.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/AttributeControlType.dart';
-import 'package:kixat/utils/Const.dart';
-import 'package:kixat/utils/ValidationMixin.dart';
-import 'package:kixat/utils/extensions.dart';
-import 'package:kixat/utils/utility.dart';
-import 'package:kixat/views/customWidget/cached_image.dart';
+import 'package:schoolapp/model/CustomAttribute.dart';
+import 'package:schoolapp/model/requestbody/FormValue.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/AttributeControlType.dart';
+import 'package:schoolapp/utils/Const.dart';
+import 'package:schoolapp/utils/ValidationMixin.dart';
+import 'package:schoolapp/utils/extensions.dart';
+import 'package:schoolapp/utils/utility.dart';
+import 'package:schoolapp/views/customWidget/cached_image.dart';
 
 class CustomAttributeManager with ValidationMixin {
   Map<num, List<AttributeValue>> _attrMap;

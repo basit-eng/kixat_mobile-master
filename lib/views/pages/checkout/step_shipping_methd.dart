@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/bloc/checkout_bloc.dart';
-import 'package:kixat/views/customWidget/CustomButton.dart';
-import 'package:kixat/model/SaveBillingResponse.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
-import 'package:kixat/utils/utility.dart';
+import 'package:schoolapp/bloc/checkout_bloc.dart';
+import 'package:schoolapp/views/customWidget/CustomButton.dart';
+import 'package:schoolapp/model/SaveBillingResponse.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
+import 'package:schoolapp/utils/utility.dart';
 
 class StepShippingMethod extends StatefulWidget {
   final CheckoutBloc bloc;

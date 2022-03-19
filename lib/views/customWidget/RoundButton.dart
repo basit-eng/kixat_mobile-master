@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/utils/utility.dart';
+import 'package:schoolapp/utils/utility.dart';
 
 class RoundButton extends StatelessWidget {
   final double radius;
@@ -23,10 +23,14 @@ class RoundButton extends StatelessWidget {
         height: radius,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: isDarkThemeEnabled(context) ? Color(0xFF4C4A4A) : Color(0xFFF6F6FA),
+          color: isDarkThemeEnabled(context)
+              ? Color(0xFF4C4A4A)
+              : Color(0xFFF6F6FA),
           boxShadow: [
             BoxShadow(
-              color: isDarkThemeEnabled(context) ? Color(0xFF3D3C3C) : Colors.grey[300],
+              color: isDarkThemeEnabled(context)
+                  ? Color(0xFF3D3C3C)
+                  : Colors.grey[300],
               blurRadius: 2.0,
               spreadRadius: 0.0,
               offset: Offset(1.5, 1.5), // shadow direction: bottom right

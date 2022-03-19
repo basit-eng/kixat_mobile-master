@@ -1,40 +1,38 @@
 import 'dart:async';
 
-import 'package:kixat/bloc/base_bloc.dart';
-import 'package:kixat/model/ChangePasswordResponse.dart';
-import 'package:kixat/model/LoginFormResponse.dart';
-import 'package:kixat/model/PasswordRecoveryResponse.dart';
-import 'package:kixat/model/UserLoginResponse.dart';
-import 'package:kixat/model/requestbody/UserLoginReqBody.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/AuthRepository.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
+import 'package:schoolapp/bloc/base_bloc.dart';
+import 'package:schoolapp/model/ChangePasswordResponse.dart';
+import 'package:schoolapp/model/LoginFormResponse.dart';
+import 'package:schoolapp/model/PasswordRecoveryResponse.dart';
+import 'package:schoolapp/model/UserLoginResponse.dart';
+import 'package:schoolapp/model/requestbody/UserLoginReqBody.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/AuthRepository.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
 
 class AuthBloc implements BaseBloc {
   AuthRepository _repository;
-  StreamController _scGetLogin, _scPostLogin, _scLogout,
-      _scPassRecover, _scPassChange, _scPassChangePost;
+  StreamController _scGetLogin,
+      _scPostLogin,
+      _scLogout,
+      _scPassRecover,
+      _scPassChange,
+      _scPassChangePost;
 
-  StreamSink<ApiResponse<LoginFormData>> get loginFormSink =>
-      _scGetLogin.sink;
-  Stream<ApiResponse<LoginFormData>> get loginFormStream =>
-      _scGetLogin.stream;
+  StreamSink<ApiResponse<LoginFormData>> get loginFormSink => _scGetLogin.sink;
+  Stream<ApiResponse<LoginFormData>> get loginFormStream => _scGetLogin.stream;
 
   StreamSink<ApiResponse<UserLoginData>> get loginResponseSink =>
       _scPostLogin.sink;
   Stream<ApiResponse<UserLoginData>> get loginResponseStream =>
       _scPostLogin.stream;
 
-  StreamSink<ApiResponse<String>> get logoutResponseSink =>
-      _scLogout.sink;
-  Stream<ApiResponse<String>> get logoutResponseStream =>
-      _scLogout.stream;
+  StreamSink<ApiResponse<String>> get logoutResponseSink => _scLogout.sink;
+  Stream<ApiResponse<String>> get logoutResponseStream => _scLogout.stream;
 
-  StreamSink<ApiResponse<String>> get passRecoverSink =>
-      _scPassRecover.sink;
-  Stream<ApiResponse<String>> get passRecoverStream =>
-      _scPassRecover.stream;
+  StreamSink<ApiResponse<String>> get passRecoverSink => _scPassRecover.sink;
+  Stream<ApiResponse<String>> get passRecoverStream => _scPassRecover.stream;
 
   StreamSink<ApiResponse<ChangePasswordData>> get passChangeSink =>
       _scPassChange.sink;
@@ -83,7 +81,7 @@ class AuthBloc implements BaseBloc {
       print(e.toString());
     }
   }
-  
+
   postPasswordRecoverRequest(String email) async {
     passRecoverSink.add(ApiResponse.loading());
     PasswordRecoveryResponse reqBody = PasswordRecoveryResponse(
@@ -93,7 +91,8 @@ class AuthBloc implements BaseBloc {
     );
 
     try {
-      PasswordRecoveryResponse response = await _repository.postPasswordRecoverRequest(reqBody);
+      PasswordRecoveryResponse response =
+          await _repository.postPasswordRecoverRequest(reqBody);
       passRecoverSink.add(ApiResponse.completed(response.message));
     } catch (e) {
       passRecoverSink.add(ApiResponse.error(e.toString()));
@@ -131,7 +130,8 @@ class AuthBloc implements BaseBloc {
     postPasswordChangeSink.add(ApiResponse.loading());
 
     try {
-      ChangePasswordResponse response = await _repository.postChangePassForm(reqBody);
+      ChangePasswordResponse response =
+          await _repository.postChangePassForm(reqBody);
       postPasswordChangeSink.add(ApiResponse.completed(response.message));
     } catch (e) {
       postPasswordChangeSink.add(ApiResponse.error(e.toString()));
@@ -148,5 +148,4 @@ class AuthBloc implements BaseBloc {
     _scPassChange?.close();
     _scPassChangePost?.close();
   }
-
 }

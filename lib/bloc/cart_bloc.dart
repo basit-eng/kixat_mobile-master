@@ -1,25 +1,30 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:kixat/bloc/base_bloc.dart';
-import 'package:kixat/model/FileUploadResponse.dart';
-import 'package:kixat/model/PostCheckoutAttrResponse.dart';
-import 'package:kixat/model/ShoppingCartResponse.dart';
-import 'package:kixat/model/requestbody/FormValue.dart';
-import 'package:kixat/model/requestbody/FormValuesRequestBody.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/CartRepository.dart';
+import 'package:schoolapp/bloc/base_bloc.dart';
+import 'package:schoolapp/model/FileUploadResponse.dart';
+import 'package:schoolapp/model/PostCheckoutAttrResponse.dart';
+import 'package:schoolapp/model/ShoppingCartResponse.dart';
+import 'package:schoolapp/model/requestbody/FormValue.dart';
+import 'package:schoolapp/model/requestbody/FormValuesRequestBody.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/CartRepository.dart';
 
 class CartBloc extends BaseBloc {
   CartRepository _repository;
-  StreamController _scGetCart, _loaderSink, _scLaunchCheckoutScreen,
-      _scErrorMsg, _scFileUpload;
+  StreamController _scGetCart,
+      _loaderSink,
+      _scLaunchCheckoutScreen,
+      _scErrorMsg,
+      _scFileUpload;
 
   StreamSink<ApiResponse<ShoppingCartResponse>> get cartSink => _scGetCart.sink;
   Stream<ApiResponse<ShoppingCartResponse>> get cartStream => _scGetCart.stream;
 
-  StreamSink<ApiResponse<FileUploadData>> get fileUploadSink => _scFileUpload.sink;
-  Stream<ApiResponse<FileUploadData>> get fileUploadStream => _scFileUpload.stream;
+  StreamSink<ApiResponse<FileUploadData>> get fileUploadSink =>
+      _scFileUpload.sink;
+  Stream<ApiResponse<FileUploadData>> get fileUploadStream =>
+      _scFileUpload.stream;
 
   StreamSink<bool> get loaderSink => _loaderSink.sink;
   Stream<bool> get loaderStream => _loaderSink.stream;
@@ -58,9 +63,9 @@ class CartBloc extends BaseBloc {
   updateItemQuantity(CartItem product, num quantity) async {
     List<FormValue> formValues = [];
     formValues.add(FormValue(
-        key: 'itemquantity${product.id}',
-        value: quantity.toString()));
-    FormValuesRequestBody requestBody = FormValuesRequestBody(formValues: formValues);
+        key: 'itemquantity${product.id}', value: quantity.toString()));
+    FormValuesRequestBody requestBody =
+        FormValuesRequestBody(formValues: formValues);
 
     await _updateCart(requestBody);
   }
@@ -80,7 +85,8 @@ class CartBloc extends BaseBloc {
     loaderSink.add(true);
 
     try {
-      ShoppingCartResponse response = await _repository.updateShoppingCart(requestBody);
+      ShoppingCartResponse response =
+          await _repository.updateShoppingCart(requestBody);
       cartSink.add(ApiResponse.completed(response));
       loaderSink.add(false);
     } catch (e) {
@@ -98,7 +104,8 @@ class CartBloc extends BaseBloc {
     );
 
     try {
-      PostCheckoutAttrResponse response = await _repository.postCheckoutAttribute(reqBody);
+      PostCheckoutAttrResponse response =
+          await _repository.postCheckoutAttribute(reqBody);
       cartSink.add(ApiResponse.completed(ShoppingCartResponse(
         data: CartData(
           cart: response.cart,
@@ -115,7 +122,7 @@ class CartBloc extends BaseBloc {
     }
   }
 
-  applyDiscountCoupon(String couponCode) async{
+  applyDiscountCoupon(String couponCode) async {
     FormValuesRequestBody requestBody = FormValuesRequestBody(formValues: [
       FormValue(
         key: 'discountcouponcode',
@@ -126,7 +133,8 @@ class CartBloc extends BaseBloc {
     loaderSink.add(true);
 
     try {
-      ShoppingCartResponse response = await _repository.applyCoupon(requestBody);
+      ShoppingCartResponse response =
+          await _repository.applyCoupon(requestBody);
       cartSink.add(ApiResponse.completed(response));
       loaderSink.add(false);
 
@@ -136,8 +144,7 @@ class CartBloc extends BaseBloc {
       });
       couponMessage = couponMessage.trimRight();
 
-      if(couponMessage.isNotEmpty)
-        errorMsgSink.add(couponMessage);
+      if (couponMessage.isNotEmpty) errorMsgSink.add(couponMessage);
     } catch (e) {
       cartSink.add(ApiResponse.error(e.toString()));
       loaderSink.add(false);
@@ -145,7 +152,7 @@ class CartBloc extends BaseBloc {
     }
   }
 
-  removeDiscountCoupon(AppliedDiscountsWithCode coupon) async{
+  removeDiscountCoupon(AppliedDiscountsWithCode coupon) async {
     FormValuesRequestBody requestBody = FormValuesRequestBody(formValues: [
       FormValue(
         key: 'removediscount-${coupon.id}',
@@ -156,7 +163,8 @@ class CartBloc extends BaseBloc {
     loaderSink.add(true);
 
     try {
-      ShoppingCartResponse response = await _repository.removeCoupon(requestBody);
+      ShoppingCartResponse response =
+          await _repository.removeCoupon(requestBody);
       cartSink.add(ApiResponse.completed(response));
       loaderSink.add(false);
 
@@ -166,8 +174,7 @@ class CartBloc extends BaseBloc {
       });
       couponMessage = couponMessage.trimRight();
 
-      if(couponMessage.isNotEmpty)
-        errorMsgSink.add(couponMessage);
+      if (couponMessage.isNotEmpty) errorMsgSink.add(couponMessage);
     } catch (e) {
       cartSink.add(ApiResponse.error(e.toString()));
       loaderSink.add(false);
@@ -175,7 +182,7 @@ class CartBloc extends BaseBloc {
     }
   }
 
-  applyGiftCard(String couponCode) async{
+  applyGiftCard(String couponCode) async {
     FormValuesRequestBody requestBody = FormValuesRequestBody(formValues: [
       FormValue(
         key: 'giftcardcouponcode',
@@ -186,11 +193,12 @@ class CartBloc extends BaseBloc {
     loaderSink.add(true);
 
     try {
-      ShoppingCartResponse response = await _repository.applyGiftCard(requestBody);
+      ShoppingCartResponse response =
+          await _repository.applyGiftCard(requestBody);
       cartSink.add(ApiResponse.completed(response));
       loaderSink.add(false);
 
-      if(response.data?.cart?.giftCardBox?.message?.isNotEmpty == true)
+      if (response.data?.cart?.giftCardBox?.message?.isNotEmpty == true)
         errorMsgSink.add(response.data?.cart?.giftCardBox?.message);
     } catch (e) {
       cartSink.add(ApiResponse.error(e.toString()));
@@ -210,11 +218,12 @@ class CartBloc extends BaseBloc {
     loaderSink.add(true);
 
     try {
-      ShoppingCartResponse response = await _repository.removeGiftCard(requestBody);
+      ShoppingCartResponse response =
+          await _repository.removeGiftCard(requestBody);
       cartSink.add(ApiResponse.completed(response));
       loaderSink.add(false);
 
-      if(response.data?.cart?.giftCardBox?.message?.isNotEmpty == true)
+      if (response.data?.cart?.giftCardBox?.message?.isNotEmpty == true)
         errorMsgSink.add(response.data?.cart?.giftCardBox?.message);
     } catch (e) {
       cartSink.add(ApiResponse.error(e.toString()));
@@ -227,7 +236,8 @@ class CartBloc extends BaseBloc {
     fileUploadSink.add(ApiResponse.loading());
 
     try {
-      FileUploadResponse response = await _repository.uploadFile(filePath, attributeId.toString());
+      FileUploadResponse response =
+          await _repository.uploadFile(filePath, attributeId.toString());
       var uploadFileData = response.data;
       uploadFileData.attributedId = attributeId;
 
@@ -246,5 +256,4 @@ class CartBloc extends BaseBloc {
     _scFileUpload?.close();
     _scLaunchCheckoutScreen?.close();
   }
-
 }

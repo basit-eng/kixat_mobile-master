@@ -1,6 +1,6 @@
-import 'package:kixat/model/NewProductResponse.dart';
-import 'package:kixat/networking/ApiBaseHelper.dart';
-import 'package:kixat/networking/Endpoints.dart';
+import 'package:schoolapp/model/NewProductResponse.dart';
+import 'package:schoolapp/networking/ApiBaseHelper.dart';
+import 'package:schoolapp/networking/Endpoints.dart';
 
 class NewProductRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

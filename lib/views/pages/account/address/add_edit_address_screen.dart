@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/bloc/address_bloc.dart';
-import 'package:kixat/views/customWidget/AddressForm.dart';
-import 'package:kixat/views/customWidget/CustomAppBar.dart';
-import 'package:kixat/views/customWidget/CustomButton.dart';
-import 'package:kixat/views/customWidget/loading_dialog.dart';
-import 'package:kixat/model/GetBillingAddressResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/AppConstants.dart';
-import 'package:kixat/utils/ButtonShape.dart';
-import 'package:kixat/utils/Const.dart';
-import 'package:kixat/utils/CustomAttributeManager.dart';
-import 'package:kixat/utils/utility.dart';
-import 'package:kixat/views/customWidget/error.dart';
-import 'package:kixat/views/customWidget/loading.dart';
+import 'package:schoolapp/bloc/address_bloc.dart';
+import 'package:schoolapp/views/customWidget/AddressForm.dart';
+import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
+import 'package:schoolapp/views/customWidget/CustomButton.dart';
+import 'package:schoolapp/views/customWidget/loading_dialog.dart';
+import 'package:schoolapp/model/GetBillingAddressResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/AppConstants.dart';
+import 'package:schoolapp/utils/ButtonShape.dart';
+import 'package:schoolapp/utils/Const.dart';
+import 'package:schoolapp/utils/CustomAttributeManager.dart';
+import 'package:schoolapp/utils/utility.dart';
+import 'package:schoolapp/views/customWidget/error.dart';
+import 'package:schoolapp/views/customWidget/loading.dart';
 
 class AddOrEditAddressScreen extends StatefulWidget {
   static const routeName = '/address-add-edit';

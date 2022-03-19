@@ -1,21 +1,21 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:kixat/bloc/base_bloc.dart';
-import 'package:kixat/model/AvailableOption.dart';
-import 'package:kixat/model/GetBillingAddressResponse.dart';
-import 'package:kixat/model/SaveBillingResponse.dart';
-import 'package:kixat/model/requestbody/FormValue.dart';
-import 'package:kixat/model/requestbody/FormValuesRequestBody.dart';
-import 'package:kixat/model/requestbody/OrderSummaryReponse.dart';
-import 'package:kixat/model/requestbody/SaveBillingReqBody.dart';
-import 'package:kixat/model/requestbody/SavePaymentReqBody.dart';
-import 'package:kixat/model/requestbody/SaveShippingReqBody.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/CheckoutRepository.dart';
-import 'package:kixat/utils/CheckoutConstants.dart';
-import 'package:kixat/utils/extensions.dart';
-import 'package:kixat/utils/utility.dart';
+import 'package:schoolapp/bloc/base_bloc.dart';
+import 'package:schoolapp/model/AvailableOption.dart';
+import 'package:schoolapp/model/GetBillingAddressResponse.dart';
+import 'package:schoolapp/model/SaveBillingResponse.dart';
+import 'package:schoolapp/model/requestbody/FormValue.dart';
+import 'package:schoolapp/model/requestbody/FormValuesRequestBody.dart';
+import 'package:schoolapp/model/requestbody/OrderSummaryReponse.dart';
+import 'package:schoolapp/model/requestbody/SaveBillingReqBody.dart';
+import 'package:schoolapp/model/requestbody/SavePaymentReqBody.dart';
+import 'package:schoolapp/model/requestbody/SaveShippingReqBody.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/CheckoutRepository.dart';
+import 'package:schoolapp/utils/CheckoutConstants.dart';
+import 'package:schoolapp/utils/extensions.dart';
+import 'package:schoolapp/utils/utility.dart';
 
 class CheckoutBloc implements BaseBloc {
   CheckoutRepository _repository;
@@ -25,7 +25,8 @@ class CheckoutBloc implements BaseBloc {
 
   // address
   AvailableOption selectedCountry;
-  ApiResponse<List<AvailableOption>> statesDropdownInitialData = ApiResponse.error('');
+  ApiResponse<List<AvailableOption>> statesDropdownInitialData =
+      ApiResponse.error('');
 
   // billing address
   List<Address> existingBillingAddress;
@@ -54,21 +55,28 @@ class CheckoutBloc implements BaseBloc {
   StreamSink<bool> get loaderSink => _scLoader.sink;
   Stream<bool> get loaderStream => _scLoader.stream;
 
-  StreamSink<ApiResponse<GetBillingAddressResponse>> get getBillingSink => _scGetBilling.sink;
-  Stream<ApiResponse<GetBillingAddressResponse>> get getBillingStream => _scGetBilling.stream;
+  StreamSink<ApiResponse<GetBillingAddressResponse>> get getBillingSink =>
+      _scGetBilling.sink;
+  Stream<ApiResponse<GetBillingAddressResponse>> get getBillingStream =>
+      _scGetBilling.stream;
 
-  StreamSink<ApiResponse<CheckoutPostResponse>> get checkoutPostSink => _scCheckoutPost.sink;
-  Stream<ApiResponse<CheckoutPostResponse>> get checkoutPostStream => _scCheckoutPost.stream;
+  StreamSink<ApiResponse<CheckoutPostResponse>> get checkoutPostSink =>
+      _scCheckoutPost.sink;
+  Stream<ApiResponse<CheckoutPostResponse>> get checkoutPostStream =>
+      _scCheckoutPost.stream;
 
-  StreamSink<ApiResponse<List<AvailableOption>>> get statesListSink => _scStates.sink;
-  Stream<ApiResponse<List<AvailableOption>>> get statesListStream => _scStates.stream;
+  StreamSink<ApiResponse<List<AvailableOption>>> get statesListSink =>
+      _scStates.sink;
+  Stream<ApiResponse<List<AvailableOption>>> get statesListStream =>
+      _scStates.stream;
 
   CheckoutBloc() {
     _repository = CheckoutRepository();
     _scGetBilling = StreamController<ApiResponse<GetBillingAddressResponse>>();
     _scCheckoutPost = StreamController<ApiResponse<CheckoutPostResponse>>();
     _scLoader = StreamController<bool>();
-    _scStates = StreamController<ApiResponse<List<AvailableOption>>>.broadcast();
+    _scStates =
+        StreamController<ApiResponse<List<AvailableOption>>>.broadcast();
   }
 
   @override
@@ -83,19 +91,25 @@ class CheckoutBloc implements BaseBloc {
     getBillingSink.add(ApiResponse.loading());
 
     try {
-      GetBillingAddressResponse response = await _repository.fetchBillingAddress();
+      GetBillingAddressResponse response =
+          await _repository.fetchBillingAddress();
 
-      this.existingBillingAddress = [...response.data.billingAddress.existingAddresses];
+      this.existingBillingAddress = [
+        ...response.data.billingAddress.existingAddresses
+      ];
       this.existingBillingAddress.add(Address(
-        id: -1,
-      )); // New address option to show on dropdown menu
+            id: -1,
+          )); // New address option to show on dropdown menu
 
-      showNewBillingAddress = response.data?.billingAddress?.existingAddresses?.isEmpty == true;
-      shipToSameAddress = response.data?.billingAddress?.shipToSameAddress ?? false;
+      showNewBillingAddress =
+          response.data?.billingAddress?.existingAddresses?.isEmpty == true;
+      shipToSameAddress =
+          response.data?.billingAddress?.shipToSameAddress ?? false;
       selectedExistingBillingAddress =
           response.data?.billingAddress?.existingAddresses?.safeFirst();
-      selectedCountry = response.data?.billingAddress
-          ?.billingNewAddress?.availableCountries?.safeFirst();
+      selectedCountry = response
+          .data?.billingAddress?.billingNewAddress?.availableCountries
+          ?.safeFirst();
 
       getBillingSink.add(ApiResponse.completed(response));
     } catch (e) {
@@ -112,7 +126,6 @@ class CheckoutBloc implements BaseBloc {
 
       statesDropdownInitialData = ApiResponse.completed(stateList);
       statesListSink.add(statesDropdownInitialData);
-
     } catch (e) {
       statesDropdownInitialData = ApiResponse.error(e);
       statesListSink.add(ApiResponse.completed(List<AvailableOption>.empty()));
@@ -124,7 +137,7 @@ class CheckoutBloc implements BaseBloc {
     @required bool newAddress,
     List<FormValue> formValue,
     Address address,
-  }) async{
+  }) async {
     SaveBillingReqBody reqBody;
 
     if (!newAddress) {
@@ -150,7 +163,8 @@ class CheckoutBloc implements BaseBloc {
 
     checkoutPostSink.add(ApiResponse.loading());
     try {
-      CheckoutPostResponse response = await _repository.saveBillingAddress(reqBody);
+      CheckoutPostResponse response =
+          await _repository.saveBillingAddress(reqBody);
       this.currentStep = response?.data?.nextStep ?? -1;
 
       statesDropdownInitialData = ApiResponse.error('');
@@ -211,20 +225,18 @@ class CheckoutBloc implements BaseBloc {
     }
   }
 
-  void saveShippingMethod() async{
-    FormValuesRequestBody reqBody = FormValuesRequestBody(
-      formValues: [
-        FormValue(
+  void saveShippingMethod() async {
+    FormValuesRequestBody reqBody = FormValuesRequestBody(formValues: [
+      FormValue(
           key: 'shippingoption',
-          value: '${this.selectedShippingMethod.name}___${this
-              .selectedShippingMethod.shippingRateComputationMethodSystemName}'
-        )
-      ]
-    );
+          value:
+              '${this.selectedShippingMethod.name}___${this.selectedShippingMethod.shippingRateComputationMethodSystemName}')
+    ]);
 
     checkoutPostSink.add(ApiResponse.loading());
     try {
-      CheckoutPostResponse response = await _repository.saveShippingMethod(reqBody);
+      CheckoutPostResponse response =
+          await _repository.saveShippingMethod(reqBody);
       this.currentStep = response?.data?.nextStep ?? -1;
 
       checkoutPostSink.add(ApiResponse.completed(response));
@@ -234,20 +246,19 @@ class CheckoutBloc implements BaseBloc {
     }
   }
 
-  void savePaymentMethod() async{
+  void savePaymentMethod() async {
     var reqBody = SavePaymentReqBody(
-      data: SavePaymentData(useRewardPoints: this.userRewardPoint),
-      formValues: [
-        FormValue(
-            key: 'paymentmethod',
-            value: this.selectedPaymentMethod.paymentMethodSystemName
-        ),
-      ]
-    );
+        data: SavePaymentData(useRewardPoints: this.userRewardPoint),
+        formValues: [
+          FormValue(
+              key: 'paymentmethod',
+              value: this.selectedPaymentMethod.paymentMethodSystemName),
+        ]);
 
     checkoutPostSink.add(ApiResponse.loading());
     try {
-      CheckoutPostResponse response = await _repository.savePaymentMethod(reqBody);
+      CheckoutPostResponse response =
+          await _repository.savePaymentMethod(reqBody);
       this.currentStep = response?.data?.nextStep ?? -1;
 
       checkoutPostSink.add(ApiResponse.completed(response));
@@ -257,7 +268,7 @@ class CheckoutBloc implements BaseBloc {
     }
   }
 
-  void getConfirmOrderData() async{
+  void getConfirmOrderData() async {
     checkoutPostSink.add(ApiResponse.loading());
     try {
       OrderSummaryResponse response = await _repository.getConfirmOrder();
@@ -266,7 +277,8 @@ class CheckoutBloc implements BaseBloc {
       checkoutPostSink.add(
         ApiResponse.completed(
           CheckoutPostResponse(
-            data: CheckoutPostResponseData(nextStep: 6, confirmModel: response.data),
+            data: CheckoutPostResponseData(
+                nextStep: 6, confirmModel: response.data),
           ),
         ),
       );
@@ -276,7 +288,7 @@ class CheckoutBloc implements BaseBloc {
     }
   }
 
-  void confirmOrder() async{
+  void confirmOrder() async {
     checkoutPostSink.add(ApiResponse.loading());
     try {
       CheckoutPostResponse response = await _repository.confirmOrder();
@@ -290,7 +302,7 @@ class CheckoutBloc implements BaseBloc {
   }
 
   /// Not updating UI for this API call
-  void orderComplete() async{
+  void orderComplete() async {
     checkoutPostSink.add(ApiResponse.loading());
     try {
       CheckoutPostResponse response = await _repository.orderComplete();
@@ -305,25 +317,26 @@ class CheckoutBloc implements BaseBloc {
   }
 
   void gotoNextStep(int step) {
-    if(step == CheckoutConstants.ConfirmOrder) {
+    if (step == CheckoutConstants.ConfirmOrder) {
       getConfirmOrderData();
-    } else if(step == CheckoutConstants.Completed) {
+    } else if (step == CheckoutConstants.Completed) {
       checkoutPostSink.add(
         ApiResponse.completed(
           CheckoutPostResponse(
-            data: CheckoutPostResponseData(nextStep: CheckoutConstants.Completed),
+            data:
+                CheckoutPostResponseData(nextStep: CheckoutConstants.Completed),
           ),
         ),
       );
-    } else if(step == CheckoutConstants.LeaveCheckout) {
+    } else if (step == CheckoutConstants.LeaveCheckout) {
       checkoutPostSink.add(
         ApiResponse.completed(
           CheckoutPostResponse(
-            data: CheckoutPostResponseData(nextStep: CheckoutConstants.LeaveCheckout),
+            data: CheckoutPostResponseData(
+                nextStep: CheckoutConstants.LeaveCheckout),
           ),
         ),
       );
     }
   }
-
 }

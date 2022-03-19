@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/ScopedModelWrapper.dart';
-import 'package:kixat/utils/sign_config.dart';
-import 'package:kixat/utils/utility.dart';
+import 'package:schoolapp/ScopedModelWrapper.dart';
+import 'package:schoolapp/utils/sign_config.dart';
+import 'package:schoolapp/utils/utility.dart';
 
 class Styles {
   static ThemeData darkTheme(AppModel model) {

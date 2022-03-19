@@ -1,14 +1,15 @@
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
 
 class ApiResponse<T> {
-
   Status status;
   T data;
   String message;
 
   ApiResponse.loading([String message]) {
-    this.message = message == null ? GlobalService().getString(Const.COMMON_PLEASE_WAIT) : message;
+    this.message = message == null
+        ? GlobalService().getString(Const.COMMON_PLEASE_WAIT)
+        : message;
     status = Status.LOADING;
   }
 

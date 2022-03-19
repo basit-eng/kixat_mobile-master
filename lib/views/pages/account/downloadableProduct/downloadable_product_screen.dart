@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/bloc/downloadable_prod_bloc.dart';
-import 'package:kixat/views/customWidget/CustomAppBar.dart';
-import 'package:kixat/views/customWidget/error.dart';
-import 'package:kixat/views/customWidget/loading.dart';
-import 'package:kixat/views/customWidget/loading_dialog.dart';
-import 'package:kixat/model/DownloadableProductResponse.dart';
-import 'package:kixat/model/UserAgreementResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
-import 'package:kixat/utils/utility.dart';
+import 'package:schoolapp/bloc/downloadable_prod_bloc.dart';
+import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
+import 'package:schoolapp/views/customWidget/error.dart';
+import 'package:schoolapp/views/customWidget/loading.dart';
+import 'package:schoolapp/views/customWidget/loading_dialog.dart';
+import 'package:schoolapp/model/DownloadableProductResponse.dart';
+import 'package:schoolapp/model/UserAgreementResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
+import 'package:schoolapp/utils/utility.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class DownloadableProductScreen extends StatefulWidget {

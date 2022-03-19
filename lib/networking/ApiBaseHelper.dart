@@ -6,11 +6,11 @@ import 'package:http/http.dart' as http;
 import 'package:http_parser/http_parser.dart';
 import 'package:jaguar_jwt/jaguar_jwt.dart' as jwt;
 import 'package:mime/mime.dart';
-import 'package:kixat/model/BaseResponse.dart';
-import 'package:kixat/networking/Endpoints.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/AppConstants.dart';
-import 'package:kixat/utils/FileResponse.dart';
+import 'package:schoolapp/model/BaseResponse.dart';
+import 'package:schoolapp/networking/Endpoints.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/AppConstants.dart';
+import 'package:schoolapp/utils/FileResponse.dart';
 
 import 'AppException.dart';
 
@@ -72,20 +72,17 @@ class ApiBaseHelper {
     final mimePart2 = mimeSplitted.length > 1 ? mimeSplitted[1] : 'unknown';
     final fileName = filePath.split('/').last ?? 'uploadedFile';
 
-    print('Multipart Post, url $url, file: $filePath, mime: $mimePart1/$mimePart2');
+    print(
+        'Multipart Post, url $url, file: $filePath, mime: $mimePart1/$mimePart2');
 
     try {
-      request.files.add(http.MultipartFile(
-        'file',
-        File(filePath).readAsBytes().asStream(),
-        File(filePath).lengthSync(),
-        filename: fileName,
-        contentType: MediaType(mimePart1, mimePart2)
-      ));
+      request.files.add(http.MultipartFile('file',
+          File(filePath).readAsBytes().asStream(), File(filePath).lengthSync(),
+          filename: fileName, contentType: MediaType(mimePart1, mimePart2)));
       var responseStream = await request.send();
       var response = await http.Response.fromStream(responseStream);
       responseJson = _returnResponse(response);
-    } catch(e) {
+    } catch (e) {
       print(e.toString());
     }
 
@@ -103,20 +100,23 @@ class ApiBaseHelper {
 
       var contentType = response.headers['content-type'] ?? '';
 
-      if(contentType.contains('application/json')) {
+      if (contentType.contains('application/json')) {
         responseJson = FileResponse(jsonStr: _returnResponse(response));
       } else {
-        List<String> tokens = response.headers['content-disposition']?.split(";") ?? [];
+        List<String> tokens =
+            response.headers['content-disposition']?.split(";") ?? [];
         String filename = 'new_file.${contentType.split('/').last}';
         for (var i = 0; i < tokens.length; i++) {
-          if (tokens[i].contains('filename') && !tokens[i].contains('filename*')) {
+          if (tokens[i].contains('filename') &&
+              !tokens[i].contains('filename*')) {
             filename = tokens[i]
                 .substring(tokens[i].indexOf("=") + 1, tokens[i].length);
             break;
           }
         }
 
-        responseJson = FileResponse(fileBytes: response.bodyBytes, filename: filename);
+        responseJson =
+            FileResponse(fileBytes: response.bodyBytes, filename: filename);
       }
     } on SocketException {
       print('No net');
@@ -131,15 +131,16 @@ class ApiBaseHelper {
     switch (response.statusCode) {
       case 200:
       case 201:
-        if(response.body!=null && response.body.isNotEmpty) {
-          Map<String, dynamic> responseJson = jsonDecode(response.body.toString());
+        if (response.body != null && response.body.isNotEmpty) {
+          Map<String, dynamic> responseJson =
+              jsonDecode(response.body.toString());
           log(responseJson.toString());
 
           var errorMsg = parseErrorMessage(response.body.toString());
-          if(errorMsg.isNotEmpty && errorMsg!=response.body) {
+          if (errorMsg.isNotEmpty && errorMsg != response.body) {
             throw BadRequestException(response.statusCode, errorMsg);
           }
-          
+
           return responseJson;
         }
         return '';
@@ -158,7 +159,6 @@ class ApiBaseHelper {
   }
 
   Map<String, String> getRequestHeader() {
-
     final claimSet = jwt.JwtClaim(
       issuedAt: DateTime.now(),
       otherClaims: <String, dynamic>{

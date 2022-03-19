@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/utils/sign_config.dart';
-import 'package:kixat/utils/utility.dart';
-import 'package:kixat/views/customWidget/CustomAppBar.dart';
+import 'package:schoolapp/utils/sign_config.dart';
+import 'package:schoolapp/utils/utility.dart';
+import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key key}) : super(key: key);

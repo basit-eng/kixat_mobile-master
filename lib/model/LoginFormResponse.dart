@@ -1,4 +1,4 @@
-import 'package:kixat/model/CustomProperties.dart';
+import 'package:schoolapp/model/CustomProperties.dart';
 
 class LoginFormResponse {
   LoginFormResponse({
@@ -11,17 +11,18 @@ class LoginFormResponse {
   String message;
   List<String> errorList;
 
-  factory LoginFormResponse.fromJson(Map<String, dynamic> json) => LoginFormResponse(
-    data: LoginFormData.fromJson(json["Data"]),
-    message: json["Message"],
-    errorList: List<String>.from(json["ErrorList"].map((x) => x)),
-  );
+  factory LoginFormResponse.fromJson(Map<String, dynamic> json) =>
+      LoginFormResponse(
+        data: LoginFormData.fromJson(json["Data"]),
+        message: json["Message"],
+        errorList: List<String>.from(json["ErrorList"].map((x) => x)),
+      );
 
   Map<String, dynamic> toJson() => {
-    "Data": data.toJson(),
-    "Message": message,
-    "ErrorList": List<dynamic>.from(errorList.map((x) => x)),
-  };
+        "Data": data.toJson(),
+        "Message": message,
+        "ErrorList": List<dynamic>.from(errorList.map((x) => x)),
+      };
 }
 
 class LoginFormData {
@@ -48,26 +49,26 @@ class LoginFormData {
   CustomProperties customProperties;
 
   factory LoginFormData.fromJson(Map<String, dynamic> json) => LoginFormData(
-    checkoutAsGuest: json["CheckoutAsGuest"],
-    email: json["Email"],
-    usernamesEnabled: json["UsernamesEnabled"],
-    registrationType: json["RegistrationType"],
-    username: json["Username"],
-    password: json["Password"],
-    rememberMe: json["RememberMe"],
-    displayCaptcha: json["DisplayCaptcha"],
-    customProperties: CustomProperties.fromJson(json["CustomProperties"]),
-  );
+        checkoutAsGuest: json["CheckoutAsGuest"],
+        email: json["Email"],
+        usernamesEnabled: json["UsernamesEnabled"],
+        registrationType: json["RegistrationType"],
+        username: json["Username"],
+        password: json["Password"],
+        rememberMe: json["RememberMe"],
+        displayCaptcha: json["DisplayCaptcha"],
+        customProperties: CustomProperties.fromJson(json["CustomProperties"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "CheckoutAsGuest": checkoutAsGuest,
-    "Email": email,
-    "UsernamesEnabled": usernamesEnabled,
-    "RegistrationType": registrationType,
-    "Username": username,
-    "Password": password,
-    "RememberMe": rememberMe,
-    "DisplayCaptcha": displayCaptcha,
-    "CustomProperties": customProperties.toJson(),
-  };
+        "CheckoutAsGuest": checkoutAsGuest,
+        "Email": email,
+        "UsernamesEnabled": usernamesEnabled,
+        "RegistrationType": registrationType,
+        "Username": username,
+        "Password": password,
+        "RememberMe": rememberMe,
+        "DisplayCaptcha": displayCaptcha,
+        "CustomProperties": customProperties.toJson(),
+      };
 }

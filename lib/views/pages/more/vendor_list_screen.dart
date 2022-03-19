@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:kixat/bloc/vendor_bloc.dart';
-import 'package:kixat/views/customWidget/CustomAppBar.dart';
-import 'package:kixat/views/customWidget/cached_image.dart';
-import 'package:kixat/views/customWidget/error.dart';
-import 'package:kixat/views/customWidget/loading.dart';
-import 'package:kixat/model/AllVendorsResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/views/pages/more/contact_vendor_screen.dart';
-import 'package:kixat/views/pages/product-list/product_list_screen.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
-import 'package:kixat/utils/GetBy.dart';
-import 'package:kixat/utils/styles.dart';
-import 'package:kixat/utils/utility.dart';
+import 'package:schoolapp/bloc/vendor_bloc.dart';
+import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
+import 'package:schoolapp/views/customWidget/cached_image.dart';
+import 'package:schoolapp/views/customWidget/error.dart';
+import 'package:schoolapp/views/customWidget/loading.dart';
+import 'package:schoolapp/model/AllVendorsResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/views/pages/more/contact_vendor_screen.dart';
+import 'package:schoolapp/views/pages/product-list/product_list_screen.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
+import 'package:schoolapp/utils/GetBy.dart';
+import 'package:schoolapp/utils/styles.dart';
+import 'package:schoolapp/utils/utility.dart';
 
 class VendorListScreen extends StatefulWidget {
   static const routeName = '/vendor-list';

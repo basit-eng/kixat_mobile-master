@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/model/home/ManufacturersResponse.dart';
-import 'package:kixat/utils/GetBy.dart';
-import 'package:kixat/views/customWidget/cached_image.dart';
-import 'package:kixat/views/pages/product-list/product_list_screen.dart';
+import 'package:schoolapp/model/home/ManufacturersResponse.dart';
+import 'package:schoolapp/utils/GetBy.dart';
+import 'package:schoolapp/views/customWidget/cached_image.dart';
+import 'package:schoolapp/views/pages/product-list/product_list_screen.dart';
 
 class ManufacturerBox extends StatelessWidget {
   final ManufacturerData manufacturerData;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/utils/utility.dart';
+import 'package:schoolapp/utils/utility.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget title;

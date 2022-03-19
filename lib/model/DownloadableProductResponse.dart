@@ -1,4 +1,4 @@
-import 'package:kixat/model/CustomProperties.dart';
+import 'package:schoolapp/model/CustomProperties.dart';
 
 class DownloadableProductResponse {
   DownloadableProductResponse({
@@ -22,17 +22,24 @@ class DownloadableProductResponse {
         errorList: errorList ?? this.errorList,
       );
 
-  factory DownloadableProductResponse.fromJson(Map<String, dynamic> json) => DownloadableProductResponse(
-    data: json["Data"] == null ? null : DownloadableProductData.fromJson(json["Data"]),
-    message: json["Message"] == null ? null : json["Message"],
-    errorList: json["ErrorList"] == null ? null : List<String>.from(json["ErrorList"].map((x) => x)),
-  );
+  factory DownloadableProductResponse.fromJson(Map<String, dynamic> json) =>
+      DownloadableProductResponse(
+        data: json["Data"] == null
+            ? null
+            : DownloadableProductData.fromJson(json["Data"]),
+        message: json["Message"] == null ? null : json["Message"],
+        errorList: json["ErrorList"] == null
+            ? null
+            : List<String>.from(json["ErrorList"].map((x) => x)),
+      );
 
   Map<String, dynamic> toJson() => {
-    "Data": data == null ? null : data.toJson(),
-    "Message": message == null ? null : message,
-    "ErrorList": errorList == null ? null : List<dynamic>.from(errorList.map((x) => x)),
-  };
+        "Data": data == null ? null : data.toJson(),
+        "Message": message == null ? null : message,
+        "ErrorList": errorList == null
+            ? null
+            : List<dynamic>.from(errorList.map((x) => x)),
+      };
 }
 
 class DownloadableProductData {
@@ -53,15 +60,24 @@ class DownloadableProductData {
         customProperties: customProperties ?? this.customProperties,
       );
 
-  factory DownloadableProductData.fromJson(Map<String, dynamic> json) => DownloadableProductData(
-    items: json["Items"] == null ? null : List<DownloadableProductItem>.from(json["Items"].map((x) => DownloadableProductItem.fromJson(x))),
-    customProperties: json["CustomProperties"] == null ? null : CustomProperties.fromJson(json["CustomProperties"]),
-  );
+  factory DownloadableProductData.fromJson(Map<String, dynamic> json) =>
+      DownloadableProductData(
+        items: json["Items"] == null
+            ? null
+            : List<DownloadableProductItem>.from(
+                json["Items"].map((x) => DownloadableProductItem.fromJson(x))),
+        customProperties: json["CustomProperties"] == null
+            ? null
+            : CustomProperties.fromJson(json["CustomProperties"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "Items": items == null ? null : List<dynamic>.from(items.map((x) => x.toJson())),
-    "CustomProperties": customProperties == null ? null : customProperties.toJson(),
-  };
+        "Items": items == null
+            ? null
+            : List<dynamic>.from(items.map((x) => x.toJson())),
+        "CustomProperties":
+            customProperties == null ? null : customProperties.toJson(),
+      };
 }
 
 class DownloadableProductItem {
@@ -118,31 +134,45 @@ class DownloadableProductItem {
         customProperties: customProperties ?? this.customProperties,
       );
 
-  factory DownloadableProductItem.fromJson(Map<String, dynamic> json) => DownloadableProductItem(
-    orderItemGuid: json["OrderItemGuid"] == null ? null : json["OrderItemGuid"],
-    orderId: json["OrderId"] == null ? null : json["OrderId"],
-    customOrderNumber: json["CustomOrderNumber"] == null ? null : json["CustomOrderNumber"],
-    productId: json["ProductId"] == null ? null : json["ProductId"],
-    productName: json["ProductName"] == null ? null : json["ProductName"],
-    productSeName: json["ProductSeName"] == null ? null : json["ProductSeName"],
-    productAttributes: json["ProductAttributes"] == null ? null : json["ProductAttributes"],
-    downloadId: json["DownloadId"] == null ? null : json["DownloadId"],
-    licenseId: json["LicenseId"] == null ? null : json["LicenseId"],
-    createdOn: json["CreatedOn"] == null ? null : DateTime.parse(json["CreatedOn"]),
-    customProperties: json["CustomProperties"] == null ? null : CustomProperties.fromJson(json["CustomProperties"]),
-  );
+  factory DownloadableProductItem.fromJson(Map<String, dynamic> json) =>
+      DownloadableProductItem(
+        orderItemGuid:
+            json["OrderItemGuid"] == null ? null : json["OrderItemGuid"],
+        orderId: json["OrderId"] == null ? null : json["OrderId"],
+        customOrderNumber: json["CustomOrderNumber"] == null
+            ? null
+            : json["CustomOrderNumber"],
+        productId: json["ProductId"] == null ? null : json["ProductId"],
+        productName: json["ProductName"] == null ? null : json["ProductName"],
+        productSeName:
+            json["ProductSeName"] == null ? null : json["ProductSeName"],
+        productAttributes: json["ProductAttributes"] == null
+            ? null
+            : json["ProductAttributes"],
+        downloadId: json["DownloadId"] == null ? null : json["DownloadId"],
+        licenseId: json["LicenseId"] == null ? null : json["LicenseId"],
+        createdOn: json["CreatedOn"] == null
+            ? null
+            : DateTime.parse(json["CreatedOn"]),
+        customProperties: json["CustomProperties"] == null
+            ? null
+            : CustomProperties.fromJson(json["CustomProperties"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "OrderItemGuid": orderItemGuid == null ? null : orderItemGuid,
-    "OrderId": orderId == null ? null : orderId,
-    "CustomOrderNumber": customOrderNumber == null ? null : customOrderNumber,
-    "ProductId": productId == null ? null : productId,
-    "ProductName": productName == null ? null : productName,
-    "ProductSeName": productSeName == null ? null : productSeName,
-    "ProductAttributes": productAttributes == null ? null : productAttributes,
-    "DownloadId": downloadId == null ? null : downloadId,
-    "LicenseId": licenseId == null ? null : licenseId,
-    "CreatedOn": createdOn == null ? null : createdOn.toIso8601String(),
-    "CustomProperties": customProperties == null ? null : customProperties.toJson(),
-  };
+        "OrderItemGuid": orderItemGuid == null ? null : orderItemGuid,
+        "OrderId": orderId == null ? null : orderId,
+        "CustomOrderNumber":
+            customOrderNumber == null ? null : customOrderNumber,
+        "ProductId": productId == null ? null : productId,
+        "ProductName": productName == null ? null : productName,
+        "ProductSeName": productSeName == null ? null : productSeName,
+        "ProductAttributes":
+            productAttributes == null ? null : productAttributes,
+        "DownloadId": downloadId == null ? null : downloadId,
+        "LicenseId": licenseId == null ? null : licenseId,
+        "CreatedOn": createdOn == null ? null : createdOn.toIso8601String(),
+        "CustomProperties":
+            customProperties == null ? null : customProperties.toJson(),
+      };
 }

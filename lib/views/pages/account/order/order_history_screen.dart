@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/bloc/order_bloc.dart';
-import 'package:kixat/views/customWidget/CustomAppBar.dart';
-import 'package:kixat/views/customWidget/loading.dart';
-import 'package:kixat/views/customWidget/error.dart';
-import 'package:kixat/model/OrderHistoryResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/views/pages/account/returnRequest/ReturnRequestScreen.dart';
-import 'package:kixat/views/pages/account/order/order_details_screen.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
-import 'package:kixat/utils/utility.dart';
+import 'package:schoolapp/bloc/order_bloc.dart';
+import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
+import 'package:schoolapp/views/customWidget/loading.dart';
+import 'package:schoolapp/views/customWidget/error.dart';
+import 'package:schoolapp/model/OrderHistoryResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/views/pages/account/returnRequest/ReturnRequestScreen.dart';
+import 'package:schoolapp/views/pages/account/order/order_details_screen.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
+import 'package:schoolapp/utils/utility.dart';
 
 class OrderHistoryScreen extends StatefulWidget {
   static const routeName = '/order-history';

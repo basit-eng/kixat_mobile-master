@@ -1,14 +1,14 @@
 import 'dart:async';
 
-import 'package:kixat/bloc/base_bloc.dart';
-import 'package:kixat/model/AvailableOption.dart';
-import 'package:kixat/model/EstimateShipping.dart';
-import 'package:kixat/model/EstimateShippingResponse.dart';
-import 'package:kixat/model/requestbody/EstimateShippingReqBody.dart';
-import 'package:kixat/model/requestbody/FormValue.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/BaseRepository.dart';
-import 'package:kixat/utils/utility.dart';
+import 'package:schoolapp/bloc/base_bloc.dart';
+import 'package:schoolapp/model/AvailableOption.dart';
+import 'package:schoolapp/model/EstimateShipping.dart';
+import 'package:schoolapp/model/EstimateShippingResponse.dart';
+import 'package:schoolapp/model/requestbody/EstimateShippingReqBody.dart';
+import 'package:schoolapp/model/requestbody/FormValue.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/BaseRepository.dart';
+import 'package:schoolapp/utils/utility.dart';
 
 class EstimateShippingBloc extends BaseBloc {
   BaseRepository _repository;
@@ -30,14 +30,14 @@ class EstimateShippingBloc extends BaseBloc {
     _repository = BaseRepository();
     _scStates = StreamController<ApiResponse<List<AvailableOption>>>();
     _scResult = StreamController<ApiResponse<EstimateShippingData>>();
-    statesSink.add(ApiResponse.completed(estimateShipping?.availableStates ?? []));
+    statesSink
+        .add(ApiResponse.completed(estimateShipping?.availableStates ?? []));
   }
 
   fetchStates(AvailableOption country) async {
     int countryId = int.tryParse(country.value) ?? -1;
 
-    if(countryId == -1)
-      return;
+    if (countryId == -1) return;
 
     statesSink.add(ApiResponse.loading());
     var statesList = await fetchStatesList(countryId);
@@ -45,14 +45,10 @@ class EstimateShippingBloc extends BaseBloc {
   }
 
   estimateShippingForCart(EstimateShipping estimateShipping) async {
-
     EstimateShippingReqBody reqBody = EstimateShippingReqBody(
-      data: estimateShipping.copyWith(
-          availableCountries: [],
-          availableStates: []
-      ),
-      formValues: []
-    );
+        data: estimateShipping
+            .copyWith(availableCountries: [], availableStates: []),
+        formValues: []);
 
     resultSink.add(ApiResponse.loading());
 
@@ -62,21 +58,16 @@ class EstimateShippingBloc extends BaseBloc {
     } catch (e) {
       resultSink.add(ApiResponse.error(e.toString()));
     }
-
   }
 
   void estimateShippingForProduct(
     EstimateShipping estimateShipping,
     List<FormValue> productFormValues,
   ) async {
-
     EstimateShippingReqBody reqBody = EstimateShippingReqBody(
-      data: estimateShipping.copyWith(
-          availableCountries: [],
-          availableStates: []
-      ),
-      formValues: productFormValues
-    );
+        data: estimateShipping
+            .copyWith(availableCountries: [], availableStates: []),
+        formValues: productFormValues);
 
     resultSink.add(ApiResponse.loading());
 

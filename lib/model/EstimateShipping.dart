@@ -1,5 +1,5 @@
-import 'package:kixat/model/AvailableOption.dart';
-import 'package:kixat/model/CustomProperties.dart';
+import 'package:schoolapp/model/AvailableOption.dart';
+import 'package:schoolapp/model/CustomProperties.dart';
 
 class EstimateShipping {
   EstimateShipping({
@@ -55,31 +55,46 @@ class EstimateShipping {
         customProperties: customProperties ?? this.customProperties,
       );
 
-  factory EstimateShipping.fromJson(Map<String, dynamic> json) => EstimateShipping(
-    productId: json["ProductId"] == null ? null : json["ProductId"],
-    requestDelay: json["RequestDelay"] == null ? null : json["RequestDelay"],
-    enabled: json["Enabled"] == null ? null : json["Enabled"],
-    countryId: json["CountryId"],
-    stateProvinceId: json["StateProvinceId"],
-    zipPostalCode: json["ZipPostalCode"],
-    useCity: json["UseCity"] == null ? null : json["UseCity"],
-    city: json["City"] == null ? null : json["City"],
-    availableCountries: json["AvailableCountries"] == null ? null : List<AvailableOption>.from(json["AvailableCountries"].map((x) => AvailableOption.fromJson(x))),
-    availableStates: json["AvailableStates"] == null ? null : List<AvailableOption>.from(json["AvailableStates"].map((x) => AvailableOption.fromJson(x))),
-    customProperties: json["CustomProperties"] == null ? null : CustomProperties.fromJson(json["CustomProperties"]),
-  );
+  factory EstimateShipping.fromJson(Map<String, dynamic> json) =>
+      EstimateShipping(
+        productId: json["ProductId"] == null ? null : json["ProductId"],
+        requestDelay:
+            json["RequestDelay"] == null ? null : json["RequestDelay"],
+        enabled: json["Enabled"] == null ? null : json["Enabled"],
+        countryId: json["CountryId"],
+        stateProvinceId: json["StateProvinceId"],
+        zipPostalCode: json["ZipPostalCode"],
+        useCity: json["UseCity"] == null ? null : json["UseCity"],
+        city: json["City"] == null ? null : json["City"],
+        availableCountries: json["AvailableCountries"] == null
+            ? null
+            : List<AvailableOption>.from(json["AvailableCountries"]
+                .map((x) => AvailableOption.fromJson(x))),
+        availableStates: json["AvailableStates"] == null
+            ? null
+            : List<AvailableOption>.from(json["AvailableStates"]
+                .map((x) => AvailableOption.fromJson(x))),
+        customProperties: json["CustomProperties"] == null
+            ? null
+            : CustomProperties.fromJson(json["CustomProperties"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "ProductId": productId == null ? null : productId,
-    "RequestDelay": requestDelay == null ? null : requestDelay,
-    "Enabled": enabled == null ? null : enabled,
-    "CountryId": countryId,
-    "StateProvinceId": stateProvinceId,
-    "ZipPostalCode": zipPostalCode,
-    "UseCity": useCity == null ? null : useCity,
-    "City": city == null ? null : city,
-    "AvailableCountries": availableCountries == null ? null : List<dynamic>.from(availableCountries.map((x) => x.toJson())),
-    "AvailableStates": availableStates == null ? null : List<dynamic>.from(availableStates.map((x) => x.toJson())),
-    "CustomProperties": customProperties == null ? null : customProperties.toJson(),
-  };
+        "ProductId": productId == null ? null : productId,
+        "RequestDelay": requestDelay == null ? null : requestDelay,
+        "Enabled": enabled == null ? null : enabled,
+        "CountryId": countryId,
+        "StateProvinceId": stateProvinceId,
+        "ZipPostalCode": zipPostalCode,
+        "UseCity": useCity == null ? null : useCity,
+        "City": city == null ? null : city,
+        "AvailableCountries": availableCountries == null
+            ? null
+            : List<dynamic>.from(availableCountries.map((x) => x.toJson())),
+        "AvailableStates": availableStates == null
+            ? null
+            : List<dynamic>.from(availableStates.map((x) => x.toJson())),
+        "CustomProperties":
+            customProperties == null ? null : customProperties.toJson(),
+      };
 }

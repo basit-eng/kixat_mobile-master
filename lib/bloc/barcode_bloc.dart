@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:kixat/bloc/base_bloc.dart';
-import 'package:kixat/model/ProductDetailsResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/ProductDetailsRepository.dart';
+import 'package:schoolapp/bloc/base_bloc.dart';
+import 'package:schoolapp/model/ProductDetailsResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/ProductDetailsRepository.dart';
 
 class BarcodeBloc implements BaseBloc {
   ProductDetailsRepository _repository;
@@ -29,8 +29,8 @@ class BarcodeBloc implements BaseBloc {
     prodDetailsSink.add(ApiResponse.loading());
 
     try {
-      ProductDetailsResponse response = await
-        _repository.fetchProductByBarcode(barcode);
+      ProductDetailsResponse response =
+          await _repository.fetchProductByBarcode(barcode);
       prodDetailsSink.add(ApiResponse.completed(response.data));
     } catch (e) {
       prodDetailsSink.add(ApiResponse.error(e.toString()));

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/utils/styles.dart';
+import 'package:schoolapp/utils/styles.dart';
 
 class CustomDropdown<T> extends StatelessWidget {
-
   final T preSelectedItem;
   final List<DropdownMenuItem<T>> items;
   final void Function(T value) onChanged;
@@ -43,8 +42,7 @@ class CustomDropdown<T> extends StatelessWidget {
           style: Theme.of(context).textTheme.subtitle2,
           onChanged: (value) {
             FocusScope.of(context).requestFocus(FocusNode());
-            if (onChanged != null)
-              onChanged(value);
+            if (onChanged != null) onChanged(value);
           },
           onSaved: (newValue) => onSaved != null ? onSaved(newValue) : () {},
           validator: (value) => validator != null ? validator(value) : () {},

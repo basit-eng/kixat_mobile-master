@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:kixat/bloc/base_bloc.dart';
-import 'package:kixat/model/DownloadableProductResponse.dart';
-import 'package:kixat/model/FileDownloadResponse.dart';
-import 'package:kixat/model/SampleDownloadResponse.dart';
-import 'package:kixat/model/UserAgreementResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/DownloadableProdRepository.dart';
+import 'package:schoolapp/bloc/base_bloc.dart';
+import 'package:schoolapp/model/DownloadableProductResponse.dart';
+import 'package:schoolapp/model/FileDownloadResponse.dart';
+import 'package:schoolapp/model/SampleDownloadResponse.dart';
+import 'package:schoolapp/model/UserAgreementResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/DownloadableProdRepository.dart';
 
 class DownloadableProductBloc extends BaseBloc {
   DownloadableProdRepository _repository;
@@ -17,19 +17,22 @@ class DownloadableProductBloc extends BaseBloc {
   Stream<ApiResponse<DownloadableProductData>> get productStream =>
       _scProduct.stream;
 
-  StreamSink<ApiResponse<UserAgreementData>> get agreementSink => _scAgreement.sink;
-  Stream<ApiResponse<UserAgreementData>> get agreementStream => _scAgreement.stream;
+  StreamSink<ApiResponse<UserAgreementData>> get agreementSink =>
+      _scAgreement.sink;
+  Stream<ApiResponse<UserAgreementData>> get agreementStream =>
+      _scAgreement.stream;
 
-  StreamSink<ApiResponse<FileDownloadResponse<SampleDownloadResponse>>> get sampleDownloadSink =>
-      _scSampleDownload.sink;
-  Stream<ApiResponse<FileDownloadResponse<SampleDownloadResponse>>> get sampleDownloadStream =>
-      _scSampleDownload.stream;
+  StreamSink<ApiResponse<FileDownloadResponse<SampleDownloadResponse>>>
+      get sampleDownloadSink => _scSampleDownload.sink;
+  Stream<ApiResponse<FileDownloadResponse<SampleDownloadResponse>>>
+      get sampleDownloadStream => _scSampleDownload.stream;
 
   DownloadableProductBloc() {
     _repository = DownloadableProdRepository();
     _scProduct = StreamController<ApiResponse<DownloadableProductData>>();
     _scAgreement = StreamController<ApiResponse<UserAgreementData>>();
-    _scSampleDownload = StreamController<ApiResponse<FileDownloadResponse<SampleDownloadResponse>>>();
+    _scSampleDownload = StreamController<
+        ApiResponse<FileDownloadResponse<SampleDownloadResponse>>>();
   }
 
   @override
@@ -43,7 +46,8 @@ class DownloadableProductBloc extends BaseBloc {
     productSink.add(ApiResponse.loading());
 
     try {
-      DownloadableProductResponse response = await _repository.fetchDownloadableProducts();
+      DownloadableProductResponse response =
+          await _repository.fetchDownloadableProducts();
       productSink.add(ApiResponse.completed(response.data));
     } catch (e) {
       productSink.add(ApiResponse.error(e.toString()));
@@ -55,7 +59,8 @@ class DownloadableProductBloc extends BaseBloc {
     agreementSink.add(ApiResponse.loading());
 
     try {
-      UserAgreementResponse response = await _repository.fetchUserAgreementText(guid);
+      UserAgreementResponse response =
+          await _repository.fetchUserAgreementText(guid);
       agreementSink.add(ApiResponse.completed(response.data));
     } catch (e) {
       agreementSink.add(ApiResponse.error(e.toString()));
@@ -67,11 +72,13 @@ class DownloadableProductBloc extends BaseBloc {
     sampleDownloadSink.add(ApiResponse.loading());
 
     try {
-      FileDownloadResponse<SampleDownloadResponse> response = await _repository.downloadFile(
-          guid, consent,
+      FileDownloadResponse<SampleDownloadResponse> response =
+          await _repository.downloadFile(
+        guid,
+        consent,
       );
 
-      if(response.jsonResponse?.data?.hasUserAgreement == true)
+      if (response.jsonResponse?.data?.hasUserAgreement == true)
         fetchUserAgreementText(guid);
       else
         sampleDownloadSink.add(ApiResponse.completed(response));
@@ -80,5 +87,4 @@ class DownloadableProductBloc extends BaseBloc {
       print(e.toString());
     }
   }
-
 }

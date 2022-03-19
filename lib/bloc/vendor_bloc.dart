@@ -1,20 +1,24 @@
 import 'dart:async';
 
-import 'package:kixat/bloc/base_bloc.dart';
-import 'package:kixat/model/AllVendorsResponse.dart';
-import 'package:kixat/model/ContactVendorResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/VendorRepository.dart';
+import 'package:schoolapp/bloc/base_bloc.dart';
+import 'package:schoolapp/model/AllVendorsResponse.dart';
+import 'package:schoolapp/model/ContactVendorResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/VendorRepository.dart';
 
 class VendorBloc extends BaseBloc {
   VendorRepository _repository;
   StreamController _scContactUs, _scLoader, _scVendors;
 
-  StreamSink<ApiResponse<ContactVendorData>> get contactSink => _scContactUs.sink;
-  Stream<ApiResponse<ContactVendorData>> get contactStream => _scContactUs.stream;
+  StreamSink<ApiResponse<ContactVendorData>> get contactSink =>
+      _scContactUs.sink;
+  Stream<ApiResponse<ContactVendorData>> get contactStream =>
+      _scContactUs.stream;
 
-  StreamSink<ApiResponse<List<VendorDetails>>> get vendorListSink => _scVendors.sink;
-  Stream<ApiResponse<List<VendorDetails>>> get vendorListStream => _scVendors.stream;
+  StreamSink<ApiResponse<List<VendorDetails>>> get vendorListSink =>
+      _scVendors.sink;
+  Stream<ApiResponse<List<VendorDetails>>> get vendorListStream =>
+      _scVendors.stream;
 
   StreamSink<ApiResponse<String>> get loaderSink => _scLoader.sink;
   Stream<ApiResponse<String>> get loaderStream => _scLoader.stream;
@@ -49,7 +53,8 @@ class VendorBloc extends BaseBloc {
     contactSink.add(ApiResponse.loading());
 
     try {
-      ContactVendorResponse response = await _repository.fetchFormData(vendorId);
+      ContactVendorResponse response =
+          await _repository.fetchFormData(vendorId);
       contactSink.add(ApiResponse.completed(response.data));
     } catch (e) {
       contactSink.add(ApiResponse.error(e.toString()));
@@ -61,12 +66,12 @@ class VendorBloc extends BaseBloc {
     loaderSink.add(ApiResponse.loading());
 
     try {
-      ContactVendorResponse response = await _repository.postEnquiry(ContactVendorResponse(data: formData));
+      ContactVendorResponse response =
+          await _repository.postEnquiry(ContactVendorResponse(data: formData));
       loaderSink.add(ApiResponse.completed(response?.message ?? ''));
     } catch (e) {
       loaderSink.add(ApiResponse.error(e.toString()));
       print(e);
     }
   }
-
 }

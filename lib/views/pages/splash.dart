@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:kixat/ScopedModelWrapper.dart';
-import 'package:kixat/networking/AppException.dart';
-import 'package:kixat/repository/SettingsRepository.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/AppConstants.dart';
-import 'package:kixat/utils/utility.dart';
-import 'package:kixat/views/pages/tabs-screen/error_screen.dart';
-import 'package:kixat/views/pages/tabs-screen/tabs_screen.dart';
+import 'package:schoolapp/ScopedModelWrapper.dart';
+import 'package:schoolapp/networking/AppException.dart';
+import 'package:schoolapp/repository/SettingsRepository.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/AppConstants.dart';
+import 'package:schoolapp/utils/utility.dart';
+import 'package:schoolapp/views/pages/tabs-screen/error_screen.dart';
+import 'package:schoolapp/views/pages/tabs-screen/tabs_screen.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

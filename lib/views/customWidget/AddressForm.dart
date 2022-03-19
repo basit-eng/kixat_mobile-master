@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/model/AvailableOption.dart';
-import 'package:kixat/model/GetBillingAddressResponse.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
-import 'package:kixat/utils/CustomAttributeManager.dart';
-import 'package:kixat/utils/ValidationMixin.dart';
-import 'package:kixat/views/customWidget/CustomDropdown.dart';
+import 'package:schoolapp/model/AvailableOption.dart';
+import 'package:schoolapp/model/GetBillingAddressResponse.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
+import 'package:schoolapp/utils/CustomAttributeManager.dart';
+import 'package:schoolapp/utils/ValidationMixin.dart';
+import 'package:schoolapp/views/customWidget/CustomDropdown.dart';
 
 class AddressForm extends StatelessWidget with ValidationMixin {
   final Address address;

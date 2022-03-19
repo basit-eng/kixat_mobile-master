@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/model/GetBillingAddressResponse.dart';
-import 'package:kixat/utils/utility.dart';
+import 'package:schoolapp/model/GetBillingAddressResponse.dart';
+import 'package:schoolapp/utils/utility.dart';
 
 class ItemAddressList extends StatelessWidget {
   final Address address;

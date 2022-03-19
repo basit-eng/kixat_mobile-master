@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:kixat/model/category_tree/CategoryTreeResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/category_tree/CategoryTreeRepository.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
+import 'package:schoolapp/model/category_tree/CategoryTreeResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/category_tree/CategoryTreeRepository.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
 
 class CategoryTreeBloc {
   CategoryTreeRepository _categoryTreeRepository;

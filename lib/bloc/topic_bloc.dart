@@ -1,18 +1,16 @@
 import 'dart:async';
 
-import 'package:kixat/bloc/base_bloc.dart';
-import 'package:kixat/model/TopicResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/TopicRepository.dart';
+import 'package:schoolapp/bloc/base_bloc.dart';
+import 'package:schoolapp/model/TopicResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/TopicRepository.dart';
 
 class TopicBloc extends BaseBloc {
   TopicRepository _repository;
   StreamController _scTopic, _scPageTitle;
 
-  StreamSink<ApiResponse<TopicResponse>> get topicSink =>
-      _scTopic.sink;
-  Stream<ApiResponse<TopicResponse>> get topicStream =>
-      _scTopic.stream;
+  StreamSink<ApiResponse<TopicResponse>> get topicSink => _scTopic.sink;
+  Stream<ApiResponse<TopicResponse>> get topicStream => _scTopic.stream;
 
   StreamSink<String> get pageTitleSink => _scPageTitle.sink;
   Stream<String> get pageTitleStream => _scPageTitle.stream;
@@ -45,7 +43,8 @@ class TopicBloc extends BaseBloc {
     topicSink.add(ApiResponse.loading());
 
     try {
-      TopicResponse response = await _repository.fetchTopicBySystemName(systemName);
+      TopicResponse response =
+          await _repository.fetchTopicBySystemName(systemName);
       topicSink.add(ApiResponse.completed(response));
       pageTitleSink.add(response.data?.title ?? '');
     } catch (e) {
@@ -53,5 +52,4 @@ class TopicBloc extends BaseBloc {
       print(e);
     }
   }
-
 }

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:kixat/views/customWidget/CustomDropdown.dart';
-import 'package:kixat/views/customWidget/RoundButton.dart';
-import 'package:kixat/views/customWidget/cached_image.dart';
-import 'package:kixat/model/AvailableOption.dart';
-import 'package:kixat/model/ShoppingCartResponse.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
-import 'package:kixat/utils/styles.dart';
-import 'package:kixat/utils/utility.dart';
-import 'package:kixat/utils/extensions.dart';
+import 'package:schoolapp/views/customWidget/CustomDropdown.dart';
+import 'package:schoolapp/views/customWidget/RoundButton.dart';
+import 'package:schoolapp/views/customWidget/cached_image.dart';
+import 'package:schoolapp/model/AvailableOption.dart';
+import 'package:schoolapp/model/ShoppingCartResponse.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
+import 'package:schoolapp/utils/styles.dart';
+import 'package:schoolapp/utils/utility.dart';
+import 'package:schoolapp/utils/extensions.dart';
 
 class CartListItem extends StatelessWidget {
   CartListItem({this.item, this.onClick, this.editable});

@@ -1,4 +1,4 @@
-import 'package:kixat/model/requestbody/FormValue.dart';
+import 'package:schoolapp/model/requestbody/FormValue.dart';
 
 class FormValuesRequestBody {
   FormValuesRequestBody({

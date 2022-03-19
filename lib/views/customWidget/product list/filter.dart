@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/bloc/product_list/product_list_bloc.dart';
-import 'package:kixat/model/product_list/ProductListResponse.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/ButtonShape.dart';
-import 'package:kixat/utils/Const.dart';
-import 'package:kixat/utils/styles.dart';
-import 'package:kixat/utils/utility.dart';
-import 'package:kixat/views/customWidget/CustomAppBar.dart';
-import 'package:kixat/views/customWidget/CustomButton.dart';
+import 'package:schoolapp/bloc/product_list/product_list_bloc.dart';
+import 'package:schoolapp/model/product_list/ProductListResponse.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/ButtonShape.dart';
+import 'package:schoolapp/utils/Const.dart';
+import 'package:schoolapp/utils/styles.dart';
+import 'package:schoolapp/utils/utility.dart';
+import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
+import 'package:schoolapp/views/customWidget/CustomButton.dart';
 
 class Filter extends StatefulWidget {
   @override

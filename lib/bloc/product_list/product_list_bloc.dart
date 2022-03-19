@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:kixat/model/product_list/ProductListResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/product_list/ProductListRepository.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
+import 'package:schoolapp/model/product_list/ProductListResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/product_list/ProductListRepository.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
 
 class ProductListBloc {
   ProductListRepository _prodListRepository;

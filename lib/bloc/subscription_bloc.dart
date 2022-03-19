@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:kixat/bloc/base_bloc.dart';
-import 'package:kixat/model/SubscriptionListResponse.dart';
-import 'package:kixat/model/requestbody/FormValue.dart';
-import 'package:kixat/model/requestbody/FormValuesRequestBody.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/SubscriptionRepository.dart';
+import 'package:schoolapp/bloc/base_bloc.dart';
+import 'package:schoolapp/model/SubscriptionListResponse.dart';
+import 'package:schoolapp/model/requestbody/FormValue.dart';
+import 'package:schoolapp/model/requestbody/FormValuesRequestBody.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/SubscriptionRepository.dart';
 
 class SubscriptionBloc implements BaseBloc {
   SubscriptionRepository _repository;
@@ -47,19 +47,19 @@ class SubscriptionBloc implements BaseBloc {
   }
 
   fetchSubscriptionList() async {
+    if (!_hasNextPage) return;
 
-    if(!_hasNextPage) return;
-
-    if(_pageNumber == 1) {
+    if (_pageNumber == 1) {
       subscriptionListSink.add(ApiResponse.loading());
     } else {
       loaderSink.add(ApiResponse.loading());
     }
 
     try {
-      SubscriptionListResponse response = await _repository.fetchSubscriptions(_pageNumber);
+      SubscriptionListResponse response =
+          await _repository.fetchSubscriptions(_pageNumber);
 
-      if(_pageNumber == 1) {
+      if (_pageNumber == 1) {
         _cachedData = response?.data;
       } else {
         _cachedData?.subscriptions?.addAll(response?.data?.subscriptions ?? []);
@@ -67,7 +67,7 @@ class SubscriptionBloc implements BaseBloc {
       }
 
       subscriptionListSink.add(ApiResponse.completed(_cachedData));
-      if(_pageNumber > 1) {
+      if (_pageNumber > 1) {
         loaderSink.add(ApiResponse.completed(''));
       }
 
@@ -76,7 +76,7 @@ class SubscriptionBloc implements BaseBloc {
       _pageNumber++;
     } catch (e) {
       subscriptionListSink.add(ApiResponse.error(e.toString()));
-      if(_pageNumber > 1) {
+      if (_pageNumber > 1) {
         loaderSink.add(ApiResponse.error(e.toString()));
       }
       print(e.toString());
@@ -84,8 +84,7 @@ class SubscriptionBloc implements BaseBloc {
   }
 
   unsubscribeSelected() async {
-    if(selectedItems.isEmpty)
-      return;
+    if (selectedItems.isEmpty) return;
 
     _pageNumber = 1;
     var reqBody = FormValuesRequestBody(
@@ -102,7 +101,7 @@ class SubscriptionBloc implements BaseBloc {
       // this is a temporary workaround. have to fix later
       try {
         unSubResponse = await _repository.unsubscribe(reqBody);
-      } catch(e) {
+      } catch (e) {
         // if response is http 302
         unSubResponse = await _repository.fetchSubscriptions(_pageNumber);
       }

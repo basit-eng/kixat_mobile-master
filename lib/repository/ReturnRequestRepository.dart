@@ -1,13 +1,13 @@
-import 'package:kixat/model/FileDownloadResponse.dart';
-import 'package:kixat/model/FileUploadResponse.dart';
-import 'package:kixat/model/ReturnRequestHistoryResponse.dart';
-import 'package:kixat/model/ReturnRequestResponse.dart';
-import 'package:kixat/model/SampleDownloadResponse.dart';
-import 'package:kixat/model/requestbody/ReturnRequestBody.dart';
-import 'package:kixat/networking/ApiBaseHelper.dart';
-import 'package:kixat/networking/Endpoints.dart';
-import 'package:kixat/utils/FileResponse.dart';
-import 'package:kixat/utils/utility.dart';
+import 'package:schoolapp/model/FileDownloadResponse.dart';
+import 'package:schoolapp/model/FileUploadResponse.dart';
+import 'package:schoolapp/model/ReturnRequestHistoryResponse.dart';
+import 'package:schoolapp/model/ReturnRequestResponse.dart';
+import 'package:schoolapp/model/SampleDownloadResponse.dart';
+import 'package:schoolapp/model/requestbody/ReturnRequestBody.dart';
+import 'package:schoolapp/networking/ApiBaseHelper.dart';
+import 'package:schoolapp/networking/Endpoints.dart';
+import 'package:schoolapp/utils/FileResponse.dart';
+import 'package:schoolapp/utils/utility.dart';
 
 class ReturnRequestRepository {
   ApiBaseHelper _helper = ApiBaseHelper();
@@ -19,12 +19,14 @@ class ReturnRequestRepository {
 
   Future<ReturnRequestResponse> postReturnRequestForm(
       num orderId, ReturnRequestBody reqBody) async {
-    final response = await _helper.post('${Endpoints.returnRequest}/$orderId', reqBody);
+    final response =
+        await _helper.post('${Endpoints.returnRequest}/$orderId', reqBody);
     return ReturnRequestResponse.fromJson(response);
   }
 
   Future<FileUploadResponse> uploadFile(String filePath) async {
-    final response = await _helper.multipart('${Endpoints.uploadFileReturnRequest}', filePath);
+    final response = await _helper.multipart(
+        '${Endpoints.uploadFileReturnRequest}', filePath);
     return FileUploadResponse.fromJson(response);
   }
 
@@ -34,9 +36,10 @@ class ReturnRequestRepository {
   }
 
   Future<FileDownloadResponse> downloadFile(String guid) async {
-    final FileResponse response = await _helper.getFile('${Endpoints.returnRequestFileDownload}/$guid');
+    final FileResponse response =
+        await _helper.getFile('${Endpoints.returnRequestFileDownload}/$guid');
 
-    if(response.isFile) {
+    if (response.isFile) {
       return FileDownloadResponse<SampleDownloadResponse>(
         file: await saveFileToDisk(response, showNotification: true),
       );

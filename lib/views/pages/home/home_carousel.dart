@@ -1,14 +1,14 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:kixat/views/customWidget/cached_image.dart';
-import 'package:kixat/views/customWidget/dot_indicator.dart';
-import 'package:kixat/model/HomeSliderResponse.dart';
-import 'package:kixat/views/pages/more/topic_screen.dart';
-import 'package:kixat/views/pages/product-list/product_list_screen.dart';
-import 'package:kixat/views/pages/product/product_details_screen.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/GetBy.dart';
-import 'package:kixat/utils/SliderType.dart';
+import 'package:schoolapp/views/customWidget/cached_image.dart';
+import 'package:schoolapp/views/customWidget/dot_indicator.dart';
+import 'package:schoolapp/model/HomeSliderResponse.dart';
+import 'package:schoolapp/views/pages/more/topic_screen.dart';
+import 'package:schoolapp/views/pages/product-list/product_list_screen.dart';
+import 'package:schoolapp/views/pages/product/product_details_screen.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/GetBy.dart';
+import 'package:schoolapp/utils/SliderType.dart';
 
 class BannerSlider extends StatefulWidget {
   final HomeSliderData sliderData;

@@ -1,4 +1,4 @@
-import 'package:kixat/model/CustomProperties.dart';
+import 'package:schoolapp/model/CustomProperties.dart';
 
 class ProductReviewResponse {
   ProductReviewResponse({
@@ -22,17 +22,24 @@ class ProductReviewResponse {
         errorList: errorList ?? this.errorList,
       );
 
-  factory ProductReviewResponse.fromJson(Map<String, dynamic> json) => ProductReviewResponse(
-    data: json["Data"] == null ? null : ProductReviewData.fromJson(json["Data"]),
-    message: json["Message"] == null ? null : json["Message"],
-    errorList: json["ErrorList"] == null ? null : List<String>.from(json["ErrorList"].map((x) => x)),
-  );
+  factory ProductReviewResponse.fromJson(Map<String, dynamic> json) =>
+      ProductReviewResponse(
+        data: json["Data"] == null
+            ? null
+            : ProductReviewData.fromJson(json["Data"]),
+        message: json["Message"] == null ? null : json["Message"],
+        errorList: json["ErrorList"] == null
+            ? null
+            : List<String>.from(json["ErrorList"].map((x) => x)),
+      );
 
   Map<String, dynamic> toJson() => {
-    "Data": data == null ? null : data.toJson(),
-    "Message": message == null ? null : message,
-    "ErrorList": errorList == null ? null : List<dynamic>.from(errorList.map((x) => x)),
-  };
+        "Data": data == null ? null : data.toJson(),
+        "Message": message == null ? null : message,
+        "ErrorList": errorList == null
+            ? null
+            : List<dynamic>.from(errorList.map((x) => x)),
+      };
 }
 
 class ProductReviewData {
@@ -73,31 +80,55 @@ class ProductReviewData {
         items: items ?? this.items,
         addProductReview: addProductReview ?? this.addProductReview,
         reviewTypeList: reviewTypeList ?? this.reviewTypeList,
-        addAdditionalProductReviewList: addAdditionalProductReviewList ?? this.addAdditionalProductReviewList,
+        addAdditionalProductReviewList: addAdditionalProductReviewList ??
+            this.addAdditionalProductReviewList,
         customProperties: customProperties ?? this.customProperties,
       );
 
-  factory ProductReviewData.fromJson(Map<String, dynamic> json) => ProductReviewData(
-    productId: json["ProductId"] == null ? null : json["ProductId"],
-    productName: json["ProductName"] == null ? null : json["ProductName"],
-    productSeName: json["ProductSeName"] == null ? null : json["ProductSeName"],
-    items: json["Items"] == null ? null : List<ProductReviewItem>.from(json["Items"].map((x) => ProductReviewItem.fromJson(x))),
-    addProductReview: json["AddProductReview"] == null ? null : AddProductReview.fromJson(json["AddProductReview"]),
-    reviewTypeList: json["ReviewTypeList"] == null ? null : List<dynamic>.from(json["ReviewTypeList"].map((x) => x)),
-    addAdditionalProductReviewList: json["AddAdditionalProductReviewList"] == null ? null : List<dynamic>.from(json["AddAdditionalProductReviewList"].map((x) => x)),
-    customProperties: json["CustomProperties"] == null ? null : CustomProperties.fromJson(json["CustomProperties"]),
-  );
+  factory ProductReviewData.fromJson(Map<String, dynamic> json) =>
+      ProductReviewData(
+        productId: json["ProductId"] == null ? null : json["ProductId"],
+        productName: json["ProductName"] == null ? null : json["ProductName"],
+        productSeName:
+            json["ProductSeName"] == null ? null : json["ProductSeName"],
+        items: json["Items"] == null
+            ? null
+            : List<ProductReviewItem>.from(
+                json["Items"].map((x) => ProductReviewItem.fromJson(x))),
+        addProductReview: json["AddProductReview"] == null
+            ? null
+            : AddProductReview.fromJson(json["AddProductReview"]),
+        reviewTypeList: json["ReviewTypeList"] == null
+            ? null
+            : List<dynamic>.from(json["ReviewTypeList"].map((x) => x)),
+        addAdditionalProductReviewList:
+            json["AddAdditionalProductReviewList"] == null
+                ? null
+                : List<dynamic>.from(
+                    json["AddAdditionalProductReviewList"].map((x) => x)),
+        customProperties: json["CustomProperties"] == null
+            ? null
+            : CustomProperties.fromJson(json["CustomProperties"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "ProductId": productId == null ? null : productId,
-    "ProductName": productName == null ? null : productName,
-    "ProductSeName": productSeName == null ? null : productSeName,
-    "Items": items == null ? null : List<dynamic>.from(items.map((x) => x.toJson())),
-    "AddProductReview": addProductReview == null ? null : addProductReview.toJson(),
-    "ReviewTypeList": reviewTypeList == null ? null : List<dynamic>.from(reviewTypeList.map((x) => x)),
-    "AddAdditionalProductReviewList": addAdditionalProductReviewList == null ? null : List<dynamic>.from(addAdditionalProductReviewList.map((x) => x)),
-    "CustomProperties": customProperties == null ? null : customProperties.toJson(),
-  };
+        "ProductId": productId == null ? null : productId,
+        "ProductName": productName == null ? null : productName,
+        "ProductSeName": productSeName == null ? null : productSeName,
+        "Items": items == null
+            ? null
+            : List<dynamic>.from(items.map((x) => x.toJson())),
+        "AddProductReview":
+            addProductReview == null ? null : addProductReview.toJson(),
+        "ReviewTypeList": reviewTypeList == null
+            ? null
+            : List<dynamic>.from(reviewTypeList.map((x) => x)),
+        "AddAdditionalProductReviewList": addAdditionalProductReviewList == null
+            ? null
+            : List<dynamic>.from(addAdditionalProductReviewList.map((x) => x)),
+        "CustomProperties":
+            customProperties == null ? null : customProperties.toJson(),
+      };
 }
 
 class AddProductReview {
@@ -139,36 +170,51 @@ class AddProductReview {
         reviewText: reviewText ?? this.reviewText,
         rating: rating ?? this.rating,
         displayCaptcha: displayCaptcha ?? this.displayCaptcha,
-        canCurrentCustomerLeaveReview: canCurrentCustomerLeaveReview ?? this.canCurrentCustomerLeaveReview,
+        canCurrentCustomerLeaveReview:
+            canCurrentCustomerLeaveReview ?? this.canCurrentCustomerLeaveReview,
         successfullyAdded: successfullyAdded ?? this.successfullyAdded,
         canAddNewReview: canAddNewReview ?? this.canAddNewReview,
         result: result ?? this.result,
         customProperties: customProperties ?? this.customProperties,
       );
 
-  factory AddProductReview.fromJson(Map<String, dynamic> json) => AddProductReview(
-    title: json["Title"],
-    reviewText: json["ReviewText"],
-    rating: json["Rating"] == null ? null : json["Rating"],
-    displayCaptcha: json["DisplayCaptcha"] == null ? null : json["DisplayCaptcha"],
-    canCurrentCustomerLeaveReview: json["CanCurrentCustomerLeaveReview"] == null ? null : json["CanCurrentCustomerLeaveReview"],
-    successfullyAdded: json["SuccessfullyAdded"] == null ? null : json["SuccessfullyAdded"],
-    canAddNewReview: json["CanAddNewReview"] == null ? null : json["CanAddNewReview"],
-    result: json["Result"],
-    customProperties: json["CustomProperties"] == null ? null : CustomProperties.fromJson(json["CustomProperties"]),
-  );
+  factory AddProductReview.fromJson(Map<String, dynamic> json) =>
+      AddProductReview(
+        title: json["Title"],
+        reviewText: json["ReviewText"],
+        rating: json["Rating"] == null ? null : json["Rating"],
+        displayCaptcha:
+            json["DisplayCaptcha"] == null ? null : json["DisplayCaptcha"],
+        canCurrentCustomerLeaveReview:
+            json["CanCurrentCustomerLeaveReview"] == null
+                ? null
+                : json["CanCurrentCustomerLeaveReview"],
+        successfullyAdded: json["SuccessfullyAdded"] == null
+            ? null
+            : json["SuccessfullyAdded"],
+        canAddNewReview:
+            json["CanAddNewReview"] == null ? null : json["CanAddNewReview"],
+        result: json["Result"],
+        customProperties: json["CustomProperties"] == null
+            ? null
+            : CustomProperties.fromJson(json["CustomProperties"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "Title": title,
-    "ReviewText": reviewText,
-    "Rating": rating == null ? null : rating,
-    "DisplayCaptcha": displayCaptcha == null ? null : displayCaptcha,
-    "CanCurrentCustomerLeaveReview": canCurrentCustomerLeaveReview == null ? null : canCurrentCustomerLeaveReview,
-    "SuccessfullyAdded": successfullyAdded == null ? null : successfullyAdded,
-    "CanAddNewReview": canAddNewReview == null ? null : canAddNewReview,
-    "Result": result,
-    "CustomProperties": customProperties == null ? null : customProperties.toJson(),
-  };
+        "Title": title,
+        "ReviewText": reviewText,
+        "Rating": rating == null ? null : rating,
+        "DisplayCaptcha": displayCaptcha == null ? null : displayCaptcha,
+        "CanCurrentCustomerLeaveReview": canCurrentCustomerLeaveReview == null
+            ? null
+            : canCurrentCustomerLeaveReview,
+        "SuccessfullyAdded":
+            successfullyAdded == null ? null : successfullyAdded,
+        "CanAddNewReview": canAddNewReview == null ? null : canAddNewReview,
+        "Result": result,
+        "CustomProperties":
+            customProperties == null ? null : customProperties.toJson(),
+      };
 }
 
 class ProductReviewItem {
@@ -228,42 +274,62 @@ class ProductReviewItem {
         rating: rating ?? this.rating,
         writtenOnStr: writtenOnStr ?? this.writtenOnStr,
         helpfulness: helpfulness ?? this.helpfulness,
-        additionalProductReviewList: additionalProductReviewList ?? this.additionalProductReviewList,
+        additionalProductReviewList:
+            additionalProductReviewList ?? this.additionalProductReviewList,
         id: id ?? this.id,
         customProperties: customProperties ?? this.customProperties,
       );
 
-  factory ProductReviewItem.fromJson(Map<String, dynamic> json) => ProductReviewItem(
-    customerId: json["CustomerId"] == null ? null : json["CustomerId"],
-    customerAvatarUrl: json["CustomerAvatarUrl"] == null ? null : json["CustomerAvatarUrl"],
-    customerName: json["CustomerName"] == null ? null : json["CustomerName"],
-    allowViewingProfiles: json["AllowViewingProfiles"] == null ? null : json["AllowViewingProfiles"],
-    title: json["Title"] == null ? null : json["Title"],
-    reviewText: json["ReviewText"] == null ? null : json["ReviewText"],
-    replyText: json["ReplyText"] == null ? null : json["ReplyText"],
-    rating: json["Rating"] == null ? null : json["Rating"],
-    writtenOnStr: json["WrittenOnStr"] == null ? null : json["WrittenOnStr"],
-    helpfulness: json["Helpfulness"] == null ? null : Helpfulness.fromJson(json["Helpfulness"]),
-    additionalProductReviewList: json["AdditionalProductReviewList"] == null ? null : List<dynamic>.from(json["AdditionalProductReviewList"].map((x) => x)),
-    id: json["Id"] == null ? null : json["Id"],
-    customProperties: json["CustomProperties"] == null ? null : CustomProperties.fromJson(json["CustomProperties"]),
-  );
+  factory ProductReviewItem.fromJson(Map<String, dynamic> json) =>
+      ProductReviewItem(
+        customerId: json["CustomerId"] == null ? null : json["CustomerId"],
+        customerAvatarUrl: json["CustomerAvatarUrl"] == null
+            ? null
+            : json["CustomerAvatarUrl"],
+        customerName:
+            json["CustomerName"] == null ? null : json["CustomerName"],
+        allowViewingProfiles: json["AllowViewingProfiles"] == null
+            ? null
+            : json["AllowViewingProfiles"],
+        title: json["Title"] == null ? null : json["Title"],
+        reviewText: json["ReviewText"] == null ? null : json["ReviewText"],
+        replyText: json["ReplyText"] == null ? null : json["ReplyText"],
+        rating: json["Rating"] == null ? null : json["Rating"],
+        writtenOnStr:
+            json["WrittenOnStr"] == null ? null : json["WrittenOnStr"],
+        helpfulness: json["Helpfulness"] == null
+            ? null
+            : Helpfulness.fromJson(json["Helpfulness"]),
+        additionalProductReviewList: json["AdditionalProductReviewList"] == null
+            ? null
+            : List<dynamic>.from(
+                json["AdditionalProductReviewList"].map((x) => x)),
+        id: json["Id"] == null ? null : json["Id"],
+        customProperties: json["CustomProperties"] == null
+            ? null
+            : CustomProperties.fromJson(json["CustomProperties"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "CustomerId": customerId == null ? null : customerId,
-    "CustomerAvatarUrl": customerAvatarUrl == null ? null : customerAvatarUrl,
-    "CustomerName": customerName == null ? null : customerName,
-    "AllowViewingProfiles": allowViewingProfiles == null ? null : allowViewingProfiles,
-    "Title": title == null ? null : title,
-    "ReviewText": reviewText == null ? null : reviewText,
-    "ReplyText": replyText == null ? null : replyText,
-    "Rating": rating == null ? null : rating,
-    "WrittenOnStr": writtenOnStr == null ? null : writtenOnStr,
-    "Helpfulness": helpfulness == null ? null : helpfulness.toJson(),
-    "AdditionalProductReviewList": additionalProductReviewList == null ? null : List<dynamic>.from(additionalProductReviewList.map((x) => x)),
-    "Id": id == null ? null : id,
-    "CustomProperties": customProperties == null ? null : customProperties.toJson(),
-  };
+        "CustomerId": customerId == null ? null : customerId,
+        "CustomerAvatarUrl":
+            customerAvatarUrl == null ? null : customerAvatarUrl,
+        "CustomerName": customerName == null ? null : customerName,
+        "AllowViewingProfiles":
+            allowViewingProfiles == null ? null : allowViewingProfiles,
+        "Title": title == null ? null : title,
+        "ReviewText": reviewText == null ? null : reviewText,
+        "ReplyText": replyText == null ? null : replyText,
+        "Rating": rating == null ? null : rating,
+        "WrittenOnStr": writtenOnStr == null ? null : writtenOnStr,
+        "Helpfulness": helpfulness == null ? null : helpfulness.toJson(),
+        "AdditionalProductReviewList": additionalProductReviewList == null
+            ? null
+            : List<dynamic>.from(additionalProductReviewList.map((x) => x)),
+        "Id": id == null ? null : id,
+        "CustomProperties":
+            customProperties == null ? null : customProperties.toJson(),
+      };
 }
 
 class Helpfulness {
@@ -293,16 +359,22 @@ class Helpfulness {
       );
 
   factory Helpfulness.fromJson(Map<String, dynamic> json) => Helpfulness(
-    productReviewId: json["ProductReviewId"] == null ? null : json["ProductReviewId"],
-    helpfulYesTotal: json["HelpfulYesTotal"] == null ? null : json["HelpfulYesTotal"],
-    helpfulNoTotal: json["HelpfulNoTotal"] == null ? null : json["HelpfulNoTotal"],
-    customProperties: json["CustomProperties"] == null ? null : CustomProperties.fromJson(json["CustomProperties"]),
-  );
+        productReviewId:
+            json["ProductReviewId"] == null ? null : json["ProductReviewId"],
+        helpfulYesTotal:
+            json["HelpfulYesTotal"] == null ? null : json["HelpfulYesTotal"],
+        helpfulNoTotal:
+            json["HelpfulNoTotal"] == null ? null : json["HelpfulNoTotal"],
+        customProperties: json["CustomProperties"] == null
+            ? null
+            : CustomProperties.fromJson(json["CustomProperties"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "ProductReviewId": productReviewId == null ? null : productReviewId,
-    "HelpfulYesTotal": helpfulYesTotal == null ? null : helpfulYesTotal,
-    "HelpfulNoTotal": helpfulNoTotal == null ? null : helpfulNoTotal,
-    "CustomProperties": customProperties == null ? null : customProperties.toJson(),
-  };
+        "ProductReviewId": productReviewId == null ? null : productReviewId,
+        "HelpfulYesTotal": helpfulYesTotal == null ? null : helpfulYesTotal,
+        "HelpfulNoTotal": helpfulNoTotal == null ? null : helpfulNoTotal,
+        "CustomProperties":
+            customProperties == null ? null : customProperties.toJson(),
+      };
 }

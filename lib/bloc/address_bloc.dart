@@ -1,22 +1,26 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:kixat/bloc/base_bloc.dart';
-import 'package:kixat/model/AddressFormResponse.dart';
-import 'package:kixat/model/AddressListResponse.dart';
-import 'package:kixat/model/AvailableOption.dart';
-import 'package:kixat/model/BaseResponse.dart';
-import 'package:kixat/model/GetBillingAddressResponse.dart';
-import 'package:kixat/model/requestbody/FormValue.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/AddressRepository.dart';
-import 'package:kixat/utils/utility.dart';
-import 'package:kixat/utils/extensions.dart';
+import 'package:schoolapp/bloc/base_bloc.dart';
+import 'package:schoolapp/model/AddressFormResponse.dart';
+import 'package:schoolapp/model/AddressListResponse.dart';
+import 'package:schoolapp/model/AvailableOption.dart';
+import 'package:schoolapp/model/BaseResponse.dart';
+import 'package:schoolapp/model/GetBillingAddressResponse.dart';
+import 'package:schoolapp/model/requestbody/FormValue.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/AddressRepository.dart';
+import 'package:schoolapp/utils/utility.dart';
+import 'package:schoolapp/utils/extensions.dart';
 
 class AddressBloc implements BaseBloc {
   AddressRepository _repository;
-  StreamController _scAddressList, _scLoader, _scDeleteAddress, _scAddress,
-      _scStates, _scSaveAddress;
+  StreamController _scAddressList,
+      _scLoader,
+      _scDeleteAddress,
+      _scAddress,
+      _scStates,
+      _scSaveAddress;
 
   AddressListResponse cachedAddressList;
   Address cachedAddress;
@@ -36,11 +40,15 @@ class AddressBloc implements BaseBloc {
   StreamSink<ApiResponse<bool>> get deleteAddressSink => _scDeleteAddress.sink;
   Stream<ApiResponse<bool>> get deleteAddressStream => _scDeleteAddress.stream;
 
-  StreamSink<ApiResponse<BaseResponse>> get saveAddressSink => _scSaveAddress.sink;
-  Stream<ApiResponse<BaseResponse>> get saveAddressStream => _scSaveAddress.stream;
+  StreamSink<ApiResponse<BaseResponse>> get saveAddressSink =>
+      _scSaveAddress.sink;
+  Stream<ApiResponse<BaseResponse>> get saveAddressStream =>
+      _scSaveAddress.stream;
 
-  StreamSink<ApiResponse<List<AvailableOption>>> get statesListSink => _scStates.sink;
-  Stream<ApiResponse<List<AvailableOption>>> get statesListStream => _scStates.stream;
+  StreamSink<ApiResponse<List<AvailableOption>>> get statesListSink =>
+      _scStates.sink;
+  Stream<ApiResponse<List<AvailableOption>>> get statesListStream =>
+      _scStates.stream;
 
   AddressBloc() {
     _repository = AddressRepository();
@@ -62,7 +70,7 @@ class AddressBloc implements BaseBloc {
     _scSaveAddress?.close();
   }
 
-  void fetchAddressList() async{
+  void fetchAddressList() async {
     addressListSink.add(ApiResponse.loading());
 
     try {
@@ -83,7 +91,8 @@ class AddressBloc implements BaseBloc {
       deleteAddressSink.add(ApiResponse.completed(true));
 
       // remove item from list
-      cachedAddressList?.data?.addresses?.removeWhere((element) => element.id == addressId);
+      cachedAddressList?.data?.addresses
+          ?.removeWhere((element) => element.id == addressId);
       addressListSink.add(ApiResponse.completed(cachedAddressList));
     } catch (e) {
       deleteAddressSink.add(ApiResponse.error(e.toString()));
@@ -91,7 +100,7 @@ class AddressBloc implements BaseBloc {
     }
   }
 
-  void fetchNewAddressForm() async{
+  void fetchNewAddressForm() async {
     addressSink.add(ApiResponse.loading());
 
     try {
@@ -105,18 +114,20 @@ class AddressBloc implements BaseBloc {
     }
   }
 
-  void saveNewAddress(Address address, List<FormValue> formValues) async{
+  void saveNewAddress(Address address, List<FormValue> formValues) async {
     saveAddressSink.add(ApiResponse.loading());
 
     try {
-      BaseResponse response = await _repository.saveNewAddress(
-        AddressFormResponse(
-          data: AddressFormData(
-            address: address.copyWith(availableStates: [], availableCountries: [], customAddressAttributes: []),
-          ),
-          formValues: formValues,
-        )
-      );
+      BaseResponse response =
+          await _repository.saveNewAddress(AddressFormResponse(
+        data: AddressFormData(
+          address: address.copyWith(
+              availableStates: [],
+              availableCountries: [],
+              customAddressAttributes: []),
+        ),
+        formValues: formValues,
+      ));
       saveAddressSink.add(ApiResponse.completed(response));
     } catch (e) {
       saveAddressSink.add(ApiResponse.error(e.toString()));
@@ -124,11 +135,12 @@ class AddressBloc implements BaseBloc {
     }
   }
 
-  void fetchExistingAddress(num addressId) async{
+  void fetchExistingAddress(num addressId) async {
     addressSink.add(ApiResponse.loading());
 
     try {
-      AddressFormResponse response = await _repository.fetchExistingAddress(addressId);
+      AddressFormResponse response =
+          await _repository.fetchExistingAddress(addressId);
       cachedAddress = response.data.address;
       setInitiallySelectedItems(cachedAddress);
       addressSink.add(ApiResponse.completed(response.data.address));
@@ -138,7 +150,8 @@ class AddressBloc implements BaseBloc {
     }
   }
 
-  void editAddress(num addressId, Address address, List<FormValue> formValues) async{
+  void editAddress(
+      num addressId, Address address, List<FormValue> formValues) async {
     saveAddressSink.add(ApiResponse.loading());
 
     try {
@@ -146,7 +159,11 @@ class AddressBloc implements BaseBloc {
           addressId,
           AddressFormResponse(
             data: AddressFormData(
-              address: address.copyWith(availableStates: [], availableCountries: [], customAddressAttributes: [],),
+              address: address.copyWith(
+                availableStates: [],
+                availableCountries: [],
+                customAddressAttributes: [],
+              ),
             ),
             formValues: formValues,
           ));
@@ -157,7 +174,6 @@ class AddressBloc implements BaseBloc {
     }
   }
 
-
   fetchStatesByCountryId(int countryId) async {
     statesListSink.add(ApiResponse.loading());
 
@@ -166,7 +182,7 @@ class AddressBloc implements BaseBloc {
 
       this.cachedAddress.availableStates = stateList;
       this.selectedState = stateList?.safeFirstWhere(
-            (element) => element.selected ?? false,
+        (element) => element.selected ?? false,
         orElse: () => stateList?.safeFirst(),
       );
 
@@ -182,17 +198,15 @@ class AddressBloc implements BaseBloc {
   }
 
   setInitiallySelectedItems(Address formData) {
-
-    if(selectedCountry!=null || selectedState!=null)
-      return;
+    if (selectedCountry != null || selectedState != null) return;
 
     selectedCountry = formData.availableCountries?.safeFirstWhere(
-          (element) => element.selected ?? false,
+      (element) => element.selected ?? false,
       orElse: () => formData.availableCountries?.safeFirst(),
     );
 
     selectedState = formData.availableStates?.safeFirstWhere(
-          (element) => element.selected ?? false,
+      (element) => element.selected ?? false,
       orElse: () => formData.availableStates?.safeFirst(),
     );
   }

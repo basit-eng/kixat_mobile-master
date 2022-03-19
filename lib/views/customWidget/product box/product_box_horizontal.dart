@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:kixat/bloc/product_box_bloc.dart';
-import 'package:kixat/model/ProductSummary.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/AppConstants.dart';
-import 'package:kixat/utils/Const.dart';
-import 'package:kixat/utils/utility.dart';
-import 'package:kixat/views/customWidget/cached_image.dart';
-import 'package:kixat/views/customWidget/loading_dialog.dart';
-import 'package:kixat/views/pages/product/product_details_screen.dart';
+import 'package:schoolapp/bloc/product_box_bloc.dart';
+import 'package:schoolapp/model/ProductSummary.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/AppConstants.dart';
+import 'package:schoolapp/utils/Const.dart';
+import 'package:schoolapp/utils/utility.dart';
+import 'package:schoolapp/views/customWidget/cached_image.dart';
+import 'package:schoolapp/views/customWidget/loading_dialog.dart';
+import 'package:schoolapp/views/pages/product/product_details_screen.dart';
 
 class HorizontalProductBox extends StatelessWidget {
   final ProductSummary productData;

@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:kixat/bloc/base_bloc.dart';
-import 'package:kixat/model/SearchResponse.dart';
-import 'package:kixat/model/SearchSuggestionResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/SearchRepository.dart';
+import 'package:schoolapp/bloc/base_bloc.dart';
+import 'package:schoolapp/model/SearchResponse.dart';
+import 'package:schoolapp/model/SearchSuggestionResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/SearchRepository.dart';
 
 class SearchBloc extends BaseBloc {
   SearchRepository _searchRepository;
@@ -51,7 +51,7 @@ class SearchBloc extends BaseBloc {
         'ms': ms,
       };
 
-      if(advSearchModel?.advSearchSelected == true) {
+      if (advSearchModel?.advSearchSelected == true) {
         queryParams['advs'] = advSearchModel.advSearchSelected.toString();
         queryParams['sid'] = advSearchModel.searchInDescription.toString();
         queryParams['isc'] = advSearchModel.searchInSubcategory.toString();
@@ -63,7 +63,7 @@ class SearchBloc extends BaseBloc {
       SearchResponse response =
           await _searchRepository.searchProduct(queryParams);
 
-      if(searchQuery.isEmpty) {
+      if (searchQuery.isEmpty) {
         advSearchModel = response.data;
         advSearchSink.add(ApiResponse.completed(response.data));
       }
@@ -75,8 +75,8 @@ class SearchBloc extends BaseBloc {
 
   Future<List<SearchSuggestionData>> fetchSuggestions(String query) async {
     try {
-      SearchSuggestionResponse response = await
-        _searchRepository.fetchSuggestions(query);
+      SearchSuggestionResponse response =
+          await _searchRepository.fetchSuggestions(query);
 
       return response?.data ?? [];
     } catch (e) {

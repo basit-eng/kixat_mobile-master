@@ -1,4 +1,4 @@
-import 'package:kixat/model/CustomProperties.dart';
+import 'package:schoolapp/model/CustomProperties.dart';
 
 class PictureModel {
   PictureModel({
@@ -18,7 +18,7 @@ class PictureModel {
   CustomProperties customProperties;
 
   factory PictureModel.fromJson(Map<String, dynamic> json) {
-    if(json == null) return null;
+    if (json == null) return null;
 
     return PictureModel(
       imageUrl: json["ImageUrl"] == null ? null : json["ImageUrl"],
@@ -34,11 +34,11 @@ class PictureModel {
   }
 
   Map<String, dynamic> toJson() => {
-    "ImageUrl": imageUrl == null ? null : imageUrl,
-    "ThumbImageUrl": thumbImageUrl == null ? null : thumbImageUrl,
-    "FullSizeImageUrl": fullSizeImageUrl == null ? null : fullSizeImageUrl,
-    "Title": title == null ? null : title,
-    "AlternateText": alternateText == null ? null : alternateText,
-    "CustomProperties": customProperties.toJson(),
-  };
+        "ImageUrl": imageUrl == null ? null : imageUrl,
+        "ThumbImageUrl": thumbImageUrl == null ? null : thumbImageUrl,
+        "FullSizeImageUrl": fullSizeImageUrl == null ? null : fullSizeImageUrl,
+        "Title": title == null ? null : title,
+        "AlternateText": alternateText == null ? null : alternateText,
+        "CustomProperties": customProperties.toJson(),
+      };
 }

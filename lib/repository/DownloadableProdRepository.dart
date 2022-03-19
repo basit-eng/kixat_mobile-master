@@ -1,12 +1,11 @@
-
-import 'package:kixat/model/DownloadableProductResponse.dart';
-import 'package:kixat/model/FileDownloadResponse.dart';
-import 'package:kixat/model/SampleDownloadResponse.dart';
-import 'package:kixat/model/UserAgreementResponse.dart';
-import 'package:kixat/networking/ApiBaseHelper.dart';
-import 'package:kixat/networking/Endpoints.dart';
-import 'package:kixat/utils/FileResponse.dart';
-import 'package:kixat/utils/utility.dart';
+import 'package:schoolapp/model/DownloadableProductResponse.dart';
+import 'package:schoolapp/model/FileDownloadResponse.dart';
+import 'package:schoolapp/model/SampleDownloadResponse.dart';
+import 'package:schoolapp/model/UserAgreementResponse.dart';
+import 'package:schoolapp/networking/ApiBaseHelper.dart';
+import 'package:schoolapp/networking/Endpoints.dart';
+import 'package:schoolapp/utils/FileResponse.dart';
+import 'package:schoolapp/utils/utility.dart';
 
 class DownloadableProdRepository {
   ApiBaseHelper _helper = ApiBaseHelper();
@@ -22,9 +21,10 @@ class DownloadableProdRepository {
   }
 
   Future<FileDownloadResponse> downloadFile(String guid, String consent) async {
-    final FileResponse response = await _helper.getFile('${Endpoints.getDownload}/$guid/$consent');
+    final FileResponse response =
+        await _helper.getFile('${Endpoints.getDownload}/$guid/$consent');
 
-    if(response.isFile) {
+    if (response.isFile) {
       return FileDownloadResponse<SampleDownloadResponse>(
         file: await saveFileToDisk(response, showNotification: true),
       );

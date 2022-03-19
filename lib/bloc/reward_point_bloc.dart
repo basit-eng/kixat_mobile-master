@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:kixat/bloc/base_bloc.dart';
-import 'package:kixat/model/RewardPointResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/RewardPointRepository.dart';
+import 'package:schoolapp/bloc/base_bloc.dart';
+import 'package:schoolapp/model/RewardPointResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/RewardPointRepository.dart';
 
 class RewardPointBloc extends BaseBloc {
   RewardPointRepository _repository;
@@ -32,19 +32,19 @@ class RewardPointBloc extends BaseBloc {
   }
 
   fetchRewardPointDetails() async {
+    if (lastPageReached) return;
 
-    if(lastPageReached) return;
-
-    if(_pageNumber == 1) {
+    if (_pageNumber == 1) {
       rewardPointSink.add(ApiResponse.loading());
     } else {
       loaderSink.add(ApiResponse.loading());
     }
 
     try {
-      RewardPointResponse response = await _repository.fetchRawardPointDetails(_pageNumber);
+      RewardPointResponse response =
+          await _repository.fetchRawardPointDetails(_pageNumber);
 
-      if(_pageNumber == 1) {
+      if (_pageNumber == 1) {
         cachedData = response?.data;
       } else {
         cachedData?.rewardPoints?.addAll(response?.data?.rewardPoints ?? []);
@@ -52,19 +52,19 @@ class RewardPointBloc extends BaseBloc {
       }
 
       rewardPointSink.add(ApiResponse.completed(cachedData));
-      if(_pageNumber > 1) {
+      if (_pageNumber > 1) {
         loaderSink.add(ApiResponse.completed(true));
       }
 
       _pageNumber++;
-      lastPageReached = (response?.data?.pagerModel?.totalPages ?? 0) == (response?.data?.pagerModel?.currentPage ?? 0);
+      lastPageReached = (response?.data?.pagerModel?.totalPages ?? 0) ==
+          (response?.data?.pagerModel?.currentPage ?? 0);
     } catch (e) {
       rewardPointSink.add(ApiResponse.error(e.toString()));
-      if(_pageNumber > 1) {
+      if (_pageNumber > 1) {
         loaderSink.add(ApiResponse.error(e.toString()));
       }
       print(e);
     }
   }
-
 }

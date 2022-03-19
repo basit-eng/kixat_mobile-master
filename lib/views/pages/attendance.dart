@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/views/customWidget/CustomAppBar.dart';
+import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

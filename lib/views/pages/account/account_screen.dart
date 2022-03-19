@@ -2,27 +2,27 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:kixat/bloc/auth_bloc.dart';
-import 'package:kixat/views/customWidget/loading_dialog.dart';
-import 'package:kixat/model/UserLoginResponse.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/views/pages/account/address/address_list_screen.dart';
-import 'package:kixat/views/pages/account/subscription_screen.dart';
-import 'package:kixat/views/pages/account/cart/shopping_cart_screen.dart';
-import 'package:kixat/views/pages/account/downloadableProduct/downloadable_product_screen.dart';
-import 'package:kixat/views/pages/account/login_screen.dart';
-import 'package:kixat/views/pages/account/new_products_screen.dart';
-import 'package:kixat/views/pages/account/order/order_history_screen.dart';
-import 'package:kixat/views/pages/account/registration_sceen.dart';
-import 'package:kixat/views/pages/account/returnRequest/return_request_history_screen.dart';
-import 'package:kixat/views/pages/account/review/customer_review_screen.dart';
-import 'package:kixat/views/pages/account/rewardPoint/reward_point_screen.dart';
-import 'package:kixat/views/pages/account/wishlist_screen.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
-import 'package:kixat/utils/nop_cart_icons.dart';
-import 'package:kixat/utils/shared_pref.dart';
-import 'package:kixat/utils/utility.dart';
+import 'package:schoolapp/bloc/auth_bloc.dart';
+import 'package:schoolapp/views/customWidget/loading_dialog.dart';
+import 'package:schoolapp/model/UserLoginResponse.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/views/pages/account/address/address_list_screen.dart';
+import 'package:schoolapp/views/pages/account/subscription_screen.dart';
+import 'package:schoolapp/views/pages/account/cart/shopping_cart_screen.dart';
+import 'package:schoolapp/views/pages/account/downloadableProduct/downloadable_product_screen.dart';
+import 'package:schoolapp/views/pages/account/login_screen.dart';
+import 'package:schoolapp/views/pages/account/new_products_screen.dart';
+import 'package:schoolapp/views/pages/account/order/order_history_screen.dart';
+import 'package:schoolapp/views/pages/account/registration_sceen.dart';
+import 'package:schoolapp/views/pages/account/returnRequest/return_request_history_screen.dart';
+import 'package:schoolapp/views/pages/account/review/customer_review_screen.dart';
+import 'package:schoolapp/views/pages/account/rewardPoint/reward_point_screen.dart';
+import 'package:schoolapp/views/pages/account/wishlist_screen.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
+import 'package:schoolapp/utils/nop_cart_icons.dart';
+import 'package:schoolapp/utils/shared_pref.dart';
+import 'package:schoolapp/utils/utility.dart';
 
 class AccountScreen extends StatefulWidget {
   @override

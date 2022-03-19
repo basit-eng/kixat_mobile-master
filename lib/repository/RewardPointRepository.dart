@@ -1,6 +1,6 @@
-import 'package:kixat/model/RewardPointResponse.dart';
-import 'package:kixat/networking/ApiBaseHelper.dart';
-import 'package:kixat/networking/Endpoints.dart';
+import 'package:schoolapp/model/RewardPointResponse.dart';
+import 'package:schoolapp/networking/ApiBaseHelper.dart';
+import 'package:schoolapp/networking/Endpoints.dart';
 
 class RewardPointRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

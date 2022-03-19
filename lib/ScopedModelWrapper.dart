@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kixat/main.dart';
-import 'package:kixat/model/AppLandingResponse.dart';
-import 'package:kixat/utils/shared_pref.dart';
+import 'package:schoolapp/main.dart';
+import 'package:schoolapp/model/AppLandingResponse.dart';
+import 'package:schoolapp/utils/shared_pref.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 import 'model/AppLandingResponse.dart';

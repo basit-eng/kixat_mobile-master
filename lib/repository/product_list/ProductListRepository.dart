@@ -1,7 +1,7 @@
-import 'package:kixat/model/product_list/ProductListResponse.dart';
-import 'package:kixat/networking/ApiBaseHelper.dart';
-import 'package:kixat/networking/Endpoints.dart';
-import 'package:kixat/utils/GetBy.dart';
+import 'package:schoolapp/model/product_list/ProductListResponse.dart';
+import 'package:schoolapp/networking/ApiBaseHelper.dart';
+import 'package:schoolapp/networking/Endpoints.dart';
+import 'package:schoolapp/utils/GetBy.dart';
 
 class ProductListRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

@@ -1,17 +1,17 @@
 import 'dart:async';
 
-import 'package:kixat/bloc/base_bloc.dart';
-import 'package:kixat/model/FileDownloadResponse.dart';
-import 'package:kixat/model/FileUploadResponse.dart';
-import 'package:kixat/model/ReturnRequestHistoryResponse.dart';
-import 'package:kixat/model/ReturnRequestResponse.dart';
-import 'package:kixat/model/SampleDownloadResponse.dart';
-import 'package:kixat/model/requestbody/FormValue.dart';
-import 'package:kixat/model/requestbody/ReturnRequestBody.dart';
-import 'package:kixat/networking/ApiResponse.dart';
-import 'package:kixat/repository/ReturnRequestRepository.dart';
-import 'package:kixat/service/GlobalService.dart';
-import 'package:kixat/utils/Const.dart';
+import 'package:schoolapp/bloc/base_bloc.dart';
+import 'package:schoolapp/model/FileDownloadResponse.dart';
+import 'package:schoolapp/model/FileUploadResponse.dart';
+import 'package:schoolapp/model/ReturnRequestHistoryResponse.dart';
+import 'package:schoolapp/model/ReturnRequestResponse.dart';
+import 'package:schoolapp/model/SampleDownloadResponse.dart';
+import 'package:schoolapp/model/requestbody/FormValue.dart';
+import 'package:schoolapp/model/requestbody/ReturnRequestBody.dart';
+import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:schoolapp/repository/ReturnRequestRepository.dart';
+import 'package:schoolapp/service/GlobalService.dart';
+import 'package:schoolapp/utils/Const.dart';
 
 class ReturnRequestBloc extends BaseBloc {
   ReturnRequestRepository _repository;
@@ -24,19 +24,23 @@ class ReturnRequestBloc extends BaseBloc {
   StreamSink<ApiResponse<ReturnRequestData>> get formSink => _scForm.sink;
   Stream<ApiResponse<ReturnRequestData>> get formStream => _scForm.stream;
 
-  StreamSink<ApiResponse<ReturnReqHistoryData>> get historySink => _scHistory.sink;
-  Stream<ApiResponse<ReturnReqHistoryData>> get historyStream => _scHistory.stream;
+  StreamSink<ApiResponse<ReturnReqHistoryData>> get historySink =>
+      _scHistory.sink;
+  Stream<ApiResponse<ReturnReqHistoryData>> get historyStream =>
+      _scHistory.stream;
 
   StreamSink<ApiResponse<String>> get messageSink => _scMsg.sink;
   Stream<ApiResponse<String>> get messageStream => _scMsg.stream;
 
-  StreamSink<ApiResponse<FileUploadData>> get fileUploadSink => _scFileUpload.sink;
-  Stream<ApiResponse<FileUploadData>> get fileUploadStream => _scFileUpload.stream;
+  StreamSink<ApiResponse<FileUploadData>> get fileUploadSink =>
+      _scFileUpload.sink;
+  Stream<ApiResponse<FileUploadData>> get fileUploadStream =>
+      _scFileUpload.stream;
 
-  StreamSink<ApiResponse<FileDownloadResponse<SampleDownloadResponse>>> get fileDownloadSink =>
-      _scFileDownload.sink;
-  Stream<ApiResponse<FileDownloadResponse<SampleDownloadResponse>>> get fileDownloadStream =>
-      _scFileDownload.stream;
+  StreamSink<ApiResponse<FileDownloadResponse<SampleDownloadResponse>>>
+      get fileDownloadSink => _scFileDownload.sink;
+  Stream<ApiResponse<FileDownloadResponse<SampleDownloadResponse>>>
+      get fileDownloadStream => _scFileDownload.stream;
 
   ReturnRequestBloc() {
     _repository = ReturnRequestRepository();
@@ -44,7 +48,8 @@ class ReturnRequestBloc extends BaseBloc {
     _scMsg = StreamController<ApiResponse<String>>();
     _scFileUpload = StreamController<ApiResponse<FileUploadData>>();
     _scHistory = StreamController<ApiResponse<ReturnReqHistoryData>>();
-    _scFileDownload = StreamController<ApiResponse<FileDownloadResponse<SampleDownloadResponse>>>();
+    _scFileDownload = StreamController<
+        ApiResponse<FileDownloadResponse<SampleDownloadResponse>>>();
   }
 
   @override
@@ -60,21 +65,18 @@ class ReturnRequestBloc extends BaseBloc {
     formSink.add(ApiResponse.loading());
 
     try {
-      ReturnRequestResponse response = await _repository.fetchReturnRequestForm(orderId);
+      ReturnRequestResponse response =
+          await _repository.fetchReturnRequestForm(orderId);
 
       // add primary selected items
       selectedAction = AvailableReturn(
-          id: -1,
-          name: GlobalService().getString(Const.RETURN_REQ_ACTION)
-      );
+          id: -1, name: GlobalService().getString(Const.RETURN_REQ_ACTION));
 
       selectedReason = AvailableReturn(
-          id: -1,
-          name: GlobalService().getString(Const.RETURN_REQ_REASON)
-      );
+          id: -1, name: GlobalService().getString(Const.RETURN_REQ_REASON));
 
-      response.data.availableReturnActions.insertAll(0, [ selectedAction ]);
-      response.data.availableReturnReasons.insertAll(0, [ selectedReason ]);
+      response.data.availableReturnActions.insertAll(0, [selectedAction]);
+      response.data.availableReturnReasons.insertAll(0, [selectedReason]);
       response.data.returnRequestReasonId = -1;
       response.data.returnRequestActionId = -1;
 
@@ -94,17 +96,18 @@ class ReturnRequestBloc extends BaseBloc {
 
     var reqBody = ReturnRequestBody(data: data, formValues: []);
     quantityMap.forEach((key, value) {
-      if(value > 0)
+      if (value > 0)
         reqBody.formValues.add(FormValue(
-          key: 'quantity$key', value: value.toString(),
+          key: 'quantity$key',
+          value: value.toString(),
         ));
     });
-    if(fileGuid.isNotEmpty)
-      reqBody.data.uploadedFileGuid = fileGuid;
+    if (fileGuid.isNotEmpty) reqBody.data.uploadedFileGuid = fileGuid;
 
     try {
       ReturnRequestResponse response = await _repository.postReturnRequestForm(
-          data.orderId, reqBody,
+        data.orderId,
+        reqBody,
       );
       messageSink.add(ApiResponse.completed(response.data?.result ?? ''));
     } catch (e) {
@@ -131,7 +134,8 @@ class ReturnRequestBloc extends BaseBloc {
     historySink.add(ApiResponse.loading());
 
     try {
-      ReturnReqHistoryResponse response = await _repository.fetchReturnRequestHistory();
+      ReturnReqHistoryResponse response =
+          await _repository.fetchReturnRequestHistory();
       historySink.add(ApiResponse.completed(response.data));
     } catch (e) {
       historySink.add(ApiResponse.error(e.toString()));
@@ -143,12 +147,12 @@ class ReturnRequestBloc extends BaseBloc {
     fileDownloadSink.add(ApiResponse.loading());
 
     try {
-      FileDownloadResponse<SampleDownloadResponse> response = await _repository.downloadFile(fileGuid);
+      FileDownloadResponse<SampleDownloadResponse> response =
+          await _repository.downloadFile(fileGuid);
       fileDownloadSink.add(ApiResponse.completed(response));
     } catch (e) {
       fileDownloadSink.add(ApiResponse.error(e.toString()));
       print(e.toString());
     }
   }
-
 }
