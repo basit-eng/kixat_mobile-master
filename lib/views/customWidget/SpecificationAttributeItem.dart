@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:schoolapp/model/ProductDetailsResponse.dart';
-import 'package:schoolapp/utils/extensions.dart';
+import 'package:softify/model/ProductDetailsResponse.dart';
+import 'package:softify/utils/extensions.dart';
 
 class SpecificationAttributeItem extends StatelessWidget {
   final SpecificationAttr attribute;

@@ -1,4 +1,4 @@
-import 'package:schoolapp/model/GetBillingAddressResponse.dart';
+import 'package:softify/model/GetBillingAddressResponse.dart';
 
 import 'FormValue.dart';
 

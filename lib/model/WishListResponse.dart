@@ -1,6 +1,6 @@
-import 'package:schoolapp/model/AvailableOption.dart';
-import 'package:schoolapp/model/CustomProperties.dart';
-import 'package:schoolapp/model/PictureModel.dart';
+import 'package:softify/model/AvailableOption.dart';
+import 'package:softify/model/CustomProperties.dart';
+import 'package:softify/model/PictureModel.dart';
 
 class WishListResponse {
   WishListResponse({

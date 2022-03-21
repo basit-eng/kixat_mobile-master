@@ -1,4 +1,4 @@
-import 'package:schoolapp/model/ProductReviewResponse.dart';
+import 'package:softify/model/ProductReviewResponse.dart';
 
 class PostHelpfulnessResponse {
   PostHelpfulnessResponse({

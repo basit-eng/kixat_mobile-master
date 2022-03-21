@@ -1,15 +1,15 @@
-import 'package:schoolapp/model/ChangePasswordResponse.dart';
-import 'package:schoolapp/model/GetAvatarResponse.dart';
-import 'package:schoolapp/model/LoginFormResponse.dart';
-import 'package:schoolapp/model/PasswordRecoveryResponse.dart';
-import 'package:schoolapp/model/RegisterFormResponse.dart';
-import 'package:schoolapp/model/UserLoginResponse.dart';
-import 'package:schoolapp/model/requestbody/RegistrationReqBody.dart';
-import 'package:schoolapp/model/requestbody/UserLoginReqBody.dart';
-import 'package:schoolapp/networking/ApiBaseHelper.dart';
-import 'package:schoolapp/networking/Endpoints.dart';
-import 'package:schoolapp/repository/BaseRepository.dart';
-import 'package:schoolapp/utils/AppConstants.dart';
+import 'package:softify/model/ChangePasswordResponse.dart';
+import 'package:softify/model/GetAvatarResponse.dart';
+import 'package:softify/model/LoginFormResponse.dart';
+import 'package:softify/model/PasswordRecoveryResponse.dart';
+import 'package:softify/model/RegisterFormResponse.dart';
+import 'package:softify/model/UserLoginResponse.dart';
+import 'package:softify/model/requestbody/RegistrationReqBody.dart';
+import 'package:softify/model/requestbody/UserLoginReqBody.dart';
+import 'package:softify/networking/ApiBaseHelper.dart';
+import 'package:softify/networking/Endpoints.dart';
+import 'package:softify/repository/BaseRepository.dart';
+import 'package:softify/utils/AppConstants.dart';
 
 class AuthRepository extends BaseRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

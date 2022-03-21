@@ -1,5 +1,5 @@
-import 'package:schoolapp/model/AvailableOption.dart';
-import 'package:schoolapp/model/CustomProperties.dart';
+import 'package:softify/model/AvailableOption.dart';
+import 'package:softify/model/CustomProperties.dart';
 
 class UserLoginResponse {
   UserLoginResponse({

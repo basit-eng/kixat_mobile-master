@@ -1,21 +1,21 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:schoolapp/bloc/base_bloc.dart';
-import 'package:schoolapp/model/AvailableOption.dart';
-import 'package:schoolapp/model/GetBillingAddressResponse.dart';
-import 'package:schoolapp/model/SaveBillingResponse.dart';
-import 'package:schoolapp/model/requestbody/FormValue.dart';
-import 'package:schoolapp/model/requestbody/FormValuesRequestBody.dart';
-import 'package:schoolapp/model/requestbody/OrderSummaryReponse.dart';
-import 'package:schoolapp/model/requestbody/SaveBillingReqBody.dart';
-import 'package:schoolapp/model/requestbody/SavePaymentReqBody.dart';
-import 'package:schoolapp/model/requestbody/SaveShippingReqBody.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/CheckoutRepository.dart';
-import 'package:schoolapp/utils/CheckoutConstants.dart';
-import 'package:schoolapp/utils/extensions.dart';
-import 'package:schoolapp/utils/utility.dart';
+import 'package:softify/bloc/base_bloc.dart';
+import 'package:softify/model/AvailableOption.dart';
+import 'package:softify/model/GetBillingAddressResponse.dart';
+import 'package:softify/model/SaveBillingResponse.dart';
+import 'package:softify/model/requestbody/FormValue.dart';
+import 'package:softify/model/requestbody/FormValuesRequestBody.dart';
+import 'package:softify/model/requestbody/OrderSummaryReponse.dart';
+import 'package:softify/model/requestbody/SaveBillingReqBody.dart';
+import 'package:softify/model/requestbody/SavePaymentReqBody.dart';
+import 'package:softify/model/requestbody/SaveShippingReqBody.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/CheckoutRepository.dart';
+import 'package:softify/utils/CheckoutConstants.dart';
+import 'package:softify/utils/extensions.dart';
+import 'package:softify/utils/utility.dart';
 
 class CheckoutBloc implements BaseBloc {
   CheckoutRepository _repository;

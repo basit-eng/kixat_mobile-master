@@ -6,11 +6,11 @@ import 'package:http/http.dart' as http;
 import 'package:http_parser/http_parser.dart';
 import 'package:jaguar_jwt/jaguar_jwt.dart' as jwt;
 import 'package:mime/mime.dart';
-import 'package:schoolapp/model/BaseResponse.dart';
-import 'package:schoolapp/networking/Endpoints.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/AppConstants.dart';
-import 'package:schoolapp/utils/FileResponse.dart';
+import 'package:softify/model/BaseResponse.dart';
+import 'package:softify/networking/Endpoints.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/AppConstants.dart';
+import 'package:softify/utils/FileResponse.dart';
 
 import 'AppException.dart';
 

@@ -1,6 +1,6 @@
-import 'package:schoolapp/model/ContactUsResponse.dart';
-import 'package:schoolapp/networking/ApiBaseHelper.dart';
-import 'package:schoolapp/networking/Endpoints.dart';
+import 'package:softify/model/ContactUsResponse.dart';
+import 'package:softify/networking/ApiBaseHelper.dart';
+import 'package:softify/networking/Endpoints.dart';
 
 class ContactUsRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

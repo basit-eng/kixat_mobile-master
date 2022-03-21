@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:schoolapp/model/category_tree/CategoryTreeResponse.dart';
-import 'package:schoolapp/utils/utility.dart';
+import 'package:softify/model/category_tree/CategoryTreeResponse.dart';
+import 'package:softify/utils/utility.dart';
 
-import 'package:schoolapp/views/customWidget/cached_image.dart';
-import 'package:schoolapp/views/pages/assignmentCard_screen.dart';
-import 'package:schoolapp/views/pages/attendance.dart';
-import 'package:schoolapp/views/pages/calender_screen.dart';
-import 'package:schoolapp/views/pages/documents.dart';
-import 'package:schoolapp/views/pages/eventscreen.dart';
-import 'package:schoolapp/views/pages/feeDetails/fee02.dart';
-import 'package:schoolapp/views/pages/feeDetails/fee_details.dart';
-import 'package:schoolapp/views/pages/courses.dart';
-import 'package:schoolapp/views/pages/notice_screen.dart';
-import 'package:schoolapp/views/pages/profile_screen.dart';
-import 'package:schoolapp/views/pages/report_card.dart';
-import 'package:schoolapp/views/pages/resultCard_detail_screen.dart';
-import 'package:schoolapp/views/pages/rountineCard_screen.dart';
+import 'package:softify/views/customWidget/cached_image.dart';
+import 'package:softify/views/pages/assignmentCard_screen.dart';
+import 'package:softify/views/pages/attendance.dart';
+import 'package:softify/views/pages/calender_screen.dart';
+import 'package:softify/views/pages/documents.dart';
+import 'package:softify/views/pages/eventscreen.dart';
+import 'package:softify/views/pages/feeDetails/fee02.dart';
+import 'package:softify/views/pages/feeDetails/fee_details.dart';
+import 'package:softify/views/pages/courses.dart';
+import 'package:softify/views/pages/notice_screen.dart';
+import 'package:softify/views/pages/profile_screen.dart';
+import 'package:softify/views/pages/report_card.dart';
+import 'package:softify/views/pages/resultCard_detail_screen.dart';
+import 'package:softify/views/pages/rountineCard_screen.dart';
 
 import '../../pages/resultcard_screen.dart';
 

@@ -1,10 +1,10 @@
-import 'package:schoolapp/model/home/BestSellerProductResponse.dart';
-import 'package:schoolapp/model/home/CategoriesWithProductsResponse.dart';
-import 'package:schoolapp/model/home/FeaturedProductResponse.dart';
-import 'package:schoolapp/model/HomeSliderResponse.dart';
-import 'package:schoolapp/model/home/ManufacturersResponse.dart';
-import 'package:schoolapp/networking/ApiBaseHelper.dart';
-import 'package:schoolapp/networking/Endpoints.dart';
+import 'package:softify/model/home/BestSellerProductResponse.dart';
+import 'package:softify/model/home/CategoriesWithProductsResponse.dart';
+import 'package:softify/model/home/FeaturedProductResponse.dart';
+import 'package:softify/model/HomeSliderResponse.dart';
+import 'package:softify/model/home/ManufacturersResponse.dart';
+import 'package:softify/networking/ApiBaseHelper.dart';
+import 'package:softify/networking/Endpoints.dart';
 
 class HomeRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

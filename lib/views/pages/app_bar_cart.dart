@@ -3,10 +3,10 @@ import 'dart:ui';
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/nop_cart_icons.dart';
-import 'package:schoolapp/utils/AppConstants.dart';
-import 'package:schoolapp/views/pages/account/cart/shopping_cart_screen.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/nop_cart_icons.dart';
+import 'package:softify/utils/AppConstants.dart';
+import 'package:softify/views/pages/account/cart/shopping_cart_screen.dart';
 
 class AppBarCart extends StatefulWidget {
   @override

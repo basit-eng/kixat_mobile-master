@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:schoolapp/bloc/product_box_bloc.dart';
-import 'package:schoolapp/model/ProductSummary.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/AppConstants.dart';
-import 'package:schoolapp/utils/Const.dart';
-import 'package:schoolapp/utils/utility.dart';
-import 'package:schoolapp/views/customWidget/cached_image.dart';
-import 'package:schoolapp/views/customWidget/loading_dialog.dart';
-import 'package:schoolapp/views/pages/product/product_details_screen.dart';
+import 'package:softify/bloc/product_box_bloc.dart';
+import 'package:softify/model/ProductSummary.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/AppConstants.dart';
+import 'package:softify/utils/Const.dart';
+import 'package:softify/utils/utility.dart';
+import 'package:softify/views/customWidget/cached_image.dart';
+import 'package:softify/views/customWidget/loading_dialog.dart';
+import 'package:softify/views/pages/product/product_details_screen.dart';
 
 class HorizontalProductBox extends StatelessWidget {
   final ProductSummary productData;

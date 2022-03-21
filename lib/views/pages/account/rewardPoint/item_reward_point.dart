@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/model/RewardPointResponse.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/Const.dart';
-import 'package:schoolapp/utils/utility.dart';
+import 'package:softify/model/RewardPointResponse.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/Const.dart';
+import 'package:softify/utils/utility.dart';
 
 class ItemRewardPoint extends StatelessWidget {
   final RewardPoint item;

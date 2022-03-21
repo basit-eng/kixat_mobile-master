@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:schoolapp/bloc/base_bloc.dart';
-import 'package:schoolapp/model/NewProductResponse.dart';
-import 'package:schoolapp/model/ProductSummary.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/NewProductRepository.dart';
+import 'package:softify/bloc/base_bloc.dart';
+import 'package:softify/model/NewProductResponse.dart';
+import 'package:softify/model/ProductSummary.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/NewProductRepository.dart';
 
 class NewProductBloc extends BaseBloc {
   NewProductRepository _repository;

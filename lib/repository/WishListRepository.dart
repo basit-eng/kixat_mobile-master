@@ -1,7 +1,7 @@
-import 'package:schoolapp/model/WishListResponse.dart';
-import 'package:schoolapp/model/requestbody/FormValuesRequestBody.dart';
-import 'package:schoolapp/networking/ApiBaseHelper.dart';
-import 'package:schoolapp/networking/Endpoints.dart';
+import 'package:softify/model/WishListResponse.dart';
+import 'package:softify/model/requestbody/FormValuesRequestBody.dart';
+import 'package:softify/networking/ApiBaseHelper.dart';
+import 'package:softify/networking/Endpoints.dart';
 
 class WishListRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

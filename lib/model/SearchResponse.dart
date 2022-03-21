@@ -1,6 +1,6 @@
-import 'package:schoolapp/model/AvailableOption.dart';
-import 'package:schoolapp/model/CustomProperties.dart';
-import 'package:schoolapp/model/product_list/ProductListResponse.dart';
+import 'package:softify/model/AvailableOption.dart';
+import 'package:softify/model/CustomProperties.dart';
+import 'package:softify/model/product_list/ProductListResponse.dart';
 
 class SearchResponse {
   SearchResponse({

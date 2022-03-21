@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/views/customWidget/RoundButton.dart';
-import 'package:schoolapp/views/customWidget/cached_image.dart';
-import 'package:schoolapp/model/ProductDetailsResponse.dart';
-import 'package:schoolapp/Views/pages/product/product_details_screen.dart';
-import 'package:schoolapp/utils/styles.dart';
+import 'package:softify/views/customWidget/RoundButton.dart';
+import 'package:softify/views/customWidget/cached_image.dart';
+import 'package:softify/model/ProductDetailsResponse.dart';
+import 'package:softify/Views/pages/product/product_details_screen.dart';
+import 'package:softify/utils/styles.dart';
 
 class ItemGroupProduct extends StatefulWidget {
   final ProductDetails item;

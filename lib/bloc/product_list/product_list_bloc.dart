@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:schoolapp/model/product_list/ProductListResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/product_list/ProductListRepository.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/Const.dart';
+import 'package:softify/model/product_list/ProductListResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/product_list/ProductListRepository.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/Const.dart';
 
 class ProductListBloc {
   ProductListRepository _prodListRepository;

@@ -1,5 +1,5 @@
-import 'package:schoolapp/model/CustomProperties.dart';
-import 'package:schoolapp/model/ProductSummary.dart';
+import 'package:softify/model/CustomProperties.dart';
+import 'package:softify/model/ProductSummary.dart';
 import '../PictureModel.dart';
 
 class ProductListResponse {

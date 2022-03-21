@@ -1,5 +1,5 @@
-name: schoolapp
-description: schoolapp Leading Market Place in World
+name: softify
+description: softify Leading Market Place in World
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -19,18 +19,18 @@ dependencies:
   jaguar_jwt: ^3.0.0 # jwt encoder/decoder
   shared_preferences: ^2.0.5
   carousel_slider: ^4.0.0
-  flutter_html: ^2.1.1
+  flutter_html: ^3.0.0-alpha.2
   cached_network_image: 
   scoped_model: ^2.0.0-nullsafety.0
-  firebase_messaging: ^10.0.4
+  firebase_messaging: ^11.2.11
   firebase_core: ^1.4.0
   firebase_crashlytics: ^2.1.1
-  flutter_local_notifications: ^5.0.0+4 # TODO ios implementation
-  file_picker: ^3.0.2+2
+  flutter_local_notifications: ^9.4.0 # TODO ios implementation
+  file_picker: ^4.5.1
   flutter_barcode_scanner: ^2.0.0
   url_launcher: ^6.0.7
-  flutter_svg: ^0.22.0
-  permission_handler: ^8.1.1
+  flutter_svg: ^1.0.3
+  permission_handler: ^9.2.0
   intl:  # datetime converter
   flutter_typeahead: ^3.2.0 # search autosuggestion
   badges: ^2.0.1

@@ -1,6 +1,6 @@
-import 'package:schoolapp/model/AvailableOption.dart';
-import 'package:schoolapp/model/CustomAttribute.dart';
-import 'package:schoolapp/model/CustomProperties.dart';
+import 'package:softify/model/AvailableOption.dart';
+import 'package:softify/model/CustomAttribute.dart';
+import 'package:softify/model/CustomProperties.dart';
 
 class RegisterFormResponse {
   RegisterFormResponse({

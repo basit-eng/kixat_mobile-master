@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/bloc/search_bloc.dart';
-import 'package:schoolapp/model/product_list/ProductListResponse.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/ButtonShape.dart';
-import 'package:schoolapp/utils/Const.dart';
-import 'package:schoolapp/utils/styles.dart';
-import 'package:schoolapp/utils/utility.dart';
-import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
-import 'package:schoolapp/views/customWidget/CustomButton.dart';
+import 'package:softify/bloc/search_bloc.dart';
+import 'package:softify/model/product_list/ProductListResponse.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/ButtonShape.dart';
+import 'package:softify/utils/Const.dart';
+import 'package:softify/utils/styles.dart';
+import 'package:softify/utils/utility.dart';
+import 'package:softify/views/customWidget/CustomAppBar.dart';
+import 'package:softify/views/customWidget/CustomButton.dart';
 
 class SearchFilter extends StatefulWidget {
   @override

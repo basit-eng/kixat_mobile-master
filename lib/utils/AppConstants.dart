@@ -23,7 +23,7 @@ class AppConstants {
   static const double productBoxThumbnailSize = 175.0;
 
   static const loginBackground = 'assets/back.jpg';
-  static const splashBackground = 'assets/splash_image_schoolapp.gif';
+  static const splashBackground = 'assets/splash_image_softify.gif';
   static const cartIcon_white = 'assets/cart_white.png';
   static const cartIcon_black = 'assets/cart.png';
   static const logo_rtl = 'assets/app_logo_arabic.png';

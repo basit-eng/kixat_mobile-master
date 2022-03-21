@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:schoolapp/model/UserLoginResponse.dart';
-import 'package:schoolapp/service/GlobalService.dart';
+import 'package:softify/model/UserLoginResponse.dart';
+import 'package:softify/service/GlobalService.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SessionData {

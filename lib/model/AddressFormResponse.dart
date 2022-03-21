@@ -1,6 +1,6 @@
-import 'package:schoolapp/model/CustomProperties.dart';
-import 'package:schoolapp/model/GetBillingAddressResponse.dart';
-import 'package:schoolapp/model/requestbody/FormValue.dart';
+import 'package:softify/model/CustomProperties.dart';
+import 'package:softify/model/GetBillingAddressResponse.dart';
+import 'package:softify/model/requestbody/FormValue.dart';
 
 class AddressFormResponse {
   AddressFormResponse({

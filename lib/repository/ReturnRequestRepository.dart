@@ -1,13 +1,13 @@
-import 'package:schoolapp/model/FileDownloadResponse.dart';
-import 'package:schoolapp/model/FileUploadResponse.dart';
-import 'package:schoolapp/model/ReturnRequestHistoryResponse.dart';
-import 'package:schoolapp/model/ReturnRequestResponse.dart';
-import 'package:schoolapp/model/SampleDownloadResponse.dart';
-import 'package:schoolapp/model/requestbody/ReturnRequestBody.dart';
-import 'package:schoolapp/networking/ApiBaseHelper.dart';
-import 'package:schoolapp/networking/Endpoints.dart';
-import 'package:schoolapp/utils/FileResponse.dart';
-import 'package:schoolapp/utils/utility.dart';
+import 'package:softify/model/FileDownloadResponse.dart';
+import 'package:softify/model/FileUploadResponse.dart';
+import 'package:softify/model/ReturnRequestHistoryResponse.dart';
+import 'package:softify/model/ReturnRequestResponse.dart';
+import 'package:softify/model/SampleDownloadResponse.dart';
+import 'package:softify/model/requestbody/ReturnRequestBody.dart';
+import 'package:softify/networking/ApiBaseHelper.dart';
+import 'package:softify/networking/Endpoints.dart';
+import 'package:softify/utils/FileResponse.dart';
+import 'package:softify/utils/utility.dart';
 
 class ReturnRequestRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

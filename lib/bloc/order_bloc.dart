@@ -1,13 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
-import 'package:schoolapp/bloc/base_bloc.dart';
-import 'package:schoolapp/model/FileDownloadResponse.dart';
-import 'package:schoolapp/model/OrderDetailsResponse.dart';
-import 'package:schoolapp/model/OrderHistoryResponse.dart';
-import 'package:schoolapp/model/SampleDownloadResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/OrderRepository.dart';
+import 'package:softify/bloc/base_bloc.dart';
+import 'package:softify/model/FileDownloadResponse.dart';
+import 'package:softify/model/OrderDetailsResponse.dart';
+import 'package:softify/model/OrderHistoryResponse.dart';
+import 'package:softify/model/SampleDownloadResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/OrderRepository.dart';
 
 class OrderBloc extends BaseBloc {
   OrderRepository _repository;

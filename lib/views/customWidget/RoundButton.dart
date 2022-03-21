@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/utils/utility.dart';
+import 'package:softify/utils/utility.dart';
 
 class RoundButton extends StatelessWidget {
   final double radius;

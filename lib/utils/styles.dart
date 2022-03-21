@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/ScopedModelWrapper.dart';
-import 'package:schoolapp/utils/sign_config.dart';
-import 'package:schoolapp/utils/utility.dart';
+import 'package:softify/ScopedModelWrapper.dart';
+import 'package:softify/utils/sign_config.dart';
+import 'package:softify/utils/utility.dart';
 
 class Styles {
   static ThemeData darkTheme(AppModel model) {

@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:schoolapp/model/PushNotificationModel.dart';
-import 'package:schoolapp/utils/NotificationType.dart';
+import 'package:softify/model/PushNotificationModel.dart';
+import 'package:softify/utils/NotificationType.dart';
 
 class NotificationUtils {
   NotificationDetails _platformChannelSpecifics;
@@ -18,7 +18,6 @@ class NotificationUtils {
   getAndroidNotificationDetails() => AndroidNotificationDetails(
         '1123',
         'LocalNotificationChannel',
-        'ChannelDescription',
         importance: Importance.max,
         priority: Priority.high,
         showWhen: false,

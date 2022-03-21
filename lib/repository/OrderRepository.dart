@@ -1,12 +1,12 @@
-import 'package:schoolapp/model/FileDownloadResponse.dart';
-import 'package:schoolapp/model/OrderDetailsResponse.dart';
-import 'package:schoolapp/model/OrderHistoryResponse.dart';
-import 'package:schoolapp/model/SampleDownloadResponse.dart';
-import 'package:schoolapp/networking/ApiBaseHelper.dart';
-import 'package:schoolapp/networking/Endpoints.dart';
-import 'package:schoolapp/utils/AppConstants.dart';
-import 'package:schoolapp/utils/FileResponse.dart';
-import 'package:schoolapp/utils/utility.dart';
+import 'package:softify/model/FileDownloadResponse.dart';
+import 'package:softify/model/OrderDetailsResponse.dart';
+import 'package:softify/model/OrderHistoryResponse.dart';
+import 'package:softify/model/SampleDownloadResponse.dart';
+import 'package:softify/networking/ApiBaseHelper.dart';
+import 'package:softify/networking/Endpoints.dart';
+import 'package:softify/utils/AppConstants.dart';
+import 'package:softify/utils/FileResponse.dart';
+import 'package:softify/utils/utility.dart';
 
 class OrderRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

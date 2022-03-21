@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:schoolapp/ScopedModelWrapper.dart';
-import 'package:schoolapp/networking/AppException.dart';
-import 'package:schoolapp/repository/SettingsRepository.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/AppConstants.dart';
-import 'package:schoolapp/utils/utility.dart';
-import 'package:schoolapp/views/pages/tabs-screen/error_screen.dart';
-import 'package:schoolapp/views/pages/tabs-screen/tabs_screen.dart';
+import 'package:softify/ScopedModelWrapper.dart';
+import 'package:softify/networking/AppException.dart';
+import 'package:softify/repository/SettingsRepository.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/AppConstants.dart';
+import 'package:softify/utils/utility.dart';
+import 'package:softify/views/pages/tabs-screen/error_screen.dart';
+import 'package:softify/views/pages/tabs-screen/tabs_screen.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

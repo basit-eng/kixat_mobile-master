@@ -1,16 +1,16 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:schoolapp/bloc/base_bloc.dart';
-import 'package:schoolapp/model/CustomerReviewResponse.dart';
-import 'package:schoolapp/model/PostHelpfulnessResponse.dart';
-import 'package:schoolapp/model/ProductReviewResponse.dart';
-import 'package:schoolapp/model/requestbody/FormValue.dart';
-import 'package:schoolapp/model/requestbody/FormValuesRequestBody.dart';
-import 'package:schoolapp/model/requestbody/PostReviewReqBody.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/ReviewRepository.dart';
-import 'package:schoolapp/utils/AppConstants.dart';
+import 'package:softify/bloc/base_bloc.dart';
+import 'package:softify/model/CustomerReviewResponse.dart';
+import 'package:softify/model/PostHelpfulnessResponse.dart';
+import 'package:softify/model/ProductReviewResponse.dart';
+import 'package:softify/model/requestbody/FormValue.dart';
+import 'package:softify/model/requestbody/FormValuesRequestBody.dart';
+import 'package:softify/model/requestbody/PostReviewReqBody.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/ReviewRepository.dart';
+import 'package:softify/utils/AppConstants.dart';
 
 class ReviewBloc implements BaseBloc {
   ReviewRepository _repository;

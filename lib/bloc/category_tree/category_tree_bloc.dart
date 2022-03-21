@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:schoolapp/model/category_tree/CategoryTreeResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/category_tree/CategoryTreeRepository.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/Const.dart';
+import 'package:softify/model/category_tree/CategoryTreeResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/category_tree/CategoryTreeRepository.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/Const.dart';
 
 class CategoryTreeBloc {
   CategoryTreeRepository _categoryTreeRepository;

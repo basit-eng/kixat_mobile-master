@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/bloc/product_list/product_list_bloc.dart';
-import 'package:schoolapp/model/product_list/ProductListResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/Const.dart';
-import 'package:schoolapp/utils/styles.dart';
-import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
-import 'package:schoolapp/views/customWidget/loading.dart';
-import 'package:schoolapp/views/customWidget/product%20list/filter.dart';
-import 'package:schoolapp/views/customWidget/product%20list/product_list_gridview.dart';
+import 'package:softify/bloc/product_list/product_list_bloc.dart';
+import 'package:softify/model/product_list/ProductListResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/Const.dart';
+import 'package:softify/utils/styles.dart';
+import 'package:softify/views/customWidget/CustomAppBar.dart';
+import 'package:softify/views/customWidget/loading.dart';
+import 'package:softify/views/customWidget/product%20list/filter.dart';
+import 'package:softify/views/customWidget/product%20list/product_list_gridview.dart';
 
 class ProductListScreen extends StatefulWidget {
   static const routeName = 'product-list';

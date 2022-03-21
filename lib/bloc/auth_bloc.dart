@@ -1,15 +1,15 @@
 import 'dart:async';
 
-import 'package:schoolapp/bloc/base_bloc.dart';
-import 'package:schoolapp/model/ChangePasswordResponse.dart';
-import 'package:schoolapp/model/LoginFormResponse.dart';
-import 'package:schoolapp/model/PasswordRecoveryResponse.dart';
-import 'package:schoolapp/model/UserLoginResponse.dart';
-import 'package:schoolapp/model/requestbody/UserLoginReqBody.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/AuthRepository.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/Const.dart';
+import 'package:softify/bloc/base_bloc.dart';
+import 'package:softify/model/ChangePasswordResponse.dart';
+import 'package:softify/model/LoginFormResponse.dart';
+import 'package:softify/model/PasswordRecoveryResponse.dart';
+import 'package:softify/model/UserLoginResponse.dart';
+import 'package:softify/model/requestbody/UserLoginReqBody.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/AuthRepository.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/Const.dart';
 
 class AuthBloc implements BaseBloc {
   AuthRepository _repository;

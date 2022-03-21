@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/model/home/CategoriesWithProductsResponse.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/Const.dart';
-import 'package:schoolapp/utils/GetBy.dart';
-import 'package:schoolapp/views/pages/product-list/product_list_screen.dart';
+import 'package:softify/model/home/CategoriesWithProductsResponse.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/Const.dart';
+import 'package:softify/utils/GetBy.dart';
+import 'package:softify/views/pages/product-list/product_list_screen.dart';
 
 class ProductBoxHeader extends StatelessWidget {
   final GlobalService _globalService = GlobalService();

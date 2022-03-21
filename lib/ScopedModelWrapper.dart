@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/main.dart';
-import 'package:schoolapp/model/AppLandingResponse.dart';
-import 'package:schoolapp/utils/shared_pref.dart';
+import 'package:softify/main.dart';
+import 'package:softify/model/AppLandingResponse.dart';
+import 'package:softify/utils/shared_pref.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 import 'model/AppLandingResponse.dart';

@@ -1,18 +1,18 @@
-import 'package:schoolapp/model/AddToCartResponse.dart';
-import 'package:schoolapp/model/BaseResponse.dart';
-import 'package:schoolapp/model/SubscriptionStatusResponse.dart';
-import 'package:schoolapp/model/FileDownloadResponse.dart';
-import 'package:schoolapp/model/FileUploadResponse.dart';
-import 'package:schoolapp/model/ProductAttrChangeResponse.dart';
-import 'package:schoolapp/model/ProductDetailsResponse.dart';
-import 'package:schoolapp/model/SampleDownloadResponse.dart';
-import 'package:schoolapp/model/home/BestSellerProductResponse.dart';
-import 'package:schoolapp/model/requestbody/FormValuesRequestBody.dart';
-import 'package:schoolapp/networking/ApiBaseHelper.dart';
-import 'package:schoolapp/networking/Endpoints.dart';
-import 'package:schoolapp/utils/AppConstants.dart';
-import 'package:schoolapp/utils/FileResponse.dart';
-import 'package:schoolapp/utils/utility.dart';
+import 'package:softify/model/AddToCartResponse.dart';
+import 'package:softify/model/BaseResponse.dart';
+import 'package:softify/model/SubscriptionStatusResponse.dart';
+import 'package:softify/model/FileDownloadResponse.dart';
+import 'package:softify/model/FileUploadResponse.dart';
+import 'package:softify/model/ProductAttrChangeResponse.dart';
+import 'package:softify/model/ProductDetailsResponse.dart';
+import 'package:softify/model/SampleDownloadResponse.dart';
+import 'package:softify/model/home/BestSellerProductResponse.dart';
+import 'package:softify/model/requestbody/FormValuesRequestBody.dart';
+import 'package:softify/networking/ApiBaseHelper.dart';
+import 'package:softify/networking/Endpoints.dart';
+import 'package:softify/utils/AppConstants.dart';
+import 'package:softify/utils/FileResponse.dart';
+import 'package:softify/utils/utility.dart';
 
 class ProductDetailsRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:schoolapp/bloc/base_bloc.dart';
-import 'package:schoolapp/model/AppLandingResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/SettingsRepository.dart';
+import 'package:softify/bloc/base_bloc.dart';
+import 'package:softify/model/AppLandingResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/SettingsRepository.dart';
 
 class SettingsBloc extends BaseBloc {
   SettingsRepository _repository;

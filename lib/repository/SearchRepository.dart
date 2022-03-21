@@ -1,7 +1,7 @@
-import 'package:schoolapp/model/SearchResponse.dart';
-import 'package:schoolapp/model/SearchSuggestionResponse.dart';
-import 'package:schoolapp/networking/ApiBaseHelper.dart';
-import 'package:schoolapp/networking/Endpoints.dart';
+import 'package:softify/model/SearchResponse.dart';
+import 'package:softify/model/SearchSuggestionResponse.dart';
+import 'package:softify/networking/ApiBaseHelper.dart';
+import 'package:softify/networking/Endpoints.dart';
 
 class SearchRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:schoolapp/bloc/base_bloc.dart';
-import 'package:schoolapp/model/DownloadableProductResponse.dart';
-import 'package:schoolapp/model/FileDownloadResponse.dart';
-import 'package:schoolapp/model/SampleDownloadResponse.dart';
-import 'package:schoolapp/model/UserAgreementResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/DownloadableProdRepository.dart';
+import 'package:softify/bloc/base_bloc.dart';
+import 'package:softify/model/DownloadableProductResponse.dart';
+import 'package:softify/model/FileDownloadResponse.dart';
+import 'package:softify/model/SampleDownloadResponse.dart';
+import 'package:softify/model/UserAgreementResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/DownloadableProdRepository.dart';
 
 class DownloadableProductBloc extends BaseBloc {
   DownloadableProdRepository _repository;

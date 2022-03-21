@@ -1,5 +1,5 @@
-import 'package:schoolapp/model/EstimateShipping.dart';
-import 'package:schoolapp/model/requestbody/FormValue.dart';
+import 'package:softify/model/EstimateShipping.dart';
+import 'package:softify/model/requestbody/FormValue.dart';
 
 class EstimateShippingReqBody {
   EstimateShippingReqBody({

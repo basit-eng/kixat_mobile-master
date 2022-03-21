@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
+import 'package:softify/views/customWidget/CustomAppBar.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({Key key}) : super(key: key);
@@ -74,7 +74,6 @@ class CustomNotification extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Container(
       child: Padding(
         padding: const EdgeInsets.only(top: 2),

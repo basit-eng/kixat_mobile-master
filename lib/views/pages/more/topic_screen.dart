@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:schoolapp/bloc/topic_bloc.dart';
-import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
-import 'package:schoolapp/views/customWidget/error.dart';
-import 'package:schoolapp/views/customWidget/loading.dart';
-import 'package:schoolapp/model/TopicResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:softify/bloc/topic_bloc.dart';
+import 'package:softify/views/customWidget/CustomAppBar.dart';
+import 'package:softify/views/customWidget/error.dart';
+import 'package:softify/views/customWidget/loading.dart';
+import 'package:softify/model/TopicResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
 
 class TopicScreen extends StatefulWidget {
   static const routeName = '/topic';

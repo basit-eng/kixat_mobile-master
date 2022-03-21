@@ -1,10 +1,10 @@
 import 'dart:io';
 
-import 'package:schoolapp/model/AppLandingResponse.dart';
-import 'package:schoolapp/model/BaseResponse.dart';
-import 'package:schoolapp/model/requestbody/AppStartReqBody.dart';
-import 'package:schoolapp/networking/ApiBaseHelper.dart';
-import 'package:schoolapp/networking/Endpoints.dart';
+import 'package:softify/model/AppLandingResponse.dart';
+import 'package:softify/model/BaseResponse.dart';
+import 'package:softify/model/requestbody/AppStartReqBody.dart';
+import 'package:softify/networking/ApiBaseHelper.dart';
+import 'package:softify/networking/Endpoints.dart';
 
 class SettingsRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

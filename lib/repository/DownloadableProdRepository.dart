@@ -1,11 +1,11 @@
-import 'package:schoolapp/model/DownloadableProductResponse.dart';
-import 'package:schoolapp/model/FileDownloadResponse.dart';
-import 'package:schoolapp/model/SampleDownloadResponse.dart';
-import 'package:schoolapp/model/UserAgreementResponse.dart';
-import 'package:schoolapp/networking/ApiBaseHelper.dart';
-import 'package:schoolapp/networking/Endpoints.dart';
-import 'package:schoolapp/utils/FileResponse.dart';
-import 'package:schoolapp/utils/utility.dart';
+import 'package:softify/model/DownloadableProductResponse.dart';
+import 'package:softify/model/FileDownloadResponse.dart';
+import 'package:softify/model/SampleDownloadResponse.dart';
+import 'package:softify/model/UserAgreementResponse.dart';
+import 'package:softify/networking/ApiBaseHelper.dart';
+import 'package:softify/networking/Endpoints.dart';
+import 'package:softify/utils/FileResponse.dart';
+import 'package:softify/utils/utility.dart';
 
 class DownloadableProdRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

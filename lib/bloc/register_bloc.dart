@@ -1,17 +1,17 @@
 import 'dart:async';
 
-import 'package:schoolapp/bloc/base_bloc.dart';
-import 'package:schoolapp/model/AvailableOption.dart';
-import 'package:schoolapp/model/GetAvatarResponse.dart';
-import 'package:schoolapp/model/RegisterFormResponse.dart';
-import 'package:schoolapp/model/requestbody/FormValue.dart';
-import 'package:schoolapp/model/requestbody/RegistrationReqBody.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/AuthRepository.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/Const.dart';
-import 'package:schoolapp/utils/extensions.dart';
-import 'package:schoolapp/utils/utility.dart';
+import 'package:softify/bloc/base_bloc.dart';
+import 'package:softify/model/AvailableOption.dart';
+import 'package:softify/model/GetAvatarResponse.dart';
+import 'package:softify/model/RegisterFormResponse.dart';
+import 'package:softify/model/requestbody/FormValue.dart';
+import 'package:softify/model/requestbody/RegistrationReqBody.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/AuthRepository.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/Const.dart';
+import 'package:softify/utils/extensions.dart';
+import 'package:softify/utils/utility.dart';
 
 class RegisterBloc extends BaseBloc {
   AuthRepository _repository;

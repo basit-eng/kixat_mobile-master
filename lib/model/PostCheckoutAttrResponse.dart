@@ -1,4 +1,4 @@
-import 'package:schoolapp/model/ShoppingCartResponse.dart';
+import 'package:softify/model/ShoppingCartResponse.dart';
 
 class PostCheckoutAttrResponse {
   PostCheckoutAttrResponse(

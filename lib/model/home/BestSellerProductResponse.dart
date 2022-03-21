@@ -1,4 +1,4 @@
-import 'package:schoolapp/model/ProductSummary.dart';
+import 'package:softify/model/ProductSummary.dart';
 
 class BestSellerProductResponse {
   BestSellerProductResponse({

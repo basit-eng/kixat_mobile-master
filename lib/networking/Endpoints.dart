@@ -1,5 +1,5 @@
 class Endpoints {
-  static const site_url = 'https://schoolapp.com'; // 4.40
+  static const site_url = 'https://kixat.com'; // 4.40
   static const base_url = '$site_url/api/';
 
   static const appLandingSettings = 'home/applandingsetting';

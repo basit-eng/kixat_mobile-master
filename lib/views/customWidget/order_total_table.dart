@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/model/ShoppingCartResponse.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/Const.dart';
+import 'package:softify/model/ShoppingCartResponse.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/Const.dart';
 
 class OrderTotalTable extends StatelessWidget {
   final _globalService = GlobalService();

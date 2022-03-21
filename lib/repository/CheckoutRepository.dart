@@ -1,13 +1,13 @@
-import 'package:schoolapp/model/GetBillingAddressResponse.dart';
-import 'package:schoolapp/model/SaveBillingResponse.dart';
-import 'package:schoolapp/model/requestbody/FormValuesRequestBody.dart';
-import 'package:schoolapp/model/requestbody/OrderSummaryReponse.dart';
-import 'package:schoolapp/model/requestbody/SaveBillingReqBody.dart';
-import 'package:schoolapp/model/requestbody/SavePaymentReqBody.dart';
-import 'package:schoolapp/model/requestbody/SaveShippingReqBody.dart';
-import 'package:schoolapp/networking/ApiBaseHelper.dart';
-import 'package:schoolapp/networking/Endpoints.dart';
-import 'package:schoolapp/repository/BaseRepository.dart';
+import 'package:softify/model/GetBillingAddressResponse.dart';
+import 'package:softify/model/SaveBillingResponse.dart';
+import 'package:softify/model/requestbody/FormValuesRequestBody.dart';
+import 'package:softify/model/requestbody/OrderSummaryReponse.dart';
+import 'package:softify/model/requestbody/SaveBillingReqBody.dart';
+import 'package:softify/model/requestbody/SavePaymentReqBody.dart';
+import 'package:softify/model/requestbody/SaveShippingReqBody.dart';
+import 'package:softify/networking/ApiBaseHelper.dart';
+import 'package:softify/networking/Endpoints.dart';
+import 'package:softify/repository/BaseRepository.dart';
 
 class CheckoutRepository extends BaseRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

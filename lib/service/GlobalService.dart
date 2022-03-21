@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:schoolapp/model/AppLandingResponse.dart';
+import 'package:softify/model/AppLandingResponse.dart';
 
 class GlobalService {
   static final GlobalService _instance = GlobalService._internal();

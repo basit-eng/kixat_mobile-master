@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/bloc/reward_point_bloc.dart';
-import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
-import 'package:schoolapp/views/customWidget/error.dart';
-import 'package:schoolapp/views/customWidget/loading.dart';
-import 'package:schoolapp/views/customWidget/loading_dialog.dart';
-import 'package:schoolapp/model/RewardPointResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/views/pages/account/rewardPoint/item_reward_point.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/Const.dart';
-import 'package:schoolapp/utils/utility.dart';
+import 'package:softify/bloc/reward_point_bloc.dart';
+import 'package:softify/views/customWidget/CustomAppBar.dart';
+import 'package:softify/views/customWidget/error.dart';
+import 'package:softify/views/customWidget/loading.dart';
+import 'package:softify/views/customWidget/loading_dialog.dart';
+import 'package:softify/model/RewardPointResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/views/pages/account/rewardPoint/item_reward_point.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/Const.dart';
+import 'package:softify/utils/utility.dart';
 
 class RewardPointScreen extends StatefulWidget {
   static const routeName = '/rewardPoint';

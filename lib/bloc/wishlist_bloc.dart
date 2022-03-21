@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:schoolapp/bloc/base_bloc.dart';
-import 'package:schoolapp/model/WishListResponse.dart';
-import 'package:schoolapp/model/requestbody/FormValue.dart';
-import 'package:schoolapp/model/requestbody/FormValuesRequestBody.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/WishListRepository.dart';
+import 'package:softify/bloc/base_bloc.dart';
+import 'package:softify/model/WishListResponse.dart';
+import 'package:softify/model/requestbody/FormValue.dart';
+import 'package:softify/model/requestbody/FormValuesRequestBody.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/WishListRepository.dart';
 
 class WishListBloc extends BaseBloc {
   WishListRepository _repository;

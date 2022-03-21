@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/bloc/new_product_bloc.dart';
-import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
-import 'package:schoolapp/views/customWidget/error.dart';
-import 'package:schoolapp/views/customWidget/loading.dart';
-import 'package:schoolapp/views/customWidget/product%20box/product_box.dart';
-import 'package:schoolapp/model/ProductSummary.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/Const.dart';
+import 'package:softify/bloc/new_product_bloc.dart';
+import 'package:softify/views/customWidget/CustomAppBar.dart';
+import 'package:softify/views/customWidget/error.dart';
+import 'package:softify/views/customWidget/loading.dart';
+import 'package:softify/views/customWidget/product%20box/product_box.dart';
+import 'package:softify/model/ProductSummary.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/Const.dart';
 
 class NewProductsScreen extends StatefulWidget {
   static const routeName = '/new-product-screen';

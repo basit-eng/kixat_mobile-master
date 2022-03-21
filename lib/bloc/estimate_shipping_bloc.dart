@@ -1,14 +1,14 @@
 import 'dart:async';
 
-import 'package:schoolapp/bloc/base_bloc.dart';
-import 'package:schoolapp/model/AvailableOption.dart';
-import 'package:schoolapp/model/EstimateShipping.dart';
-import 'package:schoolapp/model/EstimateShippingResponse.dart';
-import 'package:schoolapp/model/requestbody/EstimateShippingReqBody.dart';
-import 'package:schoolapp/model/requestbody/FormValue.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/BaseRepository.dart';
-import 'package:schoolapp/utils/utility.dart';
+import 'package:softify/bloc/base_bloc.dart';
+import 'package:softify/model/AvailableOption.dart';
+import 'package:softify/model/EstimateShipping.dart';
+import 'package:softify/model/EstimateShippingResponse.dart';
+import 'package:softify/model/requestbody/EstimateShippingReqBody.dart';
+import 'package:softify/model/requestbody/FormValue.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/BaseRepository.dart';
+import 'package:softify/utils/utility.dart';
 
 class EstimateShippingBloc extends BaseBloc {
   BaseRepository _repository;

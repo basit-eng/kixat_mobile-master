@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:schoolapp/bloc/base_bloc.dart';
-import 'package:schoolapp/model/AllVendorsResponse.dart';
-import 'package:schoolapp/model/ContactVendorResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/VendorRepository.dart';
+import 'package:softify/bloc/base_bloc.dart';
+import 'package:softify/model/AllVendorsResponse.dart';
+import 'package:softify/model/ContactVendorResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/VendorRepository.dart';
 
 class VendorBloc extends BaseBloc {
   VendorRepository _repository;

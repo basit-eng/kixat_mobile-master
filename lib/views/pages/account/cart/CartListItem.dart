@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:schoolapp/views/customWidget/CustomDropdown.dart';
-import 'package:schoolapp/views/customWidget/RoundButton.dart';
-import 'package:schoolapp/views/customWidget/cached_image.dart';
-import 'package:schoolapp/model/AvailableOption.dart';
-import 'package:schoolapp/model/ShoppingCartResponse.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/Const.dart';
-import 'package:schoolapp/utils/styles.dart';
-import 'package:schoolapp/utils/utility.dart';
-import 'package:schoolapp/utils/extensions.dart';
+import 'package:softify/views/customWidget/CustomDropdown.dart';
+import 'package:softify/views/customWidget/RoundButton.dart';
+import 'package:softify/views/customWidget/cached_image.dart';
+import 'package:softify/model/AvailableOption.dart';
+import 'package:softify/model/ShoppingCartResponse.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/Const.dart';
+import 'package:softify/utils/styles.dart';
+import 'package:softify/utils/utility.dart';
+import 'package:softify/utils/extensions.dart';
 
 class CartListItem extends StatelessWidget {
   CartListItem({this.item, this.onClick, this.editable});

@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/bloc/address_bloc.dart';
-import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
-import 'package:schoolapp/views/customWidget/CustomButton.dart';
-import 'package:schoolapp/views/customWidget/NoDataText.dart';
-import 'package:schoolapp/views/customWidget/error.dart';
-import 'package:schoolapp/views/customWidget/loading.dart';
-import 'package:schoolapp/views/customWidget/loading_dialog.dart';
-import 'package:schoolapp/model/AddressListResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/views/pages/account/address/add_edit_address_screen.dart';
-import 'package:schoolapp/views/pages/account/address/address_list_item.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/AppConstants.dart';
-import 'package:schoolapp/utils/ButtonShape.dart';
-import 'package:schoolapp/utils/Const.dart';
-import 'package:schoolapp/utils/utility.dart';
+import 'package:softify/bloc/address_bloc.dart';
+import 'package:softify/views/customWidget/CustomAppBar.dart';
+import 'package:softify/views/customWidget/CustomButton.dart';
+import 'package:softify/views/customWidget/NoDataText.dart';
+import 'package:softify/views/customWidget/error.dart';
+import 'package:softify/views/customWidget/loading.dart';
+import 'package:softify/views/customWidget/loading_dialog.dart';
+import 'package:softify/model/AddressListResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/views/pages/account/address/add_edit_address_screen.dart';
+import 'package:softify/views/pages/account/address/address_list_item.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/AppConstants.dart';
+import 'package:softify/utils/ButtonShape.dart';
+import 'package:softify/utils/Const.dart';
+import 'package:softify/utils/utility.dart';
 
 class AddressListScreen extends StatefulWidget {
   static const routeName = '/address-list';

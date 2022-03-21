@@ -1,7 +1,7 @@
-import 'package:schoolapp/model/CustomProperties.dart';
-import 'package:schoolapp/model/EstimateShipping.dart';
-import 'package:schoolapp/model/GetBillingAddressResponse.dart';
-import 'package:schoolapp/model/ShoppingCartResponse.dart';
+import 'package:softify/model/CustomProperties.dart';
+import 'package:softify/model/EstimateShipping.dart';
+import 'package:softify/model/GetBillingAddressResponse.dart';
+import 'package:softify/model/ShoppingCartResponse.dart';
 
 class CheckoutPostResponse {
   CheckoutPostResponse({

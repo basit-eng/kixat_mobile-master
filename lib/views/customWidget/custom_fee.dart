@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:schoolapp/utils/sign_config.dart';
-import 'package:schoolapp/views/customWidget/richtext.dart';
+import 'package:softify/utils/sign_config.dart';
+import 'package:softify/views/customWidget/richtext.dart';
 
 class FeeCardWidget extends StatelessWidget {
   const FeeCardWidget({

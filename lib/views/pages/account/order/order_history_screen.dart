@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/bloc/order_bloc.dart';
-import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
-import 'package:schoolapp/views/customWidget/loading.dart';
-import 'package:schoolapp/views/customWidget/error.dart';
-import 'package:schoolapp/model/OrderHistoryResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/views/pages/account/returnRequest/ReturnRequestScreen.dart';
-import 'package:schoolapp/views/pages/account/order/order_details_screen.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/Const.dart';
-import 'package:schoolapp/utils/utility.dart';
+import 'package:softify/bloc/order_bloc.dart';
+import 'package:softify/views/customWidget/CustomAppBar.dart';
+import 'package:softify/views/customWidget/loading.dart';
+import 'package:softify/views/customWidget/error.dart';
+import 'package:softify/model/OrderHistoryResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/views/pages/account/returnRequest/ReturnRequestScreen.dart';
+import 'package:softify/views/pages/account/order/order_details_screen.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/Const.dart';
+import 'package:softify/utils/utility.dart';
 
 class OrderHistoryScreen extends StatefulWidget {
   static const routeName = '/order-history';

@@ -1,9 +1,9 @@
-import 'package:schoolapp/model/AvailableOption.dart';
-import 'package:schoolapp/model/CustomAttribute.dart';
-import 'package:schoolapp/model/CustomProperties.dart';
-import 'package:schoolapp/model/EstimateShipping.dart';
-import 'package:schoolapp/model/GetBillingAddressResponse.dart';
-import 'package:schoolapp/model/PictureModel.dart';
+import 'package:softify/model/AvailableOption.dart';
+import 'package:softify/model/CustomAttribute.dart';
+import 'package:softify/model/CustomProperties.dart';
+import 'package:softify/model/EstimateShipping.dart';
+import 'package:softify/model/GetBillingAddressResponse.dart';
+import 'package:softify/model/PictureModel.dart';
 
 class ShoppingCartResponse {
   ShoppingCartResponse({

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/ScopedModelWrapper.dart';
-import 'package:schoolapp/bloc/settings_bloc.dart';
-import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
-import 'package:schoolapp/views/customWidget/CustomDropdown.dart';
-import 'package:schoolapp/views/customWidget/loading_dialog.dart';
-import 'package:schoolapp/model/AppLandingResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/Const.dart';
-import 'package:schoolapp/utils/shared_pref.dart';
-import 'package:schoolapp/utils/utility.dart';
-import 'package:schoolapp/utils/extensions.dart';
+import 'package:softify/ScopedModelWrapper.dart';
+import 'package:softify/bloc/settings_bloc.dart';
+import 'package:softify/views/customWidget/CustomAppBar.dart';
+import 'package:softify/views/customWidget/CustomDropdown.dart';
+import 'package:softify/views/customWidget/loading_dialog.dart';
+import 'package:softify/model/AppLandingResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/Const.dart';
+import 'package:softify/utils/shared_pref.dart';
+import 'package:softify/utils/utility.dart';
+import 'package:softify/utils/extensions.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class SettingsScreen extends StatefulWidget {

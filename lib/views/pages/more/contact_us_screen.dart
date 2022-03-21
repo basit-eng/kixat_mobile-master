@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/bloc/contact_us_bloc.dart';
-import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
-import 'package:schoolapp/views/customWidget/CustomButton.dart';
-import 'package:schoolapp/views/customWidget/error.dart';
-import 'package:schoolapp/views/customWidget/loading.dart';
-import 'package:schoolapp/views/customWidget/loading_dialog.dart';
-import 'package:schoolapp/model/ContactUsResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/ButtonShape.dart';
-import 'package:schoolapp/utils/Const.dart';
-import 'package:schoolapp/utils/ValidationMixin.dart';
-import 'package:schoolapp/utils/utility.dart';
+import 'package:softify/bloc/contact_us_bloc.dart';
+import 'package:softify/views/customWidget/CustomAppBar.dart';
+import 'package:softify/views/customWidget/CustomButton.dart';
+import 'package:softify/views/customWidget/error.dart';
+import 'package:softify/views/customWidget/loading.dart';
+import 'package:softify/views/customWidget/loading_dialog.dart';
+import 'package:softify/model/ContactUsResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/ButtonShape.dart';
+import 'package:softify/utils/Const.dart';
+import 'package:softify/utils/ValidationMixin.dart';
+import 'package:softify/utils/utility.dart';
 
 class ContactUsScreen extends StatefulWidget {
   static const routeName = '/contactUs';

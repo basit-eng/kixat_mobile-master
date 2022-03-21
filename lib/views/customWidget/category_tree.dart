@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/model/category_tree/CategoryTreeResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/views/customWidget/cached_image.dart';
-import 'package:schoolapp/views/pages/product-list/product_list_screen.dart';
+import 'package:softify/model/category_tree/CategoryTreeResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/views/customWidget/cached_image.dart';
+import 'package:softify/views/pages/product-list/product_list_screen.dart';
 
 class CategoryTree extends StatefulWidget {
   final ApiResponse<CategoryTreeResponse> snapshot;

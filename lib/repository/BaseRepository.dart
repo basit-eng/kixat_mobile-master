@@ -1,10 +1,10 @@
-import 'package:schoolapp/model/AddToCartResponse.dart';
-import 'package:schoolapp/model/EstimateShippingResponse.dart';
-import 'package:schoolapp/model/GetStatesResponse.dart';
-import 'package:schoolapp/model/requestbody/EstimateShippingReqBody.dart';
-import 'package:schoolapp/model/requestbody/FormValuesRequestBody.dart';
-import 'package:schoolapp/networking/ApiBaseHelper.dart';
-import 'package:schoolapp/networking/Endpoints.dart';
+import 'package:softify/model/AddToCartResponse.dart';
+import 'package:softify/model/EstimateShippingResponse.dart';
+import 'package:softify/model/GetStatesResponse.dart';
+import 'package:softify/model/requestbody/EstimateShippingReqBody.dart';
+import 'package:softify/model/requestbody/FormValuesRequestBody.dart';
+import 'package:softify/networking/ApiBaseHelper.dart';
+import 'package:softify/networking/Endpoints.dart';
 
 class BaseRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

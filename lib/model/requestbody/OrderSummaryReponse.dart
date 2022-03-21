@@ -1,4 +1,4 @@
-import 'package:schoolapp/model/SaveBillingResponse.dart';
+import 'package:softify/model/SaveBillingResponse.dart';
 
 class OrderSummaryResponse {
   OrderSummaryResponse({

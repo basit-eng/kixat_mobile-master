@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/utils/AppConstants.dart';
-import 'package:schoolapp/utils/shared_pref.dart';
+import 'package:softify/utils/AppConstants.dart';
+import 'package:softify/utils/shared_pref.dart';
 
 class ErrorScreen extends StatefulWidget {
   static const routeName = '/errorScreen';

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
-import 'package:schoolapp/bloc/search_bloc.dart';
-import 'package:schoolapp/model/SearchResponse.dart';
-import 'package:schoolapp/model/SearchSuggestionResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/Const.dart';
-import 'package:schoolapp/utils/styles.dart';
-import 'package:schoolapp/utils/utility.dart';
-import 'package:schoolapp/views/customWidget/AdvSearchBottomSheet.dart';
-import 'package:schoolapp/views/customWidget/loading.dart';
-import 'package:schoolapp/views/customWidget/search/search_filter.dart';
-import 'package:schoolapp/views/customWidget/search/search_product_list_gridview.dart';
-import 'package:schoolapp/views/pages/product/product_details_screen.dart';
+import 'package:softify/bloc/search_bloc.dart';
+import 'package:softify/model/SearchResponse.dart';
+import 'package:softify/model/SearchSuggestionResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/Const.dart';
+import 'package:softify/utils/styles.dart';
+import 'package:softify/utils/utility.dart';
+import 'package:softify/views/customWidget/AdvSearchBottomSheet.dart';
+import 'package:softify/views/customWidget/loading.dart';
+import 'package:softify/views/customWidget/search/search_filter.dart';
+import 'package:softify/views/customWidget/search/search_product_list_gridview.dart';
+import 'package:softify/views/pages/product/product_details_screen.dart';
 
 class SearchScreen extends StatefulWidget {
   @override

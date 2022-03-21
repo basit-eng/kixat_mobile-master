@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/utils/sign_config.dart';
-import 'package:schoolapp/utils/utility.dart';
-import 'package:schoolapp/views/customWidget/richtext.dart';
+import 'package:softify/utils/sign_config.dart';
+import 'package:softify/utils/utility.dart';
+import 'package:softify/views/customWidget/richtext.dart';
 
 class FeeScreen extends StatelessWidget {
   const FeeScreen({Key key}) : super(key: key);

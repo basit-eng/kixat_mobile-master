@@ -1,10 +1,10 @@
-import 'package:schoolapp/model/AddressFormResponse.dart';
-import 'package:schoolapp/model/AddressListResponse.dart';
-import 'package:schoolapp/model/BaseResponse.dart';
-import 'package:schoolapp/networking/ApiBaseHelper.dart';
-import 'package:schoolapp/networking/Endpoints.dart';
-import 'package:schoolapp/repository/BaseRepository.dart';
-import 'package:schoolapp/utils/AppConstants.dart';
+import 'package:softify/model/AddressFormResponse.dart';
+import 'package:softify/model/AddressListResponse.dart';
+import 'package:softify/model/BaseResponse.dart';
+import 'package:softify/networking/ApiBaseHelper.dart';
+import 'package:softify/networking/Endpoints.dart';
+import 'package:softify/repository/BaseRepository.dart';
+import 'package:softify/utils/AppConstants.dart';
 
 class AddressRepository extends BaseRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

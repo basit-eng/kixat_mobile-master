@@ -1,61 +1,65 @@
+// ignore_for_file: unnecessary_statements
+
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:schoolapp/ScopedModelWrapper.dart';
-import 'package:schoolapp/utils/sign_config.dart';
-import 'package:schoolapp/utils/styles.dart';
-import 'package:schoolapp/views/customWidget/notification_screen.dart';
-import 'package:schoolapp/views/pages/FcmHandler.dart';
-import 'package:schoolapp/views/pages/account/address/add_edit_address_screen.dart';
-import 'package:schoolapp/views/pages/account/address/address_list_screen.dart';
-import 'package:schoolapp/views/pages/account/cart/shopping_cart_screen.dart';
-import 'package:schoolapp/views/pages/account/change_password_screen.dart';
-import 'package:schoolapp/views/pages/account/downloadableProduct/downloadable_product_screen.dart';
-import 'package:schoolapp/views/pages/account/faq.dart';
-import 'package:schoolapp/views/pages/account/find_us.dart';
-import 'package:schoolapp/views/pages/account/forgot_password_screen.dart';
-import 'package:schoolapp/views/pages/account/login_screen.dart';
-import 'package:schoolapp/views/pages/account/new_products_screen.dart';
-import 'package:schoolapp/views/pages/account/order/order_details_screen.dart';
-import 'package:schoolapp/views/pages/account/order/order_history_screen.dart';
-import 'package:schoolapp/views/pages/account/returnRequest/ReturnRequestScreen.dart';
-import 'package:schoolapp/views/pages/account/returnRequest/return_request_history_screen.dart';
-import 'package:schoolapp/views/pages/account/review/customer_review_screen.dart';
-import 'package:schoolapp/views/pages/account/review/product_review_screen.dart';
-import 'package:schoolapp/views/pages/account/rewardPoint/reward_point_screen.dart';
-import 'package:schoolapp/views/pages/account/subscription_screen.dart';
-import 'package:schoolapp/views/pages/account/wishlist_screen.dart';
-import 'package:schoolapp/views/pages/assignmentCard_screen.dart';
-import 'package:schoolapp/views/pages/attendance.dart';
-import 'package:schoolapp/views/pages/calender_screen.dart';
-import 'package:schoolapp/views/pages/checkout/checkout_screen.dart';
-import 'package:schoolapp/views/pages/checkout/checkout_webview.dart';
-import 'package:schoolapp/views/pages/dialog_box.dart';
-import 'package:schoolapp/views/pages/documents.dart';
-import 'package:schoolapp/views/pages/eventscreen.dart';
-import 'package:schoolapp/views/pages/feeDetails/fee02.dart';
-import 'package:schoolapp/views/pages/home/home_screen.dart';
-import 'package:schoolapp/views/pages/more/barcode_scanner_screen.dart';
-import 'package:schoolapp/views/pages/more/contact_us_screen.dart';
-import 'package:schoolapp/views/pages/more/contact_vendor_screen.dart';
-import 'package:schoolapp/views/pages/more/settings_screen.dart';
-import 'package:schoolapp/views/pages/more/topic_screen.dart';
-import 'package:schoolapp/views/pages/more/vendor_list_screen.dart';
-import 'package:schoolapp/views/pages/courses.dart';
-import 'package:schoolapp/views/pages/notice_screen.dart';
-import 'package:schoolapp/views/pages/product-list/product_list_screen.dart';
-import 'package:schoolapp/views/pages/product/product_details_screen.dart';
-import 'package:schoolapp/views/pages/product/zoomable_image_screen.dart';
-import 'package:schoolapp/views/pages/profile_screen.dart';
-import 'package:schoolapp/views/pages/report_card.dart';
-import 'package:schoolapp/views/pages/resultCard_detail_screen.dart';
-import 'package:schoolapp/views/pages/rountineCard_screen.dart';
-import 'package:schoolapp/views/pages/splash.dart';
-import 'package:schoolapp/views/pages/tabs-screen/error_screen.dart';
-import 'package:schoolapp/views/pages/tabs-screen/tabs_screen.dart';
+import 'package:softify/ScopedModelWrapper.dart';
+import 'package:softify/utils/sign_config.dart';
+import 'package:softify/utils/styles.dart';
+import 'package:softify/views/customWidget/notification_screen.dart';
+import 'package:softify/views/pages/FcmHandler.dart';
+import 'package:softify/views/pages/account/address/add_edit_address_screen.dart';
+import 'package:softify/views/pages/account/address/address_list_screen.dart';
+import 'package:softify/views/pages/account/cart/shopping_cart_screen.dart';
+import 'package:softify/views/pages/account/change_password_screen.dart';
+import 'package:softify/views/pages/account/downloadableProduct/downloadable_product_screen.dart';
+import 'package:softify/views/pages/account/faq.dart';
+import 'package:softify/views/pages/account/find_us.dart';
+import 'package:softify/views/pages/account/forgot_password_screen.dart';
+import 'package:softify/views/pages/account/login_screen.dart';
+import 'package:softify/views/pages/account/new_products_screen.dart';
+import 'package:softify/views/pages/account/order/order_details_screen.dart';
+import 'package:softify/views/pages/account/order/order_history_screen.dart';
+import 'package:softify/views/pages/account/registration_sceen.dart';
+import 'package:softify/views/pages/account/returnRequest/ReturnRequestScreen.dart';
+import 'package:softify/views/pages/account/returnRequest/return_request_history_screen.dart';
+import 'package:softify/views/pages/account/review/customer_review_screen.dart';
+import 'package:softify/views/pages/account/review/product_review_screen.dart';
+import 'package:softify/views/pages/account/rewardPoint/reward_point_screen.dart';
+import 'package:softify/views/pages/account/subscription_screen.dart';
+import 'package:softify/views/pages/account/wishlist_screen.dart';
+import 'package:softify/views/pages/assignmentCard_screen.dart';
+import 'package:softify/views/pages/attendance.dart';
+import 'package:softify/views/pages/calender_screen.dart';
+import 'package:softify/views/pages/checkout/checkout_screen.dart';
+import 'package:softify/views/pages/checkout/checkout_webview.dart';
+import 'package:softify/views/pages/dialog_box.dart';
+import 'package:softify/views/pages/documents.dart';
+import 'package:softify/views/pages/eventscreen.dart';
+import 'package:softify/views/pages/feeDetails/fee02.dart';
+import 'package:softify/views/pages/home/home_screen.dart';
+import 'package:softify/views/pages/more/barcode_scanner_screen.dart';
+import 'package:softify/views/pages/more/contact_us_screen.dart';
+import 'package:softify/views/pages/more/contact_vendor_screen.dart';
+import 'package:softify/views/pages/more/settings_screen.dart';
+import 'package:softify/views/pages/more/topic_screen.dart';
+import 'package:softify/views/pages/more/vendor_list_screen.dart';
+import 'package:softify/views/pages/courses.dart';
+import 'package:softify/views/pages/notice_screen.dart';
+import 'package:softify/views/pages/product-list/product_list_screen.dart';
+import 'package:softify/views/pages/product/product_details_screen.dart';
+import 'package:softify/views/pages/product/zoomable_image_screen.dart';
+import 'package:softify/views/pages/profile_screen.dart';
+import 'package:softify/views/pages/report_card.dart';
+import 'package:softify/views/pages/resultCard_detail_screen.dart';
+import 'package:softify/views/pages/rountineCard_screen.dart';
+import 'package:softify/views/pages/splash.dart';
+import 'package:softify/views/pages/tabs-screen/error_screen.dart';
+import 'package:softify/views/pages/tabs-screen/tabs_screen.dart';
 import 'package:scoped_model/scoped_model.dart';
 
-import 'views/pages/account/registration_sceen.dart';
-
 void main() {
+  HttpOverrides.global = MyHttpOverrides();
   runApp(ScopeModelWrapper());
 }
 
@@ -264,5 +268,14 @@ class MyApp extends StatelessWidget {
         });
       });
     });
+  }
+}
+
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
   }
 }

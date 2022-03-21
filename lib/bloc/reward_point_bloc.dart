@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:schoolapp/bloc/base_bloc.dart';
-import 'package:schoolapp/model/RewardPointResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/RewardPointRepository.dart';
+import 'package:softify/bloc/base_bloc.dart';
+import 'package:softify/model/RewardPointResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/RewardPointRepository.dart';
 
 class RewardPointBloc extends BaseBloc {
   RewardPointRepository _repository;

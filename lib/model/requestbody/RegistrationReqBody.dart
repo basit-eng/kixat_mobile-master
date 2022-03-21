@@ -1,5 +1,5 @@
-import 'package:schoolapp/model/RegisterFormResponse.dart';
-import 'package:schoolapp/model/requestbody/FormValue.dart';
+import 'package:softify/model/RegisterFormResponse.dart';
+import 'package:softify/model/requestbody/FormValue.dart';
 
 class RegistrationReqBody {
   RegistrationReqBody({

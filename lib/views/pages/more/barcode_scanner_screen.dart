@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
-import 'package:schoolapp/bloc/barcode_bloc.dart';
-import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
-import 'package:schoolapp/model/ProductDetailsResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/views/pages/product/product_details_screen.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/Const.dart';
+import 'package:softify/bloc/barcode_bloc.dart';
+import 'package:softify/views/customWidget/CustomAppBar.dart';
+import 'package:softify/model/ProductDetailsResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/views/pages/product/product_details_screen.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/Const.dart';
 
 class BarcodeScannerScreen extends StatefulWidget {
   static const routeName = '/barcode_scanner_screen';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/utils/styles.dart';
+import 'package:softify/utils/styles.dart';
 
 class CustomDropdown<T> extends StatelessWidget {
   final T preSelectedItem;

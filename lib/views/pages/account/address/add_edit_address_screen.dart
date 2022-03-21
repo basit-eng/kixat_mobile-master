@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/bloc/address_bloc.dart';
-import 'package:schoolapp/views/customWidget/AddressForm.dart';
-import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
-import 'package:schoolapp/views/customWidget/CustomButton.dart';
-import 'package:schoolapp/views/customWidget/loading_dialog.dart';
-import 'package:schoolapp/model/GetBillingAddressResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/AppConstants.dart';
-import 'package:schoolapp/utils/ButtonShape.dart';
-import 'package:schoolapp/utils/Const.dart';
-import 'package:schoolapp/utils/CustomAttributeManager.dart';
-import 'package:schoolapp/utils/utility.dart';
-import 'package:schoolapp/views/customWidget/error.dart';
-import 'package:schoolapp/views/customWidget/loading.dart';
+import 'package:softify/bloc/address_bloc.dart';
+import 'package:softify/views/customWidget/AddressForm.dart';
+import 'package:softify/views/customWidget/CustomAppBar.dart';
+import 'package:softify/views/customWidget/CustomButton.dart';
+import 'package:softify/views/customWidget/loading_dialog.dart';
+import 'package:softify/model/GetBillingAddressResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/AppConstants.dart';
+import 'package:softify/utils/ButtonShape.dart';
+import 'package:softify/utils/Const.dart';
+import 'package:softify/utils/CustomAttributeManager.dart';
+import 'package:softify/utils/utility.dart';
+import 'package:softify/views/customWidget/error.dart';
+import 'package:softify/views/customWidget/loading.dart';
 
 class AddOrEditAddressScreen extends StatefulWidget {
   static const routeName = '/address-add-edit';

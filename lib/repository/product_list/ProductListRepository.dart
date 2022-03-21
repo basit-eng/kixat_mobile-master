@@ -1,7 +1,7 @@
-import 'package:schoolapp/model/product_list/ProductListResponse.dart';
-import 'package:schoolapp/networking/ApiBaseHelper.dart';
-import 'package:schoolapp/networking/Endpoints.dart';
-import 'package:schoolapp/utils/GetBy.dart';
+import 'package:softify/model/product_list/ProductListResponse.dart';
+import 'package:softify/networking/ApiBaseHelper.dart';
+import 'package:softify/networking/Endpoints.dart';
+import 'package:softify/utils/GetBy.dart';
 
 class ProductListRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

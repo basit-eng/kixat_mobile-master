@@ -1,4 +1,4 @@
-import 'package:schoolapp/model/LoginFormResponse.dart';
+import 'package:softify/model/LoginFormResponse.dart';
 
 class UserLoginReqBody {
   UserLoginReqBody({

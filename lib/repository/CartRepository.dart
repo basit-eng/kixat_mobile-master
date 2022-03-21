@@ -1,9 +1,9 @@
-import 'package:schoolapp/model/FileUploadResponse.dart';
-import 'package:schoolapp/model/PostCheckoutAttrResponse.dart';
-import 'package:schoolapp/model/ShoppingCartResponse.dart';
-import 'package:schoolapp/model/requestbody/FormValuesRequestBody.dart';
-import 'package:schoolapp/networking/ApiBaseHelper.dart';
-import 'package:schoolapp/networking/Endpoints.dart';
+import 'package:softify/model/FileUploadResponse.dart';
+import 'package:softify/model/PostCheckoutAttrResponse.dart';
+import 'package:softify/model/ShoppingCartResponse.dart';
+import 'package:softify/model/requestbody/FormValuesRequestBody.dart';
+import 'package:softify/networking/ApiBaseHelper.dart';
+import 'package:softify/networking/Endpoints.dart';
 
 class CartRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

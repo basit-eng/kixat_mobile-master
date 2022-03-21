@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
+import 'package:softify/views/customWidget/CustomAppBar.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 
 class CalenderScreen extends StatelessWidget {

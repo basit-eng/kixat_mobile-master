@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_html/shims/dart_ui_fake.dart';
-import 'package:schoolapp/model/category_tree/CategoryTreeResponse.dart';
-import 'package:schoolapp/utils/sign_config.dart';
-import 'package:schoolapp/utils/utility.dart';
-import 'package:schoolapp/views/pages/home/home_screen.dart';
+import 'package:softify/model/category_tree/CategoryTreeResponse.dart';
+import 'package:softify/utils/sign_config.dart';
+import 'package:softify/utils/utility.dart';
+import 'package:softify/views/pages/home/home_screen.dart';
 
 class MessageSubsciptionCard extends StatefulWidget {
   MessageSubsciptionCard({

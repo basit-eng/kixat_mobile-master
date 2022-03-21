@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/service/GlobalService.dart';
+import 'package:softify/service/GlobalService.dart';
 
 mixin ValidationMixin {
   bool isValidEmailAddress(String email) {

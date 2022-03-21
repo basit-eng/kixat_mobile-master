@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/views/customWidget/cached_image.dart';
-import 'package:schoolapp/model/PictureModel.dart';
+import 'package:softify/views/customWidget/cached_image.dart';
+import 'package:softify/model/PictureModel.dart';
 
 class ZoomableImageScreen extends StatefulWidget {
   static const routeName = '/zoomableImage';

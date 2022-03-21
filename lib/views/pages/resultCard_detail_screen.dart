@@ -1,9 +1,9 @@
 // ignore_for_file: must_be_immutable, camel_case_types
 
 import 'package:flutter/material.dart';
-import 'package:schoolapp/utils/utility.dart';
-import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
-import 'package:schoolapp/views/pages/report_card.dart';
+import 'package:softify/utils/utility.dart';
+import 'package:softify/views/customWidget/CustomAppBar.dart';
+import 'package:softify/views/pages/report_card.dart';
 
 class ResultCardDetailScreen extends StatelessWidget {
   ResultCardDetailScreen({Key key}) : super(key: key);

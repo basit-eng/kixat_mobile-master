@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
-import 'package:schoolapp/views/customWidget/home/horizontal_categories.dart';
+import 'package:softify/views/customWidget/CustomAppBar.dart';
+import 'package:softify/views/customWidget/home/horizontal_categories.dart';
 import 'activity_fee.dart';
 import 'exam_fee.dart';
 import 'fee_details_screen.dart';

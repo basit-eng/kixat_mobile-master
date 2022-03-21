@@ -1,14 +1,14 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:schoolapp/bloc/base_bloc.dart';
-import 'package:schoolapp/model/FileUploadResponse.dart';
-import 'package:schoolapp/model/PostCheckoutAttrResponse.dart';
-import 'package:schoolapp/model/ShoppingCartResponse.dart';
-import 'package:schoolapp/model/requestbody/FormValue.dart';
-import 'package:schoolapp/model/requestbody/FormValuesRequestBody.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/CartRepository.dart';
+import 'package:softify/bloc/base_bloc.dart';
+import 'package:softify/model/FileUploadResponse.dart';
+import 'package:softify/model/PostCheckoutAttrResponse.dart';
+import 'package:softify/model/ShoppingCartResponse.dart';
+import 'package:softify/model/requestbody/FormValue.dart';
+import 'package:softify/model/requestbody/FormValuesRequestBody.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/CartRepository.dart';
 
 class CartBloc extends BaseBloc {
   CartRepository _repository;

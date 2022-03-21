@@ -1,9 +1,9 @@
-import 'package:schoolapp/model/AddToCartResponse.dart';
-import 'package:schoolapp/model/requestbody/FormValue.dart';
-import 'package:schoolapp/model/requestbody/FormValuesRequestBody.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/BaseRepository.dart';
-import 'package:schoolapp/utils/AppConstants.dart';
+import 'package:softify/model/AddToCartResponse.dart';
+import 'package:softify/model/requestbody/FormValue.dart';
+import 'package:softify/model/requestbody/FormValuesRequestBody.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/BaseRepository.dart';
+import 'package:softify/utils/AppConstants.dart';
 
 class ProductBoxBloc {
   BaseRepository _repository;

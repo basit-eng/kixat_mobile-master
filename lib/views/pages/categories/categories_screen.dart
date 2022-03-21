@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/views/customWidget/category_tree.dart';
-import 'package:schoolapp/model/category_tree/CategoryTreeResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
+import 'package:softify/views/customWidget/category_tree.dart';
+import 'package:softify/model/category_tree/CategoryTreeResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
 
 class CategoriesScreen extends StatefulWidget {
   final ApiResponse<CategoryTreeResponse> snapshot;

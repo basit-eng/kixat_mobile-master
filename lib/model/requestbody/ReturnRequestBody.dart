@@ -1,5 +1,5 @@
-import 'package:schoolapp/model/ReturnRequestResponse.dart';
-import 'package:schoolapp/model/requestbody/FormValue.dart';
+import 'package:softify/model/ReturnRequestResponse.dart';
+import 'package:softify/model/requestbody/FormValue.dart';
 
 class ReturnRequestBody {
   ReturnRequestBody({

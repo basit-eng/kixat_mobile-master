@@ -1,17 +1,17 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:schoolapp/bloc/base_bloc.dart';
-import 'package:schoolapp/model/AddressFormResponse.dart';
-import 'package:schoolapp/model/AddressListResponse.dart';
-import 'package:schoolapp/model/AvailableOption.dart';
-import 'package:schoolapp/model/BaseResponse.dart';
-import 'package:schoolapp/model/GetBillingAddressResponse.dart';
-import 'package:schoolapp/model/requestbody/FormValue.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/AddressRepository.dart';
-import 'package:schoolapp/utils/utility.dart';
-import 'package:schoolapp/utils/extensions.dart';
+import 'package:softify/bloc/base_bloc.dart';
+import 'package:softify/model/AddressFormResponse.dart';
+import 'package:softify/model/AddressListResponse.dart';
+import 'package:softify/model/AvailableOption.dart';
+import 'package:softify/model/BaseResponse.dart';
+import 'package:softify/model/GetBillingAddressResponse.dart';
+import 'package:softify/model/requestbody/FormValue.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/AddressRepository.dart';
+import 'package:softify/utils/utility.dart';
+import 'package:softify/utils/extensions.dart';
 
 class AddressBloc implements BaseBloc {
   AddressRepository _repository;

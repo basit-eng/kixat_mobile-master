@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:schoolapp/bloc/base_bloc.dart';
-import 'package:schoolapp/model/ProductDetailsResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/ProductDetailsRepository.dart';
+import 'package:softify/bloc/base_bloc.dart';
+import 'package:softify/model/ProductDetailsResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/ProductDetailsRepository.dart';
 
 class BarcodeBloc implements BaseBloc {
   ProductDetailsRepository _repository;

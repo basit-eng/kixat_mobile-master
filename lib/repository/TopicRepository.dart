@@ -1,6 +1,6 @@
-import 'package:schoolapp/model/TopicResponse.dart';
-import 'package:schoolapp/networking/ApiBaseHelper.dart';
-import 'package:schoolapp/networking/Endpoints.dart';
+import 'package:softify/model/TopicResponse.dart';
+import 'package:softify/networking/ApiBaseHelper.dart';
+import 'package:softify/networking/Endpoints.dart';
 
 class TopicRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

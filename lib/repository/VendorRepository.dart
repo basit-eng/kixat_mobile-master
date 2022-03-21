@@ -1,7 +1,7 @@
-import 'package:schoolapp/model/AllVendorsResponse.dart';
-import 'package:schoolapp/model/ContactVendorResponse.dart';
-import 'package:schoolapp/networking/ApiBaseHelper.dart';
-import 'package:schoolapp/networking/Endpoints.dart';
+import 'package:softify/model/AllVendorsResponse.dart';
+import 'package:softify/model/ContactVendorResponse.dart';
+import 'package:softify/networking/ApiBaseHelper.dart';
+import 'package:softify/networking/Endpoints.dart';
 
 class VendorRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

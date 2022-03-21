@@ -1,10 +1,10 @@
-import 'package:schoolapp/model/CustomerReviewResponse.dart';
-import 'package:schoolapp/model/PostHelpfulnessResponse.dart';
-import 'package:schoolapp/model/ProductReviewResponse.dart';
-import 'package:schoolapp/model/requestbody/FormValuesRequestBody.dart';
-import 'package:schoolapp/model/requestbody/PostReviewReqBody.dart';
-import 'package:schoolapp/networking/ApiBaseHelper.dart';
-import 'package:schoolapp/networking/Endpoints.dart';
+import 'package:softify/model/CustomerReviewResponse.dart';
+import 'package:softify/model/PostHelpfulnessResponse.dart';
+import 'package:softify/model/ProductReviewResponse.dart';
+import 'package:softify/model/requestbody/FormValuesRequestBody.dart';
+import 'package:softify/model/requestbody/PostReviewReqBody.dart';
+import 'package:softify/networking/ApiBaseHelper.dart';
+import 'package:softify/networking/Endpoints.dart';
 
 class ReviewRepository {
   ApiBaseHelper _helper = ApiBaseHelper();

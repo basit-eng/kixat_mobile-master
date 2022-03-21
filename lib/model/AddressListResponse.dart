@@ -1,5 +1,5 @@
-import 'package:schoolapp/model/CustomProperties.dart';
-import 'package:schoolapp/model/GetBillingAddressResponse.dart';
+import 'package:softify/model/CustomProperties.dart';
+import 'package:softify/model/GetBillingAddressResponse.dart';
 
 class AddressListResponse {
   AddressListResponse({

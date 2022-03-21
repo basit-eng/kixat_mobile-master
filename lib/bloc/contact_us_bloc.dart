@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:schoolapp/bloc/base_bloc.dart';
-import 'package:schoolapp/model/ContactUsResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/ContactUsRepository.dart';
+import 'package:softify/bloc/base_bloc.dart';
+import 'package:softify/model/ContactUsResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/ContactUsRepository.dart';
 
 class ContactUsBloc extends BaseBloc {
   ContactUsRepository _repository;

@@ -1,4 +1,4 @@
-import 'package:schoolapp/model/requestbody/FormValue.dart';
+import 'package:softify/model/requestbody/FormValue.dart';
 
 class FormValuesRequestBody {
   FormValuesRequestBody({

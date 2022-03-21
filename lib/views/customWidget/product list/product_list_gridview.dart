@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/bloc/product_list/product_list_bloc.dart';
-import 'package:schoolapp/model/ProductSummary.dart';
-import 'package:schoolapp/model/product_list/ProductListResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/views/customWidget/loading.dart';
-import 'package:schoolapp/views/customWidget/product%20box/product_box.dart';
+import 'package:softify/bloc/product_list/product_list_bloc.dart';
+import 'package:softify/model/ProductSummary.dart';
+import 'package:softify/model/product_list/ProductListResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/views/customWidget/loading.dart';
+import 'package:softify/views/customWidget/product%20box/product_box.dart';
 
 class ProductListGridView extends StatefulWidget {
   final String type;

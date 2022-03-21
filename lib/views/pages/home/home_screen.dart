@@ -1,23 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/bloc/home_bloc.dart';
-import 'package:schoolapp/utils/sign_config.dart';
-import 'package:schoolapp/views/customWidget/custom_fee.dart';
-import 'package:schoolapp/views/customWidget/home/horizontal_categories.dart';
-import 'package:schoolapp/views/customWidget/home/horizontal_manufacturer_slider.dart';
-import 'package:schoolapp/views/customWidget/home/horizontal_product_box_slider.dart';
-import 'package:schoolapp/views/customWidget/loading.dart';
-import 'package:schoolapp/model/HomeSliderResponse.dart';
-import 'package:schoolapp/model/category_tree/CategoryTreeResponse.dart';
-import 'package:schoolapp/model/home/BestSellerProductResponse.dart';
-import 'package:schoolapp/model/home/CategoriesWithProductsResponse.dart';
-import 'package:schoolapp/model/home/FeaturedProductResponse.dart';
-import 'package:schoolapp/model/home/ManufacturersResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/styles.dart';
-import 'package:schoolapp/utils/Const.dart';
-import 'package:schoolapp/views/customWidget/message_subscription.dart';
-import 'package:schoolapp/views/pages/dialog_box.dart';
+import 'package:softify/bloc/home_bloc.dart';
+import 'package:softify/utils/sign_config.dart';
+import 'package:softify/views/customWidget/custom_fee.dart';
+import 'package:softify/views/customWidget/home/horizontal_categories.dart';
+import 'package:softify/views/customWidget/loading.dart';
+import 'package:softify/model/HomeSliderResponse.dart';
+import 'package:softify/model/category_tree/CategoryTreeResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/views/customWidget/message_subscription.dart';
+import 'package:softify/views/pages/dialog_box.dart';
 
 import 'home_carousel.dart';
 

@@ -1,12 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:schoolapp/model/AvailableOption.dart';
-import 'package:schoolapp/model/SearchResponse.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/Const.dart';
-import 'package:schoolapp/utils/extensions.dart';
-import 'package:schoolapp/views/customWidget/CustomCheckBox.dart';
-import 'package:schoolapp/views/customWidget/CustomDropdown.dart';
+import 'package:softify/model/AvailableOption.dart';
+import 'package:softify/model/SearchResponse.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/Const.dart';
+import 'package:softify/utils/extensions.dart';
+import 'package:softify/views/customWidget/CustomCheckBox.dart';
+import 'package:softify/views/customWidget/CustomDropdown.dart';
 
 class AdvSearchBottomSheet extends StatelessWidget {
   final SearchData model;

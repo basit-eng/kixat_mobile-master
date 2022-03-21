@@ -1,15 +1,15 @@
 import 'dart:async';
 
-import 'package:schoolapp/bloc/base_bloc.dart';
-import 'package:schoolapp/model/home/BestSellerProductResponse.dart';
-import 'package:schoolapp/model/home/CategoriesWithProductsResponse.dart';
-import 'package:schoolapp/model/home/FeaturedProductResponse.dart';
-import 'package:schoolapp/model/HomeSliderResponse.dart';
-import 'package:schoolapp/model/home/ManufacturersResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/HomeRepository.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/Const.dart';
+import 'package:softify/bloc/base_bloc.dart';
+import 'package:softify/model/home/BestSellerProductResponse.dart';
+import 'package:softify/model/home/CategoriesWithProductsResponse.dart';
+import 'package:softify/model/home/FeaturedProductResponse.dart';
+import 'package:softify/model/HomeSliderResponse.dart';
+import 'package:softify/model/home/ManufacturersResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/HomeRepository.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/Const.dart';
 
 class HomeBloc implements BaseBloc {
   HomeRepository _homeRepository;

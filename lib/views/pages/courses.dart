@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
+import 'package:softify/views/customWidget/CustomAppBar.dart';
 
 class MyCoursesScreen extends StatelessWidget {
   const MyCoursesScreen({Key key}) : super(key: key);

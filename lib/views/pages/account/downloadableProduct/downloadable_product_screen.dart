@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/bloc/downloadable_prod_bloc.dart';
-import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
-import 'package:schoolapp/views/customWidget/error.dart';
-import 'package:schoolapp/views/customWidget/loading.dart';
-import 'package:schoolapp/views/customWidget/loading_dialog.dart';
-import 'package:schoolapp/model/DownloadableProductResponse.dart';
-import 'package:schoolapp/model/UserAgreementResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/Const.dart';
-import 'package:schoolapp/utils/utility.dart';
+import 'package:softify/bloc/downloadable_prod_bloc.dart';
+import 'package:softify/views/customWidget/CustomAppBar.dart';
+import 'package:softify/views/customWidget/error.dart';
+import 'package:softify/views/customWidget/loading.dart';
+import 'package:softify/views/customWidget/loading_dialog.dart';
+import 'package:softify/model/DownloadableProductResponse.dart';
+import 'package:softify/model/UserAgreementResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/Const.dart';
+import 'package:softify/utils/utility.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class DownloadableProductScreen extends StatefulWidget {

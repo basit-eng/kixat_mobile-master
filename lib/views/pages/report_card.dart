@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/views/pages/resultCard_detail_screen.dart';
+import 'package:softify/views/pages/resultCard_detail_screen.dart';
 
 class ReportCardScreen extends StatelessWidget {
   ReportCardScreen({Key key, this.title}) : super(key: key);

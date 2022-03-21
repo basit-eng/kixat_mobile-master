@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:schoolapp/bloc/vendor_bloc.dart';
-import 'package:schoolapp/views/customWidget/CustomAppBar.dart';
-import 'package:schoolapp/views/customWidget/cached_image.dart';
-import 'package:schoolapp/views/customWidget/error.dart';
-import 'package:schoolapp/views/customWidget/loading.dart';
-import 'package:schoolapp/model/AllVendorsResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/views/pages/more/contact_vendor_screen.dart';
-import 'package:schoolapp/views/pages/product-list/product_list_screen.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/Const.dart';
-import 'package:schoolapp/utils/GetBy.dart';
-import 'package:schoolapp/utils/styles.dart';
-import 'package:schoolapp/utils/utility.dart';
+import 'package:softify/bloc/vendor_bloc.dart';
+import 'package:softify/views/customWidget/CustomAppBar.dart';
+import 'package:softify/views/customWidget/cached_image.dart';
+import 'package:softify/views/customWidget/error.dart';
+import 'package:softify/views/customWidget/loading.dart';
+import 'package:softify/model/AllVendorsResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/views/pages/more/contact_vendor_screen.dart';
+import 'package:softify/views/pages/product-list/product_list_screen.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/Const.dart';
+import 'package:softify/utils/GetBy.dart';
+import 'package:softify/utils/styles.dart';
+import 'package:softify/utils/utility.dart';
 
 class VendorListScreen extends StatefulWidget {
   static const routeName = '/vendor-list';

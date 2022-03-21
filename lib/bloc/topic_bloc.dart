@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:schoolapp/bloc/base_bloc.dart';
-import 'package:schoolapp/model/TopicResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/repository/TopicRepository.dart';
+import 'package:softify/bloc/base_bloc.dart';
+import 'package:softify/model/TopicResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/repository/TopicRepository.dart';
 
 class TopicBloc extends BaseBloc {
   TopicRepository _repository;

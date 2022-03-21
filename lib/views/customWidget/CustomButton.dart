@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/ButtonShape.dart';
-import 'package:schoolapp/utils/utility.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/ButtonShape.dart';
+import 'package:softify/utils/utility.dart';
 
 class CustomButton extends StatelessWidget {
   final String label;

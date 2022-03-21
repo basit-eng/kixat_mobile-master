@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/bloc/checkout_bloc.dart';
-import 'package:schoolapp/views/customWidget/CustomButton.dart';
-import 'package:schoolapp/views/customWidget/CustomDropdown.dart';
-import 'package:schoolapp/model/AvailableOption.dart';
-import 'package:schoolapp/model/GetBillingAddressResponse.dart';
-import 'package:schoolapp/model/SaveBillingResponse.dart';
-import 'package:schoolapp/networking/ApiResponse.dart';
-import 'package:schoolapp/service/GlobalService.dart';
-import 'package:schoolapp/utils/Const.dart';
-import 'package:schoolapp/utils/CustomAttributeManager.dart';
-import 'package:schoolapp/utils/ValidationMixin.dart';
-import 'package:schoolapp/utils/extensions.dart';
-import 'package:schoolapp/utils/styles.dart';
-import 'package:schoolapp/utils/utility.dart';
+import 'package:softify/bloc/checkout_bloc.dart';
+import 'package:softify/views/customWidget/CustomButton.dart';
+import 'package:softify/views/customWidget/CustomDropdown.dart';
+import 'package:softify/model/AvailableOption.dart';
+import 'package:softify/model/GetBillingAddressResponse.dart';
+import 'package:softify/model/SaveBillingResponse.dart';
+import 'package:softify/networking/ApiResponse.dart';
+import 'package:softify/service/GlobalService.dart';
+import 'package:softify/utils/Const.dart';
+import 'package:softify/utils/CustomAttributeManager.dart';
+import 'package:softify/utils/ValidationMixin.dart';
+import 'package:softify/utils/extensions.dart';
+import 'package:softify/utils/styles.dart';
+import 'package:softify/utils/utility.dart';
 
 class StepCheckoutAddress extends StatefulWidget {
   final GetBillingData billingData;
