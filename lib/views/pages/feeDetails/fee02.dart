@@ -54,32 +54,22 @@ class FeeScreen extends StatelessWidget {
     double paid_amt = 10.0;
 
     return Card(
-      elevation: 12,
+      elevation: 02,
       child: Padding(
         padding: const EdgeInsets.only(
           top: 8.0,
           bottom: 12,
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
+        child: ExpansionTile(
+          backgroundColor:
+              isDarkThemeEnabled(context) ? Colors.black38 : Color(0XFFF5F5F5),
+          title: Text(
+            feeType,
+            style: Theme.of(context).textTheme.headline6.copyWith(
+                fontSize: 2.0 * SizeConfig.textMultiplier,
+                fontWeight: FontWeight.w600),
+          ),
           children: [
-            ListTile(
-              tileColor: isDarkThemeEnabled(context)
-                  ? Colors.black38
-                  : Color(0XFFF5F5F5),
-              title: Text(
-                feeType,
-                style: Theme.of(context).textTheme.headline6.copyWith(
-                    fontSize: 2.0 * SizeConfig.textMultiplier,
-                    fontWeight: FontWeight.w600),
-              ),
-              trailing: IconButton(
-                  onPressed: () => Container(),
-                  icon: Icon(
-                    Icons.arrow_forward_ios,
-                    size: 18,
-                  )),
-            ),
             customFeeRow(
               context: context,
               key: "Fee Code :",

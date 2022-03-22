@@ -1,24 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:softify/model/AppLandingResponse.dart';
-import 'package:softify/utils/nop_cart_icons.dart';
 import 'package:softify/utils/sign_config.dart';
-import 'package:softify/views/pages/account/account_screen.dart';
-import 'package:softify/views/pages/account/change_password_screen.dart';
 import 'package:softify/views/pages/account/faq.dart';
 import 'package:softify/views/pages/account/find_us.dart';
-import 'package:softify/views/pages/account/login_screen.dart';
-import 'package:softify/views/pages/assignmentCard_screen.dart';
-import 'package:softify/views/pages/attendance.dart';
-import 'package:softify/views/pages/calender_screen.dart';
-import 'package:softify/views/pages/examSchedule/exam_schedule.dart';
-import 'package:softify/views/pages/home/home_screen.dart';
 import 'package:softify/views/pages/more/contact_us_screen.dart';
 import 'package:softify/views/pages/more/settings_screen.dart';
-import 'package:softify/views/pages/courses.dart';
-import 'package:softify/views/pages/notice_screen.dart';
 import 'package:softify/views/pages/profile_screen.dart';
-import 'package:softify/views/pages/report_card.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({
@@ -64,7 +51,7 @@ class CustomDrawer extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Akhtar Abbas ",
+                          "Zoyan Haider ",
                           style: Theme.of(context).textTheme.headline6.copyWith(
                               color: Colors.white,
                               fontWeight: FontWeight.w700,
@@ -88,15 +75,6 @@ class CustomDrawer extends StatelessWidget {
                     )
                   ],
                 )),
-            customListTile(
-              context: context,
-              title: "My Profile",
-              iconPath: "assets/svg/user.svg",
-              onTap: () {
-                Navigator.pushNamed(context, ProfileScreen.routeName);
-              },
-            ),
-            divider,
             customListTile(
               context: context,
               title: "Manage Account",

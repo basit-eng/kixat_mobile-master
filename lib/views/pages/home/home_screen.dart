@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:softify/bloc/home_bloc.dart';
 import 'package:softify/utils/sign_config.dart';
+import 'package:softify/views/customWidget/customParentsChild.dart';
 import 'package:softify/views/customWidget/custom_fee.dart';
 import 'package:softify/views/customWidget/home/horizontal_categories.dart';
 import 'package:softify/views/customWidget/loading.dart';
@@ -107,6 +108,8 @@ class MainMenu extends StatelessWidget {
         shrinkWrap: true,
         children: [
           if (categories.isNotEmpty) SizedBox(height: 05),
+          ParentsChild(),
+          SizedBox(height: 05),
           FeeCard(),
           SizedBox(height: 5),
           BannerSlider(sliderData),

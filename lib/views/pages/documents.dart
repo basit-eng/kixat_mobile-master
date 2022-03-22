@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:softify/utils/sign_config.dart';
 import 'package:softify/views/customWidget/CustomAppBar.dart';
 
 class DocumentsScreen extends StatelessWidget {
@@ -8,6 +9,12 @@ class DocumentsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List doc_type = [
+      "Charecter Certificate",
+      "Hope Certificate",
+      "Award Certificate",
+    ];
+
     return Scaffold(
       appBar: CustomAppBar(
         title: Text(
@@ -15,83 +22,32 @@ class DocumentsScreen extends StatelessWidget {
           style: Theme.of(context).appBarTheme.textTheme.headline6,
         ),
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          CustomDocTitle(title: "Certificates", icon: Icons.picture_as_pdf),
-          CustomDocDiscribtion(
-            leadingicon: Icons.picture_as_pdf,
-            file: "doc.pdf",
-            tralingicon: Icons.download,
-          ),
-          CustomDocTitle(title: "Marksheet", icon: Icons.picture_as_pdf),
-          CustomDocDiscribtion(
-            leadingicon: Icons.picture_as_pdf,
-            file: "doc.pdf",
-            tralingicon: Icons.download,
-          ),
-          CustomDocTitle(title: "Report Card", icon: Icons.picture_as_pdf),
-          CustomDocDiscribtion(
-            leadingicon: Icons.picture_as_pdf,
-            file: "doc.pdf",
-            tralingicon: Icons.download,
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class CustomDocTitle extends StatelessWidget {
-  const CustomDocTitle({
-    Key key,
-    this.icon,
-    this.title,
-  }) : super(key: key);
-  final IconData icon;
-  final String title;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(0),
-      child: Card(
-        margin: EdgeInsets.all(0),
-        color: Colors.grey[200],
-        child: ListTile(
-          leading: Icon(icon),
-          title: Text(
-            title,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
+      body: ListView.builder(
+        itemCount: doc_type.length,
+        itemBuilder: ((context, index) {
+          return Card(
+            elevation: 02,
+            margin: EdgeInsets.only(top: 08),
+            child: ExpansionTile(
+              title: Text(
+                doc_type[index],
+                style: TextStyle(
+                  fontSize: 2.0 * SizeConfig.textMultiplier,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              children: [
+                ListTile(
+                  leading: Icon(Icons.picture_as_pdf),
+                  title: Text(
+                    "doc",
+                  ),
+                  trailing: Icon(Icons.file_download_outlined),
+                ),
+              ],
             ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class CustomDocDiscribtion extends StatelessWidget {
-  const CustomDocDiscribtion({
-    Key key,
-    this.leadingicon,
-    this.file,
-    this.tralingicon,
-  }) : super(key: key);
-  final IconData leadingicon;
-  final IconData tralingicon;
-  final String file;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(0),
-      child: ListTile(
-        leading: Icon(leadingicon),
-        title: Text(
-          file,
-        ),
-        trailing: Icon(tralingicon),
+          );
+        }),
       ),
     );
   }

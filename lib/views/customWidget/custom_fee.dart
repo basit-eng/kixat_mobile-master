@@ -24,42 +24,32 @@ class FeeCardWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 8.0, right: 08, bottom: 12),
       child: Card(
-        elevation: 20,
+        elevation: 12,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
         child: Container(
           height: size.height * 0.16,
           width: size.width * 0.33,
-          // alignment: Alignment.topCenter,
           padding: EdgeInsets.all(08),
-          // decoration: BoxDecoration(
-          //     color: Colors.red[250],
-          //     borderRadius: BorderRadius.circular(30),
-          //     boxShadow: [
-          //       BoxShadow(
-          //           offset: Offset(6, 6),
-          //           color: Color(0xFFFFFFF2).withOpacity(0.5),
-          //           spreadRadius: 9,
-          //           blurRadius: 20)
-          //     ]),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(top: 8.0),
                 child: SvgPicture.asset(
                   icon,
                   color: Colors.blue,
-                  height: 20,
-                  width: 20,
+                  height: 25,
+                  width: 25,
                   fit: BoxFit.contain,
                 ),
               ),
+              Spacer(),
               Flexible(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
+                  padding: const EdgeInsets.only(top: 0.0),
                   child: Text(
                     title,
                     style: Theme.of(context).textTheme.headline6.copyWith(
@@ -103,7 +93,7 @@ class FeeCard extends StatelessWidget {
       children: [
         Flexible(
           child: FeeCardWidget(
-              icon: "assets/svg/form.svg",
+              icon: 'assets/svg/document.svg',
               attendence: 26,
               fee: 2400,
               title: "Previous Month"),

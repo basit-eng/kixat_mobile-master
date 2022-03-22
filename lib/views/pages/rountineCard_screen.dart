@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:softify/views/customWidget/CustomAppBar.dart';
-import 'package:table_calendar/table_calendar.dart';
-import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 
 class RountineClassScreen extends StatelessWidget {
   RountineClassScreen({Key key}) : super(key: key);
@@ -35,17 +33,12 @@ class RountineClassScreen extends StatelessWidget {
           itemCount: days.length,
           itemBuilder: (context, index) {
             return Card(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: ExpansionTile(
+                title: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text(days[index], style: style),
+                ),
                 children: [
-                  Container(
-                    width: double.infinity,
-                    color: Color(0XFFF5F5F5),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Text(days[index], style: style),
-                    ),
-                  ),
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 08, left: 16.0, right: 16, bottom: 08),

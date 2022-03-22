@@ -1,24 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:softify/model/category_tree/CategoryTreeResponse.dart';
-import 'package:softify/utils/utility.dart';
-
-import 'package:softify/views/customWidget/cached_image.dart';
-import 'package:softify/views/pages/assignmentCard_screen.dart';
 import 'package:softify/views/pages/attendance.dart';
 import 'package:softify/views/pages/calender_screen.dart';
 import 'package:softify/views/pages/documents.dart';
 import 'package:softify/views/pages/eventscreen.dart';
 import 'package:softify/views/pages/feeDetails/fee02.dart';
-import 'package:softify/views/pages/feeDetails/fee_details.dart';
-import 'package:softify/views/pages/courses.dart';
-import 'package:softify/views/pages/notice_screen.dart';
 import 'package:softify/views/pages/profile_screen.dart';
-import 'package:softify/views/pages/report_card.dart';
 import 'package:softify/views/pages/resultCard_detail_screen.dart';
 import 'package:softify/views/pages/rountineCard_screen.dart';
-
-import '../../pages/resultcard_screen.dart';
 
 class DashBoardMenu extends StatelessWidget {
   DashBoardMenu({Key key, this.categories}) : super(key: key);
@@ -27,12 +17,10 @@ class DashBoardMenu extends StatelessWidget {
   final double boxSize = 40;
 
   List pagesList = <Widget>[
-    AssignmentScreen(),
     EventsScreen(),
     CalenderScreen(),
     ProfileScreen(),
     FeeScreen(),
-    MyCoursesScreen(),
     ResultCardDetailScreen(),
     RountineClassScreen(),
     // NoticeScreen(),
@@ -41,24 +29,20 @@ class DashBoardMenu extends StatelessWidget {
     DocumentsScreen(),
   ];
   List imagesList = <String>[
-    'assets/svg/edit.svg',
     'assets/svg/bell.svg',
     'assets/svg/calendar.svg',
     'assets/svg/user.svg',
     'assets/svg/edit-alt.svg',
-    'assets/svg/book-alt.svg',
     'assets/svg/chart-histogram.svg',
     'assets/svg/time-check.svg',
     'assets/svg/list-check.svg',
     'assets/svg/document.svg',
   ];
   List DashBoardMenuItemsName = [
-    "Assignment",
     "Events",
     "Calender",
     "Profile",
     "Fee Details",
-    "My Courses",
     "Result Card",
     "Time Table",
     "Attendence",
@@ -72,28 +56,10 @@ class DashBoardMenu extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: Card(
-        elevation: 20,
+        elevation: 12,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
-        // decoration: BoxDecoration(
-        //   // color: isDarkThemeEnabled(context) ? Colors.red : Colors.white,
-        //   borderRadius: BorderRadius.circular(16),
-        //   boxShadow: [
-        //     BoxShadow(
-        //       color: isDarkThemeEnabled(context)
-        //           ? Colors.black38
-        //           : Colors.grey[300],
-        //       blurRadius: 10.0, // soften the shadow
-        //       spreadRadius: 05.0, //extend the shadow
-        //       offset: Offset(
-        //         08.0, // Move to right 10  horizontally
-        //         08.0, // Move to bottom 10 Vertically
-        //       ),
-        //     )
-        //   ],
-        // ),
-        // padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 00),
         child: GridView.builder(
           physics: NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -111,14 +77,6 @@ class DashBoardMenu extends StatelessWidget {
                   context,
                   MaterialPageRoute(builder: (context) => pagesList[index]),
                 );
-                // Navigator.of(context).pushNamed(
-                //   ProductListScreen.routeName,
-                //   arguments: StudentListScreenArguments(
-                //     id: categories[index].categoryId,
-                //     name: categories[index].name,
-                //     type: GetBy.CATEGORY,
-                //   ),
-                // );
               },
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
