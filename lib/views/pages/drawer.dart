@@ -96,7 +96,7 @@ class CustomDrawer extends StatelessWidget {
             customListTile(
               context: context,
               title: "FAQs",
-              iconPath: "assets/svg/faqs.svg",
+              iconPath: "assets/svg/interrogation.svg",
               onTap: () {
                 Navigator.pushNamed(context, FAQScreen.routeName);
               },

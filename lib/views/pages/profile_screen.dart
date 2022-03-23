@@ -55,125 +55,107 @@ class ProfileScreen extends StatelessWidget {
             ),
             Card(
               elevation: 02,
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  top: 8.0,
-                  bottom: 12,
+              child: ExpansionTile(
+                backgroundColor: Colors.white,
+                title: Text(
+                  "Personal Information",
+                  textAlign: TextAlign.left,
+                  style: Theme.of(context).textTheme.headline6.copyWith(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 2.0 * SizeConfig.textMultiplier),
                 ),
-                child: ExpansionTile(
-                  backgroundColor: Colors.white,
-                  title: Text(
-                    "Personal Information",
-                    textAlign: TextAlign.left,
-                    style: Theme.of(context).textTheme.headline6.copyWith(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 2.0 * SizeConfig.textMultiplier),
+                children: [
+                  CustomProfile(
+                    attr: "Name",
+                    iconsPath: Icons.person,
+                    value: "Emma_ema",
                   ),
-                  children: [
-                    CustomProfile(
-                      attr: "Name",
-                      iconsPath: Icons.person,
-                      value: "Emma_ema",
-                    ),
-                    CustomProfile(
-                      attr: "F.Name",
-                      iconsPath: Icons.person_add_alt_1,
-                      value: "Hassan",
-                    ),
-                    CustomProfile(
-                      attr: "Roll No.",
-                      iconsPath: Icons.confirmation_number_outlined,
-                      value: "123",
-                    ),
-                    CustomProfile(
-                      attr: "Reg. No.",
-                      iconsPath: Icons.app_registration,
-                      value: "1656356",
-                    ),
-                    CustomProfile(
-                      attr: "Gender",
-                      iconsPath: Icons.female,
-                      value: "Female",
-                    ),
-                  ],
-                ),
+                  CustomProfile(
+                    attr: "F.Name",
+                    iconsPath: Icons.person_add_alt_1,
+                    value: "Hassan",
+                  ),
+                  CustomProfile(
+                    attr: "Roll No.",
+                    iconsPath: Icons.confirmation_number_outlined,
+                    value: "123",
+                  ),
+                  CustomProfile(
+                    attr: "Reg. No.",
+                    iconsPath: Icons.app_registration,
+                    value: "1656356",
+                  ),
+                  CustomProfile(
+                    attr: "Gender",
+                    iconsPath: Icons.female,
+                    value: "Female",
+                  ),
+                ],
               ),
             ),
             Card(
               elevation: 02,
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  top: 8.0,
-                  bottom: 12,
+              child: ExpansionTile(
+                backgroundColor: Colors.white,
+                title: Text(
+                  "Degree Information",
+                  textAlign: TextAlign.left,
+                  style: Theme.of(context).textTheme.headline6.copyWith(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 2.0 * SizeConfig.textMultiplier),
                 ),
-                child: ExpansionTile(
-                  backgroundColor: Colors.white,
-                  title: Text(
-                    "Degree Information",
-                    textAlign: TextAlign.left,
-                    style: Theme.of(context).textTheme.headline6.copyWith(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 2.0 * SizeConfig.textMultiplier),
+                children: [
+                  CustomProfile(
+                    attr: "Class",
+                    iconsPath: Icons.class__outlined,
+                    value: "10th",
                   ),
-                  children: [
-                    CustomProfile(
-                      attr: "Class",
-                      iconsPath: Icons.class__outlined,
-                      value: "10th",
-                    ),
-                    CustomProfile(
-                      attr: "Section",
-                      iconsPath: Icons.subject_outlined,
-                      value: "A",
-                    ),
-                    CustomProfile(
-                      attr: "Session",
-                      iconsPath: Icons.settings_applications_rounded,
-                      value: "2022 - 2024",
-                    ),
-                    CustomProfile(
-                      attr: "Major",
-                      iconsPath: Icons.rotate_90_degrees_ccw,
-                      value: "Science",
-                    ),
-                  ],
-                ),
+                  CustomProfile(
+                    attr: "Section",
+                    iconsPath: Icons.subject_outlined,
+                    value: "A",
+                  ),
+                  CustomProfile(
+                    attr: "Session",
+                    iconsPath: Icons.settings_applications_rounded,
+                    value: "2022 - 2024",
+                  ),
+                  CustomProfile(
+                    attr: "Major",
+                    iconsPath: Icons.rotate_90_degrees_ccw,
+                    value: "Science",
+                  ),
+                ],
               ),
             ),
             Card(
               elevation: 02,
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  top: 8.0,
-                  bottom: 12,
+              child: ExpansionTile(
+                backgroundColor: Colors.white,
+                title: Text(
+                  "Contact Information",
+                  textAlign: TextAlign.left,
+                  style: Theme.of(context).textTheme.headline6.copyWith(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 2.0 * SizeConfig.textMultiplier),
                 ),
-                child: ExpansionTile(
-                  backgroundColor: Colors.white,
-                  title: Text(
-                    "Contact Information",
-                    textAlign: TextAlign.left,
-                    style: Theme.of(context).textTheme.headline6.copyWith(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 2.0 * SizeConfig.textMultiplier),
+                children: [
+                  CustomProfile(
+                    attr: "Mobile No.",
+                    iconsPath: Icons.call,
+                    value: "034459504493",
                   ),
-                  children: [
-                    CustomProfile(
-                      attr: "Mobile No.",
-                      iconsPath: Icons.call,
-                      value: "034459504493",
-                    ),
-                    CustomProfile(
-                      attr: "Email",
-                      iconsPath: Icons.email,
-                      value: "abcd@gmail.com",
-                    ),
-                    CustomProfile(
-                      attr: "Adress",
-                      iconsPath: Icons.rotate_90_degrees_ccw,
-                      value: "Rawalpindi",
-                    ),
-                  ],
-                ),
+                  CustomProfile(
+                    attr: "Email",
+                    iconsPath: Icons.email,
+                    value: "abcd@gmail.com",
+                  ),
+                  CustomProfile(
+                    attr: "Adress",
+                    iconsPath: Icons.rotate_90_degrees_ccw,
+                    value: "Rawalpindi",
+                  ),
+                ],
               ),
             ),
           ],

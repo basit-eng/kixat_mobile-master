@@ -28,14 +28,14 @@ class RichWidget extends StatelessWidget {
 }
 
 class HotRichWidget extends StatelessWidget {
-  HotRichWidget({this.text1, this.text2});
-  final String text1;
+  HotRichWidget({this.amount, this.text2});
+  final String amount;
   final String text2;
   @override
   Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(
-        text: text1,
+        text: amount,
         style: Theme.of(context)
             .textTheme
             .bodyText1

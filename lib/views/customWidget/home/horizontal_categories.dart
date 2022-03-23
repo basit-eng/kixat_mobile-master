@@ -31,11 +31,11 @@ class DashBoardMenu extends StatelessWidget {
   List imagesList = <String>[
     'assets/svg/bell.svg',
     'assets/svg/calendar.svg',
-    'assets/svg/user.svg',
+    'assets/svg/graduation-cap.svg',
     'assets/svg/edit-alt.svg',
-    'assets/svg/chart-histogram.svg',
+    'assets/svg/treatment.svg',
     'assets/svg/time-check.svg',
-    'assets/svg/list-check.svg',
+    'assets/svg/edit.svg',
     'assets/svg/document.svg',
   ];
   List DashBoardMenuItemsName = [

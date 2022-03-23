@@ -20,7 +20,9 @@ class FeeCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
+    var spacer = SizedBox(
+      height: 06,
+    );
     return Padding(
       padding: const EdgeInsets.only(left: 8.0, right: 08, bottom: 12),
       child: Card(
@@ -37,7 +39,7 @@ class FeeCardWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 8.0),
+                padding: const EdgeInsets.only(top: 08.0),
                 child: SvgPicture.asset(
                   icon,
                   color: Colors.blue,
@@ -46,34 +48,42 @@ class FeeCardWidget extends StatelessWidget {
                   fit: BoxFit.contain,
                 ),
               ),
-              Spacer(),
-              Flexible(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 0.0),
-                  child: Text(
-                    title,
-                    style: Theme.of(context).textTheme.headline6.copyWith(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 1.6 * SizeConfig.textMultiplier),
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Flexible(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 02.0),
+                      child: Text(
+                        title,
+                        style: Theme.of(context).textTheme.headline6.copyWith(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 1.6 * SizeConfig.textMultiplier),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              FittedBox(
-                child: RichWidget(
-                  text1: 'Fee : ',
-                  text2: "$fee PKR",
-                ),
-              ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 04.0),
+                    child: FittedBox(
+                      child: RichWidget(
+                        text1: 'Fee : ',
+                        text2: "$fee PKR",
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    indent: 05,
+                    endIndent: 05,
+                    thickness: 3,
+                    color: Colors.blue,
+                  ),
+                ],
+              )
               // RichWidget(
               //   text1: 'Attendence:',
               //   text2: "$attendence",
               // ),
-              Divider(
-                indent: 05,
-                endIndent: 05,
-                thickness: 3,
-                color: Colors.blue,
-              ),
             ],
           ),
         ),
@@ -93,7 +103,7 @@ class FeeCard extends StatelessWidget {
       children: [
         Flexible(
           child: FeeCardWidget(
-              icon: 'assets/svg/document.svg',
+              icon: 'assets/svg/assept-document.svg',
               attendence: 26,
               fee: 2400,
               title: "Previous Month"),
@@ -107,7 +117,7 @@ class FeeCard extends StatelessWidget {
         ),
         Flexible(
           child: FeeCardWidget(
-              icon: "assets/svg/pencil.svg",
+              icon: "assets/svg/add-document.svg",
               attendence: 0,
               fee: 3000,
               title: "Next Month"),
